@@ -49,13 +49,13 @@
 
 <p>You can use our API to access your end users, responses, declines and page views.</p>
 
-<p>JSON will be returned in all responses from the API including errors. We currently have code examples using curl, you can view code examples in the dark area to the right.</p>
+<p>JSON will be returned in all responses from the API, including errors. We currently have code examples using curl, and you can view code examples in the dark area to the right.</p>
 <h1 id='authentication'>Authentication</h1>
-<p>Wootric expects for the access token key to be included in all API requests that looks like the following:</p>
+<p>Wootric expects an access token to be included in all API requests.  A request should be to a URL like the following, using your own access token:</p>
 
 <p><code class="prettyprint">https://api.wootric.com/v1/end_users.json?access_token=myaccesstoken</code></p>
 
-<p>Access tokens expire 2 hours after creation. New Access tokens can be obtained using refresh tokens which is detailed in the CURL example to the right.</p>
+<p>Access tokens expire 2 hours after creation. New access tokens can be obtained using refresh tokens which are detailed in the CURL example to the right.</p>
 
 <p><aside class="notice">
 You must replace <code class="prettyprint">myaccesstoken</code> with your personal Access Token.
