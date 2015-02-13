@@ -17,6 +17,10 @@ updated_at | datetime |  Datetime representation of when the page view was latel
 
 ```shell
 curl "https://api.wootric.com/v1/end_users/1/page_views?access_token=myaccesstoken"
+
+or
+
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/page_views"
 ```
 
 > The above command returns JSON structured like this:
@@ -46,7 +50,7 @@ This endpoint retrieves all page views for end user.
 
 ### HTTP Request
 
-`GET https://api.wootric.com/v1/end_users/1/page_views?access_token=myaccesstoken`
+`GET https://api.wootric.com/v1/end_users/1/page_views`
 
 ### Scope Parameters
 
@@ -62,6 +66,10 @@ created | hash | {} | Hash with properties used to filter your page views by tim
 
 ```shell
 curl "https://api.wootric.com/v1/end_users/1/page_views/2?access_token=myaccesstoken"
+
+or
+
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/page_views/2"
 ```
 
 > The above command returns JSON structured like this:
@@ -81,7 +89,7 @@ This endpoint retrieves a specific page view.
 
 ### HTTP Request
 
-`GET https://api.wootric.com/v1/end_users/<END_USER_ID>/page_views/<ID>?access_token=myaccesstoken`
+`GET https://api.wootric.com/v1/end_users/<END_USER_ID>/page_views/<ID>`
 
 ### URL Parameters
 
@@ -94,6 +102,10 @@ ID | The ID of the page view to retrieve
 
 ```shell
 curl -X POST "https://api.wootric.com/v1/end_users/1/page_views?access_token=myaccesstoken" -d "at=1423751367;url=http://example.com"
+
+or
+
+curl -X POST -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/page_views" -d "at=1423751367;url=http://example.com"
 ```
 
 > The above command returns JSON structured like this:
@@ -113,7 +125,7 @@ This endpoint creates a page view for the end user.
 
 ### HTTP Request
 
-`POST https://api.wootric.com/v1/end_users/<END_USER_ID>/page_views?access_token=myaccesstoken`
+`POST https://api.wootric.com/v1/end_users/<END_USER_ID>/page_views`
 
 ### URL Parameters
 
@@ -127,6 +139,10 @@ url (optional) | URL of the page viewed
 
 ```shell
 curl -X DELETE "https://api.wootric.com/v1/end_users/1/page_views/1?access_token=myaccesstoken"
+
+or
+
+curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/page_views/1"
 ```
 
 > The above command returns JSON structured like this:
@@ -146,7 +162,7 @@ This endpoint deletes a page view for the end user.
 
 ### HTTP Request
 
-`DELETE https://api.wootric.com/v1/end_users/<END_USER_ID>/page_views/<PAGE_VIEW_ID>?access_token=myaccesstoken`
+`DELETE https://api.wootric.com/v1/end_users/<END_USER_ID>/page_views/<PAGE_VIEW_ID>`
 
 ### URL Parameters
 

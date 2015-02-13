@@ -28,11 +28,15 @@ JSON will be returned in all responses from the API including errors. We current
 
 # Authentication
 
-Wootric expects for the access token key to be included in all API requests that looks like the following:
+Access token can be retrieved using either grant_type of "password" with your account email and password, or grant_type of "client_credentials" with your application client_id and client_secret.
+
+Wootric expects for the access token key to be included in all API requests that looks like the following for grant_type of "password":
 
 `https://api.wootric.com/v1/end_users.json?access_token=myaccesstoken`
 
-Access token can be retrieved using either grant_type of "password" with your account email and password, or grant_type of "client_credentials" with your application client_id and client_secret.
+If you are using grant_type of "client_credentials" you need to send the access token as a request header:
+
+`Authorization: Bearer <myaccesstoken>`
 
 Access token expires 2 hours after creation. New Access tokens can be obtained using refresh tokens which is detailed in the CURL example to the right.
 
