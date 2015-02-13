@@ -89,3 +89,68 @@ Parameter | Description
 --------- | -----------
 END_USER_ID | The ID of the end user
 ID | The ID of the page view to retrieve
+
+## Create Page View
+
+```shell
+curl -X POST "https://api.wootric.com/v1/end_users/1/page_views?access_token=myaccesstoken" -d "at=1423751367;url=http://example.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+  {
+    "id": 1,
+    "end_user_id": 1,
+    "at": "2015-02-12T06:29:27.000-08:00",
+    "url": "http://example.com",
+    "created_at" : "2015-02-12T06:29:27.000-08:00",
+    "updated_at" : "2015-02-12T06:29:27.000-08:00"
+  }
+```
+
+This endpoint creates a page view for the end user.
+
+### HTTP Request
+
+`POST https://api.wootric.com/v1/end_users/<END_USER_ID>/page_views?access_token=myaccesstoken`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+END_USER_ID | The ID of the end user
+at (optional) | When the page was viewed (UNIX timestamp)
+url (optional) | URL of the page viewed
+
+## Delete Page View
+
+```shell
+curl -X DELETE "https://api.wootric.com/v1/end_users/1/page_views/1?access_token=myaccesstoken"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+  {
+    "id": 1,
+    "end_user_id": 1,
+    "at": "2015-02-12T06:29:27.000-08:00",
+    "url": "http://example.com",
+    "created_at" : "2015-02-12T06:29:27.000-08:00",
+    "updated_at" : "2015-02-12T06:29:27.000-08:00"
+  }
+```
+
+This endpoint deletes a page view for the end user.
+
+### HTTP Request
+
+`DELETE https://api.wootric.com/v1/end_users/<END_USER_ID>/page_views/<PAGE_VIEW_ID>?access_token=myaccesstoken`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+END_USER_ID | The ID of the end user
+PAGE_VIEW_ID | The ID of the page view to delete

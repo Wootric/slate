@@ -38,7 +38,7 @@ Access tokens expire 2 hours after creation. New Access tokens can be obtained u
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-> To retreive an access token using oauth, use this code:
+> To retrieve an access token using oauth, use this code:
 
 ```shell
 $ curl -i https://api.wootric.com/oauth/token \
@@ -100,7 +100,7 @@ import kittn
 api = kittn.authorize('meowmeowmeow')
 api.kittens.get(2)
 ```
-> To retreive a new access token after it has expired, use this code:
+> To retrieve a new access token after it has expired, use this code:
 
 ```shell
 curl "http://example.com/api/kittens/2"

@@ -254,3 +254,72 @@ Parameter | Description
 --------- | -----------
 END_USER_ID | The ID of the end user
 ID | The ID of the decline to retrieve
+
+## Create Response
+
+```shell
+curl -X POST "https://api.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken" -d "score=5;text=test response;ip_address=192.168.0.1;origin_url=http://example.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+  {
+    "id": 1,
+    "created_at" : "2015-02-12T06:29:27.000-08:00",
+    "updated_at" : "2015-02-12T06:29:27.000-08:00",
+    "score": 5,
+    "text": "test response",
+    "ip_address": "192.168.0.1",
+    "origin_url": "http://example.com"
+  }
+```
+
+This endpoint creates a response for the end user.
+
+### HTTP Request
+
+`POST https://api.wootric.com/v1/end_users/<END_USER_ID>/responses?access_token=myaccesstoken&score=<SCORE>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+END_USER_ID | The ID of the end user
+SCORE | The end user response score (values from 0 to 10)
+text (optional) | The end user comment to the response
+ip_address (optional) | IP address the response originated from
+origin_url (optional) | URL the response originated from
+
+## Delete Response
+
+```shell
+curl -X DELETE "https://api.wootric.com/v1/end_users/1/respones/1?access_token=myaccesstoken"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+  {
+    "id": 1,
+    "created_at" : "2015-02-12T06:29:27.000-08:00",
+    "updated_at" : "2015-02-12T06:29:27.000-08:00",
+    "score": 5,
+    "text": "test response",
+    "ip_address": "192.168.0.1",
+    "origin_url": "http://example.com"
+  }
+```
+
+This endpoint deletes a page view for the end user.
+
+### HTTP Request
+
+`DELETE https://api.wootric.com/v1/end_users/<END_USER_ID>/respones/<RESPONSE_ID>?access_token=myaccesstoken`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+END_USER_ID | The ID of the end user
+RESPONSE_ID | The ID of the response to delete
