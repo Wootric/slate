@@ -16,6 +16,10 @@ user_id | integer | The id of user
 
 ```shell
 curl "https://api.wootric.com/v1/end_users/1/declines?access_token=myaccesstoken"
+
+or
+
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/declines"
 ```
 
 > The above command returns JSON structured like this:
@@ -43,7 +47,7 @@ This endpoint retrieves all declines for end user.
 
 ### HTTP Request
 
-`GET https://api.wootric.com/v1/end_users/1/declines?access_token=myaccesstoken`
+`GET https://api.wootric.com/v1/end_users/1/declines`
 
 ### Scope Parameters
 
@@ -59,6 +63,10 @@ created | hash | {} | Hash with properties used to filter your declines by time 
 
 ```shell
 curl "https://api.wootric.com/v1/end_users/1/declines/2?access_token=myaccesstoken"
+
+or
+
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/declines/2"
 ```
 
 > The above command returns JSON structured like this:
@@ -77,7 +85,7 @@ This endpoint retrieves a specific decline.
 
 ### HTTP Request
 
-`GET https://api.wootric.com/v1/end_users/<END_USER_ID>/declines/<ID>?access_token=myaccesstoken`
+`GET https://api.wootric.com/v1/end_users/<END_USER_ID>/declines/<ID>`
 
 ### URL Parameters
 
@@ -90,6 +98,10 @@ ID | The ID of the decline to retrieve
 
 ```shell
 curl -X POST "https://api.wootric.com/v1/end_users/1/declines?access_token=myaccesstoken"
+
+or
+
+curl -X POST -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/declines"
 ```
 
 > The above command returns JSON structured like this:
@@ -108,7 +120,7 @@ This endpoint creates a decline for the end user.
 
 ### HTTP Request
 
-`POST https://api.wootric.com/v1/end_users/<END_USER_ID>/declines?access_token=myaccesstoken`
+`POST https://api.wootric.com/v1/end_users/<END_USER_ID>/declines`
 
 ### URL Parameters
 
@@ -120,6 +132,10 @@ END_USER_ID | The ID of the end user
 
 ```shell
 curl -X DELETE "https://api.wootric.com/v1/end_users/1/declines/1?access_token=myaccesstoken"
+
+or
+
+curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/declines/1"
 ```
 
 > The above command returns JSON structured like this:
@@ -138,7 +154,7 @@ This endpoint deletes a decline for the end user.
 
 ### HTTP Request
 
-`DELETE https://api.wootric.com/v1/end_users/<END_USER_ID>/declines/<DECLINE_ID>?access_token=myaccesstoken`
+`DELETE https://api.wootric.com/v1/end_users/<END_USER_ID>/declines/<DECLINE_ID>`
 
 ### URL Parameters
 

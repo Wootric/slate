@@ -20,6 +20,10 @@ properites | hash | Properties (i.e. plan, product)
 
 ```shell
 curl "https://api.wootric.com/v1/end_users?access_token=myaccesstoken"
+
+or
+
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users"
 ```
 
 > The above command returns JSON structured like this:
@@ -55,7 +59,7 @@ This endpoint retrieves all end users.
 
 ### HTTP Request
 
-`GET http://api.wootric.com/v1/end_users?access_token=myaccesstoken`
+`GET http://api.wootric.com/v1/end_users`
 
 ### Scope Parameters
 
@@ -70,7 +74,11 @@ created | hash | {} | Hash with properties used to filter your end users by time
 ## Get a Specific End User
 
 ```shell
-curl " http://api.wootric.com/v1/end_users/2?access_token=myaccesstoken"
+curl "http://api.wootric.com/v1/end_users/2?access_token=myaccesstoken"
+
+or
+
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/2"
 ```
 
 > The above command returns JSON structured like this:
@@ -106,6 +114,10 @@ ID | The ID of the end user to retrieve
 
 ```shell
 curl -X POST "https://api.wootric.com/v1/end_users?access_token=myaccesstoken" -d "email=enduser@example.com;last_surveyed=1423732280;properties[company]=TestCompany&properties[city]=San Francisco"
+
+or
+
+curl -X POST -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users" -d "email=enduser@example.com;last_surveyed=1423732280;properties[company]=TestCompany&properties[city]=San Francisco"
 ```
 
 > The above command returns JSON structured like this:
@@ -128,7 +140,7 @@ This endpoint creates the end user.
 
 ### HTTP Request
 
-`POST https://api.wootric.com/v1/end_users?access_token=myaccesstoken&email=<EMAIL>`
+`POST https://api.wootric.com/v1/end_users`
 
 ### URL Parameters
 
@@ -143,6 +155,10 @@ properties (optional) | Hash of additional properties
 
 ```shell
 curl -X PUT "https://api.wootric.com/v1/end_users/1?access_token=myaccesstoken" -d "email=enduser_new@example.com;properties[company]=NewCompany&properties[city]=New Reno"
+
+or
+
+curl -X PUT -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1" -d "email=enduser_new@example.com;properties[company]=NewCompany&properties[city]=New Reno"
 ```
 
 > The above command returns JSON structured like this:
@@ -165,7 +181,7 @@ This endpoint updates the end user with specified params.
 
 ### HTTP Request
 
-`PUT https://api.wootric.com/v1/end_users/<END_USER_ID>?access_token=myaccesstoken`
+`PUT https://api.wootric.com/v1/end_users/<END_USER_ID>`
 
 ### URL Parameters
 
@@ -181,6 +197,10 @@ properties (optional) | Hash of additional properties
 
 ```shell
 curl -X DELETE "https://api.wootric.com/v1/end_users/1?access_token=myaccesstoken"
+
+or
+
+curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1"
 ```
 
 > The above command returns JSON structured like this:
@@ -203,7 +223,7 @@ This endpoint deletes the end user.
 
 ### HTTP Request
 
-`DELETE https://api.wootric.com/v1/end_users/<END_USER_ID>?access_token=myaccesstoken`
+`DELETE https://api.wootric.com/v1/end_users/<END_USER_ID>`
 
 ### URL Parameters
 
