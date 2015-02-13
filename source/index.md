@@ -32,7 +32,9 @@ Wootric expects for the access token key to be included in all API requests that
 
 `https://api.wootric.com/v1/end_users.json?access_token=myaccesstoken`
 
-Access tokens expire 2 hours after creation. New Access tokens can be obtained using refresh tokens which is detailed in the CURL example to the right.
+Access token can be retrieved using either grant_type of "password" with your account email and password, or grant_type of "client_credentials" with your application client_id and client_secret.
+
+Access token expires 2 hours after creation. New Access tokens can be obtained using refresh tokens which is detailed in the CURL example to the right.
 
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
@@ -41,7 +43,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 > To retrieve an access token using oauth, use this code:
 
 ```shell
-$ curl -i https://api.wootric.com/oauth/token \
+curl -i https://api.wootric.com/oauth/token \
 -F grant_type=password \
 -F username=<youremailaddress>\
 -F password=<yourpassword>
