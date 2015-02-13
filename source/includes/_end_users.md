@@ -101,3 +101,112 @@ This endpoint retrieves a specific end user.
 Parameter | Description
 --------- | -----------
 ID | The ID of the end user to retrieve
+
+## Create End User
+
+```shell
+curl -X POST "https://api.wootric.com/v1/end_users?access_token=myaccesstoken" -d "email=enduser@example.com;last_surveyed=1423732280;properties[company]=TestCompany&properties[city]=San Francisco"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+  {
+    "id": 1,
+    "email": "enduser@example.com",
+    "last_surveyed": "2015-02-12T06:29:27.000-08:00",
+    "external_created_at": null,
+    "created_at" : "2015-02-12T06:29:27.000-08:00",
+    "updated_at" : "2015-02-12T06:29:27.000-08:00",
+    "user_id": 1,
+    "page_views_count": 0,
+    "properties": "{'company':'TestCompany', 'city':'San Francisco'}"
+  }
+```
+
+This endpoint creates the end user.
+
+### HTTP Request
+
+`POST https://api.wootric.com/v1/end_users?access_token=myaccesstoken&email=<EMAIL>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+EMAIL | End User's Email Address
+last_surveyed (optional) | Date of last survey for the end user (UNIX Timestamp)
+external_created_at (optional) | Date of creation of the end user in external application (UNIX Timestamp)
+properties (optional) | Hash of additional properties
+
+## Update End User
+
+```shell
+curl -X PUT "https://api.wootric.com/v1/end_users/1?access_token=myaccesstoken" -d "email=enduser_new@example.com;properties[company]=NewCompany&properties[city]=New Reno"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+  {
+    "id": 1,
+    "email": "enduser_new@example.com",
+    "last_surveyed": "2015-02-12T06:29:27.000-08:00",
+    "external_created_at": null,
+    "created_at" : "2015-02-12T06:29:27.000-08:00",
+    "updated_at" : "2015-02-12T06:29:27.000-08:00",
+    "user_id": 1,
+    "page_views_count": 0,
+    "properties": "{'company':'NewCompany', 'city':'New Reno'}"
+  }
+```
+
+This endpoint updates the end user with specified params.
+
+### HTTP Request
+
+`PUT https://api.wootric.com/v1/end_users/<END_USER_ID>?access_token=myaccesstoken`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+END_USER_ID | The ID of the end user to update
+email (optional) | End User's Email Address
+last_surveyed (optional) | Date of last survey for the end user (UNIX Timestamp)
+external_created_at (optional) | Date of creation of the end user in external application (UNIX Timestamp)
+properties (optional) | Hash of additional properties
+
+## Delete End User
+
+```shell
+curl -X DELETE "https://api.wootric.com/v1/end_users/1?access_token=myaccesstoken"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+  {
+    "id": 1,
+    "email": "enduser@example.com",
+    "last_surveyed": "2015-02-12T06:29:27.000-08:00",
+    "external_created_at": null,
+    "created_at" : "2015-02-12T06:29:27.000-08:00",
+    "updated_at" : "2015-02-12T06:29:27.000-08:00",
+    "user_id": 1,
+    "page_views_count": 0,
+    "properties": "{'company':'TestCompany', 'city':'San Francisco'}"
+  }
+```
+
+This endpoint deletes the end user.
+
+### HTTP Request
+
+`DELETE https://api.wootric.com/v1/end_users/<END_USER_ID>?access_token=myaccesstoken`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+END_USER_ID | The ID of the end user to delete

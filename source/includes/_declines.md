@@ -85,3 +85,64 @@ Parameter | Description
 --------- | -----------
 END_USER_ID | The ID of the end user
 ID | The ID of the decline to retrieve
+
+## Create Decline
+
+```shell
+curl -X POST "https://api.wootric.com/v1/end_users/1/declines?access_token=myaccesstoken"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+  {
+    "id": 2,
+    "end_user_id": 1,
+    "created_at" : "2015-02-13T01:44:51.578-08:00",
+    "updated_at" : "2015-02-13T01:44:51.578-08:00",
+    "user_id": 1
+  }
+```
+
+This endpoint creates a decline for the end user.
+
+### HTTP Request
+
+`POST https://api.wootric.com/v1/end_users/<END_USER_ID>/declines?access_token=myaccesstoken`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+END_USER_ID | The ID of the end user
+
+## Delete Decline
+
+```shell
+curl -X DELETE "https://api.wootric.com/v1/end_users/1/declines/1?access_token=myaccesstoken"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+  {
+    "id": 1,
+    "end_user_id": 1,
+    "created_at" : "2015-02-13T01:44:51.578-08:00",
+    "updated_at" : "2015-02-13T01:44:51.578-08:00",
+    "user_id": 1
+  }
+```
+
+This endpoint deletes a decline for the end user.
+
+### HTTP Request
+
+`DELETE https://api.wootric.com/v1/end_users/<END_USER_ID>/declines/<DECLINE_ID>?access_token=myaccesstoken`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+END_USER_ID | The ID of the end user
+DECLINE_ID | The ID of the decline to delete
