@@ -848,16 +848,16 @@ curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <s
 <td>The end user response score (values from 0 to 10)</td>
 </tr>
 <tr>
-<td>text (optional)</td>
-<td>The end user comment to the response</td>
-</tr>
-<tr>
-<td>ip_address (optional)</td>
+<td>IP_ADDRESS</td>
 <td>IP address the response originated from</td>
 </tr>
 <tr>
-<td>origin_url (optional)</td>
+<td>ORIGIN_URL</td>
 <td>URL the response originated from</td>
+</tr>
+<tr>
+<td>text (optional)</td>
+<td>The end user comment to the response</td>
 </tr>
 </tbody></table>
 <h2 id='delete-response'>Delete Response</h2><pre><code class="highlight shell">curl -X DELETE <span class="s2">"https://api.wootric.com/v1/end_users/1/respones/1?access_token=myaccesstoken"</span>
