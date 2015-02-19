@@ -311,9 +311,9 @@ Parameter | Description
 --------- | -----------
 END_USER_ID | The ID of the end user
 SCORE | The end user response score (values from 0 to 10)
+IP_ADDRESS | IP address the response originated from
+ORIGIN_URL | URL the response originated from
 text (optional) | The end user comment to the response
-ip_address (optional) | IP address the response originated from
-origin_url (optional) | URL the response originated from
 
 ## Delete Response
 
