@@ -104,18 +104,6 @@ or
 curl -X POST -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/declines"
 ```
 
-> The above command returns JSON structured like this:
-
-```json
-  {
-    "id": 2,
-    "end_user_id": 1,
-    "created_at" : "2015-02-13T01:44:51.578-08:00",
-    "updated_at" : "2015-02-13T01:44:51.578-08:00",
-    "user_id": 1
-  }
-```
-
 This endpoint creates a decline for the end user.
 
 ### HTTP Request
