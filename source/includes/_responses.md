@@ -285,20 +285,6 @@ or
 curl -X POST -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses" -d "score=5;text=test response;ip_address=192.168.0.1;origin_url=http://example.com"
 ```
 
-> The above command returns JSON structured like this:
-
-```json
-  {
-    "id": 1,
-    "created_at" : "2015-02-12T06:29:27.000-08:00",
-    "updated_at" : "2015-02-12T06:29:27.000-08:00",
-    "score": 5,
-    "text": "test response",
-    "ip_address": "192.168.0.1",
-    "origin_url": "http://example.com"
-  }
-```
-
 This endpoint creates a response for the end user.
 
 ### HTTP Request
