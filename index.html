@@ -815,20 +815,6 @@ or
 curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses"</span> -d <span class="s2">"score=5;text=test response;ip_address=192.168.0.1;origin_url=http://example.com"</span>
 </code></pre>
 
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre><code class="highlight json"><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-12T06:29:27.000-08:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-12T06:29:27.000-08:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test response"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ip_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"192.168.0.1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"origin_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span></code></pre>
-
 <p>This endpoint creates a response for the end user.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST https://api.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/responses</code></p>
@@ -1042,18 +1028,6 @@ or
 
 curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/declines"</span>
 </code></pre>
-
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre><code class="highlight json"><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"end_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-13T01:44:51.578-08:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-13T01:44:51.578-08:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span></code></pre>
 
 <p>This endpoint creates a decline for the end user.</p>
 <h3 id='http-request'>HTTP Request</h3>
