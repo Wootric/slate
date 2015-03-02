@@ -14,7 +14,7 @@ last_surveyed | datetime | Datetime representation of when the end user was late
 external_created_at | integer |
 user_id | integer | The id of user
 page_views_count | integer | Total number of page views
-properites | hash | Properties (i.e. plan, product)
+properties | hash | Properties (i.e. plan, product)
 
 ## Get All End Users
 
@@ -39,7 +39,7 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
     "external_created_at": null,
     "user_id": 16,
     "page_views_count" : 1,
-    "properites": {"plan": "Small Business", "product": "Example"}
+    "properties": {"plan": "Small Business", "product": "Example"}
   },
   {
     "id": 2,
@@ -50,7 +50,7 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
     "external_created_at": null,
     "user_id": 16,
     "page_views_count" : 3,
-    "properites": {"plan": "Enterprise", "product": "The Company"}
+    "properties": {"plan": "Enterprise", "product": "The Company"}
   }
 ]
 ```
@@ -59,22 +59,23 @@ This endpoint retrieves all end users.
 
 ### HTTP Request
 
-`GET http://api.wootric.com/v1/end_users`
+`GET https://api.wootric.com/v1/end_users`
 
 ### Scope Parameters
 
-Scope paramaters filter your end users and can also be chained together by passing multiple scope paramters in an array.
+Scope parameters filter your end users and can also be chained together by passing multiple scope parameters in an array.
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
-page | integer | 1 | Number of returned page
-per_page | integer | 25 | Number of records returned on each page
-created | hash | {} | Hash with properties used to filter your end users by time it can be used with params (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte*
+page (optional) | integer | 1 | Number of returned page
+per_page (optional) | integer | 25 | Number of records returned on each page
+created (optional) | hash | {} | Hash with properties used to filter your end users by time it can be used with params (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte*
+email (optional) | string | None | Filter end users by email (will return an array containing a single end user object if the end user with provided email exists)
 
 ## Get a Specific End User
 
 ```shell
-curl "http://api.wootric.com/v1/end_users/2?access_token=myaccesstoken"
+curl "https://api.wootric.com/v1/end_users/2?access_token=myaccesstoken"
 
 or
 
@@ -93,7 +94,7 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
     "external_created_at": null,
     "user_id": 16,
     "page_views_count" : 3,
-    "properites": {"plan": "Enterprise", "product": "The Company"}
+    "properties": {"plan": "Enterprise", "product": "The Company"}
   }
 ```
 
