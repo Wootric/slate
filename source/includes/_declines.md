@@ -51,7 +51,7 @@ This endpoint retrieves all declines for end user.
 
 ### Scope Parameters
 
-Scope paramaters filter your declines and can also be chained together by passing multiple scope paramters in an array.
+Scope parameters filter your declines and can also be chained together by passing multiple scope parameters in an array.
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
