@@ -54,7 +54,7 @@ This endpoint retrieves all page views for end user.
 
 ### Scope Parameters
 
-Scope paramaters filter your page views and can also be chained together by passing multiple scope paramters in an array.
+Scope parameters filter your page views and can also be chained together by passing multiple scope parameters in an array.
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
