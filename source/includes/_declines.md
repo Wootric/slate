@@ -115,6 +115,7 @@ This endpoint creates a decline for the end user.
 Parameter | Description
 --------- | -----------
 END_USER_ID | The ID of the end user
+created_at (optional) | UNIX timestamp, if present, will set 'created_at' of newly created decline to provided value
 
 ## Delete Decline
 

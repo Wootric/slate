@@ -355,6 +355,7 @@ SCORE | The end user response score (values from 0 to 10)
 IP_ADDRESS | IP address the response originated from
 ORIGIN_URL | URL the response originated from
 text (optional) | The end user comment to the response
+created_at (optional) | UNIX timestamp, if present, will set 'created_at' of newly created decline to provided value
 
 ## Delete Response
 
