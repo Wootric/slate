@@ -19,11 +19,11 @@ user_id | integer | The if of user
 ## Get All Responses
 
 ```shell
-curl "http://api.staging.wootric.com/v1/responses?access_token=myaccesstoken"
+curl "https://api.wootric.com/v1/responses?access_token=myaccesstoken"
 
 or
 
-curl -H "Authorization: Bearer myaccesstoken" "http://api.staging.wootric.com/v1/responses"
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/responses"
 ```
 
 > The above command returns JSON structured like this:
@@ -59,7 +59,7 @@ This endpoint retrieves all responses for a user.
 
 ### HTTP Request
 
-`GET http://api.staging.wootric.com/v1/end_users/1/responses`
+`GET https://api.wootric.com/v1/responses`
 
 ### Scope Parameters
 
@@ -74,11 +74,11 @@ created | hash | {} | Hash with properties used to filter your responses by time
 ## Get All End User's Responses
 
 ```shell
-curl "http://api.staging.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken"
+curl "https://api.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken"
 
 or
 
-curl -H "Authorization: Bearer myaccesstoken" "http://api.staging.wootric.com/v1/end_users/1/responses"
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses"
 ```
 
 > The above command returns JSON structured like this:
@@ -114,7 +114,7 @@ This endpoint retrieves all responses for end user.
 
 ### HTTP Request
 
-`GET http://api.staging.wootric.com/v1/end_users/1/responses`
+`GET https://api.wootric.com/v1/end_users/1/responses`
 
 ### Scope Parameters
 
@@ -129,11 +129,11 @@ created | hash | {} | Hash with properties used to filter your responses by time
 ## Get All Promoters Responses
 
 ```shell
-curl "http://api.staging.wootric.com/v1/end_users/1/responses/promoters?access_token=myaccesstoken"
+curl "https://api.wootric.com/v1/end_users/1/responses/promoters?access_token=myaccesstoken"
 
 or
 
-curl -H "Authorization: Bearer myaccesstoken" "http://api.staging.wootric.com/v1/end_users/1/responses/promoters"
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses/promoters"
 ```
 
 > The above command returns JSON structured like this:
@@ -169,7 +169,7 @@ This endpoint retrieves all promoters responses for end user.
 
 ### HTTP Request
 
-`GET http://api.staging.wootric.com/v1/end_users/1/responses/promoters`
+`GET https://api.wootric.com/v1/end_users/1/responses/promoters`
 
 ### Scope Parameters
 
@@ -184,11 +184,11 @@ created | hash | {} | Hash with properties used to filter your promoters respons
 ## Get All Passives Responses
 
 ```shell
-curl "http://api.staging.wootric.com/v1/end_users/1/responses/passives?access_token=myaccesstoken"
+curl "https://api.wootric.com/v1/end_users/1/responses/passives?access_token=myaccesstoken"
 
 or
 
-curl -H "Authorization: Bearer myaccesstoken" "http://api.staging.wootric.com/v1/end_users/1/responses/passives"
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses/passives"
 ```
 
 > The above command returns JSON structured like this:
@@ -224,7 +224,7 @@ This endpoint retrieves all passives responses for end user.
 
 ### HTTP Request
 
-`GET http://api.staging.wootric.com/v1/end_users/1/responses/passives`
+`GET https://api.wootric.com/v1/end_users/1/responses/passives`
 
 ### Scope Parameters
 
@@ -239,11 +239,11 @@ created | hash | {} | Hash with properties used to filter your passives response
 ## Get All Detractors Responses
 
 ```shell
-curl "http://api.staging.wootric.com/v1/end_users/1/responses/detractors?access_token=myaccesstoken"
+curl "https://api.wootric.com/v1/end_users/1/responses/detractors?access_token=myaccesstoken"
 
 or
 
-curl -H "Authorization: Bearer myaccesstoken" "http://api.staging.wootric.com/v1/end_users/1/responses/detractors"
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses/detractors"
 ```
 
 > The above command returns JSON structured like this:
@@ -279,7 +279,7 @@ This endpoint retrieves all detractors responses for end user.
 
 ### HTTP Request
 
-`GET http://api.staging.wootric.com/v1/end_users/1/responses/detractors`
+`GET https://api.wootric.com/v1/end_users/1/responses/detractors`
 
 ### Scope Parameters
 
@@ -294,11 +294,11 @@ created | hash | {} | Hash with properties used to filter your detractors respon
 ## Get a Specific Response
 
 ```shell
-curl "http://api.staging.wootric.com/v1/end_users/1/responses/2?access_token=myaccesstoken"
+curl "https://api.wootric.com/v1/end_users/1/responses/2?access_token=myaccesstoken"
 
 or
 
-curl -H "Authorization: Bearer myaccesstoken" "http://api.staging.wootric.com/v1/end_users/1/responses/2"
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses/2"
 ```
 
 > The above command returns JSON structured like this:
@@ -321,7 +321,7 @@ This endpoint retrieves a specific response.
 
 ### HTTP Request
 
-`GET http://api.staging.wootric.com/v1/end_users/<END_USER_ID>/responses/<ID>`
+`GET https://api.wootric.com/v1/end_users/<END_USER_ID>/responses/<ID>`
 
 ### URL Parameters
 
@@ -333,18 +333,18 @@ ID | The ID of the decline to retrieve
 ## Create Response
 
 ```shell
-curl -X POST "http://api.staging.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken" -d "score=5;text=test response;ip_address=192.168.0.1;origin_url=http://example.com"
+curl -X POST "https://api.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken" -d "score=5;text=test response;ip_address=192.168.0.1;origin_url=http://example.com"
 
 or
 
-curl -X POST -H "Authorization: Bearer myaccesstoken" "http://api.staging.wootric.com/v1/end_users/1/responses" -d "score=5;text=test response;ip_address=192.168.0.1;origin_url=http://example.com"
+curl -X POST -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses" -d "score=5;text=test response;ip_address=192.168.0.1;origin_url=http://example.com"
 ```
 
 This endpoint creates a response for the end user.
 
 ### HTTP Request
 
-`POST http://api.staging.wootric.com/v1/end_users/<END_USER_ID>/responses`
+`POST https://api.wootric.com/v1/end_users/<END_USER_ID>/responses`
 
 ### URL Parameters
 
@@ -360,11 +360,11 @@ created_at (optional) | UNIX timestamp, if present, will set 'created_at' of new
 ## Delete Response
 
 ```shell
-curl -X DELETE "http://api.staging.wootric.com/v1/end_users/1/respones/1?access_token=myaccesstoken"
+curl -X DELETE "https://api.wootric.com/v1/end_users/1/respones/1?access_token=myaccesstoken"
 
 or
 
-curl -X DELETE -H "Authorization: Bearer myaccesstoken" "http://api.staging.wootric.com/v1/end_users/1/respones/1"
+curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/respones/1"
 ```
 
 > The above command returns JSON structured like this:
@@ -385,7 +385,7 @@ This endpoint deletes a page view for the end user.
 
 ### HTTP Request
 
-`DELETE http://api.staging.wootric.com/v1/end_users/<END_USER_ID>/respones/<RESPONSE_ID>`
+`DELETE https://api.wootric.com/v1/end_users/<END_USER_ID>/respones/<RESPONSE_ID>`
 
 ### URL Parameters
 
