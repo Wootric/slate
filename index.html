@@ -496,11 +496,11 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
 <td>The if of user</td>
 </tr>
 </tbody></table>
-<h2 id='get-all-responses'>Get All Responses</h2><pre><code class="highlight shell">curl <span class="s2">"http://api.staging.wootric.com/v1/responses?access_token=myaccesstoken"</span>
+<h2 id='get-all-responses'>Get All Responses</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/responses?access_token=myaccesstoken"</span>
 
 or
 
-curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"http://api.staging.wootric.com/v1/responses"</span>
+curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/responses"</span>
 </code></pre>
 
 <blockquote>
@@ -534,7 +534,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 
 <p>This endpoint retrieves all responses for a user.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://api.staging.wootric.com/v1/end_users/1/responses</code></p>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/responses</code></p>
 <h3 id='scope-parameters'>Scope Parameters</h3>
 <p>Scope parameters filter your responses and can also be chained together by passing multiple scope parameters in an array.</p>
 
@@ -565,11 +565,11 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>Hash with properties used to filter your responses by time it can be used with params (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em></td>
 </tr>
 </tbody></table>
-<h2 id='get-all-end-user39s-responses'>Get All End User&rsquo;s Responses</h2><pre><code class="highlight shell">curl <span class="s2">"http://api.staging.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken"</span>
+<h2 id='get-all-end-user39s-responses'>Get All End User&rsquo;s Responses</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken"</span>
 
 or
 
-curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"http://api.staging.wootric.com/v1/end_users/1/responses"</span>
+curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses"</span>
 </code></pre>
 
 <blockquote>
@@ -603,7 +603,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 
 <p>This endpoint retrieves all responses for end user.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://api.staging.wootric.com/v1/end_users/1/responses</code></p>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/1/responses</code></p>
 <h3 id='scope-parameters'>Scope Parameters</h3>
 <p>Scope parameters filter your responses and can also be chained together by passing multiple scope parameters in an array.</p>
 
@@ -634,11 +634,11 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>Hash with properties used to filter your responses by time it can be used with params (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em></td>
 </tr>
 </tbody></table>
-<h2 id='get-all-promoters-responses'>Get All Promoters Responses</h2><pre><code class="highlight shell">curl <span class="s2">"http://api.staging.wootric.com/v1/end_users/1/responses/promoters?access_token=myaccesstoken"</span>
+<h2 id='get-all-promoters-responses'>Get All Promoters Responses</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/promoters?access_token=myaccesstoken"</span>
 
 or
 
-curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"http://api.staging.wootric.com/v1/end_users/1/responses/promoters"</span>
+curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/promoters"</span>
 </code></pre>
 
 <blockquote>
@@ -672,7 +672,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 
 <p>This endpoint retrieves all promoters responses for end user.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://api.staging.wootric.com/v1/end_users/1/responses/promoters</code></p>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/1/responses/promoters</code></p>
 <h3 id='scope-parameters'>Scope Parameters</h3>
 <p>Scope parameters filter your promoters responses and can also be chained together by passing multiple scope parameters in an array.</p>
 
@@ -703,11 +703,11 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>Hash with properties used to filter your promoters responses by time it can be used with params (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em></td>
 </tr>
 </tbody></table>
-<h2 id='get-all-passives-responses'>Get All Passives Responses</h2><pre><code class="highlight shell">curl <span class="s2">"http://api.staging.wootric.com/v1/end_users/1/responses/passives?access_token=myaccesstoken"</span>
+<h2 id='get-all-passives-responses'>Get All Passives Responses</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/passives?access_token=myaccesstoken"</span>
 
 or
 
-curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"http://api.staging.wootric.com/v1/end_users/1/responses/passives"</span>
+curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/passives"</span>
 </code></pre>
 
 <blockquote>
@@ -741,7 +741,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 
 <p>This endpoint retrieves all passives responses for end user.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://api.staging.wootric.com/v1/end_users/1/responses/passives</code></p>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/1/responses/passives</code></p>
 <h3 id='scope-parameters'>Scope Parameters</h3>
 <p>Scope parameters filter your passives responses and can also be chained together by passing multiple scope parameters in an array.</p>
 
@@ -772,11 +772,11 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>Hash with properties used to filter your passives responses by time it can be used with params (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em></td>
 </tr>
 </tbody></table>
-<h2 id='get-all-detractors-responses'>Get All Detractors Responses</h2><pre><code class="highlight shell">curl <span class="s2">"http://api.staging.wootric.com/v1/end_users/1/responses/detractors?access_token=myaccesstoken"</span>
+<h2 id='get-all-detractors-responses'>Get All Detractors Responses</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/detractors?access_token=myaccesstoken"</span>
 
 or
 
-curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"http://api.staging.wootric.com/v1/end_users/1/responses/detractors"</span>
+curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/detractors"</span>
 </code></pre>
 
 <blockquote>
@@ -810,7 +810,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 
 <p>This endpoint retrieves all detractors responses for end user.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://api.staging.wootric.com/v1/end_users/1/responses/detractors</code></p>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/1/responses/detractors</code></p>
 <h3 id='scope-parameters'>Scope Parameters</h3>
 <p>Scope parameters filter your detractors responses and can also be chained together by passing multiple scope parameters in an array.</p>
 
@@ -841,11 +841,11 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>Hash with properties used to filter your detractors responses by time it can be used with params (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em></td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-response'>Get a Specific Response</h2><pre><code class="highlight shell">curl <span class="s2">"http://api.staging.wootric.com/v1/end_users/1/responses/2?access_token=myaccesstoken"</span>
+<h2 id='get-a-specific-response'>Get a Specific Response</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/2?access_token=myaccesstoken"</span>
 
 or
 
-curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"http://api.staging.wootric.com/v1/end_users/1/responses/2"</span>
+curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/2"</span>
 </code></pre>
 
 <blockquote>
@@ -866,7 +866,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 
 <p>This endpoint retrieves a specific response.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://api.staging.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/responses/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/responses/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -883,16 +883,16 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>The ID of the decline to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='create-response'>Create Response</h2><pre><code class="highlight shell">curl -X POST <span class="s2">"http://api.staging.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken"</span> -d <span class="s2">"score=5;text=test response;ip_address=192.168.0.1;origin_url=http://example.com"</span>
+<h2 id='create-response'>Create Response</h2><pre><code class="highlight shell">curl -X POST <span class="s2">"https://api.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken"</span> -d <span class="s2">"score=5;text=test response;ip_address=192.168.0.1;origin_url=http://example.com"</span>
 
 or
 
-curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"http://api.staging.wootric.com/v1/end_users/1/responses"</span> -d <span class="s2">"score=5;text=test response;ip_address=192.168.0.1;origin_url=http://example.com"</span>
+curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses"</span> -d <span class="s2">"score=5;text=test response;ip_address=192.168.0.1;origin_url=http://example.com"</span>
 </code></pre>
 
 <p>This endpoint creates a response for the end user.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">POST http://api.staging.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/responses</code></p>
+<p><code class="prettyprint">POST https://api.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/responses</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -925,11 +925,11 @@ curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <s
 <td>UNIX timestamp, if present, will set &lsquo;created_at&rsquo; of newly created decline to provided value</td>
 </tr>
 </tbody></table>
-<h2 id='delete-response'>Delete Response</h2><pre><code class="highlight shell">curl -X DELETE <span class="s2">"http://api.staging.wootric.com/v1/end_users/1/respones/1?access_token=myaccesstoken"</span>
+<h2 id='delete-response'>Delete Response</h2><pre><code class="highlight shell">curl -X DELETE <span class="s2">"https://api.wootric.com/v1/end_users/1/respones/1?access_token=myaccesstoken"</span>
 
 or
 
-curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"http://api.staging.wootric.com/v1/end_users/1/respones/1"</span>
+curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/respones/1"</span>
 </code></pre>
 
 <blockquote>
@@ -948,7 +948,7 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
 
 <p>This endpoint deletes a page view for the end user.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">DELETE http://api.staging.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/respones/&lt;RESPONSE_ID&gt;</code></p>
+<p><code class="prettyprint">DELETE https://api.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/respones/&lt;RESPONSE_ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
