@@ -1,168 +1,53 @@
 ---
-title: API Reference
+title: Wootric Docs
 
 language_tabs:
-  - shell
-  - ruby
-  - python
+  - javascript
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - errors
+  - install
+  - custom_sampling
+  - custom_fields
+  - custom_messages
+
 
 search: true
 ---
 
-# Introduction
+# Installing Wootric – A One Step Process!
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Installing Wootric is easy – it should only take you 30 seconds. If coding isn’t your thing, we have
+an option to email the Wootric code to a developer/colleague for quick assistance.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+## Step 1. ­Add the code
 
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Once you are signed up on the Wootric homepage, you will be taken directly to an installation
+page. If you’re a return visitor to the site, sign in at wootric.com and click on the “Help” button in
+the black banner near the top of the dashboard. You will see a code snippet with a unique
+account_token for you to install.
 
-# Authentication
+```javascript
+<!-- begin Wootric code -->
+<script type="text/javascript">
+wootric_survey_immediately = true; // Shows survey immediately for testing purposes. TODO: Comment out for production.
+window.wootricSettings = {
+  email:'nps@example.com',// TODO: The current logged in user's email address.
+  created_at: 1234567890, // TODO: The current logged in user's sign-up date as a Unix timestamp.
+  product_name: 'Wootric',// TODO: The name of the product or service
+  account_token: 'NPS-7fbb3f3c'
+};
 
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+</script>
+<script type="text/javascript">/*{literal}<![CDATA[*/ if(window.wootricSettings){i=new Image;i.src="//d8myem934l1zi.cloudfront.net/pixel.gif?account_token="+window.wootricSettings.account_token+"&email="+encodeURIComponent(window.wootricSettings.email)+"&created_at="+window.wootricSettings.created_at+"&url="+encodeURIComponent(window.location)+"&random="+Math.random()}window.lightningjs||function(c){function g(b,d){d&&(d+=(/\?/.test(d)?"&":"?")+"lv=1");c[b]||function(){var i=window,h=document,j=b,g=h.location.protocol,l="load",k=0;(function(){function b(){a.P(l);a.w=1;c[j]("_load")}c[j]=function(){function m(){m.id=e;return c[j].apply(m,arguments)}var b,e=++k;b=this&&this!=i?this.id||0:0;(a.s=a.s||[]).push([e,b,arguments]);m.then=function(b,c,h){var d=a.fh[e]=a.fh[e]||[],j=a.eh[e]=a.eh[e]||[],f=a.ph[e]=a.ph[e]||[];b&&d.push(b);c&&j.push(c);h&&f.push(h);return m}; return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="https:"?g:"http:")+"//"):d;a.p={0:+new Date};a.P=function(b){a.p[b]=new Date-a.p[0]};a.w&&b();i.addEventListener?i.addEventListener(l,b,!1):i.attachEvent("on"+l,b);var q=function(){function b(){return["<head></head><",c,' onload="var d=',n,";d.getElementsByTagName('head')[0].",d,"(d.",g,"('script')).",i,"='",a.l,"'\"></",c,">"].join("")}var c="body",e=h[c];if(!e)return setTimeout(q,100);a.P(1);var d="appendChild",g="createElement", i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g, String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&q()})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({}); window.wootric = lightningjs.require("wootric", "//d27j601g4x0gd5.cloudfront.net/beacon.js"); window.wootric("run"); /*]]>{/literal}*/</script> <!-- end Wootric code -->
 ```
 
-```python
-import kittn
+You can either install the code yourself or email the code to a colleague.
 
-api = kittn.authorize('meowmeowmeow')
-```
+### Forward the snippet to a colleague for help with install
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace `meowmeowmeow` with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Isis",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/3"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Isis",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the cat to retrieve
-
+In the section entitled “Share the Snippet”, enter the email of the person you’d like to receive the
+snippet. We'll send them the code along with installation instructions.
