@@ -15,6 +15,8 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true, :disable_inden
 # Activate the syntax highlighter
 activate :syntax
 
+activate :directory_indexes
+
 # This is needed for Github pages, since they're hosted on a subdomain
 activate :relative_assets
 set :relative_links, true
@@ -36,4 +38,3 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
-
