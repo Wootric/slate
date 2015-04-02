@@ -14,9 +14,6 @@ be presented instead. By default, we present the following messages:
 * The default placeholder text:
 **"Help us by explaining your score."**
 
-<img src="../images/default_wootric_question.png" />
-<img src="../images/default_followup_and_placeholder.png" width="682" />
-
 ## Full example
 
 This example shows how the full ready Wootric snippet looks like with
@@ -55,9 +52,6 @@ will be shown.
 <!--­­ end Wootric code --­­>
 
 ```
-
-<img src="../images/custom_question.png" />
-<img src="../images/customized_modal.png" width="688" />
 
 ## followup_question
 
