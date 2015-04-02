@@ -1,0 +1,486 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Documentation</title>
+
+    <link href="../stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script src="../javascripts/all_nosearch.js" type="text/javascript"></script>
+
+  </head>
+
+  <body class="install install_index">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="../images/logo.png" />
+      <div id="toc">
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='installing-wootric--a-one-step-process'>Installing Wootric – A One Step Process!</h1>
+<p>Installing Wootric is easy – it should only take you 30 seconds. If coding isn’t your thing, we have
+an option to email the Wootric code to a developer/colleague for quick assistance.</p>
+<h2 id='step-1--add-the-code'>Step 1. ­Add the code</h2>
+<p>Once you are signed up on the Wootric homepage, you will be taken directly to an installation
+page. If you’re a return visitor to the site, sign in at wootric.com and click on the “Help” button in
+the black banner near the top of the dashboard. You will see a code snippet with a unique
+account_token for you to install.</p>
+<pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="nx">wootric_survey_immediately</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// Shows survey immediately for testing purposes. TODO: Comment out for production.</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span><span class="c1">// TODO: The current logged in user's email address.</span>
+  <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.</span>
+  <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span><span class="c1">// TODO: The name of the product or service</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-7fbb3f3c'</span>
+<span class="p">};</span>
+
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span><span class="cm">/*{literal}&lt;![CDATA[*/</span> <span class="k">if</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span><span class="p">){</span><span class="nx">i</span><span class="o">=</span><span class="k">new</span> <span class="nx">Image</span><span class="p">;</span><span class="nx">i</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="s2">"//d8myem934l1zi.cloudfront.net/pixel.gif?account_token="</span><span class="o">+</span><span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span><span class="p">.</span><span class="nx">account_token</span><span class="o">+</span><span class="s2">"&amp;email="</span><span class="o">+</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span><span class="p">.</span><span class="nx">email</span><span class="p">)</span><span class="o">+</span><span class="s2">"&amp;created_at="</span><span class="o">+</span><span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span><span class="p">.</span><span class="nx">created_at</span><span class="o">+</span><span class="s2">"&amp;url="</span><span class="o">+</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">)</span><span class="o">+</span><span class="s2">"&amp;random="</span><span class="o">+</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()}</span><span class="nb">window</span><span class="p">.</span><span class="nx">lightningjs</span><span class="o">||</span><span class="kd">function</span><span class="p">(</span><span class="nx">c</span><span class="p">){</span><span class="kd">function</span> <span class="nx">g</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span><span class="nx">d</span><span class="p">){</span><span class="nx">d</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="nx">d</span><span class="o">+=</span><span class="p">(</span><span class="sr">/</span><span class="se">\?</span><span class="sr">/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">d</span><span class="p">)?</span><span class="s2">"&amp;"</span><span class="p">:</span><span class="s2">"?"</span><span class="p">)</span><span class="o">+</span><span class="s2">"lv=1"</span><span class="p">);</span><span class="nx">c</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span><span class="o">||</span><span class="kd">function</span><span class="p">(){</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="nb">window</span><span class="p">,</span><span class="nx">h</span><span class="o">=</span><span class="nb">document</span><span class="p">,</span><span class="nx">j</span><span class="o">=</span><span class="nx">b</span><span class="p">,</span><span class="nx">g</span><span class="o">=</span><span class="nx">h</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span><span class="p">,</span><span class="nx">l</span><span class="o">=</span><span class="s2">"load"</span><span class="p">,</span><span class="nx">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;(</span><span class="kd">function</span><span class="p">(){</span><span class="kd">function</span> <span class="nx">b</span><span class="p">(){</span><span class="nx">a</span><span class="p">.</span><span class="nx">P</span><span class="p">(</span><span class="nx">l</span><span class="p">);</span><span class="nx">a</span><span class="p">.</span><span class="nx">w</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="nx">c</span><span class="p">[</span><span class="nx">j</span><span class="p">](</span><span class="s2">"_load"</span><span class="p">)}</span><span class="nx">c</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span><span class="kd">function</span> <span class="nx">m</span><span class="p">(){</span><span class="nx">m</span><span class="p">.</span><span class="nx">id</span><span class="o">=</span><span class="nx">e</span><span class="p">;</span><span class="k">return</span> <span class="nx">c</span><span class="p">[</span><span class="nx">j</span><span class="p">].</span><span class="nx">apply</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span><span class="nx">arguments</span><span class="p">)}</span><span class="kd">var</span> <span class="nx">b</span><span class="p">,</span><span class="nx">e</span><span class="o">=++</span><span class="nx">k</span><span class="p">;</span><span class="nx">b</span><span class="o">=</span><span class="k">this</span><span class="o">&amp;&amp;</span><span class="k">this</span><span class="o">!=</span><span class="nx">i</span><span class="p">?</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="o">||</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">;(</span><span class="nx">a</span><span class="p">.</span><span class="nx">s</span><span class="o">=</span><span class="nx">a</span><span class="p">.</span><span class="nx">s</span><span class="o">||</span><span class="p">[]).</span><span class="nx">push</span><span class="p">([</span><span class="nx">e</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">arguments</span><span class="p">]);</span><span class="nx">m</span><span class="p">.</span><span class="nx">then</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">,</span><span class="nx">h</span><span class="p">){</span><span class="kd">var</span> <span class="nx">d</span><span class="o">=</span><span class="nx">a</span><span class="p">.</span><span class="nx">fh</span><span class="p">[</span><span class="nx">e</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">.</span><span class="nx">fh</span><span class="p">[</span><span class="nx">e</span><span class="p">]</span><span class="o">||</span><span class="p">[],</span><span class="nx">j</span><span class="o">=</span><span class="nx">a</span><span class="p">.</span><span class="nx">eh</span><span class="p">[</span><span class="nx">e</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">.</span><span class="nx">eh</span><span class="p">[</span><span class="nx">e</span><span class="p">]</span><span class="o">||</span><span class="p">[],</span><span class="nx">f</span><span class="o">=</span><span class="nx">a</span><span class="p">.</span><span class="nx">ph</span><span class="p">[</span><span class="nx">e</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">.</span><span class="nx">ph</span><span class="p">[</span><span class="nx">e</span><span class="p">]</span><span class="o">||</span><span class="p">[];</span><span class="nx">b</span><span class="o">&amp;&amp;</span><span class="nx">d</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span><span class="nx">c</span><span class="o">&amp;&amp;</span><span class="nx">j</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span><span class="nx">h</span><span class="o">&amp;&amp;</span><span class="nx">f</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">h</span><span class="p">);</span><span class="k">return</span> <span class="nx">m</span><span class="p">};</span> <span class="k">return</span> <span class="nx">m</span><span class="p">};</span><span class="kd">var</span> <span class="nx">a</span><span class="o">=</span><span class="nx">c</span><span class="p">[</span><span class="nx">j</span><span class="p">].</span><span class="nx">_</span><span class="o">=</span><span class="p">{};</span><span class="nx">a</span><span class="p">.</span><span class="nx">fh</span><span class="o">=</span><span class="p">{};</span><span class="nx">a</span><span class="p">.</span><span class="nx">eh</span><span class="o">=</span><span class="p">{};</span><span class="nx">a</span><span class="p">.</span><span class="nx">ph</span><span class="o">=</span><span class="p">{};</span><span class="nx">a</span><span class="p">.</span><span class="nx">l</span><span class="o">=</span><span class="nx">d</span><span class="p">?</span><span class="nx">d</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^</span><span class="se">\/\/</span><span class="sr">/</span><span class="p">,(</span><span class="nx">g</span><span class="o">==</span><span class="s2">"https:"</span><span class="p">?</span><span class="nx">g</span><span class="p">:</span><span class="s2">"http:"</span><span class="p">)</span><span class="o">+</span><span class="s2">"//"</span><span class="p">):</span><span class="nx">d</span><span class="p">;</span><span class="nx">a</span><span class="p">.</span><span class="nx">p</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="o">+</span><span class="k">new</span> <span class="nb">Date</span><span class="p">};</span><span class="nx">a</span><span class="p">.</span><span class="nx">P</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">b</span><span class="p">){</span><span class="nx">a</span><span class="p">.</span><span class="nx">p</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span><span class="o">=</span><span class="k">new</span> <span class="nb">Date</span><span class="o">-</span><span class="nx">a</span><span class="p">.</span><span class="nx">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]};</span><span class="nx">a</span><span class="p">.</span><span class="nx">w</span><span class="o">&amp;&amp;</span><span class="nx">b</span><span class="p">();</span><span class="nx">i</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">?</span><span class="nx">i</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="o">!</span><span class="mi">1</span><span class="p">):</span><span class="nx">i</span><span class="p">.</span><span class="nx">attachEvent</span><span class="p">(</span><span class="s2">"on"</span><span class="o">+</span><span class="nx">l</span><span class="p">,</span><span class="nx">b</span><span class="p">);</span><span class="kd">var</span> <span class="nx">q</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span><span class="kd">function</span> <span class="nx">b</span><span class="p">(){</span><span class="k">return</span><span class="p">[</span><span class="s2">"&lt;head&gt;&lt;/head&gt;&lt;"</span><span class="p">,</span><span class="nx">c</span><span class="p">,</span><span class="s1">' onload="var d='</span><span class="p">,</span><span class="nx">n</span><span class="p">,</span><span class="s2">";d.getElementsByTagName('head')[0]."</span><span class="p">,</span><span class="nx">d</span><span class="p">,</span><span class="s2">"(d."</span><span class="p">,</span><span class="nx">g</span><span class="p">,</span><span class="s2">"('script'))."</span><span class="p">,</span><span class="nx">i</span><span class="p">,</span><span class="s2">"='"</span><span class="p">,</span><span class="nx">a</span><span class="p">.</span><span class="nx">l</span><span class="p">,</span><span class="s2">"'\"&gt;&lt;/"</span><span class="p">,</span><span class="nx">c</span><span class="p">,</span><span class="s2">"&gt;"</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s2">""</span><span class="p">)}</span><span class="kd">var</span> <span class="nx">c</span><span class="o">=</span><span class="s2">"body"</span><span class="p">,</span><span class="nx">e</span><span class="o">=</span><span class="nx">h</span><span class="p">[</span><span class="nx">c</span><span class="p">];</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">)</span><span class="k">return</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">q</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span><span class="nx">a</span><span class="p">.</span><span class="nx">P</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="kd">var</span> <span class="nx">d</span><span class="o">=</span><span class="s2">"appendChild"</span><span class="p">,</span><span class="nx">g</span><span class="o">=</span><span class="s2">"createElement"</span><span class="p">,</span> <span class="nx">i</span><span class="o">=</span><span class="s2">"src"</span><span class="p">,</span><span class="nx">k</span><span class="o">=</span><span class="nx">h</span><span class="p">[</span><span class="nx">g</span><span class="p">](</span><span class="s2">"div"</span><span class="p">),</span><span class="nx">l</span><span class="o">=</span><span class="nx">k</span><span class="p">[</span><span class="nx">d</span><span class="p">](</span><span class="nx">h</span><span class="p">[</span><span class="nx">g</span><span class="p">](</span><span class="s2">"div"</span><span class="p">)),</span><span class="nx">f</span><span class="o">=</span><span class="nx">h</span><span class="p">[</span><span class="nx">g</span><span class="p">](</span><span class="s2">"iframe"</span><span class="p">),</span><span class="nx">n</span><span class="o">=</span><span class="s2">"document"</span><span class="p">,</span><span class="nx">p</span><span class="p">;</span><span class="nx">k</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="o">=</span><span class="s2">"none"</span><span class="p">;</span><span class="nx">e</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span><span class="nx">e</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">).</span><span class="nx">id</span><span class="o">=</span><span class="nx">o</span><span class="o">+</span><span class="s2">"-"</span><span class="o">+</span><span class="nx">j</span><span class="p">;</span><span class="nx">f</span><span class="p">.</span><span class="nx">frameBorder</span><span class="o">=</span><span class="s2">"0"</span><span class="p">;</span><span class="nx">f</span><span class="p">.</span><span class="nx">id</span><span class="o">=</span><span class="nx">o</span><span class="o">+</span><span class="s2">"-frame-"</span><span class="o">+</span><span class="nx">j</span><span class="p">;</span><span class="sr">/MSIE</span><span class="se">[</span><span class="sr"> </span><span class="se">]</span><span class="sr">+6/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="nx">f</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">=</span><span class="s2">"javascript:false"</span><span class="p">);</span><span class="nx">f</span><span class="p">.</span><span class="nx">allowTransparency</span><span class="o">=</span><span class="s2">"true"</span><span class="p">;</span><span class="nx">l</span><span class="p">[</span><span class="nx">d</span><span class="p">](</span><span class="nx">f</span><span class="p">);</span><span class="k">try</span><span class="p">{</span><span class="nx">f</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">[</span><span class="nx">n</span><span class="p">].</span><span class="nx">open</span><span class="p">()}</span><span class="k">catch</span><span class="p">(</span><span class="nx">s</span><span class="p">){</span><span class="nx">a</span><span class="p">.</span><span class="nx">domain</span><span class="o">=</span><span class="nx">h</span><span class="p">.</span><span class="nx">domain</span><span class="p">,</span><span class="nx">p</span><span class="o">=</span><span class="s2">"javascript:var d="</span><span class="o">+</span><span class="nx">n</span><span class="o">+</span><span class="s2">".open();d.domain='"</span><span class="o">+</span><span class="nx">h</span><span class="p">.</span><span class="nx">domain</span><span class="o">+</span><span class="s2">"';"</span><span class="p">,</span><span class="nx">f</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">=</span><span class="nx">p</span><span class="o">+</span><span class="s2">"void(0);"</span><span class="p">}</span><span class="k">try</span><span class="p">{</span><span class="kd">var</span> <span class="nx">r</span><span class="o">=</span><span class="nx">f</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">[</span><span class="nx">n</span><span class="p">];</span><span class="nx">r</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">b</span><span class="p">());</span><span class="nx">r</span><span class="p">.</span><span class="nx">close</span><span class="p">()}</span><span class="k">catch</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span><span class="nx">f</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">=</span><span class="nx">p</span><span class="o">+</span><span class="s1">'d.write("'</span><span class="o">+</span><span class="nx">b</span><span class="p">().</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/"/g</span><span class="p">,</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="mi">92</span><span class="p">)</span><span class="o">+</span><span class="s1">'"'</span><span class="p">)</span><span class="o">+</span><span class="s1">'");d.close();'</span><span class="p">}</span><span class="nx">a</span><span class="p">.</span><span class="nx">P</span><span class="p">(</span><span class="mi">2</span><span class="p">)};</span><span class="nx">a</span><span class="p">.</span><span class="nx">l</span><span class="o">&amp;&amp;</span><span class="nx">q</span><span class="p">()})()}();</span><span class="nx">c</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">lv</span><span class="o">=</span><span class="s2">"1"</span><span class="p">;</span><span class="k">return</span> <span class="nx">c</span><span class="p">[</span><span class="nx">b</span><span class="p">]}</span><span class="kd">var</span> <span class="nx">o</span><span class="o">=</span><span class="s2">"lightningjs"</span><span class="p">,</span><span class="nx">k</span><span class="o">=</span><span class="nb">window</span><span class="p">[</span><span class="nx">o</span><span class="p">]</span><span class="o">=</span><span class="nx">g</span><span class="p">(</span><span class="nx">o</span><span class="p">);</span><span class="nx">k</span><span class="p">.</span><span class="nx">require</span><span class="o">=</span><span class="nx">g</span><span class="p">;</span><span class="nx">k</span><span class="p">.</span><span class="nx">modules</span><span class="o">=</span><span class="nx">c</span><span class="p">}({});</span> <span class="nb">window</span><span class="p">.</span><span class="nx">wootric</span> <span class="o">=</span> <span class="nx">lightningjs</span><span class="p">.</span><span class="nx">require</span><span class="p">(</span><span class="s2">"wootric"</span><span class="p">,</span> <span class="s2">"//d27j601g4x0gd5.cloudfront.net/beacon.js"</span><span class="p">);</span> <span class="nb">window</span><span class="p">.</span><span class="nx">wootric</span><span class="p">(</span><span class="s2">"run"</span><span class="p">);</span> <span class="cm">/*]]&gt;{/literal}*/</span><span class="o">&lt;</span><span class="sr">/script&gt; &lt;!-- end Wootric code --</span><span class="err">&gt;
+</span></code></pre>
+
+<p>You can either install the code yourself or email the code to a colleague.</p>
+<h3 id='forward-the-snippet-to-a-colleague-for-help-with-install'>Forward the snippet to a colleague for help with install</h3>
+<p>In the section entitled “Share the Snippet”, enter the email of the person you’d like to receive the
+snippet. We&rsquo;ll send them the code along with installation instructions.</p>
+<h2 id='installing-the-code-snippet-yourself-'>Installing the code snippet yourself.</h2>
+<p>Copy and paste the code right before the closing &lt;\body&gt; tag of every page where you would like
+the Wootric survey to appear.</p>
+
+<p>Don’t forget!! Customize the TODO fields for your application, adding additional custom fields
+if required. This involves basic server­side code to fill in certain values dynamically.</p>
+
+<p>Fields that require your input at a minimum:</p>
+
+<ul>
+<li><p><strong>email:</strong> The current user’s email address. This field ensures that you can identify and respond to
+your users within our application. (Format is string within single quotes)</p></li>
+<li><p><strong>created_at:</strong> The current user&rsquo;s sign­up date as a Unix timestamp. Wootric uses the created_at
+reference date to manage the sampling of your user base. (Format is 10 digit Unix timestamp).</p></li>
+<li><p><strong>product_name:</strong> The name of the product or service. The product/company/service name that
+you want to appear in the NPS survey question. (Format is string within single quotes). For
+example, if you set the value of the product_name to “Wootric”, we will ask, “How likely are you
+to recommend Wootric to a friend or colleague?” By default we ask “How likely are you to
+recommend this product or service to a friend or colleague?”</p></li>
+</ul>
+
+<blockquote>
+<p>Here is an example section of the code snippet with basic TODO fields set:</p>
+</blockquote>
+<pre><code class="highlight javascript"><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">email</span><span class="p">:</span> <span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: The current user's email address.</span>
+  <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current user's sign­up date as a Unix timestamp.</span>
+  <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service.</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span> <span class="p">}</span><span class="err">;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
+<span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
+</code></pre>
+
+<blockquote>
+<p><strong>If you do not have values for a field be sure to remove the field or comment them out.</strong></p>
+</blockquote>
+<pre><code class="highlight javascript"><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span> <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxx'</span> <span class="p">}</span><span class="err">;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
+<span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
+</code></pre>
+<h2 id='step-2--thats-it-view-your-responses-live'>Step 2. That’s it! View your Responses Live</h2>
+<p>Once your Wootric snippet is installed, eligible users will immediately start being surveyed.
+Depending on the traffic of your site, you could start to see responses within a few minutes.
+Responses will come in to your Wootric dash in real time.</p>
+<h3 id='strongno-data-yetstrong'><strong>No data yet?</strong></h3>
+<p>We provide a link within your empty dashboard to a sample dash with dummy
+data.</p>
+<h3 id='strongid-like-to-do-some-testing-first--how-do-i-see-ensure-the-survey-shows-up-on-demandstrong'><strong>I’d like to do some testing first. How do I see ensure the survey shows up on demand?</strong></h3>
+<p>You can easily install Wootric in your development environment for testing. The snippet is
+already set up to show the survey immediately for testing purposes only.</p>
+
+<blockquote>
+<p>When you are ready for production, make sure to comment out the line wootric_survey_immediately = true.</p>
+</blockquote>
+<pre><code class="highlight javascript"><span class="o">&lt;!</span><span class="err">­­</span><span class="o">--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="nx">wootric_survey_immediately</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span><span class="c1">//Fire immediately for testing</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: The current user's email address.</span>
+  <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service.</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span> <span class="p">}</span><span class="err">;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
+<span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+</code></pre>
+<h3 id='additional-notes-on-wootric-snippet-placement'>Additional notes on Wootric snippet placement:</h3><h4 id='for-sites-with-loggedin-users'>For sites with logged­in users:</h4>
+<p>If your site has registered users, we recommend that you
+paste the tag on only the pages that your logged in users will access to allow unique user
+identification.</p>
+<h4 id='for-ecommerce-sites'>For ecommerce sites:</h4>
+<p>If your site has a checkout flow, we recommend that you paste the tag
+on pages that won’t interrupt checkout. The most commonly used location is the transaction
+completion page.</p>
+
+<blockquote>
+<p>Make sure to leave the line <strong>wootric_survey_immediately = true;</strong> in the
+code snippet to force the survey to load on every visit to the &ldquo;checked­out&rdquo; page.</p>
+</blockquote>
+<pre><code class="highlight javascript"><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="nx">wootric_survey_immediately</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span><span class="c1">//Fire immediately for transactional NPS</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: The current user's email address.</span>
+  <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service.</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span> <span class="p">}</span><span class="err">;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
+<span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+</code></pre>
+<h4 id='google-tag-manager'>Google Tag Manager:</h4>
+<p>You may use Google Tag Manager to install and manage the Wootric
+snippet.</p>
+
+<h1 id='advanced-feature-custom-sampling-settings'>Advanced Feature: Custom Sampling Settings</h1>
+<p>Wootric allows you to change some of the default sampling settings to suit your needs.</p>
+<h2 id='wootric_first_survey'>wootric_first_survey</h2>
+<p>This allows you to set the number of days after a new user signs up that
+you wish to wait before he sees his first survey. By default this is set to 31 days from
+created_at. Please make sure that you are sending us the users created_at date. (Format is an
+integer number of days).</p>
+<pre><code class="highlight javascript"><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="nx">wootric_first_survey</span><span class="o">=</span><span class="mi">45</span><span class="p">;</span><span class="c1">//User becomes eligible 45 days from created_at.</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: The current user's email address.</span>
+  <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current user's sign­up date as a Unix timestamp.</span>
+  <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span> <span class="p">}</span><span class="err">;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
+<span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
+</code></pre>
+<h2 id='wootric_time_delay'>wootric_time_delay</h2>
+<p>This setting delays the Wootric modal from appearing on a page by a
+certain length of time from when the page loads, in seconds. The default is no delay. (Format is
+an integer number of seconds).</p>
+<pre><code class="highlight javascript"><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="nx">wootric_time_delay</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span><span class="c1">//Delay modal on page by integer number of seconds.</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: The current user's email address.</span>
+  <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current user's sign­up date as a Unix timestamp.</span>
+  <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span> <span class="p">}</span><span class="err">;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
+<span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
+</code></pre>
+<h2 id='wootric_survey_immediately'>wootric_survey_immediately</h2>
+<p>Set this to true to override our proprietary sampling
+methodology and fire the survey immediately for that user on that page. (Format is a boolean
+value).</p>
+<pre><code class="highlight javascript"><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="nx">wootric_survey_immediately</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span><span class="c1">//Override sampling and fire immediately</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: The current user's email address.</span>
+  <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current user's sign­up date as a Unix timestamp.</span>
+  <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span> <span class="p">}</span><span class="err">;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
+<span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
+</code></pre>
+<h2 id='wootric_registered_percent'>wootric_registered_percent</h2>
+<p>This allows you to set the percentage of your registered user
+traffic that you wish to sample in a 3 month period. By default, this is set to 33% or a registered
+user who visits your site has a 1 in 3 chance of being served the survey in a 3 month period.
+Make sure that you are sending us an email address for the registered user. (Format is an
+integer percentage).</p>
+<pre><code class="highlight javascript"><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="nx">wootric_registered_percent</span><span class="o">=</span><span class="mi">33</span><span class="p">;</span><span class="c1">//Percentage of registered users to sample</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: The current user's email address.</span>
+  <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current user's sign­up date as a Unix timestamp.</span>
+  <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span> <span class="p">}</span><span class="err">;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
+<span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
+</code></pre>
+<h2 id='wootric_visitor_percent'>wootric_visitor_percent</h2>
+<p>This allows you to set the percentage of your visitor traffic (non
+registered users) that you wish to sample in a 3 month period. By default, this is set to 1% or a
+visitor to your site has a 1 in 100 chance of being served the survey in a 3 month period. This
+setting is only for unknown users. (Format is an integer percentage).</p>
+<pre><code class="highlight javascript"><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="nx">wootric_visitor_percent</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span><span class="c1">//Percentage of visitors to sample</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span> <span class="p">}</span><span class="err">;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
+<span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
+</code></pre>
+
+<h1 id='advanced-feature-adding-custom-fields'>Advanced Feature: Adding Custom Fields</h1>
+<p>Wootric now allows you to send custom attributes about your customers. This will give you the
+power to segment your users into groups meaningful for your business and report Net Promoter
+Score analytics for each of those groups.
+For example, if you are an HR management tool, you may want to examine your NPS scores
+and feedback by employee type (i.e., manager, individual contributor). This may give you richer
+insight into your drivers of satisfaction, and whether these differ by user type.</p>
+<h2 id='setting-up-custom-attributes'>Setting up Custom Attributes</h2>
+<p>You add custom attributes within the Wootric JS code snippet as additional key/value pairs.
+<strong>Make sure to double check that your custom attribute keys always have a JSON­ valid
+value</strong>; this means quotes around strings and sending null as a value when there isn’t a value for
+that user.</p>
+
+<p>It&rsquo;s also important to note that right now Wootric only supports strings as values.
+Support for Integers, Date, and Boolean formats are coming soon.
+Keys cannot contain characters such as &lsquo;$&rsquo;, &lsquo;.&rsquo; or the NULL character.
+Values cannot be nested hashes or arrays.</p>
+
+<blockquote>
+<p>Here&rsquo;s an example of custom attributes set within the Wootric snippet (in red below)</p>
+</blockquote>
+<pre><code class="highlight javascript"><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: The current user's email address.</span>
+  <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current user's sign­up date as a Unix timestamp.</span>
+  <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service.</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span><span class="p">,</span>
+  <span class="na">properties</span><span class="p">:{</span>
+    <span class="na">role</span><span class="p">:</span><span class="s1">'manager'</span><span class="p">,</span><span class="c1">// TODO: The current user's role.</span>
+    <span class="na">pricing_plan</span><span class="p">:</span><span class="s1">'Enterprise'</span><span class="c1">// TODO: The current user's pricing plan.</span>
+  <span class="p">}</span>
+<span class="p">}</span><span class="err">;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
+<span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
+</code></pre>
+<h2 id='what-custom-attributes-can-i-send-to-wootric'>What Custom Attributes can I send to Wootric?</h2>
+<p>Send any custom attributes you like to Wootric, as long as they are in string format. We find that
+the most meaningful attributes for Net Promoter Score segmentation include things like user
+type, price plan, engagement, and geography.</p>
+<h2 id='is-there-a-limit-on-the-number-of-custom-attributes-i-can-send-to-wootric'>Is there a limit on the number of custom attributes I can send to Wootric?</h2>
+<p>At this time, we limit you to 5 attributes, with an additional limit of 5 values for each attribute.</p>
+<h2 id='what-does-this-look-like-within-wootric'>What does this look like within Wootric?</h2>
+<p>The addition of custom attributes brings new functionality to your Wootric dashboard. Attributes
+show up on the left hand side of the dash, and can be selected to filter scores, trend graphs, and
+responses.</p>
+
+<h1 id='custom-messages'>Custom Messages</h1>
+<p>Wootric allows you to specify additional custom messages.
+This is done with the <strong>customMessages</strong> object.</p>
+
+<p><strong>Note:</strong>
+If the customMessages object is not specified, the default messages will
+be presented instead. By default, we present the following messages:</p>
+
+<ul>
+<li>The default Wootric question:
+<strong>&ldquo;How likely are you to recommend this product or service to a friend or colleague?&rdquo;</strong></li>
+<li>The default follow-up question:
+<strong>&ldquo;Thank you! Care to tell us why?&rdquo;</strong></li>
+<li>The default placeholder text:
+<strong>&ldquo;Help us by explaining your score.&rdquo;</strong></li>
+</ul>
+
+<p><img src="images/default_wootric_question.png" />
+<img src="images/default_followup_and_placeholder.png" width="682" /></p>
+<h2 id='full-example'>Full example</h2>
+<p>This example shows how the full ready Wootric snippet looks like with
+the custom messages specified.</p>
+
+<p>For instance, if the <strong>followup_question</strong> and <strong>followup_questions_list</strong> properties
+are set at the same time, the messages from the <strong>followup_questions_list</strong> property
+will be shown.</p>
+<pre><code class="highlight javascript">
+<span class="c">&lt;!--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">email</span><span class="p">:</span> <span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: The current user's email address.</span>
+    <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current user's sign­up date as a Unix timestamp.</span>
+    <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service.</span>
+    <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span>
+  <span class="p">}</span><span class="err">;</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">followup_question</span><span class="p">:</span> <span class="s2">"Custom message for all scores"</span><span class="p">,</span>
+      <span class="na">followup_questions_list</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">detractor_question</span><span class="p">:</span> <span class="s2">"Custom message for detractors"</span><span class="p">,</span>
+          <span class="na">passive_question</span><span class="p">:</span> <span class="s2">"Custom message for passives"</span><span class="p">,</span>
+          <span class="na">promoter_question</span><span class="p">:</span> <span class="s2">"Custom message for promoters"</span>
+      <span class="p">},</span>
+      <span class="na">wootric_question</span><span class="p">:</span> <span class="s2">"Custom Wootric question"</span><span class="p">,</span>
+      <span class="na">placeholder_text</span><span class="p">:</span> <span class="s2">"Custom placeholder for all scores"</span><span class="p">,</span>
+      <span class="na">placeholder_texts_list</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">detractor_text</span><span class="p">:</span> <span class="s2">"Custom placeholder text for detractors"</span><span class="p">,</span>
+        <span class="na">passive_text</span><span class="p">:</span> <span class="s2">"Custom placeholder text for passives"</span><span class="p">,</span>
+        <span class="na">promoter_text</span><span class="p">:</span> <span class="s2">"Custom placeholder text for promoters"</span>
+      <span class="p">}</span>
+  <span class="p">};</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
+
+</code></pre>
+
+<p><img src="images/custom_question.png" />
+<img src="images/customized_modal.png" width="688" /></p>
+<h2 id='followup_question'>followup_question</h2>
+<p>Defines the main follow-up question for all scores.
+Therefore, you will see the same question, regardless of which score you have chosen.</p>
+
+<p>If this property is not specified, the default follow-up question will be
+shown instead.</p>
+
+<blockquote>
+<p>This will be shown after choosing the score regardless of its value.</p>
+</blockquote>
+<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">followup_question</span><span class="p">:</span> <span class="s2">"Custom message for all scores"</span><span class="p">,</span>
+  <span class="p">};</span>
+</code></pre>
+<h2 id='followup_questions_list'>followup_questions_list</h2>
+<p>An object that contains custom messages for detractors,
+passives and promoters.</p>
+
+<p>There are the following properties that you may specify:</p>
+
+<ul>
+<li>detractor_question</li>
+<li>passive_question</li>
+<li>promoter_question</li>
+</ul>
+
+<p>If you set e.g. one property of the three available, you will see the message
+for the property that you have specified. For the rest of the properties,
+the default message will be presented according to the score that the user has selected.</p>
+<pre><code class="highlight javascript">
+<span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">followup_questions_list</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">detractor_question</span><span class="p">:</span> <span class="s2">"Custom message for detractors"</span><span class="p">,</span>
+        <span class="na">passive_question</span><span class="p">:</span> <span class="s2">"Custom message for passives"</span><span class="p">,</span>
+        <span class="na">promoter_question</span><span class="p">:</span> <span class="s2">"Custom message for promoters"</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre>
+<h2 id='detractor_question'>detractor_question</h2>
+<p>Contains the message that will be presented to a detractor i.e.
+when a user selects the score from the range of 0-7.</p>
+<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">followup_questions_list</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">detractor_question</span><span class="p">:</span> <span class="s2">"Custom message for detractors"</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+<h2 id='passive_question'>passive_question</h2>
+<p>Contains the message that will be presented to a passive i.e.
+when a user selects the score from the range of 7-8.</p>
+<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">followup_questions_list</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">passive_question</span><span class="p">:</span> <span class="s2">"Custom message for passives"</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+<h2 id='promoter_question'>promoter_question</h2>
+<p>Contains the message that will be presented to a promoter i.e.
+when a user selects the score from the range of 9-10.</p>
+<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">followup_questions_list</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">promoter_question</span><span class="p">:</span> <span class="s2">"Custom message for promoters"</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+<h2 id='wootric_question'>wootric_question</h2>
+<p>Contains a question that is presented to the user once the Wootric
+modal shows up.</p>
+
+<p>If this property is not specified, the default question will be shown instead.</p>
+<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">wootric_question</span><span class="p">:</span> <span class="s2">"Custom Wootric question"</span>
+<span class="p">};</span>
+</code></pre>
+<h2 id='placeholder_text'>placeholder_text</h2>
+<p>Contains a placeholder text that is presented to the user
+after selecting the score.</p>
+
+<p>If this property is not specified, the default placeholder will be shown instead.</p>
+<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">placeholder_text</span><span class="p">:</span> <span class="s2">"Custom placeholder for all scores"</span>
+<span class="p">};</span>
+</code></pre>
+<h2 id='placeholder_texts_list'>placeholder_texts_list</h2>
+<p>An object that holds custom placeholder texts for detractors, passives and promoters.</p>
+
+<p>Currently we offer the following properties for you to specify:</p>
+
+<ul>
+<li>detractor_text</li>
+<li>passive_text</li>
+<li>promoter_text</li>
+</ul>
+
+<p>If you set e.g. one placeholder property of the three available, you will see the message
+for the property that you have specified. For the rest of the properties,
+the default placeholder text will be presented according to the score that the user has selected.</p>
+<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">placeholder_texts_list</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">detractor_text</span><span class="p">:</span> <span class="s2">"Custom placeholder text for detractors"</span><span class="p">,</span>
+    <span class="na">passive_text</span><span class="p">:</span> <span class="s2">"Custom placeholder text for passives"</span><span class="p">,</span>
+    <span class="na">promoter_text</span><span class="p">:</span> <span class="s2">"Custom placeholder text for promoters"</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+<h2 id='detractor_text'>detractor_text</h2>
+<p>Contains a placeholder text presented to a detractor when the score
+value from the range of 0-7 has been selected.</p>
+<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">placeholder_texts_list</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">detractor_text</span><span class="p">:</span> <span class="s2">"Custom placeholder text for detractors"</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+<h2 id='passive_text'>passive_text</h2>
+<p>Contains a placeholder text presented to a passive when the score
+value from the range of 7-8 has been selected.</p>
+<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">placeholder_texts_list</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">passive_text</span><span class="p">:</span> <span class="s2">"Custom placeholder text for passives"</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+<h2 id='promoter_text'>promoter_text</h2>
+<p>Contains a placeholder text presented to a promoter when the score
+value from the range of 9-10 has been selected.</p>
+<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">placeholder_texts_list</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">promoter_question</span><span class="p">:</span> <span class="s2">"Custom message for promoters"</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
