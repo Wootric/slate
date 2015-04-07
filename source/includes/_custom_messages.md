@@ -8,7 +8,7 @@ If the customMessages object is not specified, the default messages will
 be presented instead. By default, we present the following messages:
 
 * The default Wootric question:
-**"How likely are you to recommend this product or service to a friend or colleague?"**
+**"How likely are you to recommend Wootric to a friend or co-worker?"**
 * The default follow-up question:
 **"Thank you! Care to tell us why?"**
 * The default placeholder text:
@@ -40,7 +40,7 @@ will be shown.
           passive_question: "Custom message for passives",
           promoter_question: "Custom message for promoters"
       },
-      wootric_question: "Custom Wootric question",
+      wootric_recommend_target: "Custom Wootric recommend target text",
       placeholder_text: "Custom placeholder for all scores",
       placeholder_texts_list: {
         detractor_text: "Custom placeholder text for detractors",
@@ -131,15 +131,20 @@ window.customMessages = {
 };
 ```
 
-## wootric_question
-Contains a question that is presented to the user once the Wootric
-modal shows up.
+## wootric_recommend_target
+Contains a customized recommend target text that is the end part of the
+question.
+By default, when this property is not set, we display:
+"How likely are you to recommend Wootric to a friend or co-worker?"
 
-If this property is not specified, the default question will be shown instead.
+Example:
+
+If wootric_recommend_target = "your friends", the question will result in:
+"How likely are you to recommend Wootric to your friends?"
 
 ```javascript
 window.customMessages = {
-  wootric_question: "Custom Wootric question"
+  wootric_recommend_target: "Custom Wootric recommend target text"
 };
 ```
 
