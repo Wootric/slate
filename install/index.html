@@ -296,7 +296,7 @@ be presented instead. By default, we present the following messages:</p>
 
 <ul>
 <li>The default Wootric question:
-<strong>&ldquo;How likely are you to recommend this product or service to a friend or colleague?&rdquo;</strong></li>
+<strong>&ldquo;How likely are you to recommend Wootric to a friend or co-worker?&rdquo;</strong></li>
 <li>The default follow-up question:
 <strong>&ldquo;Thank you! Care to tell us why?&rdquo;</strong></li>
 <li>The default placeholder text:
@@ -325,7 +325,7 @@ will be shown.</p>
           <span class="na">passive_question</span><span class="p">:</span> <span class="s2">"Custom message for passives"</span><span class="p">,</span>
           <span class="na">promoter_question</span><span class="p">:</span> <span class="s2">"Custom message for promoters"</span>
       <span class="p">},</span>
-      <span class="na">wootric_question</span><span class="p">:</span> <span class="s2">"Custom Wootric question"</span><span class="p">,</span>
+      <span class="na">wootric_recommend_target</span><span class="p">:</span> <span class="s2">"Custom Wootric recommend target text"</span><span class="p">,</span>
       <span class="na">placeholder_text</span><span class="p">:</span> <span class="s2">"Custom placeholder for all scores"</span><span class="p">,</span>
       <span class="na">placeholder_texts_list</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">detractor_text</span><span class="p">:</span> <span class="s2">"Custom placeholder text for detractors"</span><span class="p">,</span>
@@ -403,13 +403,18 @@ when a user selects the score from the range of 9-10.</p>
     <span class="p">}</span>
 <span class="p">};</span>
 </code></pre>
-<h2 id='wootric_question'>wootric_question</h2>
-<p>Contains a question that is presented to the user once the Wootric
-modal shows up.</p>
+<h2 id='wootric_recommend_target'>wootric_recommend_target</h2>
+<p>Contains a customized recommend target text that is the end part of the
+question.
+By default, when this property is not set, we display:
+&ldquo;How likely are you to recommend Wootric to a friend or co-worker?&rdquo;</p>
 
-<p>If this property is not specified, the default question will be shown instead.</p>
+<p>Example:</p>
+
+<p>If wootric_recommend_target = &ldquo;your friends&rdquo;, the question will result in:
+&ldquo;How likely are you to recommend Wootric to your friends?&rdquo;</p>
 <pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">wootric_question</span><span class="p">:</span> <span class="s2">"Custom Wootric question"</span>
+  <span class="na">wootric_recommend_target</span><span class="p">:</span> <span class="s2">"Custom Wootric recommend target text"</span>
 <span class="p">};</span>
 </code></pre>
 <h2 id='placeholder_text'>placeholder_text</h2>
