@@ -97,7 +97,7 @@ window.customMessages = {
 
 ## detractor_question
 Contains the message that will be presented to a detractor i.e.
-when a user selects the score from the range of 0-7.
+when a user selects the score from the range of 0-6.
 
 ```javascript
 window.customMessages = {
@@ -185,7 +185,7 @@ window.customMessages = {
 
 ## detractor_text
 Contains a placeholder text presented to a detractor when the score
-value from the range of 0-7 has been selected.
+value from the range of 0-6 has been selected.
 
 ```javascript
 window.customMessages = {
