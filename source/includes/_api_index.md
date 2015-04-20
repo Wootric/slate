@@ -13,6 +13,7 @@ includes:
   - responses
   - declines
   - page_views
+  - end_user_settings
   - errors
 
 search: true
