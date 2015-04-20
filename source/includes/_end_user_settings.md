@@ -46,7 +46,7 @@ Parameter | Description
 --------- | -----------
 END_USER_ID | The ID of the end user
 
-## Update End User
+## Update End User Settings
 
 ```shell
 curl -X PUT "https://api.wootric.com/v1/end_users/1/settings?access_token=myaccesstoken" -d "email_nps=false"
