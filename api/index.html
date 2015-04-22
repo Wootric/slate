@@ -1376,6 +1376,115 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
 </tr>
 </tbody></table>
 
+<h1 id='end-user-settings'>End User Settings</h1><h2 id='end-user-settings-object'>End User Settings Object</h2>
+<p>A end user settings object has the following fields:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>The id of end user settings</td>
+</tr>
+<tr>
+<td>end_user_id</td>
+<td>integer</td>
+<td>The id of end user</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>Datetime representation of when the end user settings were created</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>datetime</td>
+<td>Datetime representation of when the end user settings was lately updated</td>
+</tr>
+<tr>
+<td>email_nps</td>
+<td>boolean</td>
+<td>Specifies whether end user should receive NPS survey through an email</td>
+</tr>
+</tbody></table>
+<h2 id='get-specific-end-user-settings'>Get Specific End User Settings</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/settings?access_token=myaccesstoken"</span>
+
+or
+
+curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/settings"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"end_user_id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="s2">"2015-04-20 04:46:51-08:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="s2">"2015-04-20 04:46:51-08:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email_nps"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves a specific end users settings.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/settings</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>END_USER_ID</td>
+<td>The ID of the end user</td>
+</tr>
+</tbody></table>
+<h2 id='update-end-user-settings'>Update End User Settings</h2><pre><code class="highlight shell">curl -X PUT <span class="s2">"https://api.wootric.com/v1/end_users/1/settings?access_token=myaccesstoken"</span> -d <span class="s2">"email_nps=false"</span>
+
+or
+
+curl -X PUT -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/settings"</span> -d <span class="s2">"email_nps=false"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"end_user_id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email_nps"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="s2">"2015-04-20T04:55:58.741-08:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="s2">"2015-04-20T04:55:58.755-08:00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint updates the end users settings with specified params.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">PUT https://api.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/settings</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>END_USER_ID</td>
+<td>The ID of the end user to update</td>
+</tr>
+<tr>
+<td>email_nps (optional)</td>
+<td>whether or not end user should receive NPS survey through an email</td>
+</tr>
+</tbody></table>
+
 <h1 id='errors'>Errors</h1>
 <p>The Wootric API uses the following error codes:</p>
 
