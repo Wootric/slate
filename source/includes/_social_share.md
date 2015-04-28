@@ -18,4 +18,4 @@ window.wootricSettings = {
 
 Wootric allows you to display a social share screen for your promoters (9-10).
 In order to do that, you need to configure wootricSettings passing BOTH your product's twitter_account and facebook_page.
-If configured properly, Wootric will display a third page, right after promoter submit feedback, asking "Would you be willing to share your positive comments?" and allowing the end user to "like" your Facebook page or share a comment through the Twitter with "via @twitteraccount" text.
+If configured properly, Wootric will display a third page, right after promoter submits feedback, asking "Would you be willing to share your positive comments?" and allowing the end user to "like" your Facebook page or share a comment through the Twitter with addition of "via @twitteraccount" text.
