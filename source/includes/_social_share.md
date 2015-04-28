@@ -1,4 +1,4 @@
-#Social Share Settings
+#Social Media Share Settings
 
 ```javascript
 <!--­­ begin Wootric code ­­-->
