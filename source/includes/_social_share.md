@@ -9,7 +9,7 @@ window.wootricSettings = {
   created_at: 1234567890,
   product_name: 'Wootric',
   account_token: 'NPS­xxxxxxxx',
-  twitter_account: 'twitteraccount'
+  twitter_account: 'twitteraccount',
   facebook_page: 'https://www.facebook.com/myPage' };
 </script>
 ....//The rest of the widget...
