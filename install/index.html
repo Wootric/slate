@@ -153,6 +153,66 @@ code snippet to force the survey to load on every visit to the &ldquo;checked­o
 <p>You may use Google Tag Manager to install and manage the Wootric
 snippet.</p>
 
+<h1 id='modal-settings'>Modal Settings</h1>
+<p>There are three settings available for customizing the wootric modal: <code class="prettyprint">modal_theme</code>, <code class="prettyprint">modal_footprint</code> and <code class="prettyprint">modal_position</code>. If no settings are provided the modal will default to &ldquo;light normal bottom&rdquo;, same if you skipped some of them - default value will be used for the missing ones.</p>
+<h2 id='modal-theme-settings'>Modal theme settings</h2>
+<p>Modal comes with two themes: <code class="prettyprint">light</code> (default) and <code class="prettyprint">dark</code>. To set the theme, provide <code class="prettyprint">modal_theme</code> key-value in <code class="prettyprint">wootricSettings</code> object.</p>
+<pre><code class="highlight javascript"><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: The current user's email address.</span>
+  <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current user's sign­up date as a Unix timestamp.</span>
+  <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service.</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span><span class="p">,</span>
+  <span class="na">modal_theme</span><span class="p">:</span> <span class="s1">'dark'</span><span class="p">,</span>
+  <span class="na">properties</span><span class="p">:{</span>
+    <span class="na">role</span><span class="p">:</span><span class="s1">'manager'</span><span class="p">,</span><span class="c1">// TODO: The current user's role.</span>
+    <span class="na">pricing_plan</span><span class="p">:</span><span class="s1">'Enterprise'</span><span class="c1">// TODO: The current user's pricing plan.</span>
+  <span class="p">}</span>
+<span class="p">}</span><span class="err">;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
+<span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
+</code></pre>
+<h2 id='modal-footprint-settings'>Modal footprint settings</h2>
+<p>You can set modal footprint to be <code class="prettyprint">compact</code> for tighter spaces, <code class="prettyprint">spacious</code> for huge spaces or <code class="prettyprint">normal</code> which is default value. To set the footprint, provide <code class="prettyprint">modal_footprint</code> key-value in <code class="prettyprint">wootricSettings</code> object.</p>
+<pre><code class="highlight javascript"><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: The current user's email address.</span>
+  <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current user's sign­up date as a Unix timestamp.</span>
+  <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service.</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span><span class="p">,</span>
+  <span class="na">modal_footprint</span><span class="p">:</span> <span class="s1">'compact'</span><span class="p">,</span>
+  <span class="na">properties</span><span class="p">:{</span>
+    <span class="na">role</span><span class="p">:</span><span class="s1">'manager'</span><span class="p">,</span><span class="c1">// TODO: The current user's role.</span>
+    <span class="na">pricing_plan</span><span class="p">:</span><span class="s1">'Enterprise'</span><span class="c1">// TODO: The current user's pricing plan.</span>
+  <span class="p">}</span>
+<span class="p">}</span><span class="err">;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
+<span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
+</code></pre>
+<h2 id='modal-position-settings'>Modal position settings</h2>
+<p>Modal position can be either <code class="prettyprint">top</code> or <code class="prettyprint">bottom</code> (default).  To set the position, provide <code class="prettyprint">modal_position</code> key-value in <code class="prettyprint">wootricSettings</code> object.</p>
+<pre><code class="highlight javascript"><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: The current user's email address.</span>
+  <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current user's sign­up date as a Unix timestamp.</span>
+  <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service.</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span><span class="p">,</span>
+  <span class="na">modal_position</span><span class="p">:</span> <span class="s1">'top'</span><span class="p">,</span>
+  <span class="na">properties</span><span class="p">:{</span>
+    <span class="na">role</span><span class="p">:</span><span class="s1">'manager'</span><span class="p">,</span><span class="c1">// TODO: The current user's role.</span>
+    <span class="na">pricing_plan</span><span class="p">:</span><span class="s1">'Enterprise'</span><span class="c1">// TODO: The current user's pricing plan.</span>
+  <span class="p">}</span>
+<span class="p">}</span><span class="err">;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
+<span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
+</code></pre>
+
 <h1 id='advanced-feature-custom-sampling-settings'>Advanced Feature: Custom Sampling Settings</h1>
 <p>Wootric allows you to change some of the default sampling settings to suit your needs.</p>
 <h2 id='wootric_first_survey'>wootric_first_survey</h2>
