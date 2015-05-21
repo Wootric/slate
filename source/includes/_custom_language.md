@@ -36,3 +36,5 @@ Chinese (Simplified) | CN_S
 Chinese (Traditional) | CN_T
 Japanese | JP
 Vietnamese | VN
+Russian | RU
+Swedish | SE
