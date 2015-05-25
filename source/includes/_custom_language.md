@@ -16,11 +16,11 @@ window.wootricSettings = {
 ```
 
 Wootric allows you to set a custom language for the survey modal.
-To set a custom language add ```language``` parameter to ```wootricSettings``` and pass appropriate country code.
+To set a custom language add ```language``` parameter to ```wootricSettings``` and pass appropriate language code.
 
 Please be advised, that custom messages and/or placeholder, takes precedence over language settings.
 
-Currently supported languages (with country codes):
+Currently supported languages (with language codes):
 
 Language | Code
 -------- | ----
