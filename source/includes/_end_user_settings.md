@@ -22,7 +22,7 @@ or
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/settings"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
   {
@@ -56,7 +56,7 @@ or
 curl -X PUT -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/settings" -d "email_nps=false"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
   {

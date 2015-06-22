@@ -3,9 +3,6 @@
 There are three settings available for customizing the wootric modal: ```modal_theme```, ```modal_footprint``` and ```modal_position```. If no settings are provided the modal will default to "light normal bottom", same if you skipped some of them - default value will be used for the missing ones.
 
 ## Modal theme settings
-
-Modal comes with two themes: ```light``` (default) and ```dark```. To set the theme, provide ```modal_theme``` key-value in ```wootricSettings``` object.
-
 ```javascript
 <!­­ begin Wootric code ­­>
 <script type="text/javascript">
@@ -25,10 +22,17 @@ window.wootricSettings = {
 <!--­­ end Wootric code --­­>
 ```
 
+Modal comes with two themes: ```light``` (default) and ```dark```. To set the theme, provide ```modal_theme``` key-value in ```wootricSettings``` object.
+
+Light:
+![Compact Survey](spacious_light.png)
+
+
+
+Dark:
+![Compact Survey](spacious_dark.png)
+
 ## Modal footprint settings
-
-You can set modal footprint to be ```compact``` for tighter spaces, ```spacious``` for huge spaces or ```normal``` which is default value. To set the footprint, provide ```modal_footprint``` key-value in ```wootricSettings``` object.
-
 ```javascript
 <!­­ begin Wootric code ­­>
 <script type="text/javascript">
@@ -47,11 +51,20 @@ window.wootricSettings = {
 ....//The rest of the widget...
 <!--­­ end Wootric code --­­>
 ```
+You can set modal footprint to be ```compact``` for tighter spaces, ```spacious``` for huge spaces or ```normal``` which is default value. To set the footprint, provide ```modal_footprint``` key-value in ```wootricSettings``` object.
+
+Compact:
+![Compact Survey](compact_light.png)
+
+
+Normal:
+![Compact Survey](normal_light.png)
+
+
+Spacious:
+![Compact Survey](spacious_light.png)
 
 ## Modal position settings
-
-Modal position can be either ```top``` or ```bottom``` (default).  To set the position, provide ```modal_position``` key-value in ```wootricSettings``` object.
-
 ```javascript
 <!­­ begin Wootric code ­­>
 <script type="text/javascript">
@@ -70,3 +83,4 @@ window.wootricSettings = {
 ....//The rest of the widget...
 <!--­­ end Wootric code --­­>
 ```
+Modal position can be either ```top``` or ```bottom``` (default).  To set the position, provide ```modal_position``` key-value in ```wootricSettings``` object.
