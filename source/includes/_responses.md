@@ -26,7 +26,7 @@ or
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/responses"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
 [
@@ -81,7 +81,7 @@ or
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
 [
@@ -136,7 +136,7 @@ or
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses/promoters"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
 [
@@ -191,7 +191,7 @@ or
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses/passives"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
 [
@@ -246,7 +246,7 @@ or
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses/detractors"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
 [
@@ -301,7 +301,7 @@ or
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses/2"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
 {
@@ -367,7 +367,7 @@ or
 curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/respones/1"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
   {

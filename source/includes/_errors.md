@@ -1,5 +1,6 @@
 # Errors
 
+
 The Wootric API uses the following error codes:
 
 Error Code | Meaning
