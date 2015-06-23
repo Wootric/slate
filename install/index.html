@@ -82,64 +82,6 @@ completion page.</p>
 <p>You may use Google Tag Manager to install and manage the Wootric
 snippet.</p>
 
-<h1 id='custom-messages'>Custom Messages</h1>
-<p>Wootric allows you to specify additional custom messages.
-This is done on our website in &ldquo;Settings&rdquo; and &ldquo;Customize Survey.&rdquo;</p>
-
-<p><strong>Note:</strong>
-If the custom messages are not specified, the default messages will
-be presented instead. By default, we present the following messages:</p>
-
-<ul>
-<li>The default Wootric question:
-<strong>&ldquo;How likely are you to recommend Wootric to a friend or co-worker?&rdquo;</strong></li>
-<li>The default follow-up question:
-<strong>&ldquo;Thank you! Care to tell us why?&rdquo;</strong></li>
-<li>The default text box prompt text:
-<strong>&ldquo;Help us by explaining your score.&rdquo;</strong></li>
-</ul>
-<h2 id='survey-language'>Survey Language</h2>
-<p>Define the language of the message as it appears to your customers.</p>
-<h2 id='productcompany-name'>Product/Company Name</h2>
-<p>Define the name of your product/company as it will appear in the survey question.</p>
-<h2 id='audience'>Audience</h2>
-<p>Define a customized recommend target text that is the end part of the
-question.
-By default, when this property is not set, we display:
-&ldquo;How likely are you to recommend Wootric to a friend or co-worker?&rdquo;</p>
-<h2 id='follow-up-question'>Follow-Up Question</h2>
-<p>Define the question that follows a user&rsquo;s response. You may define a default question for all scores or a specific question for detractors, passives, and promoters.</p>
-<h2 id='text-box-prompt'>Text Box Prompt</h2>
-<p>Define a placeholder text that is presented to the user
-after selecting the score.</p>
-
-<h1 id='custom-sampling-settings'>Custom Sampling Settings</h1>
-<p>Wootric allows you to change some of the default sampling settings to suit your needs.</p>
-
-<p>You may edit the sampling settings at our website by going to &ldquo;Settings&rdquo; and then &ldquo;Customize Sampling.&rdquo;</p>
-<h2 id='first-survey'>First Survey</h2>
-<p>This allows you to set the number of days after a new user signs up that
-you wish to wait before he sees his first survey. By default this is set to 31 days from
-created_at. Please make sure that you are sending us the users created_at date. (Format is an
-integer number of days).</p>
-<h2 id='survey-throttle'>Survey Throttle</h2>
-<p>This allows you to set the number of days after a user is surveyed during which they will not be surveyed again.</p>
-<h2 id='time-delay-on-page'>Time Delay on Page</h2>
-<p>This setting delays the Wootric modal from appearing on a page by a
-certain length of time from when the page loads, in seconds. The default is no delay. (Format is
-an integer number of seconds).</p>
-<h2 id='registered-users--surveyed'>Registered Users % Surveyed</h2>
-<p>This allows you to set the percentage of your registered user
-traffic that you wish to sample in a 3 month period. By default, this is set to 33% or a registered
-user who visits your site has a 1 in 3 chance of being served the survey in a 3 month period.
-Make sure that you are sending us an email address for the registered user. (Format is an
-integer percentage).</p>
-<h2 id='visitor--surveyed'>Visitor % Surveyed</h2>
-<p>This allows you to set the percentage of your visitor traffic (non
-registered users) that you wish to sample in a 3 month period. By default, this is set to 1% or a
-visitor to your site has a 1 in 100 chance of being served the survey in a 3 month period. This
-setting is only for unknown users. (Format is an integer percentage).</p>
-
 <h1 id='modal-settings'>Modal Settings</h1>
 <p>There are three settings available for customizing the wootric modal: <code class="prettyprint">modal_theme</code>, <code class="prettyprint">modal_footprint</code> and <code class="prettyprint">modal_position</code>. If no settings are provided the modal will default to &ldquo;light normal bottom&rdquo;, same if you skipped some of them - default value will be used for the missing ones.</p>
 <h2 id='modal-theme-settings'>Modal theme settings</h2><pre><code class="highlight javascript"><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
