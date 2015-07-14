@@ -121,7 +121,7 @@ window.customMessages = {
 
 ## promoter_question
 Contains the message that will be presented to a promoter i.e.
-when a user selects the score from the range of 9-10.
+when a user selects the score from the range of 910.
 
 ```javascript
 window.customMessages = {

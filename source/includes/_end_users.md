@@ -8,9 +8,9 @@ Attribute | Type | Description
 --------- | ------- | -----------
 id | integer | The id of end user
 created_at | datetime | Datetime representation of when the end user was created
-updated_at | datetime | Datetime representation of when the end user was lately updated
+updated_at | datetime | Datetime representation of when the end user was last updated
 email | string | End user email
-last_surveyed | datetime | Datetime representation of when the end user was lately surveyed
+last_surveyed | datetime | Datetime representation of when the end user was last surveyed
 external_created_at | integer |
 user_id | integer | The id of user
 page_views_count | integer | Total number of page views
@@ -26,7 +26,7 @@ or
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
 [
@@ -82,7 +82,7 @@ or
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/2"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
   {
@@ -121,7 +121,7 @@ or
 curl -X POST -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users" -d "email=enduser@example.com;last_surveyed=1423732280;properties[company]=TestCompany&properties[city]=San Francisco"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
   {
@@ -162,7 +162,7 @@ or
 curl -X PUT -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1" -d "email=enduser_new@example.com;properties[company]=NewCompany&properties[city]=New Reno"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
   {
@@ -204,7 +204,7 @@ or
 curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
   {

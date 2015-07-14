@@ -23,29 +23,12 @@ search: true
 
 Welcome to the Wootric API documentation!
 
-You can use our API to access your end users, responses, declines and page views.
+You can use our API to access and update your end users, responses, declines, and page views.
 
-JSON will be returned in all responses from the API including errors. We currently have code examples using curl, you can view code examples in the dark area to the right.
+All responses from the API (including errors) are in JSON. All code examples are in cURL.
 
 # Authentication
-
-Access token can be retrieved using either grant_type of "password" with your account email and password, or grant_type of "client_credentials" with your application client_id and client_secret.
-
-Wootric expects for the access token key to be included in all API requests that looks like the following for grant_type of "password":
-
-`https://api.wootric.com/v1/end_users.json?access_token=myaccesstoken`
-
-If you are using grant_type of "client_credentials" you need to send the access token as a request header:
-
-`Authorization: Bearer <myaccesstoken>`
-
-Access token expires 2 hours after creation. New Access tokens can be obtained using refresh tokens which is detailed in the CURL example to the right.
-
-<aside class="notice">
-You must replace `myaccesstoken` with your personal Access Token.
-</aside>
-
-> To retrieve an access token using oauth, use this code:
+> To retrieve an access token using oauth, use the following code:
 
 ```shell
 curl -i https://api.wootric.com/oauth/token \
@@ -54,7 +37,7 @@ curl -i https://api.wootric.com/oauth/token \
 -F password=<yourpassword>
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
 {
@@ -73,7 +56,7 @@ curl -i https://api.wootric.com/oauth/token \
 -F refresh_token="<yourrefreshtoken>"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
 {
@@ -94,7 +77,7 @@ curl -X POST https://api.wootric.com/oauth/token \
 -F client_secret=<yourclientsecret>
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
 {
@@ -104,3 +87,19 @@ curl -X POST https://api.wootric.com/oauth/token \
   "scope":"public"  
 }
 ```
+
+Access tokens can be retrieved using either grant_type of "password" with your account email and password, or grant_type of "client_credentials" with your application client_id and client_secret.
+
+Wootric expects the access token key to be included in all API requests that use grant_type of "password":
+
+`https://api.wootric.com/v1/end_users.json?access_token=myaccesstoken`
+
+If you are using grant_type of "client_credentials," you need to send the access token as a request header:
+
+`Authorization: Bearer <myaccesstoken>`
+
+Access tokens expire 2 hours after creation. New Access tokens can be obtained using refresh tokens as detailed in the cURL example to the right.
+
+<aside class="notice">
+You must replace `myaccesstoken` with your personal Access Token.
+</aside>

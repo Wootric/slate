@@ -22,7 +22,7 @@ or
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/declines"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
 [
@@ -59,7 +59,7 @@ page | integer | 1 | Number of returned page
 per_page | integer | 25 | Number of records returned on each page
 created | hash | {} | Hash with properties used to filter your declines by time it can be used with params (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte*
 
-## Get a Specific Declines
+## Get a Specific Decline
 
 ```shell
 curl "https://api.wootric.com/v1/end_users/1/declines/2?access_token=myaccesstoken"
@@ -69,7 +69,7 @@ or
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/declines/2"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
   {
@@ -127,7 +127,7 @@ or
 curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/declines/1"
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns the following JSON:
 
 ```json
   {
