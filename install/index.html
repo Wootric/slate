@@ -494,7 +494,10 @@ To set a custom language add <code class="prettyprint">language</code> parameter
   <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span>
   <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span><span class="p">,</span>
   <span class="na">twitter_account</span><span class="p">:</span> <span class="s1">'twitteraccount'</span><span class="p">,</span>
-  <span class="na">facebook_page</span><span class="p">:</span> <span class="s1">'https://www.facebook.com/myPage'</span> <span class="p">}</span><span class="err">;</span>
+  <span class="na">facebook_page</span><span class="p">:</span> <span class="s1">'https://www.facebook.com/myPage'</span><span class="p">,</span>
+  <span class="na">social_message</span><span class="p">:</span> <span class="s1">'social message'</span><span class="p">,</span>
+  <span class="na">social_link_text</span><span class="p">:</span> <span class="s1">'Click me!'</span><span class="p">,</span>
+  <span class="na">social_link_url</span><span class="p">:</span> <span class="s1">'http://example.com'</span><span class="p">}</span><span class="err">;</span>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
 <span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
@@ -504,6 +507,8 @@ To set a custom language add <code class="prettyprint">language</code> parameter
 In order to do that, you need to configure <code class="prettyprint">wootricSettings</code> passing your product&rsquo;s <code class="prettyprint">twitter_account</code> and/or <code class="prettyprint">facebook_page</code>. In addition, Twitter option will only display if promoter provided a feedback text.</p>
 
 <p>If configured properly, Wootric will display a third page, right after promoter submits feedback, asking &ldquo;Would you be willing to share your positive comments?&rdquo; and allowing the end user to &ldquo;like&rdquo; your Facebook page or share a comment through the Twitter.</p>
+
+<p>You may also provide <code class="prettyprint">social_message</code>, <code class="prettyprint">social_link_text</code> and <code class="prettyprint">social_link_url</code>. If social message is provided it will replace &ldquo;Would you be willing to share your positive comments?&rdquo; text. Providing social link text and url (both are required for this option to work) will display additional link on a third page as a <code class="prettyprint">social_link_text</code> leading to <code class="prettyprint">social_link_url</code>. With both text and url provided you don&rsquo;t have to configure <code class="prettyprint">twitter_account</code> and/or <code class="prettyprint">facebook_page</code> for the &ldquo;social share page&rdquo; to show up.</p>
 
 
       </div>
