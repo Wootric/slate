@@ -38,3 +38,4 @@ Japanese | JP
 Vietnamese | VN
 Russian | RU
 Swedish | SE
+Norwegian | NO
