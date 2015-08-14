@@ -234,15 +234,11 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>created (optional)</td>
 <td>hash</td>
 <td>{}</td>
-<td>Hash with properties used to filter your end users by time it can be used with params (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em></td>
-</tr>
-<tr>
-<td>email (optional)</td>
-<td>string</td>
-<td>None</td>
-<td>Filter end users by email (will return an array containing a single end user object if the end user with provided email exists)</td>
+<td>Filter your end users by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
 </tbody></table>
+
+<p>email (optional) | string | None | Filter end users by email (will return an array containing a single end user object if the end user with provided email exists)</p>
 <h2 id='get-a-specific-end-user'>Get a Specific End User</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/2?access_token=myaccesstoken"</span>
 
 or
@@ -546,7 +542,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>created</td>
 <td>hash</td>
 <td>{}</td>
-<td>Hash with properties used to filter your responses by time it can be used with params (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em></td>
+<td>Filter your responses by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
 </tbody></table>
 <h2 id='get-all-end-user39s-responses'>Get All End User&rsquo;s Responses</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken"</span>
@@ -615,7 +611,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>created</td>
 <td>hash</td>
 <td>{}</td>
-<td>Hash with properties used to filter your responses by time it can be used with params (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em></td>
+<td>Filter your responses by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
 </tbody></table>
 <h2 id='get-all-promoters-responses'>Get All Promoters Responses</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/promoters?access_token=myaccesstoken"</span>
@@ -684,7 +680,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>created</td>
 <td>hash</td>
 <td>{}</td>
-<td>Hash with properties used to filter your promoters responses by time it can be used with params (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em></td>
+<td>Filter your responses by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
 </tbody></table>
 <h2 id='get-all-passives-responses'>Get All Passives Responses</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/passives?access_token=myaccesstoken"</span>
@@ -753,7 +749,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>created</td>
 <td>hash</td>
 <td>{}</td>
-<td>Hash with properties used to filter your passives responses by time it can be used with params (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em></td>
+<td>Filter your responses by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
 </tbody></table>
 <h2 id='get-all-detractors-responses'>Get All Detractors Responses</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/detractors?access_token=myaccesstoken"</span>
@@ -822,7 +818,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>created</td>
 <td>hash</td>
 <td>{}</td>
-<td>Hash with properties used to filter your detractors responses by time it can be used with params (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em></td>
+<td>Filter your responses by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-response'>Get a Specific Response</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/2?access_token=myaccesstoken"</span>
@@ -1025,7 +1021,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET https://api.wootric.com/v1/declines</code></p>
 <h3 id='scope-parameters'>Scope Parameters</h3>
-<p>Scope parameters filter your responses and can also be chained together by passing multiple scope parameters in an array.</p>
+<p>Scope parameters filter your declines and can also be chained together by passing multiple scope parameters in an array.</p>
 
 <table><thead>
 <tr>
@@ -1051,7 +1047,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>created</td>
 <td>hash</td>
 <td>{}</td>
-<td>Hash with properties used to filter your responses by time it can be used with params (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em></td>
+<td>Filter your declines by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
 </tbody></table>
 <h2 id='get-all-end-user39s-declines'>Get All End User&rsquo;s Declines</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/declines?access_token=myaccesstoken"</span>
@@ -1114,7 +1110,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>created</td>
 <td>hash</td>
 <td>{}</td>
-<td>Hash with properties used to filter your declines by time it can be used with params (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em></td>
+<td>Filter your declines by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-decline'>Get a Specific Decline</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/declines/2?access_token=myaccesstoken"</span>
