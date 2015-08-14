@@ -69,7 +69,7 @@ Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
 page | integer | 1 | Number of returned page
 per_page | integer | 25 | Number of records returned on each page
-created | hash | {} | Hash with properties used to filter your responses by time it can be used with params (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte*
+created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
 
 ## Get All End User's Responses
 
@@ -124,7 +124,8 @@ Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
 page | integer | 1 | Number of returned page
 per_page | integer | 25 | Number of records returned on each page
-created | hash | {} | Hash with properties used to filter your responses by time it can be used with params (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte*
+created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
+
 
 ## Get All Promoters Responses
 
@@ -179,7 +180,8 @@ Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
 page | integer | 1 | Number of returned page
 per_page | integer | 25 | Number of records returned on each page
-created | hash | {} | Hash with properties used to filter your promoters responses by time it can be used with params (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte*
+created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
+
 
 ## Get All Passives Responses
 
@@ -234,7 +236,8 @@ Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
 page | integer | 1 | Number of returned page
 per_page | integer | 25 | Number of records returned on each page
-created | hash | {} | Hash with properties used to filter your passives responses by time it can be used with params (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte*
+created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
+
 
 ## Get All Detractors Responses
 
@@ -289,7 +292,8 @@ Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
 page | integer | 1 | Number of returned page
 per_page | integer | 25 | Number of records returned on each page
-created | hash | {} | Hash with properties used to filter your detractors responses by time it can be used with params (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte*
+created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
+
 
 ## Get a Specific Response
 

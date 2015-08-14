@@ -54,13 +54,13 @@ This endpoint retrieves all declines for the user.
 
 ### Scope Parameters
 
-Scope parameters filter your responses and can also be chained together by passing multiple scope parameters in an array.
+Scope parameters filter your declines and can also be chained together by passing multiple scope parameters in an array.
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
 page | integer | 1 | Number of returned page
 per_page | integer | 25 | Number of records returned on each page
-created | hash | {} | Hash with properties used to filter your responses by time it can be used with params (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte*
+created | hash | {} | Filter your declines by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
 
 ## Get All End User's Declines
 
@@ -109,7 +109,8 @@ Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
 page | integer | 1 | Number of returned page
 per_page | integer | 25 | Number of records returned on each page
-created | hash | {} | Hash with properties used to filter your declines by time it can be used with params (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte*
+created | hash | {} | Filter your declines by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
+
 
 ## Get a Specific Decline
 
