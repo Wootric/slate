@@ -34,8 +34,8 @@ Turkish | TR
 Dutch | NL
 Chinese (Simplified) | CN_S
 Chinese (Traditional) | CN_T
-Japanese | JP
+Japanese | JA
 Vietnamese | VN
 Russian | RU
-Swedish | SE
+Swedish | SV
 Norwegian | NO
