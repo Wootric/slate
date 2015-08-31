@@ -11,9 +11,6 @@ window.wootricSettings = {
   account_token: 'NPS­xxxxxxxx',
   twitter_account: 'twitteraccount',
   facebook_page: 'https://www.facebook.com/myPage',
-  social_message: 'social message',
-  social_link_text: 'Click me!',
-  social_link_url: 'http://example.com'};
 </script>
 ....//The rest of the widget...
 <!--­­ end Wootric code --­­>
