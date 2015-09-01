@@ -499,9 +499,6 @@ To set a custom language add <code class="prettyprint">language</code> parameter
   <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span><span class="p">,</span>
   <span class="na">twitter_account</span><span class="p">:</span> <span class="s1">'twitteraccount'</span><span class="p">,</span>
   <span class="na">facebook_page</span><span class="p">:</span> <span class="s1">'https://www.facebook.com/myPage'</span><span class="p">,</span>
-  <span class="na">social_message</span><span class="p">:</span> <span class="s1">'social message'</span><span class="p">,</span>
-  <span class="na">social_link_text</span><span class="p">:</span> <span class="s1">'Click me!'</span><span class="p">,</span>
-  <span class="na">social_link_url</span><span class="p">:</span> <span class="s1">'http://example.com'</span><span class="p">}</span><span class="err">;</span>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
 <span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
@@ -513,6 +510,99 @@ In order to do that, you need to configure <code class="prettyprint">wootricSett
 <p>If configured properly, Wootric will display a third page, right after promoter submits feedback, asking &ldquo;Would you be willing to share your positive comments?&rdquo; and allowing the end user to &ldquo;like&rdquo; your Facebook page or share a comment through the Twitter.</p>
 
 <p>You may also provide <code class="prettyprint">social_message</code>, <code class="prettyprint">social_link_text</code> and <code class="prettyprint">social_link_url</code>. If social message is provided it will replace &ldquo;Would you be willing to share your positive comments?&rdquo; text. Providing social link text and url (both are required for this option to work) will display additional link on a third page as a <code class="prettyprint">social_link_text</code> leading to <code class="prettyprint">social_link_url</code>. With both text and url provided you don&rsquo;t have to configure <code class="prettyprint">twitter_account</code> and/or <code class="prettyprint">facebook_page</code> for the &ldquo;social share page&rdquo; to show up.</p>
+
+<h1 id='custom-thank-you-settings'>Custom Thank You Settings</h1><pre><code class="highlight javascript"><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="nx">wootric_first_survey</span><span class="o">=</span><span class="mi">45</span><span class="p">;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span>
+  <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span>
+  <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span><span class="p">,</span>
+  <span class="na">twitter_account</span><span class="p">:</span> <span class="s1">'twitteraccount'</span><span class="p">,</span>
+  <span class="na">facebook_page</span><span class="p">:</span> <span class="s1">'https://www.facebook.com/myPage'</span>
+<span class="p">...</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">Wootric</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">thankYouMessages</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">thank_you_setup</span><span class="p">:</span> <span class="s1">'Thank you for all scores!'</span><span class="p">,</span>
+    <span class="na">thank_you_setup_list</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">detractor_thank_you_setup</span><span class="p">:</span> <span class="s1">'Detractor thank you'</span><span class="p">,</span>
+      <span class="na">passive_thank_you_setup</span><span class="p">:</span> <span class="s1">'Passive thank you'</span><span class="p">,</span>
+      <span class="na">promoter_thank_you_setup</span><span class="p">:</span> <span class="s1">'Promoter thank you'</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="na">thankYouLinks</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">thank_you_link_text</span><span class="p">:</span> <span class="s1">'Thank you text for all scores!'</span><span class="p">,</span>
+    <span class="na">thank_you_link_url</span><span class="p">:</span> <span class="s1">'Thank you url for all scores!'</span><span class="p">,</span>
+    <span class="na">thank_you_link_text_list</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">detractor_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Detractor thank you text'</span><span class="p">,</span>
+      <span class="na">passive_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Passive thank you text'</span><span class="p">,</span>
+      <span class="na">promoter_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Promoter thank you text'</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">thank_you_link_url_list</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">detractor_thank_you_link_url</span><span class="p">:</span> <span class="s1">'Detractor thank you url'</span><span class="p">,</span>
+      <span class="na">passive_thank_you_link_url</span><span class="p">:</span> <span class="s1">'Passive thank you url'</span><span class="p">,</span>
+      <span class="na">promoter_thank_you_link_url</span><span class="p">:</span> <span class="s1">'Promoter thank you url'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
+<span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
+</code></pre>
+
+<p>Wootric allows you also to display a customized button and &lsquo;thank you&rsquo; message on a third page of the survey. This feature can be configured to work for all scores.</p>
+
+<p>The <code class="prettyprint">Wootric.thankYouMessages</code> object can contain <code class="prettyprint">thank_you_setup</code> which is default value for every score if <code class="prettyprint">thank_you_setup_list</code> is not provided, or a default value for keys missing in <code class="prettyprint">thank_you_setup_list</code></p>
+
+<p>The <code class="prettyprint">Wootric.thankYouLinks</code> object can contain <code class="prettyprint">thank_you_link_text</code> and <code class="prettyprint">thank_you_link_url</code> which are default text/url for every score if <code class="prettyprint">thank_you_link_text_list</code>/<code class="prettyprint">thank_you_link_url_list</code> are not provided or are missing appropriate keys.</p>
+
+<h1 id='custom-thank-you-examples'>Custom Thank You Examples</h1><pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">1</span> <span class="o">--&gt;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">thankYouMessages</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">thank_you_setup</span><span class="p">:</span> <span class="s1">'Thank you for all scores!'</span><span class="p">,</span>
+  <span class="na">thank_you_setup_list</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">promoter_thank_you_setup</span><span class="p">:</span> <span class="s1">'Promoter thank you'</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+<h3 id='example-1'>Example 1</h3>
+<p>We have defined <code class="prettyprint">thank_you_setup</code> and <code class="prettyprint">promoter_thank_you_setup</code> in <code class="prettyprint">thank_you_setup_list</code>. Therefore on a third page we will display &lsquo;Thank you for all scores!&rsquo; text for passives and detractors, and &lsquo;Promoter thank you&rsquo; for promoters.</p>
+<pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">2</span> <span class="o">--&gt;</span>
+<span class="kd">var</span> <span class="nx">Wootric</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">thankYouLinks</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">thank_you_link_text</span><span class="p">:</span> <span class="s1">'Thank you text for all scores!'</span><span class="p">,</span>
+    <span class="na">thank_you_link_url</span><span class="p">:</span> <span class="s1">'http://example.com'</span><span class="p">,</span>
+    <span class="na">thank_you_link_text_list</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">promoter_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Promoter thank you text'</span>
+    <span class="p">},</span>
+    <span class="na">thank_you_link_url_list</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">detractor_thank_you_link_url</span><span class="p">:</span> <span class="s1">'http://detractor.com'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+<h3 id='example-2'>Example 2</h3>
+<p>We have defined both <code class="prettyprint">thank_you_link_text</code> and <code class="prettyprint">thank_you_link_url</code>. We have also defined <code class="prettyprint">promoter_thank_you_link_text</code> and <code class="prettyprint">detractor_thank_you_link_url</code> in respectively <code class="prettyprint">thank_you_link_text_list</code> and <code class="prettyprint">thank_you_link_url_list</code>. This means that we are going to display button with text &lsquo;Promoter thank you text&rsquo; which opens a &lsquo;http://example.com&rsquo; url for a promoter. Passive is going to see button with text &lsquo;Thank you text for all scores!&rsquo; and url &lsquo;http://example.com&rsquo;, while detractor&rsquo;s button url would be &lsquo;http://detractor.com&rsquo; with the same text as passive.</p>
+<pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">3</span> <span class="o">--&gt;</span>
+<span class="kd">var</span> <span class="nx">Wootric</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// thankYouMessages not defined</span>
+  <span class="na">thankYouLinks</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">thank_you_link_text</span><span class="p">:</span> <span class="s1">'Thank you text for all scores!'</span><span class="p">,</span>
+    <span class="na">thank_you_link_text_list</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">detractor_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Detractor thank you text'</span><span class="p">,</span>
+      <span class="na">passive_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Passive thank you text'</span><span class="p">,</span>
+      <span class="na">promoter_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Promoter thank you text'</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">thank_you_link_url_list</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">detractor_thank_you_link_url</span><span class="p">:</span> <span class="s1">'Detractor thank you url'</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+<h3 id='example-3'>Example 3</h3>
+<p>With this kind of setting we are missing the default <code class="prettyprint">thank_you_link_url</code> and have only detractor url defined. With no <code class="prettyprint">Wootric.thankYouMessages</code> object defined, we will display third page only for detractors if social media share (Facebook and Twitter) is also not defined (because there is no message to display and we can show complete button only for detractors).</p>
 
 
       </div>
