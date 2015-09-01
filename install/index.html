@@ -560,10 +560,12 @@ In order to do that, you need to configure <code class="prettyprint">wootricSett
 <p>The <code class="prettyprint">Wootric.thankYouLinks</code> object can contain <code class="prettyprint">thank_you_link_text</code> and <code class="prettyprint">thank_you_link_url</code> which are default text/url for every score if <code class="prettyprint">thank_you_link_text_list</code>/<code class="prettyprint">thank_you_link_url_list</code> are not provided or are missing appropriate keys.</p>
 
 <h1 id='custom-thank-you-examples'>Custom Thank You Examples</h1><pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">1</span> <span class="o">--&gt;</span>
-<span class="nb">window</span><span class="p">.</span><span class="nx">thankYouMessages</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">thank_you_setup</span><span class="p">:</span> <span class="s1">'Thank you for all scores!'</span><span class="p">,</span>
-  <span class="na">thank_you_setup_list</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">promoter_thank_you_setup</span><span class="p">:</span> <span class="s1">'Promoter thank you'</span>
+<span class="kd">var</span> <span class="nx">Wootric</span> <span class="o">=</span> <span class="p">{</span>
+<span class="na">thankYouMessages</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">thank_you_setup</span><span class="p">:</span> <span class="s1">'Thank you for all scores!'</span><span class="p">,</span>
+    <span class="na">thank_you_setup_list</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">promoter_thank_you_setup</span><span class="p">:</span> <span class="s1">'Promoter thank you'</span>
+    <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
 </code></pre>
