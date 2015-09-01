@@ -2,10 +2,12 @@
 
 ```javascript
 <!-- Example 1 -->
-window.thankYouMessages = {
-  thank_you_setup: 'Thank you for all scores!',
-  thank_you_setup_list: {
-    promoter_thank_you_setup: 'Promoter thank you'
+var Wootric = {
+  thankYouMessages: {
+    thank_you_setup: 'Thank you for all scores!',
+    thank_you_setup_list: {
+      promoter_thank_you_setup: 'Promoter thank you'
+    }
   }
 };
 ```
