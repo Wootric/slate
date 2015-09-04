@@ -525,6 +525,8 @@ In order to do that, you need to configure <code class="prettyprint">wootricSett
 <span class="p">};</span>
 
 <span class="kd">var</span> <span class="nx">Wootric</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">add_score_param_to_url</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">add_comment_param_to_url</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="na">thankYouMessages</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">thank_you_setup</span><span class="p">:</span> <span class="s1">'Thank you for all scores!'</span><span class="p">,</span>
     <span class="na">thank_you_setup_list</span><span class="p">:</span> <span class="p">{</span>
@@ -558,6 +560,8 @@ In order to do that, you need to configure <code class="prettyprint">wootricSett
 <p>The <code class="prettyprint">Wootric.thankYouMessages</code> object can contain <code class="prettyprint">thank_you_setup</code> which is default value for every score if <code class="prettyprint">thank_you_setup_list</code> is not provided, or a default value for keys missing in <code class="prettyprint">thank_you_setup_list</code></p>
 
 <p>The <code class="prettyprint">Wootric.thankYouLinks</code> object can contain <code class="prettyprint">thank_you_link_text</code> and <code class="prettyprint">thank_you_link_url</code> which are default text/url for every score if <code class="prettyprint">thank_you_link_text_list</code>/<code class="prettyprint">thank_you_link_url_list</code> are not provided or are missing appropriate keys.</p>
+
+<p>If you are using your own url and would like to pass score and/or comment as a parameters, you can set <code class="prettyprint">add_score_param_to_url</code> and/or <code class="prettyprint">add_comment_param_to_url</code> keys to <code class="prettyprint">true</code>. If you have set for example <code class="prettyprint">&quot;http://promoterurl.com/endpoint&quot;</code> as your url, setting both of the keys to true will result in the url being <code class="prettyprint">http://promoterurl.com/endpoint?wootric_score=SCORE&amp;wootric_comment=COMMENT</code>. As you can see in the example - parameters names are <code class="prettyprint">wootric_score</code> for score and <code class="prettyprint">wootric_comment</code> for comment.</p>
 
 <h1 id='custom-thank-you-examples'>Custom Thank You Examples</h1><pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">1</span> <span class="o">--&gt;</span>
 <span class="kd">var</span> <span class="nx">Wootric</span> <span class="o">=</span> <span class="p">{</span>
