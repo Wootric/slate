@@ -15,8 +15,8 @@ window.wootricSettings = {
 };
 
 var Wootric = {
-  add_score_param_to_url: false,
-  add_comment_param_to_url: false,
+  add_score_param_to_url: true,
+  add_comment_param_to_url: true,
   thankYouMessages: {
     thank_you_setup: 'Thank you for all scores!',
     thank_you_setup_list: {
@@ -51,4 +51,8 @@ The ```Wootric.thankYouMessages``` object can contain ```thank_you_setup``` whic
 
 The ```Wootric.thankYouLinks``` object can contain ```thank_you_link_text``` and ```thank_you_link_url``` which are default text/url for every score if ```thank_you_link_text_list```/```thank_you_link_url_list``` are not provided or are missing appropriate keys.
 
-If you are using your own url and would like to pass score and/or comment as a parameters, you can set ```add_score_param_to_url``` and/or ```add_comment_param_to_url``` keys to ```true```. If you have set for example ```"http://promoterurl.com/endpoint"``` as your url, setting both of the keys to true will result in the url being ```http://promoterurl.com/endpoint?wootric_score=SCORE&wootric_comment=COMMENT```. As you can see in the example - parameters names are ```wootric_score``` for score and ```wootric_comment``` for comment.
+If you are using your own url and would like to pass score and/or comment as a parameters, you can set ```add_score_param_to_url``` and/or ```add_comment_param_to_url``` keys to ```true```. You can skip them entirely in ```Wootric``` var if they are not needed.
+
+Parameters names are ```wootric_score``` for score and ```wootric_comment``` for comment.
+
+If you have set for example ```"http://promoterurl.com/endpoint"``` as your url, setting both of the keys to true will result in the url being ```http://promoterurl.com/endpoint?wootric_score=SCORE&wootric_comment=COMMENT```.
