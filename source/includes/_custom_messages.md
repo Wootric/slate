@@ -1,10 +1,13 @@
 # Custom Messages
 
-Wootric allows you to specify additional custom messages.
+Wootric allows you to customize messaging within the survey.
 This is done with the **customMessages** object.
 
-**Note:**
-If the customMessages object is not specified, the default messages will
+**Note:** This method is for advanced/custom installs only. Custom messages can be
+set within the [Wootric settings
+page](https://www.wootric.com/user_settings/edit#!/survey-follow).
+
+When the customMessages object is not specified, the default messages will
 be presented instead. By default, we present the following messages:
 
 * The default Wootric question:
