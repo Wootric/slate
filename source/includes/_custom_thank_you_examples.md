@@ -14,7 +14,7 @@ var Wootric = {
 
 ###Example 1
 
-We have defined ```thank_you_setup``` and ```promoter_thank_you_setup``` in ```thank_you_setup_list```. Therefore on a third page we will display 'Thank you for all scores!' text for passives and detractors, and 'Promoter thank you' for promoters.
+We have defined `thank_you_setup` and `promoter_thank_you_setup` in `thank_you_setup_list`. Therefore on a third page we will display 'Thank you for all scores!' text for passives and detractors, and 'Promoter thank you' for promoters.
 
  ```javascript
 <!-- Example 2 -->
@@ -31,9 +31,10 @@ var Wootric = {
   }
 };
 ```
+
 ###Example 2
 
-We have defined both ```thank_you_link_text``` and ```thank_you_link_url```. We have also defined ```promoter_thank_you_link_text``` and ```detractor_thank_you_link_url``` in respectively ```thank_you_link_text_list``` and ```thank_you_link_url_list```. This means that we are going to display button with text 'Promoter thank you text' which opens a 'http://example.com' url for a promoter. Passive is going to see button with text 'Thank you text for all scores!' and url 'http://example.com', while detractor's button url would be 'http://detractor.com' with the same text as passive.
+We have defined both `thank_you_link_text` and `thank_you_link_url`. We have also defined `promoter_thank_you_link_text` and `detractor_thank_you_link_url` in respectively `thank_you_link_text_list` and `thank_you_link_url_list`. This means that we are going to display button with text 'Promoter thank you text' which opens a 'http://example.com' url for a promoter. Passive is going to see button with text 'Thank you text for all scores!' and url 'http://example.com', while detractor's button url would be 'http://detractor.com' with the same text as passive.
 
 ```javascript
 <!-- Example 3 -->
@@ -52,6 +53,7 @@ var Wootric = {
   }
 };
 ```
+
 ###Example 3
 
-With this kind of setting we are missing the default ```thank_you_link_url``` and have only detractor url defined. With no ```Wootric.thankYouMessages``` object defined, we will display third page only for detractors if social media share (Facebook and Twitter) is also not defined (because there is no message to display and we can show complete button only for detractors).
+With this kind of setting we are missing the default `thank_you_link_url` and have only detractor url defined. With no `Wootric.thankYouMessages` object defined, we will display third page only for detractors if social media share (Facebook and Twitter) is also not defined (because there is no message to display and we can show complete button only for detractors).

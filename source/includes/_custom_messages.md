@@ -82,9 +82,7 @@ There are the following properties that you may specify:
 * passive_question
 * promoter_question
 
-If you set e.g. one property of the three available, you will see the message
-for the property that you have specified. For the rest of the properties,
-the default message will be presented according to the score that the user has selected.
+If you set e.g. one property of the three available, you will see the message for the property that you have specified. For the rest of the properties, the default message will be presented according to the score that the user has selected.
 
 ```javascript
 
@@ -152,8 +150,7 @@ window.customMessages = {
 ```
 
 ## placeholder_text
-Contains a placeholder text that is presented to the user
-after selecting the score.
+Contains a placeholder text that is presented to the user after selecting the score.
 
 If this property is not specified, the default placeholder will be shown instead.
 
@@ -172,9 +169,7 @@ Currently we offer the following properties for you to specify:
 * passive_text
 * promoter_text
 
-If you set e.g. one placeholder property of the three available, you will see the message
-for the property that you have specified. For the rest of the properties,
-the default placeholder text will be presented according to the score that the user has selected.
+If you set e.g. one placeholder property of the three available, you will see the message for the property that you have specified. For the rest of the properties, the default placeholder text will be presented according to the score that the user has selected.
 
 ```javascript
 window.customMessages = {
@@ -187,8 +182,7 @@ window.customMessages = {
 ```
 
 ## detractor_text
-Contains a placeholder text presented to a detractor when the score
-value from the range of 0-6 has been selected.
+Contains a placeholder text presented to a detractor when the score value from the range of 0-6 has been selected.
 
 ```javascript
 window.customMessages = {
@@ -199,8 +193,7 @@ window.customMessages = {
 ```
 
 ## passive_text
-Contains a placeholder text presented to a passive when the score
-value from the range of 7-8 has been selected.
+Contains a placeholder text presented to a passive when the score value from the range of 7-8 has been selected.
 
 ```javascript
 window.customMessages = {
@@ -211,8 +204,7 @@ window.customMessages = {
 ```
 
 ## promoter_text
-Contains a placeholder text presented to a promoter when the score
-value from the range of 9-10 has been selected.
+Contains a placeholder text presented to a promoter when the score value from the range of 9-10 has been selected.
 
 ```javascript
 window.customMessages = {

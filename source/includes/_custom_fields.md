@@ -30,8 +30,8 @@ window.wootricSettings = {
 <!--­­ end Wootric code --­­>
 ```
 You add custom attributes within the Wootric JS code snippet as additional key/value pairs.
-**Make sure to double check that your custom attribute keys always have a JSON­ valid
-value**; this means quotes around strings and sending null as a value when there isn’t a value for
+**Make sure to double check that your custom attribute keys always have a JSON valid
+value**; this means quotes around strings and sending null as a value when there isn't a value for
 that user.
 
 Wootric currently supports Integers, Strings, and Unix formatted dates as values.
@@ -40,8 +40,6 @@ Integers must be suffixed with _amount and dates must be in Unix timestamp forma
 
 Keys cannot contain characters such as '$', '.' or the NULL character.
 Values cannot be nested hashes or arrays.
-
-
 
 ## What Custom Attributes can I send to Wootric?
 Send any custom attributes you like to Wootric, as long as they are in a string, integer, or date format. We find that

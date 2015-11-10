@@ -1,6 +1,6 @@
 # Installing Wootric
 
-## Step 1. ­Add the code
+## Step 1. Add the code
 ```javascript
 <!-- begin Wootric code -->
 <script type="text/javascript">
@@ -15,8 +15,7 @@ window.wootricSettings = {
 <!-- end Wootric code -->
 ```
 Once you are signed up on the Wootric homepage, you will be taken directly to an installation
-page. If you’re a returning visitor, sign in at [wootric.com](https://www.wootric.com/) and click on the “Settings" button near the top right of the page. Navigate to the [Javascript Setup Guide](https://www.wootric.com/install) and you will see a code snippet with a unique
-account_token for you to install.
+page. If you're a returning visitor, sign in at [wootric.com](https://www.wootric.com/) and click on the "Settings" button near the top right of the page. Navigate to the [Javascript Setup Guide](https://www.wootric.com/install) and you will see a code snippet with a unique account_token for you to install.
 
 ##Step 2. Customize the Survey
 
@@ -46,7 +45,7 @@ Responses will come in to your Wootric dash in real time.
 ### **No data yet?**
 We provide a link within your empty dashboard to a sample dash with dummy
 data.
-### **I’d like to do some testing first. How do I ensure that the survey shows up on demand?**
+### **I'd like to do some testing first. How do I ensure that the survey shows up on demand?**
 
 You can easily install Wootric in your development environment for testing. The snippet is
 already set up to show the survey immediately for testing purposes only.
