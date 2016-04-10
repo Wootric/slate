@@ -15,12 +15,12 @@ window.wootricSettings = {
 <!-- end Wootric code -->
 ```
 Once you are signed up on the Wootric homepage, you will be taken directly to an installation
-page. If you’re a returning visitor, sign in at [wootric.com](https://www.wootric.com/) and click on the “Settings" button near the top right of the page. Navigate to the [Javascript Setup Guide](https://www.wootric.com/install) and you will see a code snippet with a unique
+page. If you’re a returning visitor, sign in at [wootric.com](https://www.wootric.com/) and click on the “Settings" button near the top right of the page. Navigate to the [Javascript Setup Guide](https://app.wootric.com/install) and you will see a code snippet with a unique
 account_token for you to install.
 
 ##Step 2. Customize the Survey
 
-This is an important step! [Customize](https://www.wootric.com/user_settings/edit#!/survey-nps) your survey with the name of your product or company. As needed, make changes to our trusted [survey](https://www.wootric.com/user_settings/edit#!/survey-nps) and [sampling](https://www.wootric.com/user_settings/edit#!/sampling) defaults.
+This is an important step! [Customize](https://app.wootric.com/user_settings/edit#!/survey-nps) your survey with the name of your product or company. As needed, make changes to our trusted [survey](https://app.wootric.com/user_settings/edit#!/survey-nps) and [sampling](https://app.wootric.com/user_settings/edit#!/sampling) defaults.
 
 ## Step 3. View your Responses Live!
 > Comment out the line wootric_survey_immediately = true when you are ready for production. Alternatively, leave the line in the code for testing purposes or to survey the customer upon every visit to a specific page.

@@ -2,6 +2,22 @@
 
 There are three settings available for customizing the wootric modal: ```modal_theme```, ```modal_footprint``` and ```modal_position```. If no settings are provided the modal will default to "light normal bottom", same if you skipped some of them - default value will be used for the missing ones.
 
+## wootric_recommend_target
+```javascript
+window.wootricSettings = {
+  wootric_recommend_target: "Custom Wootric recommend target text"
+};
+```
+Contains a customized recommend target text that is the end part of the
+question.
+By default, when this property is not set, we display:
+"How likely are you to recommend Wootric to a friend or co-worker?"
+
+Example:
+
+If wootric_recommend_target = "your friends", the question will result in:
+"How likely are you to recommend Wootric to your friends?"
+
 ## Modal theme settings
 ```javascript
 <!­­ begin Wootric code ­­>

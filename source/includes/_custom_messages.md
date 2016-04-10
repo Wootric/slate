@@ -5,7 +5,7 @@ This is done with the **customMessages** object.
 
 **Note:** This method is for advanced/custom installs only. Custom messages can be
 set within the [Wootric settings
-page](https://www.wootric.com/user_settings/edit#!/survey-follow).
+page](https://app.wootric.com/user_settings/edit#!/survey-follow).
 
 When the customMessages object is not specified, the default messages will
 be presented instead. By default, we present the following messages:
@@ -18,14 +18,6 @@ be presented instead. By default, we present the following messages:
 **"Help us by explaining your score."**
 
 ## Full example
-
-This example shows how the full ready Wootric snippet looks like with
-the custom messages specified.
-
-For instance, if the **followup_question** and **followup_questions_list** properties
-are set at the same time, the messages from the **followup_questions_list** property
-will be shown.
-
 ```javascript
 
 <!-- begin Wootric code -->
@@ -43,7 +35,6 @@ will be shown.
           passive_question: "Custom message for passives",
           promoter_question: "Custom message for promoters"
       },
-      wootric_recommend_target: "Custom Wootric recommend target text",
       placeholder_text: "Custom placeholder for all scores",
       placeholder_texts_list: {
         detractor_text: "Custom placeholder text for detractors",
@@ -53,17 +44,17 @@ will be shown.
   };
 </script>
 <!--­­ end Wootric code --­­>
-
 ```
 
+This example shows how the full ready Wootric snippet looks like with
+the custom messages specified.
+
+For instance, if the **followup_question** and **followup_questions_list** properties
+are set at the same time, the messages from the **followup_questions_list** property
+will be shown.
+
+
 ## followup_question
-
-Defines the main follow-up question for all scores.
-Therefore, you will see the same question, regardless of which score you have chosen.
-
-If this property is not specified, the default follow-up question will be
-shown instead.
-
 > This will be shown after choosing the score regardless of its value.
 
 ```javascript
@@ -71,6 +62,13 @@ window.customMessages = {
       followup_question: "Custom message for all scores",
   };
 ```
+
+Defines the main follow-up question for all scores.
+Therefore, you will see the same question, regardless of which score you have chosen.
+
+If this property is not specified, the default follow-up question will be
+shown instead.
+
 
 ## followup_questions_list
 An object that contains custom messages for detractors,
@@ -134,23 +132,6 @@ window.customMessages = {
 };
 ```
 
-## wootric_recommend_target
-Contains a customized recommend target text that is the end part of the
-question.
-By default, when this property is not set, we display:
-"How likely are you to recommend Wootric to a friend or co-worker?"
-
-Example:
-
-If wootric_recommend_target = "your friends", the question will result in:
-"How likely are you to recommend Wootric to your friends?"
-
-```javascript
-window.customMessages = {
-  wootric_recommend_target: "Custom Wootric recommend target text"
-};
-```
-
 ## placeholder_text
 Contains a placeholder text that is presented to the user
 after selecting the score.
@@ -164,6 +145,15 @@ window.customMessages = {
 ```
 
 ## placeholder_texts_list
+```javascript
+window.customMessages = {
+  placeholder_texts_list: {
+    detractor_text: "Custom placeholder text for detractors",
+    passive_text: "Custom placeholder text for passives",
+    promoter_text: "Custom placeholder text for promoters"
+  }
+};
+```
 An object that holds custom placeholder texts for detractors, passives and promoters.
 
 Currently we offer the following properties for you to specify:
@@ -176,15 +166,6 @@ If you set e.g. one placeholder property of the three available, you will see th
 for the property that you have specified. For the rest of the properties,
 the default placeholder text will be presented according to the score that the user has selected.
 
-```javascript
-window.customMessages = {
-  placeholder_texts_list: {
-    detractor_text: "Custom placeholder text for detractors",
-    passive_text: "Custom placeholder text for passives",
-    promoter_text: "Custom placeholder text for promoters"
-  }
-};
-```
 
 ## detractor_text
 Contains a placeholder text presented to a detractor when the score
