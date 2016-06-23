@@ -36,12 +36,12 @@
 <p>All responses from the API (including errors) are in JSON. All code examples are in cURL.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
-<p>To retrieve an access token using oauth, use the following code:</p>
+<p>To retrieve an access token using OAuth, use the following code:</p>
 </blockquote>
 <pre><code class="highlight shell">curl -i https://api.wootric.com/oauth/token <span class="se">\</span>
--F <span class="nv">grant_type</span><span class="o">=</span>password <span class="se">\</span>
--F <span class="nv">username</span><span class="o">=</span>&lt;youremailaddress&gt;<span class="se">\</span>
--F <span class="nv">password</span><span class="o">=</span>&lt;yourpassword&gt;
+     -F <span class="nv">grant_type</span><span class="o">=</span>password <span class="se">\</span>
+     -F <span class="nv">username</span><span class="o">=</span>&lt;youremailaddress&gt; <span class="se">\</span>
+     -F <span class="nv">password</span><span class="o">=</span>&lt;yourpassword&gt;
 </code></pre>
 
 <blockquote>
@@ -60,8 +60,8 @@
 <p>To retrieve a new access token after it has expired, use this code:</p>
 </blockquote>
 <pre><code class="highlight shell">curl -i https://api.wootric.com/oauth/token <span class="se">\</span>
--F <span class="nv">grant_type</span><span class="o">=</span>refresh_token <span class="se">\</span>
--F <span class="nv">refresh_token</span><span class="o">=</span><span class="s2">"&lt;yourrefreshtoken&gt;"</span>
+     -F <span class="nv">grant_type</span><span class="o">=</span>refresh_token <span class="se">\</span>
+     -F <span class="nv">refresh_token</span><span class="o">=</span><span class="s2">"&lt;yourrefreshtoken&gt;"</span>
 </code></pre>
 
 <blockquote>
@@ -80,9 +80,9 @@
 <p>To retrieve an access token using credentials, use this code:</p>
 </blockquote>
 <pre><code class="highlight shell">curl -X POST https://api.wootric.com/oauth/token <span class="se">\</span>
--F <span class="nv">grant_type</span><span class="o">=</span>client_credentials <span class="se">\</span>
--F <span class="nv">client_id</span><span class="o">=</span>&lt;yourclientid&gt; <span class="se">\</span>
--F <span class="nv">client_secret</span><span class="o">=</span>&lt;yourclientsecret&gt;
+     -F <span class="nv">grant_type</span><span class="o">=</span>client_credentials <span class="se">\</span>
+     -F <span class="nv">client_id</span><span class="o">=</span>&lt;yourclientid&gt; <span class="se">\</span>
+     -F <span class="nv">client_secret</span><span class="o">=</span>&lt;yourclientsecret&gt;
 </code></pre>
 
 <blockquote>
@@ -100,7 +100,7 @@
 
 <p>Wootric expects the access token key to be included in all API requests that use grant_type of &ldquo;password&rdquo;:</p>
 
-<p><code class="prettyprint">https://api.wootric.com/v1/end_users.json?access_token=myaccesstoken</code></p>
+<p><code class="prettyprint">https://api.wootric.com/v1/end_users?access_token=myaccesstoken</code></p>
 
 <p>If you are using grant_type of &ldquo;client_credentials,&rdquo; you need to send the access token as a request header:</p>
 
@@ -125,7 +125,7 @@ You must replace <code class="prettyprint">myaccesstoken</code> with your person
 <tr>
 <td>id</td>
 <td>integer</td>
-<td>The id of end user</td>
+<td>The ID of end user</td>
 </tr>
 <tr>
 <td>created_at</td>
@@ -150,12 +150,7 @@ You must replace <code class="prettyprint">myaccesstoken</code> with your person
 <tr>
 <td>external_created_at</td>
 <td>integer</td>
-<td></td>
-</tr>
-<tr>
-<td>user_id</td>
-<td>integer</td>
-<td>The id of user</td>
+<td>UNIX timestamp of when the end user was created externally</td>
 </tr>
 <tr>
 <td>page_views_count</td>
@@ -236,9 +231,13 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>{}</td>
 <td>Filter your end users by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
+<tr>
+<td>email (optional)</td>
+<td>string</td>
+<td>None</td>
+<td>Filter end users by email (will return an array containing a single end user object if the end user with provided email exists)</td>
+</tr>
 </tbody></table>
-
-<p>email (optional) | string | None | Filter end users by email (will return an array containing a single end user object if the end user with provided email exists)</p>
 <h2 id='get-a-specific-end-user'>Get a Specific End User</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/2?access_token=myaccesstoken"</span>
 
 or
@@ -264,7 +263,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 
 <p>This endpoint retrieves a specific end user.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/&lt;id&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -273,15 +272,15 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
+<td>id</td>
 <td>The ID of the end user to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='create-end-user'>Create End User</h2><pre><code class="highlight shell">curl -X POST <span class="s2">"https://api.wootric.com/v1/end_users?access_token=myaccesstoken"</span> -d <span class="s2">"email=enduser@example.com;last_surveyed=1423732280;properties[company]=TestCompany&amp;properties[city]=San Francisco"</span>
+<h2 id='create-end-user'>Create End User</h2><pre><code class="highlight shell">curl -X POST <span class="s2">"https://api.wootric.com/v1/end_users?access_token=myaccesstoken"</span> -d <span class="s2">"email=enduser@example.com&amp;last_surveyed=1423732280&amp;properties[company]=TestCompany&amp;properties[city]=San Francisco"</span>
 
 or
 
-curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users"</span> -d <span class="s2">"email=enduser@example.com;last_surveyed=1423732280;properties[company]=TestCompany&amp;properties[city]=San Francisco"</span>
+curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users"</span> -d <span class="s2">"email=enduser@example.com&amp;last_surveyed=1423732280&amp;properties[company]=TestCompany&amp;properties[city]=San Francisco"</span>
 </code></pre>
 
 <blockquote>
@@ -311,8 +310,8 @@ curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <s
 </tr>
 </thead><tbody>
 <tr>
-<td>EMAIL</td>
-<td>End User&rsquo;s Email Address</td>
+<td>email</td>
+<td>End user&rsquo;s email address</td>
 </tr>
 <tr>
 <td>last_surveyed (optional)</td>
@@ -327,11 +326,11 @@ curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <s
 <td>Hash of additional properties</td>
 </tr>
 </tbody></table>
-<h2 id='update-end-user'>Update End User</h2><pre><code class="highlight shell">curl -X PUT <span class="s2">"https://api.wootric.com/v1/end_users/1?access_token=myaccesstoken"</span> -d <span class="s2">"email=enduser_new@example.com;properties[company]=NewCompany&amp;properties[city]=New Reno"</span>
+<h2 id='update-end-user'>Update End User</h2><pre><code class="highlight shell">curl -X PUT <span class="s2">"https://api.wootric.com/v1/end_users/1?access_token=myaccesstoken"</span> -d <span class="s2">"email=enduser_new@example.com&amp;properties[company]=NewCompany&amp;properties[city]=New Reno"</span>
 
 or
 
-curl -X PUT -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1"</span> -d <span class="s2">"email=enduser_new@example.com;properties[company]=NewCompany&amp;properties[city]=New Reno"</span>
+curl -X PUT -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1"</span> -d <span class="s2">"email=enduser_new@example.com&amp;properties[company]=NewCompany&amp;properties[city]=New Reno"</span>
 </code></pre>
 
 <blockquote>
@@ -406,7 +405,7 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
 
 <p>This endpoint deletes the end user.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">DELETE https://api.wootric.com/v1/end_users/&lt;END_USER_ID&gt;</code></p>
+<p><code class="prettyprint">DELETE https://api.wootric.com/v1/end_users/&lt;end_user_id&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -415,7 +414,7 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
 </tr>
 </thead><tbody>
 <tr>
-<td>END_USER_ID</td>
+<td>end_user_id</td>
 <td>The ID of the end user to delete</td>
 </tr>
 </tbody></table>
@@ -433,7 +432,7 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
 <tr>
 <td>id</td>
 <td>integer</td>
-<td>The id of response</td>
+<td>The ID of response</td>
 </tr>
 <tr>
 <td>created_at</td>
@@ -443,7 +442,7 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
 <tr>
 <td>updated_at</td>
 <td>datetime</td>
-<td>Datetime representation of when the response was lately updated</td>
+<td>Datetime representation of when the response was last updated</td>
 </tr>
 <tr>
 <td>score</td>
@@ -468,12 +467,22 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
 <tr>
 <td>end_user_id</td>
 <td>integer</td>
-<td>The id of end user</td>
+<td>The ID of end user</td>
 </tr>
 <tr>
-<td>user_id</td>
+<td>survey_id</td>
 <td>integer</td>
-<td>The if of user</td>
+<td>ID of the survey to which the response belongs</td>
+</tr>
+<tr>
+<td>completed</td>
+<td>boolean</td>
+<td>Specifies if a response has been completed</td>
+</tr>
+<tr>
+<td>excluded_from_calculations</td>
+<td>boolean</td>
+<td>Specifies if a response should be excluded from calculations</td>
 </tr>
 </tbody></table>
 <h2 id='get-all-responses'>Get All Responses</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/responses?access_token=myaccesstoken"</span>
@@ -846,7 +855,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 
 <p>This endpoint retrieves a specific response.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/responses/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/&lt;end_user_id&gt;/responses/&lt;id&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -855,24 +864,24 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 </tr>
 </thead><tbody>
 <tr>
-<td>END_USER_ID</td>
+<td>end_user_id</td>
 <td>The ID of the end user</td>
 </tr>
 <tr>
-<td>ID</td>
+<td>id</td>
 <td>The ID of the decline to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='create-response'>Create Response</h2><pre><code class="highlight shell">curl -X POST <span class="s2">"https://api.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken"</span> -d <span class="s2">"score=5;text=test response;ip_address=192.168.0.1;origin_url=http://example.com"</span>
+<h2 id='create-response'>Create Response</h2><pre><code class="highlight shell">curl -X POST <span class="s2">"https://api.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken"</span> -d <span class="s2">"score=5&amp;text=test response&amp;ip_address=192.168.0.1&amp;origin_url=http://example.com"</span>
 
 or
 
-curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses"</span> -d <span class="s2">"score=5;text=test response;ip_address=192.168.0.1;origin_url=http://example.com"</span>
+curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses"</span> -d <span class="s2">"score=5&amp;text=test response&amp;ip_address=192.168.0.1&amp;origin_url=http://example.com"</span>
 </code></pre>
 
 <p>This endpoint creates a response for the end user.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">POST https://api.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/responses</code></p>
+<p><code class="prettyprint">POST https://api.wootric.com/v1/end_users/&lt;end_user_id&gt;/responses</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -881,19 +890,19 @@ curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <s
 </tr>
 </thead><tbody>
 <tr>
-<td>END_USER_ID</td>
+<td>end_user_id</td>
 <td>The ID of the end user</td>
 </tr>
 <tr>
-<td>SCORE</td>
+<td>score</td>
 <td>The end user response score (values from 0 to 10)</td>
 </tr>
 <tr>
-<td>IP_ADDRESS</td>
+<td>ip_address</td>
 <td>IP address the response originated from</td>
 </tr>
 <tr>
-<td>ORIGIN_URL</td>
+<td>origin_url</td>
 <td>URL the response originated from</td>
 </tr>
 <tr>
@@ -905,11 +914,11 @@ curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <s
 <td>UNIX timestamp, if present, will set &lsquo;created_at&rsquo; of newly created decline to provided value</td>
 </tr>
 </tbody></table>
-<h2 id='delete-response'>Delete Response</h2><pre><code class="highlight shell">curl -X DELETE <span class="s2">"https://api.wootric.com/v1/end_users/1/respones/1?access_token=myaccesstoken"</span>
+<h2 id='delete-response'>Delete Response</h2><pre><code class="highlight shell">curl -X DELETE <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/1?access_token=myaccesstoken"</span>
 
 or
 
-curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/respones/1"</span>
+curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/1"</span>
 </code></pre>
 
 <blockquote>
@@ -926,9 +935,9 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>This endpoint deletes a page view for the end user.</p>
+<p>This endpoint deletes an end user response.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">DELETE https://api.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/respones/&lt;RESPONSE_ID&gt;</code></p>
+<p><code class="prettyprint">DELETE https://api.wootric.com/v1/end_users/&lt;end_user_id&gt;/responses/&lt;response_id&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -937,11 +946,11 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
 </tr>
 </thead><tbody>
 <tr>
-<td>END_USER_ID</td>
+<td>end_user_id</td>
 <td>The ID of the end user</td>
 </tr>
 <tr>
-<td>RESPONSE_ID</td>
+<td>response_id</td>
 <td>The ID of the response to delete</td>
 </tr>
 </tbody></table>
@@ -959,12 +968,12 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
 <tr>
 <td>id</td>
 <td>integer</td>
-<td>The id of decline</td>
+<td>The ID of decline</td>
 </tr>
 <tr>
 <td>end_user_id</td>
 <td>integer</td>
-<td>The id of end user</td>
+<td>The ID of end user</td>
 </tr>
 <tr>
 <td>created_at</td>
@@ -974,17 +983,12 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
 <tr>
 <td>updated_at</td>
 <td>datetime</td>
-<td>Datetime representation of when the decline was lately updated</td>
-</tr>
-<tr>
-<td>user_id</td>
-<td>integer</td>
-<td>The id of user</td>
+<td>Datetime representation of when the decline was last updated</td>
 </tr>
 <tr>
 <td>survey_id</td>
 <td>integer</td>
-<td>Id of the survey to which the decline belongs</td>
+<td>ID of the survey to which the decline belongs</td>
 </tr>
 </tbody></table>
 <h2 id='get-all-declines'>Get All Declines</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/declines?access_token=myaccesstoken"</span>
@@ -1137,7 +1141,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 
 <p>This endpoint retrieves a specific decline.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/declines/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/&lt;end_user_id&gt;/declines/&lt;id&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1146,11 +1150,11 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 </tr>
 </thead><tbody>
 <tr>
-<td>END_USER_ID</td>
+<td>end_user_id</td>
 <td>The ID of the end user</td>
 </tr>
 <tr>
-<td>ID</td>
+<td>id</td>
 <td>The ID of the decline to retrieve</td>
 </tr>
 </tbody></table>
@@ -1163,7 +1167,7 @@ curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <s
 
 <p>This endpoint creates a decline for the end user.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">POST https://api.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/declines</code></p>
+<p><code class="prettyprint">POST https://api.wootric.com/v1/end_users/&lt;end_user_id&gt;/declines</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1172,7 +1176,7 @@ curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <s
 </tr>
 </thead><tbody>
 <tr>
-<td>END_USER_ID</td>
+<td>end_user_id</td>
 <td>The ID of the end user</td>
 </tr>
 <tr>
@@ -1205,7 +1209,7 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
 
 <p>This endpoint deletes a decline for the end user.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">DELETE https://api.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/declines/&lt;DECLINE_ID&gt;</code></p>
+<p><code class="prettyprint">DELETE https://api.wootric.com/v1/end_users/&lt;end_user_id&gt;/declines/&lt;decline_id&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1214,11 +1218,11 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
 </tr>
 </thead><tbody>
 <tr>
-<td>END_USER_ID</td>
+<td>end_user_id</td>
 <td>The ID of the end user</td>
 </tr>
 <tr>
-<td>DECLINE_ID</td>
+<td>decline_id</td>
 <td>The ID of the decline to delete</td>
 </tr>
 </tbody></table>
@@ -1236,12 +1240,12 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
 <tr>
 <td>id</td>
 <td>integer</td>
-<td>The id of end user settings</td>
+<td>The ID of end user settings</td>
 </tr>
 <tr>
 <td>end_user_id</td>
 <td>integer</td>
-<td>The id of end user</td>
+<td>The ID of end user</td>
 </tr>
 <tr>
 <td>created_at</td>
@@ -1251,7 +1255,7 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
 <tr>
 <td>updated_at</td>
 <td>datetime</td>
-<td>Datetime representation of when the end user settings was lately updated</td>
+<td>Datetime representation of when the end user settings was last updated</td>
 </tr>
 <tr>
 <td>email_nps</td>
@@ -1280,7 +1284,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 
 <p>This endpoint retrieves a specific end users settings.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/settings</code></p>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/&lt;end_user_id&gt;/settings</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1289,7 +1293,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 </tr>
 </thead><tbody>
 <tr>
-<td>END_USER_ID</td>
+<td>end_user_id</td>
 <td>The ID of the end user</td>
 </tr>
 </tbody></table>
@@ -1314,7 +1318,7 @@ curl -X PUT -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <sp
 
 <p>This endpoint updates the end users settings with specified params.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">PUT https://api.wootric.com/v1/end_users/&lt;END_USER_ID&gt;/settings</code></p>
+<p><code class="prettyprint">PUT https://api.wootric.com/v1/end_users/&lt;end_user_id&gt;/settings</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1323,7 +1327,7 @@ curl -X PUT -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <sp
 </tr>
 </thead><tbody>
 <tr>
-<td>END_USER_ID</td>
+<td>end_user_id</td>
 <td>The ID of the end user to update</td>
 </tr>
 <tr>
