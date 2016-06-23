@@ -28,13 +28,13 @@ You can use our API to access and update your end users, responses, declines, an
 All responses from the API (including errors) are in JSON. All code examples are in cURL.
 
 # Authentication
-> To retrieve an access token using oauth, use the following code:
+> To retrieve an access token using OAuth, use the following code:
 
 ```shell
 curl -i https://api.wootric.com/oauth/token \
--F grant_type=password \
--F username=<youremailaddress>\
--F password=<yourpassword>
+     -F grant_type=password \
+     -F username=<youremailaddress> \
+     -F password=<yourpassword>
 ```
 
 > The above command returns the following JSON:
@@ -48,12 +48,13 @@ curl -i https://api.wootric.com/oauth/token \
   "scope":"public"
 }
 ```
+
 > To retrieve a new access token after it has expired, use this code:
 
 ```shell
 curl -i https://api.wootric.com/oauth/token \
--F grant_type=refresh_token \
--F refresh_token="<yourrefreshtoken>"
+     -F grant_type=refresh_token \
+     -F refresh_token="<yourrefreshtoken>"
 ```
 
 > The above command returns the following JSON:
@@ -72,9 +73,9 @@ curl -i https://api.wootric.com/oauth/token \
 
 ```shell
 curl -X POST https://api.wootric.com/oauth/token \
--F grant_type=client_credentials \
--F client_id=<yourclientid> \
--F client_secret=<yourclientsecret>
+     -F grant_type=client_credentials \
+     -F client_id=<yourclientid> \
+     -F client_secret=<yourclientsecret>
 ```
 
 > The above command returns the following JSON:
@@ -92,7 +93,7 @@ Access tokens can be retrieved using either grant_type of "password" with your a
 
 Wootric expects the access token key to be included in all API requests that use grant_type of "password":
 
-`https://api.wootric.com/v1/end_users.json?access_token=myaccesstoken`
+`https://api.wootric.com/v1/end_users?access_token=myaccesstoken`
 
 If you are using grant_type of "client_credentials," you need to send the access token as a request header:
 

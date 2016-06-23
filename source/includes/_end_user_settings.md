@@ -6,10 +6,10 @@ A end user settings object has the following fields:
 
 Attribute | Type | Description
 --------- | ------- | -----------
-id | integer | The id of end user settings
-end_user_id | integer | The id of end user
+id | integer | The ID of end user settings
+end_user_id | integer | The ID of end user
 created_at | datetime | Datetime representation of when the end user settings were created
-updated_at | datetime | Datetime representation of when the end user settings was lately updated
+updated_at | datetime | Datetime representation of when the end user settings was last updated
 email_nps | boolean | Specifies whether end user should receive NPS survey through an email
 
 ## Get Specific End User Settings
@@ -38,13 +38,13 @@ This endpoint retrieves a specific end users settings.
 
 ### HTTP Request
 
-`GET https://api.wootric.com/v1/end_users/<END_USER_ID>/settings`
+`GET https://api.wootric.com/v1/end_users/<end_user_id>/settings`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-END_USER_ID | The ID of the end user
+end_user_id | The ID of the end user
 
 ## Update End User Settings
 
@@ -72,11 +72,11 @@ This endpoint updates the end users settings with specified params.
 
 ### HTTP Request
 
-`PUT https://api.wootric.com/v1/end_users/<END_USER_ID>/settings`
+`PUT https://api.wootric.com/v1/end_users/<end_user_id>/settings`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-END_USER_ID | The ID of the end user to update
+end_user_id | The ID of the end user to update
 email_nps (optional) | whether or not end user should receive NPS survey through an email

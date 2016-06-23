@@ -6,12 +6,11 @@ A decline object has the following fields:
 
 Attribute | Type | Description
 --------- | ------- | -----------
-id | integer | The id of decline
-end_user_id | integer | The id of end user
+id | integer | The ID of decline
+end_user_id | integer | The ID of end user
 created_at | datetime | Datetime representation of when the decline was created
-updated_at | datetime | Datetime representation of when the decline was lately updated
-user_id | integer | The id of user
-survey_id | integer | Id of the survey to which the decline belongs
+updated_at | datetime | Datetime representation of when the decline was last updated
+survey_id | integer | ID of the survey to which the decline belongs
 
 ## Get All Declines
 
@@ -141,14 +140,14 @@ This endpoint retrieves a specific decline.
 
 ### HTTP Request
 
-`GET https://api.wootric.com/v1/end_users/<END_USER_ID>/declines/<ID>`
+`GET https://api.wootric.com/v1/end_users/<end_user_id>/declines/<id>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-END_USER_ID | The ID of the end user
-ID | The ID of the decline to retrieve
+end_user_id | The ID of the end user
+id | The ID of the decline to retrieve
 
 ## Create Decline
 
@@ -164,13 +163,13 @@ This endpoint creates a decline for the end user.
 
 ### HTTP Request
 
-`POST https://api.wootric.com/v1/end_users/<END_USER_ID>/declines`
+`POST https://api.wootric.com/v1/end_users/<end_user_id>/declines`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-END_USER_ID | The ID of the end user
+end_user_id | The ID of the end user
 created_at (optional) | UNIX timestamp, if present, will set 'created_at' of newly created decline to provided value
 origin_url (optional) | URL of the decline origin
 
@@ -200,11 +199,11 @@ This endpoint deletes a decline for the end user.
 
 ### HTTP Request
 
-`DELETE https://api.wootric.com/v1/end_users/<END_USER_ID>/declines/<DECLINE_ID>`
+`DELETE https://api.wootric.com/v1/end_users/<end_user_id>/declines/<decline_id>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-END_USER_ID | The ID of the end user
-DECLINE_ID | The ID of the decline to delete
+end_user_id | The ID of the end user
+decline_id | The ID of the decline to delete

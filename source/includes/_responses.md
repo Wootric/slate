@@ -6,15 +6,17 @@ A response object has the following fields:
 
 Attribute | Type | Description
 --------- | ------- | -----------
-id | integer | The id of response
+id | integer | The ID of response
 created_at | datetime | Datetime representation of when the response was created
-updated_at | datetime | Datetime representation of when the response was lately updated
+updated_at | datetime | Datetime representation of when the response was last updated
 score | integer | The response's score
 text | text | The response's comment
 ip_address | text | The response's IP address
 origin_url | text | The response's origin url
-end_user_id | integer | The id of end user
-user_id | integer | The if of user
+end_user_id | integer | The ID of end user
+survey_id | integer | ID of the survey to which the response belongs
+completed | boolean | Specifies if a response has been completed
+excluded_from_calculations | boolean | Specifies if a response should be excluded from calculations
 
 ## Get All Responses
 
@@ -325,50 +327,50 @@ This endpoint retrieves a specific response.
 
 ### HTTP Request
 
-`GET https://api.wootric.com/v1/end_users/<END_USER_ID>/responses/<ID>`
+`GET https://api.wootric.com/v1/end_users/<end_user_id>/responses/<id>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-END_USER_ID | The ID of the end user
-ID | The ID of the decline to retrieve
+end_user_id | The ID of the end user
+id | The ID of the decline to retrieve
 
 ## Create Response
 
 ```shell
-curl -X POST "https://api.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken" -d "score=5;text=test response;ip_address=192.168.0.1;origin_url=http://example.com"
+curl -X POST "https://api.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken" -d "score=5&text=test response&ip_address=192.168.0.1&origin_url=http://example.com"
 
 or
 
-curl -X POST -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses" -d "score=5;text=test response;ip_address=192.168.0.1;origin_url=http://example.com"
+curl -X POST -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses" -d "score=5&text=test response&ip_address=192.168.0.1&origin_url=http://example.com"
 ```
 
 This endpoint creates a response for the end user.
 
 ### HTTP Request
 
-`POST https://api.wootric.com/v1/end_users/<END_USER_ID>/responses`
+`POST https://api.wootric.com/v1/end_users/<end_user_id>/responses`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-END_USER_ID | The ID of the end user
-SCORE | The end user response score (values from 0 to 10)
-IP_ADDRESS | IP address the response originated from
-ORIGIN_URL | URL the response originated from
+end_user_id | The ID of the end user
+score | The end user response score (values from 0 to 10)
+ip_address | IP address the response originated from
+origin_url | URL the response originated from
 text (optional) | The end user comment to the response
 created_at (optional) | UNIX timestamp, if present, will set 'created_at' of newly created decline to provided value
 
 ## Delete Response
 
 ```shell
-curl -X DELETE "https://api.wootric.com/v1/end_users/1/respones/1?access_token=myaccesstoken"
+curl -X DELETE "https://api.wootric.com/v1/end_users/1/responses/1?access_token=myaccesstoken"
 
 or
 
-curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/respones/1"
+curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses/1"
 ```
 
 > The above command returns the following JSON:
@@ -385,15 +387,15 @@ curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com
   }
 ```
 
-This endpoint deletes a page view for the end user.
+This endpoint deletes an end user response.
 
 ### HTTP Request
 
-`DELETE https://api.wootric.com/v1/end_users/<END_USER_ID>/respones/<RESPONSE_ID>`
+`DELETE https://api.wootric.com/v1/end_users/<end_user_id>/responses/<response_id>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-END_USER_ID | The ID of the end user
-RESPONSE_ID | The ID of the response to delete
+end_user_id | The ID of the end user
+response_id | The ID of the response to delete
