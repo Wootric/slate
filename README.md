@@ -7,13 +7,14 @@ Configure repo within a repo for simpler deployment.
     git checkout wootric-master
     mkdir build
     cd build
+    git init
     git remote add origin git@github.com:Wootric/slate.git
     git fetch
     git checkout gh-pages
 
 Install Ruby dependencies.
 
-    rbenv install 2.1.2
+    rbenv install 2.2.3
     gem install bundler
     bundle install
     
