@@ -89,18 +89,22 @@ curl -X POST https://api.wootric.com/oauth/token \
 }
 ```
 
-Access tokens can be retrieved using either grant_type of "password" with your account email and password, or grant_type of "client_credentials" with your application client_id and client_secret.
+Access tokens can be retrieved using either grant_type of `password` with your account `email` and ``password`, or grant_type of `client_credentials` with your application `client_id` and `client_secret`.
 
-Wootric expects the access token key to be included in all API requests that use grant_type of "password":
+Wootric expects the  token to be included in all API requests regardless of grant_type of `password` or `client_credentials`. We recommend to send your token as HTTP `Authorization Header`, for example
+
+`curl -H "Authorization: Bearer <youraccesstoken>" https://api.wootric.com/v1/end_users`
+
+Token can be sent as query paramters as well but we **do not recommend** it for security purposes. For example
 
 `https://api.wootric.com/v1/end_users?access_token=myaccesstoken`
 
-If you are using grant_type of "client_credentials," you need to send the access token as a request header:
-
-`Authorization: Bearer <myaccesstoken>`
-
-Access tokens expire 2 hours after creation. New Access tokens can be obtained using refresh tokens as detailed in the cURL example to the right.
+Access tokens expire 2 hours after creation. New access_token can be obtained using refresh tokens as detailed in the cURL example to the right.
 
 <aside class="notice">
 You must replace `myaccesstoken` with your personal Access Token.
+</aside>
+
+<aside class="notice">
+Never send your credentials (password or client_secret) as query paramter to URL even when using POST request. Query parameters get logged in plain text as your API requests hop through different servers on the way to Wootric servers and hence it can be **exploited**.
 </aside>
