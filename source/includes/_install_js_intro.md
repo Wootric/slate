@@ -1,4 +1,4 @@
-# Installing Wootric
+# Installing Javascript SDK
 
 ## Step 1. ­Add the code
 ```javascript

@@ -89,7 +89,7 @@ curl -X POST https://api.wootric.com/oauth/token \
 }
 ```
 
-Access tokens can be retrieved using either grant_type of `password` with your account `email` and ``password`, or grant_type of `client_credentials` with your application `client_id` and `client_secret`.
+Access tokens can be retrieved using either grant_type of `password` with your account `email` and `password`, or grant_type of `client_credentials` with your application `client_id` and `client_secret`.
 
 Wootric expects the  token to be included in all API requests regardless of grant_type of `password` or `client_credentials`. We recommend to send your token as HTTP `Authorization Header`, for example
 

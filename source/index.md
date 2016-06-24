@@ -1,9 +1,9 @@
 # Welcome to the Wootric Docs.
 
-Here is a list of the docs that may help you to integrate and use Wootric.
+Here is a list of the docs to integrate and use Wootric. It should not take more than 15 minutes. :-)
 <b>
 <br><br>
-* <a href="/install" style="text-decoration:none;color:#000">Install Wootric using Javascript</a>
+* <a href="/javascript" style="text-decoration:none;color:#000">Install Wootric using Javascript</a>
 <br><br>
 * <a href="/segment" style="text-decoration:none;color:#000">Install Wootric using Segment.com</a>
 <br><br>
