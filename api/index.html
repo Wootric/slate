@@ -96,20 +96,24 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Access tokens can be retrieved using either grant_type of &ldquo;password&rdquo; with your account email and password, or grant_type of &ldquo;client_credentials&rdquo; with your application client_id and client_secret.</p>
+<p>Access tokens can be retrieved using either grant_type of <code class="prettyprint">password</code> with your account <code class="prettyprint">email</code> and `<code class="prettyprint">password</code>, or grant_type of <code class="prettyprint">client_credentials</code> with your application <code class="prettyprint">client_id</code> and <code class="prettyprint">client_secret</code>.</p>
 
-<p>Wootric expects the access token key to be included in all API requests that use grant_type of &ldquo;password&rdquo;:</p>
+<p>Wootric expects the  token to be included in all API requests regardless of grant_type of <code class="prettyprint">password</code> or <code class="prettyprint">client_credentials</code>. We recommend to send your token as HTTP <code class="prettyprint">Authorization Header</code>, for example</p>
+
+<p><code class="prettyprint">curl -H &quot;Authorization: Bearer &lt;youraccesstoken&gt;&quot; https://api.wootric.com/v1/end_users</code></p>
+
+<p>Token can be sent as query paramters as well but we <strong>do not recommend</strong> it for security purposes. For example</p>
 
 <p><code class="prettyprint">https://api.wootric.com/v1/end_users?access_token=myaccesstoken</code></p>
 
-<p>If you are using grant_type of &ldquo;client_credentials,&rdquo; you need to send the access token as a request header:</p>
-
-<p><code class="prettyprint">Authorization: Bearer &lt;myaccesstoken&gt;</code></p>
-
-<p>Access tokens expire 2 hours after creation. New Access tokens can be obtained using refresh tokens as detailed in the cURL example to the right.</p>
+<p>Access tokens expire 2 hours after creation. New access_token can be obtained using refresh tokens as detailed in the cURL example to the right.</p>
 
 <p><aside class="notice">
 You must replace <code class="prettyprint">myaccesstoken</code> with your personal Access Token.
+</aside></p>
+
+<p><aside class="notice">
+Never send your credentials (password or client_secret) as query paramter to URL even when using POST request. Query parameters get logged in plain text as your API requests hop through different servers on the way to Wootric servers and hence it can be <strong>exploited</strong>.
 </aside></p>
 
 <h1 id='end-users'>End Users</h1><h2 id='end-user-object'>End User Object</h2>
