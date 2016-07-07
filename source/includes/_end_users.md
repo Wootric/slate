@@ -70,6 +70,8 @@ page (optional) | integer | 1 | Number of returned page
 per_page (optional) | integer | 25 | Number of records returned on each page
 created (optional) | hash | {} | Filter your end users by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
 email (optional) | string | None | Filter end users by email (will return an array containing a single end user object if the end user with provided email exists)
+sort_order (optional)| string | asc | Order in which recordsa re shown. Default is oldest first. Options are `asc` or `desc`
+
 
 ## Get a Specific End User
 
