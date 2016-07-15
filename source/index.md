@@ -7,7 +7,7 @@ Here is a list of the docs to integrate and use Wootric. It should not take more
 <br><br>
 * <a href="/segment" style="text-decoration:none;color:#000">Install Wootric using Segment.com</a>
 <br><br>
-* <a href="https://github.com/Wootric/WootricSDK-iOS/blob/master/README.md" style="text-decoration:none;color:#000">Install Wootric using iOS SDK</a>
+* <a href="/ios" style="text-decoration:none;color:#000">Install Wootric using iOS SDK</a>
 <br><br>
 * <a href="https://github.com/Wootric/WootricSDK-Android/blob/master/README.md" style="text-decoration:none;color:#000">Install Wootric using Android SDK</a>
 <br><br>
