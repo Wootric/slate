@@ -1,0 +1,111 @@
+# Samples
+
+## Rate application on the App Store
+```objective_c
+#import <WootricSDK/WootricSDK.h>
+
+...
+
+[Wootric configureWithClientID:clientID clientSecret:clientSecret accountToken:accountToken];
+[Wootric setEndUserEmail:@"nps@example.com"];
+[Wootric setEndUserCreatedAt:@1234567890];
+
+// Replace YOUR_APP_ID with your application's id. 
+// e.g. https://itunes.apple.com/en/app/YOUR_APP_NAME/id123456789
+// The app id would 123456789
+NSURL *appStoreURL = [NSURL URLWithString:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=YOUR_APP_ID&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software"];
+
+// Uncomment to set ThankYouLink for all users
+//[Wootric setThankYouLinkWithText:@"Rate our app!" URL:appStoreURL];
+
+// Will set Link only for promoters
+[Wootric setPromoterThankYouLinkWithText:@"Rate our app!" URL:appStoreURL];
+
+// Will skip the Feedback view for Promoters
+[Wootric skipFeedbackScreenForPromoter:YES];
+
+// Uncomment for testing
+// NOTE: do not use on production
+//[Wootric forceSurvey:YES];
+
+[Wootric showSurveyInViewController:self];
+```
+
+```swift
+Wootric.configureWithClientID(clientID, clientSecret:clientSecret, accountToken:accountToken)
+Wootric.setEndUserEmail("nps@example.com")
+Wootric.setEndUserCreatedAt(1234567890)
+
+// Replace YOUR_APP_ID with your application's id.
+// e.g. https://itunes.apple.com/en/app/YOUR_APP_NAME/id123456789
+// The app id would 123456789
+let appStoreURL = NSURL(string: "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=YOUR_APP_ID&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software")
+
+// Uncomment to set ThankYouLink for all users
+// Wootric.setThankYouLinkWithText("Rate our app!", URL:appStoreURL);
+
+// Will set Link only for promoters
+Wootric.setPromoterThankYouLinkWithText("Rate our app!", URL:appStoreURL)
+
+// Will skip the Feedback view for Promoters
+Wootric.skipFeedbackScreenForPromoter(true)
+
+// Uncomment for testing
+// NOTE: do not use on production
+// Wootric.forceSurvey(true)
+
+Wootric.showSurveyInViewController(self)
+```
+
+You can set the last button to go to the App Store so users can rate your app.
+
+<p align="center" >
+  <img src="https://cloud.githubusercontent.com/assets/1431421/16994309/6da2c438-4e6c-11e6-91f1-c75fcac4d2e6.png" alt="Wootric" title="Wootric" style="height:400px;">
+</p>
+
+## Set End User Properties
+```objective_c
+#import <WootricSDK/WootricSDK.h>
+
+...
+
+[Wootric configureWithClientID:clientID clientSecret:clientSecret accountToken:accountToken];
+
+[Wootric setEndUserEmail:@"nps@example.com"];
+
+// Uncomment for testing
+// NOTE: do not use in production
+// [Wootric forceSurvey:YES];
+
+// Set end user's properties
+NSMutableDictionary *properties = [NSMutableDictionary new];
+[properties setObject:@"Wootric" forKey:@"company"];
+[properties setObject:@"awesome" forKey:@"type"];
+[properties setObject:@"iOS" forKey:@"os"];
+[Wootric setEndUserProperties:properties];
+
+[Wootric showSurveyInViewController:self];
+```
+
+```swift
+Wootric.configureWithClientID(clientID, clientSecret:clientSecret, accountToken:accountToken)
+    
+Wootric.setEndUserEmail("nps@example.com")
+
+// Uncomment for testing
+// NOTE: do not use in production
+// Wootric.forceSurvey(true)
+
+// Set end user's properties
+let properties: [String: String] = ["company" : "Wootric",
+									"type" : "awesome",
+                                    "os" :"iOS"]
+Wootric.setEndUserProperties(properties)
+
+Wootric.showSurveyInViewController(self)
+```
+Setting end user properties will help you segment and filter results.
+
+<p align="center" >
+  <img src="https://cloud.githubusercontent.com/assets/1431421/17043713/0b202224-4f7f-11e6-86cf-3193cfda998f.png" alt="Properties" title="Wootric">
+</p>

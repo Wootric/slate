@@ -1,0 +1,17 @@
+# Troubleshooting
+
+**Survey not showing up?**
+
+Check that client ID, client secret and account token are correct. Account token should have a "NPS-xxxxxxxx" format
+
+**Does the SDK work with Amazon devices?**
+
+Yes, the SDK has been tested with Amazon devices.
+
+**I'm using `setSurveyImmediately` but getting `User not eligible`**
+
+Check that Wootric Mobile Switch is enabled on your [Acount Settings](https://app.wootric.com/account_settings/edit?#!/account)
+
+<p align="center" >
+  <img src="https://cloud.githubusercontent.com/assets/1431421/17071952/562c86da-502a-11e6-8362-48aac99ced6a.png" alt="Wootric" title="Wootric">
+</p>

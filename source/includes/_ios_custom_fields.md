@@ -16,7 +16,7 @@ While end user email is not required it is HIGHLY recommended to set it if possi
 ```swift
 Wootric.forceSurvey(<BOOL>)
 ```
-If forceSurvey is set to YES, the survey is displayed skipping eligibility check AND even if user was already surveyed. This is for test purposes only as it will display the survey every time and for every user.
+If forceSurvey is set to `true`, the survey is displayed skipping eligibility check AND even if user was already surveyed. This is for test purposes only as it will display the survey every time and for every user.
 
 ##surveyImmediately
 ```objective_c
@@ -25,7 +25,11 @@ If forceSurvey is set to YES, the survey is displayed skipping eligibility check
 ```swift
 Wootric.surveyImmediately(<BOOL>)
 ```
-If surveyImmediately is set to YES and user wasn't surveyed yet - eligibility check will return "true" and survey will be displayed. This shouldn't be used on production.
+If surveyImmediately is set to `true` and user wasn't surveyed yet - eligibility check will return `true` and survey will be displayed.
+
+<aside class="warning">
+This should not be used in production.
+</aside>
 
 ##setEndUserCreatedAt
 ```objective_c
@@ -34,7 +38,7 @@ If surveyImmediately is set to YES and user wasn't surveyed yet - eligibility ch
 ```swift
 Wootric.setEndUserCreatedAt(<UNIX Timestamp>)
 ```
-When creating a new end user for survey, it will set his/hers external creation date (so for example, date, when end user was created in your iOS application).
+When creating a new end user for survey, it will set the external creation date (so for example, date, when end user was created in your iOS application).
 This value is also used in eligibility check, to determine if end user should be surveyed.
 
 ##setFirstSurveyAfter
@@ -53,7 +57,7 @@ If not set, defaults to value from admin panel. Used to check if end user was cr
 ```swift
 Wootric.setEndUserProperties(<NSDICTIONARY>)
 ```
-Adds properties object to end user.
+End user properties can be provided as an `NSDictionary` object.
 
 ##setProductNameForEndUser
 ```objective_c
@@ -91,8 +95,3 @@ If you enable this setting, score and feedback text will be added as wootric_sco
 Wootric.skipFeedbackScreenForPromoter(<BOOL>)
 ```
 With this option enabled, promoters (score 9-10) will be taken directly to third (social share) screen, skipping the second (feedback) one.
-
-
-
-
-
