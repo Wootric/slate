@@ -62,21 +62,22 @@ Drag WootricSDK.framework to the "Embedded Binaries" section of your Xcode proje
 ## Step 1. Initialize Wootric
 ``` objective_c
 #import <WootricSDK/WootricSDK.h>
-// In you view controller
 
+// Inside your method
 [Wootric configureWithClientID:<YOUR_CLIENT_ID> clientSecret:<YOUR_CLIENT_SECRET> accountToken:<YOUR_ACCOUNT_TOKEN>];
+
 // TODO: The current logged in user's email address.
 [Wootric setEndUserEmail:@"nps@example.com"];
 // TODO: The current logged in user's sign-up date as a Unix timestamp.
 [Wootric setEndUserCreatedAt:@1234567890];
 
+// Use only for testing
+[Wootric forceSurvey:YES];
+
 [Wootric showSurveyInViewController:<YOUR_VIEW_CONTROLLER>];
-
 ```
-
 ``` swift
-// In you view controller
-
+// Inside your method
 Wootric.configureWithClientID(<YOUR_CLIENT_ID>, clientSecret: <YOUR_CLIENT_SECRET>, accountToken: <YOUR_ACCOUNT_TOKEN>)
 
 // TODO: The current logged in user's email address.
@@ -84,14 +85,20 @@ Wootric.setEndUserEmail("nps@example.com")
 // TODO: The current logged in user's sign-up date as a Unix timestamp.
 Wootric.setEndUserCreatedAt(1234567890)
 
-Wootric.showSurveyInViewController(<YOUR_VIEW_CONTROLLER>)
+// Use only for testing
+Wootric.forceSurvey(true)
 
+Wootric.showSurveyInViewController(<YOUR_VIEW_CONTROLLER>)
 ```
-Once you are signed up on the Wootric homepage, you will be taken directly to an installation page. If you’re a returning visitor, sign in at [wootric.com](https://www.wootric.com/) and click on the “Settings" button near the top right of the page. Navigate to the [Wootric Installation Guide](https://app.wootric.com/install) and you will see a unique **account_token** for you to use.
+First import the SDK into your ViewController of choosing. Then configure the SDK with your client ID, secret and account token.
+
+Sign in at [wootric.com](https://www.wootric.com/) if you haven't already. If you just signed up on the Wootric homepage, you will be taken directly to an installation page. If you’re a returning visitor, click on the “Settings" button near the top right of the page. Navigate to the [Wootric Installation Guide](https://app.wootric.com/install) and you will see a unique **account_token** for you to use.
 
 The **client_id** and **client_secret** can be found on your account's settings [API section](https://app.wootric.com/account_settings/edit#!/api).
 
-<aside class="warning">
+To display the survey just use `showSurveyInViewController`. If the user is eligible (this check is built in the method) the SDK will show the survey.
+
+<aside class="notice">
 If you are using Swift, don't forget to import WootricSDK in your `Bridging-Header.h`
 </aside>
 
@@ -106,7 +113,8 @@ If you are using Swift, don't forget to import WootricSDK in your `Bridging-Head
 [Wootric configureWithClientID:@"your_client_id" clientSecret:@"your_client_secret" accountToken:@"NPS­-xxxxxxxx"];
 [Wootric setEndUserEmail:@"nps@example.com"];
 [Wootric setEndUserCreatedAt:@1234567890];
-// Fire immediately for testing
+
+// Use only for testing
 [Wootric forceSurvey:YES];
 
 // Customization
@@ -118,13 +126,11 @@ If you are using Swift, don't forget to import WootricSDK in your `Bridging-Head
 ```
 
 ```swift
-// In you view controller
-
 Wootric.configureWithClientID("your_client_id", clientSecret: "your_client_secret", accountToken: "NPS­-xxxxxxxx")
 Wootric.setEndUserEmail("nps@example.com")
 Wootric.setEndUserCreatedAt(1234567890)
 
-// Fire immediately for testing
+// Use only for testing
 Wootric.forceSurvey(true)
 
 // Customization
@@ -137,15 +143,28 @@ Wootric.showSurveyInViewController(self)
 
 This is an important step! [Customize](https://app.wootric.com/user_settings/edit#!/survey-nps) your survey with the name of your product or company. As needed, make changes to our trusted [survey](https://app.wootric.com/user_settings/edit#!/survey-nps) and [sampling](https://app.wootric.com/user_settings/edit#!/sampling) defaults. This values can modified from your app.
 
+<p align="center" >
+  <img src="https://cloud.githubusercontent.com/assets/1431421/17188297/0c761584-5402-11e6-9339-8af8f63125a5.png" alt="Wootric" title="Customization">
+  <img src="https://cloud.githubusercontent.com/assets/1431421/17188298/0c8dec22-5402-11e6-8925-020e777c36ba.png" alt="Wootric" title="Customization">
+</p>
+
 ## Step 3. View your Responses Live!
 That's it! Once the WootricSDK is installed, eligible users will immediately start being surveyed.
 Depending on the traffic of your app, you could start to see responses within a few minutes.
 Responses will come in to your Wootric dash in real time.
 
+<aside class="notice">
+For a working implementation of the iOS WootricSDK, try the demo app on our [Github repo](https://github.com/Wootric/WootricSDK-iOS).
+</aside>
+
 
 ### **No data yet?**
-We provide a link within your empty dashboard to a sample dash with dummy
-data.
+Checkout the [Demo](https://demo.wootric.com/) dashboard with dummy data.
+
+<p align="center" >
+  <img src="https://cloud.githubusercontent.com/assets/1431421/17186433/d64cd56c-53fa-11e6-8add-2a141ff4f886.png" alt="Wootric" title="Demo">
+</p>
+
 ### **I’d like to do some testing first. How do I ensure that the survey shows up on demand?**
 
 You can easily install Wootric in your development environment for testing. The SDK is
