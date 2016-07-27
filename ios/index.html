@@ -94,35 +94,43 @@ $ pod install
 
 <p><img alt="Xcode" src="https://cloud.githubusercontent.com/assets/1431421/16505349/238edd62-3ee2-11e6-8f91-9d3c978a10cf.png" /></p>
 <h1 id='presenting-the-survey'>Presenting the survey</h1><h2 id='step-1--initialize-wootric'>Step 1. Initialize Wootric</h2><pre><code class="highlight objective_c"><span class="cp">#import &lt;WootricSDK/WootricSDK.h&gt;
-</span><span class="c1">// In you view controller
 </span>
-<span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_CLIENT_ID</span><span class="o">&gt;</span> <span class="nf">clientSecret</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_CLIENT_SECRET</span><span class="o">&gt;</span> <span class="nf">accountToken</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;</span><span class="p">];</span>
+<span class="c1">// Inside your method
+</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_CLIENT_ID</span><span class="o">&gt;</span> <span class="nf">clientSecret</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_CLIENT_SECRET</span><span class="o">&gt;</span> <span class="nf">accountToken</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;</span><span class="p">];</span>
+
 <span class="c1">// TODO: The current logged in user's email address.
 </span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserEmail</span><span class="p">:</span><span class="s">@"nps@example.com"</span><span class="p">];</span>
 <span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.
 </span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserCreatedAt</span><span class="p">:</span><span class="mi">@1234567890</span><span class="p">];</span>
 
-<span class="p">[</span><span class="n">Wootric</span> <span class="nf">showSurveyInViewController</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_VIEW_CONTROLLER</span><span class="o">&gt;</span><span class="p">];</span>
+<span class="c1">// Use only for testing
+</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">forceSurvey</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
 
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">showSurveyInViewController</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_VIEW_CONTROLLER</span><span class="o">&gt;</span><span class="p">];</span>
 </code></pre>
-<pre><code class="highlight swift"><span class="c1">// In you view controller
-</span>
-<span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">YOUR_CLIENT_ID</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">YOUR_CLIENT_SECRET</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;</span><span class="p">)</span>
+<pre><code class="highlight swift"><span class="c1">// Inside your method
+</span><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">YOUR_CLIENT_ID</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">YOUR_CLIENT_SECRET</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;</span><span class="p">)</span>
 
 <span class="c1">// TODO: The current logged in user's email address.
 </span><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserEmail</span><span class="p">(</span><span class="s">"nps@example.com"</span><span class="p">)</span>
 <span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.
 </span><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserCreatedAt</span><span class="p">(</span><span class="mi">1234567890</span><span class="p">)</span>
 
-<span class="kt">Wootric</span><span class="o">.</span><span class="nf">showSurveyInViewController</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">YOUR_VIEW_CONTROLLER</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="c1">// Use only for testing
+</span><span class="kt">Wootric</span><span class="o">.</span><span class="nf">forceSurvey</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
 
+<span class="kt">Wootric</span><span class="o">.</span><span class="nf">showSurveyInViewController</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">YOUR_VIEW_CONTROLLER</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre>
 
-<p>Once you are signed up on the Wootric homepage, you will be taken directly to an installation page. If you’re a returning visitor, sign in at <a href="https://www.wootric.com/">wootric.com</a> and click on the “Settings&quot; button near the top right of the page. Navigate to the <a href="https://app.wootric.com/install">Wootric Installation Guide</a> and you will see a unique <strong>account_token</strong> for you to use.</p>
+<p>First import the SDK into your ViewController of choosing. Then configure the SDK with your client ID, secret and account token.</p>
+
+<p>Sign in at <a href="https://www.wootric.com/">wootric.com</a> if you haven&rsquo;t already. If you just signed up on the Wootric homepage, you will be taken directly to an installation page. If you’re a returning visitor, click on the “Settings&quot; button near the top right of the page. Navigate to the <a href="https://app.wootric.com/install">Wootric Installation Guide</a> and you will see a unique <strong>account_token</strong> for you to use.</p>
 
 <p>The <strong>client_id</strong> and <strong>client_secret</strong> can be found on your account&rsquo;s settings <a href="https://app.wootric.com/account_settings/edit#!/api">API section</a>.</p>
 
-<p><aside class="warning">
+<p>To display the survey just use <code class="prettyprint">showSurveyInViewController</code>. If the user is eligible (this check is built in the method) the SDK will show the survey.</p>
+
+<p><aside class="notice">
 If you are using Swift, don&rsquo;t forget to import WootricSDK in your <code class="prettyprint">Bridging-Header.h</code>
 </aside></p>
 <h2 id='step-2--customize-the-survey'>Step 2. Customize the Survey</h2>
@@ -134,7 +142,8 @@ If you are using Swift, don&rsquo;t forget to import WootricSDK in your <code cl
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="s">@"your_client_id"</span> <span class="nf">clientSecret</span><span class="p">:</span><span class="s">@"your_client_secret"</span> <span class="nf">accountToken</span><span class="p">:</span><span class="s">@"NPS­-xxxxxxxx"</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserEmail</span><span class="p">:</span><span class="s">@"nps@example.com"</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserCreatedAt</span><span class="p">:</span><span class="mi">@1234567890</span><span class="p">];</span>
-<span class="c1">// Fire immediately for testing
+
+<span class="c1">// Use only for testing
 </span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">forceSurvey</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
 
 <span class="c1">// Customization
@@ -144,13 +153,11 @@ If you are using Swift, don&rsquo;t forget to import WootricSDK in your <code cl
 
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">showSurveyInViewController</span><span class="p">:</span><span class="n">self</span><span class="p">];</span>
 </code></pre>
-<pre><code class="highlight swift"><span class="c1">// In you view controller
-</span>
-<span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="s">"your_client_id"</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span> <span class="s">"your_client_secret"</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span> <span class="s">"NPS­-xxxxxxxx"</span><span class="p">)</span>
+<pre><code class="highlight swift"><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="s">"your_client_id"</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span> <span class="s">"your_client_secret"</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span> <span class="s">"NPS­-xxxxxxxx"</span><span class="p">)</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserEmail</span><span class="p">(</span><span class="s">"nps@example.com"</span><span class="p">)</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserCreatedAt</span><span class="p">(</span><span class="mi">1234567890</span><span class="p">)</span>
 
-<span class="c1">// Fire immediately for testing
+<span class="c1">// Use only for testing
 </span><span class="kt">Wootric</span><span class="o">.</span><span class="nf">forceSurvey</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
 
 <span class="c1">// Customization
@@ -162,13 +169,25 @@ If you are using Swift, don&rsquo;t forget to import WootricSDK in your <code cl
 </code></pre>
 
 <p>This is an important step! <a href="https://app.wootric.com/user_settings/edit#!/survey-nps">Customize</a> your survey with the name of your product or company. As needed, make changes to our trusted <a href="https://app.wootric.com/user_settings/edit#!/survey-nps">survey</a> and <a href="https://app.wootric.com/user_settings/edit#!/sampling">sampling</a> defaults. This values can modified from your app.</p>
+
+<p align="center" >
+  <img src="https://cloud.githubusercontent.com/assets/1431421/17188297/0c761584-5402-11e6-9339-8af8f63125a5.png" alt="Wootric" title="Customization">
+  <img src="https://cloud.githubusercontent.com/assets/1431421/17188298/0c8dec22-5402-11e6-8925-020e777c36ba.png" alt="Wootric" title="Customization">
+</p>
 <h2 id='step-3--view-your-responses-live'>Step 3. View your Responses Live!</h2>
 <p>That&rsquo;s it! Once the WootricSDK is installed, eligible users will immediately start being surveyed.
 Depending on the traffic of your app, you could start to see responses within a few minutes.
 Responses will come in to your Wootric dash in real time.</p>
+
+<p><aside class="notice">
+For a working implementation of the iOS WootricSDK, try the demo app on our <a href="https://github.com/Wootric/WootricSDK-iOS">Github repo</a>.
+</aside></p>
 <h3 id='strongno-data-yetstrong'><strong>No data yet?</strong></h3>
-<p>We provide a link within your empty dashboard to a sample dash with dummy
-data.</p>
+<p>Checkout the <a href="https://demo.wootric.com/">Demo</a> dashboard with dummy data.</p>
+
+<p align="center" >
+  <img src="https://cloud.githubusercontent.com/assets/1431421/17186433/d64cd56c-53fa-11e6-8add-2a141ff4f886.png" alt="Wootric" title="Demo">
+</p>
 <h3 id='strongid-like-to-do-some-testing-first--how-do-i-ensure-that-the-survey-shows-up-on-demandstrong'><strong>I’d like to do some testing first. How do I ensure that the survey shows up on demand?</strong></h3>
 <p>You can easily install Wootric in your development environment for testing. The SDK is
 already set up to show the survey immediately for testing purposes only.</p>
@@ -192,19 +211,23 @@ completion page.</p>
 <pre><code class="highlight swift"><span class="kt">Wootric</span><span class="o">.</span><span class="nf">forceSurvey</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">BOOL</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre>
 
-<p>If forceSurvey is set to YES, the survey is displayed skipping eligibility check AND even if user was already surveyed. This is for test purposes only as it will display the survey every time and for every user.</p>
+<p>If forceSurvey is set to <code class="prettyprint">true</code>, the survey is displayed skipping eligibility check AND even if user was already surveyed. This is for test purposes only as it will display the survey every time and for every user.</p>
 <h2 id='surveyimmediately'>surveyImmediately</h2><pre><code class="highlight objective_c"><span class="p">[</span><span class="n">Wootric</span> <span class="nf">surveyImmediately</span><span class="p">:</span><span class="o">&lt;</span><span class="n">BOOL</span><span class="o">&gt;</span><span class="p">];</span>
 </code></pre>
 <pre><code class="highlight swift"><span class="kt">Wootric</span><span class="o">.</span><span class="nf">surveyImmediately</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">BOOL</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre>
 
-<p>If surveyImmediately is set to YES and user wasn&rsquo;t surveyed yet - eligibility check will return &ldquo;true&rdquo; and survey will be displayed. This shouldn&rsquo;t be used on production.</p>
+<p>If surveyImmediately is set to <code class="prettyprint">true</code> and user wasn&rsquo;t surveyed yet - eligibility check will return <code class="prettyprint">true</code> and survey will be displayed.</p>
+
+<p><aside class="warning">
+This should not be used in production.
+</aside></p>
 <h2 id='setendusercreatedat'>setEndUserCreatedAt</h2><pre><code class="highlight objective_c"><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserCreatedAt</span><span class="p">:</span><span class="o">&lt;</span><span class="n">UNIX</span> <span class="n">Timestamp</span><span class="o">&gt;</span><span class="p">];</span>
 </code></pre>
 <pre><code class="highlight swift"><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserCreatedAt</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">UNIX</span> <span class="kt">Timestamp</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre>
 
-<p>When creating a new end user for survey, it will set his/hers external creation date (so for example, date, when end user was created in your iOS application).
+<p>When creating a new end user for survey, it will set the external creation date (so for example, date, when end user was created in your iOS application).
 This value is also used in eligibility check, to determine if end user should be surveyed.</p>
 <h2 id='setfirstsurveyafter'>setFirstSurveyAfter</h2><pre><code class="highlight objective_c"><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setFirstSurveyAfter</span><span class="p">:</span><span class="o">&lt;</span><span class="n">NUMBER_OF_DAYS</span><span class="o">&gt;</span><span class="p">];</span>
 </code></pre>
@@ -217,7 +240,7 @@ This value is also used in eligibility check, to determine if end user should be
 <pre><code class="highlight swift"><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserProperties</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">NSDICTIONARY</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre>
 
-<p>Adds properties object to end user.</p>
+<p>End user properties can be provided as an <code class="prettyprint">NSDictionary</code> object.</p>
 <h2 id='setproductnameforenduser'>setProductNameForEndUser</h2><pre><code class="highlight objective_c"><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setProductNameForEndUser</span><span class="p">:</span><span class="o">&lt;</span><span class="n">PRODUCT_NAME</span><span class="o">&gt;</span><span class="p">];</span>
 </code></pre>
 <pre><code class="highlight swift"><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setProductNameForEndUser</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">PRODUCT_NAME</span><span class="o">&gt;</span><span class="p">)</span>
@@ -365,6 +388,166 @@ if custom product name is set it will substitute &ldquo;this product or service&
 <h1 id='additional-information'>Additional information</h1>
 <p>First survey after &amp; end user created at setting:
 While it is not required, setting <code class="prettyprint">setEndUserCreatedAt</code> is highly recommended for proper checking if end user needs survey and skipping uneccessary eligibility checks.</p>
+
+<h1 id='samples'>Samples</h1><h2 id='rate-application-on-the-app-store'>Rate application on the App Store</h2><pre><code class="highlight objective_c"><span class="cp">#import &lt;WootricSDK/WootricSDK.h&gt;
+</span>
+<span class="p">...</span>
+
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="n">clientID</span> <span class="nf">clientSecret</span><span class="p">:</span><span class="n">clientSecret</span> <span class="nf">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">];</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserEmail</span><span class="p">:</span><span class="s">@"nps@example.com"</span><span class="p">];</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserCreatedAt</span><span class="p">:</span><span class="mi">@1234567890</span><span class="p">];</span>
+
+<span class="c1">// Replace YOUR_APP_ID with your application's id. 
+// e.g. https://itunes.apple.com/en/app/YOUR_APP_NAME/id123456789
+// The app id would 123456789
+</span><span class="n">NSURL</span> <span class="o">*</span><span class="n">appStoreURL</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSURL</span> <span class="nf">URLWithString</span><span class="p">:</span><span class="s">@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=YOUR_APP_ID&amp;onlyLatestVersion=true&amp;pageNumber=0&amp;sortOrdering=1&amp;type=Purple+Software"</span><span class="p">];</span>
+
+<span class="c1">// Uncomment to set ThankYouLink for all users
+//[Wootric setThankYouLinkWithText:@"Rate our app!" URL:appStoreURL];
+</span>
+<span class="c1">// Will set Link only for promoters
+</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setPromoterThankYouLinkWithText</span><span class="p">:</span><span class="s">@"Rate our app!"</span> <span class="nf">URL</span><span class="p">:</span><span class="n">appStoreURL</span><span class="p">];</span>
+
+<span class="c1">// Will skip the Feedback view for Promoters
+</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">skipFeedbackScreenForPromoter</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+
+<span class="c1">// Uncomment for testing
+// NOTE: do not use on production
+//[Wootric forceSurvey:YES];
+</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">showSurveyInViewController</span><span class="p">:</span><span class="n">self</span><span class="p">];</span>
+</code></pre>
+<pre><code class="highlight swift"><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span><span class="n">clientSecret</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">)</span>
+<span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserEmail</span><span class="p">(</span><span class="s">"nps@example.com"</span><span class="p">)</span>
+<span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserCreatedAt</span><span class="p">(</span><span class="mi">1234567890</span><span class="p">)</span>
+
+<span class="c1">// Replace YOUR_APP_ID with your application's id.
+// e.g. https://itunes.apple.com/en/app/YOUR_APP_NAME/id123456789
+// The app id would 123456789
+</span><span class="k">let</span> <span class="nv">appStoreURL</span> <span class="o">=</span> <span class="kt">NSURL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=YOUR_APP_ID&amp;onlyLatestVersion=true&amp;pageNumber=0&amp;sortOrdering=1&amp;type=Purple+Software"</span><span class="p">)</span>
+
+<span class="c1">// Uncomment to set ThankYouLink for all users
+// Wootric.setThankYouLinkWithText("Rate our app!", URL:appStoreURL);
+</span>
+<span class="c1">// Will set Link only for promoters
+</span><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setPromoterThankYouLinkWithText</span><span class="p">(</span><span class="s">"Rate our app!"</span><span class="p">,</span> <span class="kt">URL</span><span class="p">:</span><span class="n">appStoreURL</span><span class="p">)</span>
+
+<span class="c1">// Will skip the Feedback view for Promoters
+</span><span class="kt">Wootric</span><span class="o">.</span><span class="nf">skipFeedbackScreenForPromoter</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+
+<span class="c1">// Uncomment for testing
+// NOTE: do not use on production
+// Wootric.forceSurvey(true)
+</span>
+<span class="kt">Wootric</span><span class="o">.</span><span class="nf">showSurveyInViewController</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
+</code></pre>
+
+<p>You can set the last button to go to the App Store so users can rate your app.</p>
+
+<p align="center" >
+  <img src="https://cloud.githubusercontent.com/assets/1431421/16994309/6da2c438-4e6c-11e6-91f1-c75fcac4d2e6.png" alt="Wootric" title="Wootric" style="height:400px;">
+</p>
+<h2 id='set-end-user-properties'>Set End User Properties</h2><pre><code class="highlight objective_c"><span class="cp">#import &lt;WootricSDK/WootricSDK.h&gt;
+</span>
+<span class="p">...</span>
+
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="n">clientID</span> <span class="nf">clientSecret</span><span class="p">:</span><span class="n">clientSecret</span> <span class="nf">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserEmail</span><span class="p">:</span><span class="s">@"nps@example.com"</span><span class="p">];</span>
+
+<span class="c1">// Uncomment for testing
+// NOTE: do not use in production
+// [Wootric forceSurvey:YES];
+</span>
+<span class="c1">// Set end user's properties
+</span><span class="n">NSMutableDictionary</span> <span class="o">*</span><span class="n">properties</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSMutableDictionary</span> <span class="nf">new</span><span class="p">];</span>
+<span class="p">[</span><span class="n">properties</span> <span class="nf">setObject</span><span class="p">:</span><span class="s">@"Wootric"</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"company"</span><span class="p">];</span>
+<span class="p">[</span><span class="n">properties</span> <span class="nf">setObject</span><span class="p">:</span><span class="s">@"awesome"</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"type"</span><span class="p">];</span>
+<span class="p">[</span><span class="n">properties</span> <span class="nf">setObject</span><span class="p">:</span><span class="s">@"iOS"</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"os"</span><span class="p">];</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserProperties</span><span class="p">:</span><span class="n">properties</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">showSurveyInViewController</span><span class="p">:</span><span class="n">self</span><span class="p">];</span>
+</code></pre>
+<pre><code class="highlight swift"><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span><span class="n">clientSecret</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">)</span>
+
+<span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserEmail</span><span class="p">(</span><span class="s">"nps@example.com"</span><span class="p">)</span>
+
+<span class="c1">// Uncomment for testing
+// NOTE: do not use in production
+// Wootric.forceSurvey(true)
+</span>
+<span class="c1">// Set end user's properties
+</span><span class="k">let</span> <span class="nv">properties</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"company"</span> <span class="p">:</span> <span class="s">"Wootric"</span><span class="p">,</span>
+                                    <span class="s">"type"</span> <span class="p">:</span> <span class="s">"awesome"</span><span class="p">,</span>
+                                    <span class="s">"os"</span> <span class="p">:</span><span class="s">"iOS"</span><span class="p">]</span>
+<span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserProperties</span><span class="p">(</span><span class="n">properties</span><span class="p">)</span>
+
+<span class="kt">Wootric</span><span class="o">.</span><span class="nf">showSurveyInViewController</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
+</code></pre>
+
+<p>Setting end user properties will help you segment and filter results.</p>
+
+<p align="center" >
+  <img src="https://cloud.githubusercontent.com/assets/1431421/17043713/0b202224-4f7f-11e6-86cf-3193cfda998f.png" alt="Properties" title="Wootric">
+</p>
+
+<h1 id='troubleshooting'>Troubleshooting</h1>
+<p><strong>Survey not showing up or is blank?</strong></p>
+
+<p>Check that client ID, client secret and account token are correct. Account token should have a &ldquo;NPS-xxxxxxxx&rdquo; format</p>
+
+<p><strong>I&rsquo;m using <code class="prettyprint">forceSurvey</code> but getting <code class="prettyprint">User not eligible</code></strong></p>
+
+<p>Check that Wootric Mobile Switch is enabled on your <a href="https://app.wootric.com/account_settings/edit?#!/account">Acount Settings</a></p>
+
+<p align="center" >
+  <img src="https://cloud.githubusercontent.com/assets/1431421/17071952/562c86da-502a-11e6-8362-48aac99ced6a.png" alt="Wootric" title="Wootric">
+</p>
+
+<h1 id='segment-integration'>Segment Integration</h1>
+<p>Wootric provides an integration for <a href="https://segment.com/">Segment</a>. The library can be found on <a href="https://github.com/Wootric/segment-wootric-ios">our Github</a>. </p>
+<h2 id='install-with-cocoapods'>Install with Cocoapods</h2>
+<p>Segment-Wootric is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your <code class="prettyprint">Podfile</code>:</p>
+<pre><code class="highlight ruby"><span class="n">pod</span> <span class="s2">"Segment-Wootric"</span>
+</code></pre>
+<h2 id='usage'>Usage</h2><pre><code class="highlight objective_c"><span class="cp">#import &lt;Segment-Wootric/SegmentWootric.h&gt;
+</span>
+<span class="n">SEGAnalyticsConfiguration</span> <span class="o">*</span><span class="n">config</span> <span class="o">=</span> <span class="p">[</span><span class="n">SEGAnalyticsConfiguration</span> <span class="nf">configurationWithWriteKey</span><span class="p">:</span><span class="s">@"YOUR_WRITE_KEY"</span><span class="p">];</span>
+<span class="n">WTRWootricIntegrationFactory</span> <span class="o">*</span><span class="n">wootricFactory</span> <span class="o">=</span> <span class="p">[</span><span class="n">WTRWootricIntegrationFactory</span> <span class="nf">instance</span><span class="p">];</span>
+<span class="p">[</span><span class="n">config</span> <span class="nf">use</span><span class="p">:</span><span class="n">wootricFactory</span><span class="p">];</span>
+<span class="p">[</span><span class="n">SEGAnalytics</span> <span class="nf">setupWithConfiguration</span><span class="p">:</span><span class="n">config</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">WTRWootricIntegration</span> <span class="nf">showSurveyInViewController</span><span class="p">:</span><span class="o">&lt;</span><span class="n">VIEW_CONTROLLER</span><span class="o">&gt;</span><span class="p">];</span>
+</code></pre>
+<pre><code class="highlight swift"><span class="k">let</span> <span class="nv">config</span> <span class="o">=</span> <span class="kt">SEGAnalyticsConfiguration</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">writeKey</span><span class="p">:</span> <span class="s">"YOUR_WRITE_KEY"</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">wootricFactory</span> <span class="o">=</span> <span class="kt">WTRWootricIntegrationFactory</span><span class="o">.</span><span class="nf">instance</span><span class="p">()</span> <span class="k">as</span><span class="o">!</span> <span class="kt">WTRWootricIntegrationFactory</span>
+<span class="n">config</span><span class="o">.</span><span class="nf">use</span><span class="p">(</span><span class="n">wootricFactory</span><span class="p">)</span>
+<span class="kt">SEGAnalytics</span><span class="o">.</span><span class="nf">setupWithConfiguration</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+<span class="kt">WTRWootricIntegration</span><span class="o">.</span><span class="nf">showSurveyInViewController</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
+</code></pre>
+
+<p>First of all you need to provide values for account token, clientID and client secret in Segment&rsquo;s dashboard for Wootric integration, then import Segment-Wootric.</p>
+
+<p>Then init the Analytics with Wootric integration. Wootric integration responds to <code class="prettyprint">identify</code> call, to read more about it, visit <a href="https://segment.com/docs/libraries/ios/#identify">Segment identify method documentation</a>.
+In identify call <code class="prettyprint">traits</code> dictionary is set as <code class="prettyprint">endUserProperties</code> in WootricSDK,  except keys <code class="prettyprint">email</code> and <code class="prettyprint">createdAt</code> which are set as <code class="prettyprint">endUserEmail</code> and <code class="prettyprint">endUserCreatedAt</code> respectively.</p>
+
+<p>For custom configuration you can use <code class="prettyprint">SEGWootric</code> class instance, to get it, call:
+<code class="prettyprint">[WTRWootricIntegration wootric]</code>
+For all available methods (being instace methods for SEGWootric instead of class methods) please refer to WootricSDK <a href="https://github.com/Wootric/WootricSDK-iOS">docs</a>.</p>
+
+<p>Finally to show the survey with <code class="prettyprint">showSurveyInViewController</code>.</p>
+
+<p><aside class="notice">
+If you are using Swift, don&rsquo;t forget to import 
+<code class="prettyprint">#import &lt;Segment-Wootric/SegmentWootric.h&gt;</code> in your <code class="prettyprint">Bridging-Header.h</code>
+</aside></p>
+<h1 id='mparticle-integration'>mParticle Integration</h1>
+<p>Wootric provides an integration for <a href="http://mparticle.com/">mParticle</a>. </p>
+
+<p>Instructions on how to setup the mParticle Apple SDK can be found on <a href="https://github.com/mParticle/mparticle-apple-sdk/">mParticle&rsquo;s Github</a>.</p>
 
 
       </div>
