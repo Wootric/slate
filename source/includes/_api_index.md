@@ -95,7 +95,7 @@ Wootric expects the  token to be included in all API requests regardless of gran
 
 `curl -H "Authorization: Bearer <youraccesstoken>" https://api.wootric.com/v1/end_users`
 
-Token can be sent as query paramters as well but we **do not recommend** it for security purposes. For example
+Token can be sent as query parameters as well but we **do not recommend** it for security purposes. For example
 
 `https://api.wootric.com/v1/end_users?access_token=myaccesstoken`
 
@@ -106,5 +106,5 @@ You must replace `myaccesstoken` with your personal Access Token.
 </aside>
 
 <aside class="notice">
-Never send your credentials (password or client_secret) as query paramter to URL even when using POST request. Query parameters get logged in plain text as your API requests hop through different servers on the way to Wootric servers and hence it can be **exploited**.
+Never send your credentials (password or client_secret) as query parameter to URL even when using POST request. Query parameters get logged in plain text as your API requests hop through different servers on the way to Wootric servers and hence it can be **exploited**.
 </aside>
