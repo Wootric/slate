@@ -17,6 +17,7 @@ end_user_id | integer | The ID of end user
 survey_id | integer | ID of the survey to which the response belongs
 completed | boolean | Specifies if a response has been completed
 excluded_from_calculations | boolean | Specifies if a response should be excluded from calculations
+tags | string array | The responses's tags
 
 ## Get All Responses
 
