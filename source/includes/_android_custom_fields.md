@@ -6,6 +6,11 @@ wootric.setEndUserEmail(<END_USER_EMAIL>);
 ```
 While end user email is not required it is HIGHLY recommended to set it if possible.
 
+##setEndUserExternalId
+```java
+wootric.setEndUserExternalId(<END_USER_EXTERNAL_ID>);
+```
+Set an external ID for the end user. This value is optional.
 
 ##setSurveyImmediately
 ```java
