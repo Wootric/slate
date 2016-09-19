@@ -70,10 +70,12 @@ Scope parameters filter your responses and can also be chained together by passi
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
-page (optional)| integer | 1 | Number of returned page
-per_page (optional) | integer | 25 | Number of records returned on each page
+page (optional)| integer | 1 | Number of returned page, max 25
+per_page (optional) | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
 sort_order (optional)| string | asc | Order in which records are shown. Default is oldest first. Options are `asc` or `desc`
+
+We recommend to iterate using `created` parameter if you need to get more data than what you get out of our pagination restriction.
 
 ## Get All End User's Responses
 
@@ -126,9 +128,11 @@ Scope parameters filter your responses and can also be chained together by passi
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
-page | integer | 1 | Number of returned page
-per_page | integer | 25 | Number of records returned on each page
+page | integer | 1 | Number of returned page, max 25
+per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
+
+We recommend to iterate using `created` parameter if you need to get more data than what you get out of our pagination restriction.
 
 
 ## Get All Promoters Responses

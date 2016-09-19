@@ -57,9 +57,11 @@ Scope parameters filter your declines and can also be chained together by passin
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
-page | integer | 1 | Number of returned page
-per_page | integer | 25 | Number of records returned on each page
+page | integer | 1 | Number of returned page, max 25
+per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your declines by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
+
+We recommend to iterate using `created` parameter if you need to get more data than what you get out of our pagination restriction.
 
 ## Get All End User's Declines
 
@@ -106,8 +108,8 @@ Scope parameters filter your declines and can also be chained together by passin
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
-page | integer | 1 | Number of returned page
-per_page | integer | 25 | Number of records returned on each page
+page | integer | 1 | Number of returned page, max 25
+per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your declines by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
 
 

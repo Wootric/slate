@@ -66,11 +66,13 @@ Scope parameters filter your end users and can also be chained together by passi
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
-page (optional) | integer | 1 | Number of returned page
-per_page (optional) | integer | 25 | Number of records returned on each page
+page (optional) | integer | 1 | Number of returned page, max 25
+per_page (optional) | integer | 25 | Number of records returned on each page, max 50
 created (optional) | hash | {} | Filter your end users by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
 email (optional) | string | None | Filter end users by email (will return an array containing a single end user object if the end user with provided email exists)
 sort_order (optional)| string | asc | Order in which records are shown. Default is oldest first. Options are `asc` or `desc`
+
+We recommend to iterate using `created` parameter if you need to get more data than what you get out of our pagination restriction.  
 
 
 ## Get a Specific End User
