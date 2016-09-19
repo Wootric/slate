@@ -221,13 +221,13 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>page (optional)</td>
 <td>integer</td>
 <td>1</td>
-<td>Number of returned page</td>
+<td>Number of returned page, max 25</td>
 </tr>
 <tr>
 <td>per_page (optional)</td>
 <td>integer</td>
 <td>25</td>
-<td>Number of records returned on each page</td>
+<td>Number of records returned on each page, max 50</td>
 </tr>
 <tr>
 <td>created (optional)</td>
@@ -248,6 +248,8 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>Order in which records are shown. Default is oldest first. Options are <code class="prettyprint">asc</code> or <code class="prettyprint">desc</code></td>
 </tr>
 </tbody></table>
+
+<p>We recommend to iterate using <code class="prettyprint">created</code> parameter if you need to get more data than what you get out of our pagination restriction.  </p>
 <h2 id='get-a-specific-end-user'>Get a Specific End User</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/2?access_token=myaccesstoken"</span>
 
 or
@@ -554,13 +556,13 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>page (optional)</td>
 <td>integer</td>
 <td>1</td>
-<td>Number of returned page</td>
+<td>Number of returned page, max 25</td>
 </tr>
 <tr>
 <td>per_page (optional)</td>
 <td>integer</td>
 <td>25</td>
-<td>Number of records returned on each page</td>
+<td>Number of records returned on each page, max 50</td>
 </tr>
 <tr>
 <td>created</td>
@@ -575,6 +577,8 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>Order in which records are shown. Default is oldest first. Options are <code class="prettyprint">asc</code> or <code class="prettyprint">desc</code></td>
 </tr>
 </tbody></table>
+
+<p>We recommend to iterate using <code class="prettyprint">created</code> parameter if you need to get more data than what you get out of our pagination restriction.</p>
 <h2 id='get-all-end-user39s-responses'>Get All End User&rsquo;s Responses</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken"</span>
 
 or
@@ -629,13 +633,13 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>page</td>
 <td>integer</td>
 <td>1</td>
-<td>Number of returned page</td>
+<td>Number of returned page, max 25</td>
 </tr>
 <tr>
 <td>per_page</td>
 <td>integer</td>
 <td>25</td>
-<td>Number of records returned on each page</td>
+<td>Number of records returned on each page, max 50</td>
 </tr>
 <tr>
 <td>created</td>
@@ -644,6 +648,8 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>Filter your responses by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
 </tbody></table>
+
+<p>We recommend to iterate using <code class="prettyprint">created</code> parameter if you need to get more data than what you get out of our pagination restriction.</p>
 <h2 id='get-all-promoters-responses'>Get All Promoters Responses</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/promoters?access_token=myaccesstoken"</span>
 
 or
@@ -1060,13 +1066,13 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>page</td>
 <td>integer</td>
 <td>1</td>
-<td>Number of returned page</td>
+<td>Number of returned page, max 25</td>
 </tr>
 <tr>
 <td>per_page</td>
 <td>integer</td>
 <td>25</td>
-<td>Number of records returned on each page</td>
+<td>Number of records returned on each page, max 50</td>
 </tr>
 <tr>
 <td>created</td>
@@ -1075,6 +1081,8 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>Filter your declines by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
 </tbody></table>
+
+<p>We recommend to iterate using <code class="prettyprint">created</code> parameter if you need to get more data than what you get out of our pagination restriction.</p>
 <h2 id='get-all-end-user39s-declines'>Get All End User&rsquo;s Declines</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/declines?access_token=myaccesstoken"</span>
 
 or
@@ -1123,13 +1131,13 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>page</td>
 <td>integer</td>
 <td>1</td>
-<td>Number of returned page</td>
+<td>Number of returned page, max 25</td>
 </tr>
 <tr>
 <td>per_page</td>
 <td>integer</td>
 <td>25</td>
-<td>Number of records returned on each page</td>
+<td>Number of records returned on each page, max 50</td>
 </tr>
 <tr>
 <td>created</td>
