@@ -1,3 +1,5 @@
+require './lib/swift_lexer'
+
 require './lib/redcarpet_header_fix'
 
 set :css_dir, 'stylesheets'

@@ -11,6 +11,11 @@ Wootric.setCustomLanguage(<LANGUAGE_CODE>)
 Wootric.setCustomAudience(<CUSTOM_AUDIENCE>)
 Wootric.setCustomProductName(<CUSTOM_PRODUCT_NAME>)
 ```
+```swift_three
+Wootric.setCustomLanguage(<LANGUAGE_CODE>)
+Wootric.setCustomAudience(<CUSTOM_AUDIENCE>)
+Wootric.setCustomProductName(<CUSTOM_PRODUCT_NAME>)
+```
 Please refer to our [docs](http://docs.wootric.com/install/#custom-language-setting) for available languages.
 
 Custom audience and/or product name modifies the default NPS question e.g. default question in English looks like this:
