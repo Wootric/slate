@@ -90,6 +90,20 @@ Wootric.forceSurvey(true)
 
 Wootric.showSurveyInViewController(<YOUR_VIEW_CONTROLLER>)
 ```
+``` swift_three
+// Inside your method
+Wootric.configure(withClientID: <YOUR_CLIENT_ID>, clientSecret:<YOUR_CLIENT_SECRET>,, accountToken:<YOUR_ACCOUNT_TOKEN>)
+
+// TODO: The current logged in user's email address.
+Wootric.setEndUserEmail("nps@example.com")
+// TODO: The current logged in user's sign-up date as a Unix timestamp.
+Wootric.setEndUserCreatedAt(1234567890)
+
+// Use only for testing
+Wootric.forceSurvey(true)
+
+Wootric.showSurvey(in: <YOUR_VIEW_CONTROLLER>)
+```
 First import the SDK into your ViewController of choosing. Then configure the SDK with your client ID, secret and account token.
 
 Sign in at [wootric.com](https://www.wootric.com/) if you haven't already. If you just signed up on the Wootric homepage, you will be taken directly to an installation page. If you’re a returning visitor, click on the “Settings" button near the top right of the page. Navigate to the [Wootric Installation Guide](https://app.wootric.com/install) and you will see a unique **account_token** for you to use.
@@ -124,7 +138,6 @@ If you are using Swift, don't forget to import WootricSDK in your `Bridging-Head
 
 [Wootric showSurveyInViewController:self];
 ```
-
 ```swift
 Wootric.configureWithClientID("your_client_id", clientSecret: "your_client_secret", accountToken: "NPS­-xxxxxxxx")
 Wootric.setEndUserEmail("nps@example.com")
@@ -140,6 +153,22 @@ Wootric.setCustomLanguage("fr")
 
 Wootric.showSurveyInViewController(self)
 ```
+```swift_three
+Wootric.configure(withClientID:"your_client_id", clientSecret: "your_client_secret", accountToken: "NPS­-xxxxxxxx")
+Wootric.setEndUserEmail("nps@example.com")
+Wootric.setEndUserCreatedAt(1234567890)
+
+// Use only for testing
+Wootric.forceSurvey(true)
+
+// Customization
+Wootric.setCustomProductName("Wootric")
+Wootric.setCustomFinalThankYou("Merci!")
+Wootric.setCustomLanguage("fr")
+
+Wootric.showSurvey(in: self)
+```
+
 
 This is an important step! [Customize](https://app.wootric.com/user_settings/edit#!/survey-nps) your survey with the name of your product or company. As needed, make changes to our trusted [survey](https://app.wootric.com/user_settings/edit#!/survey-nps) and [sampling](https://app.wootric.com/user_settings/edit#!/sampling) defaults. This values can modified from your app.
 

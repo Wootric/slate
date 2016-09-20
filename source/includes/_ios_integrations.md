@@ -31,6 +31,15 @@ SEGAnalytics.setupWithConfiguration(config)
 
 WTRWootricIntegration.showSurveyInViewController(self)
 ```
+```swift_three
+let config = SEGAnalyticsConfiguration.init(writeKey: "1232135234124123")
+
+let wootricFactory = WTRWootricIntegrationFactory.instance() as! WTRWootricIntegrationFactory
+config?.use(wootricFactory)
+SEGAnalytics.setup(with: config)
+
+WTRWootricIntegration.showSurvey(in: self)
+```
 First of all you need to provide values for account token, clientID and client secret in Segment's dashboard for Wootric integration, then import Segment-Wootric.
 
 Then init the Analytics with Wootric integration. Wootric integration responds to ```identify``` call, to read more about it, visit [Segment identify method documentation](https://segment.com/docs/libraries/ios/#identify).

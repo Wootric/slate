@@ -30,7 +30,6 @@ NSURL *appStoreURL = [NSURL URLWithString:@"itms-apps://itunes.apple.com/WebObje
 
 [Wootric showSurveyInViewController:self];
 ```
-
 ```swift
 Wootric.configureWithClientID(clientID, clientSecret:clientSecret, accountToken:accountToken)
 Wootric.setEndUserEmail("nps@example.com")
@@ -55,6 +54,31 @@ Wootric.skipFeedbackScreenForPromoter(true)
 // Wootric.forceSurvey(true)
 
 Wootric.showSurveyInViewController(self)
+```
+```swift_three
+Wootric.configure(withClientID: clientID, clientSecret:clientSecret, accountToken:accountToken)
+Wootric.setEndUserEmail("nps@example.com")
+Wootric.setEndUserCreatedAt(1234567890)
+
+// Replace YOUR_APP_ID with your application's id.
+// e.g. https://itunes.apple.com/en/app/YOUR_APP_NAME/id123456789
+// The app id would 123456789
+let appStoreURL = URL(string: "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=YOUR_APP_ID&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software")
+
+// Uncomment to set ThankYouLink for all users
+// Wootric.setThankYouLinkWithText("Rate our app!", url:appStoreURL);
+
+// Will set Link only for promoters
+Wootric.setPromoterThankYouLinkWithText("Rate our app!", url:appStoreURL)
+
+// Will skip the Feedback view for Promoters
+Wootric.skipFeedbackScreen(forPromoter: true)
+
+// Uncomment for testing
+// NOTE: do not use on production
+// Wootric.forceSurvey(true)
+
+Wootric.showSurvey(in: self)
 ```
 
 You can set the last button to go to the App Store so users can rate your app.
@@ -86,7 +110,6 @@ NSMutableDictionary *properties = [NSMutableDictionary new];
 
 [Wootric showSurveyInViewController:self];
 ```
-
 ```swift
 Wootric.configureWithClientID(clientID, clientSecret:clientSecret, accountToken:accountToken)
     
@@ -98,11 +121,28 @@ Wootric.setEndUserEmail("nps@example.com")
 
 // Set end user's properties
 let properties: [String: String] = ["company" : "Wootric",
-									"type" : "awesome",
+                                    "type" : "awesome",
                                     "os" :"iOS"]
 Wootric.setEndUserProperties(properties)
 
 Wootric.showSurveyInViewController(self)
+```
+```swift_three
+Wootric.configure(withClientID: clientID, clientSecret:clientSecret, accountToken:accountToken)
+    
+Wootric.setEndUserEmail("nps@example.com")
+
+// Uncomment for testing
+// NOTE: do not use in production
+// Wootric.forceSurvey(true)
+
+// Set end user's properties
+let properties: [String: String] = ["company" : "Wootric",
+                                    "type" : "awesome",
+                                    "os" :"iOS"]
+Wootric.setEndUserProperties(properties)
+
+Wootric.showSurvey(in: self)
 ```
 Setting end user properties will help you segment and filter results.
 
