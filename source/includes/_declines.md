@@ -57,7 +57,7 @@ Scope parameters filter your declines and can also be chained together by passin
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
-page | integer | 1 | Number of returned page, max 25
+page | integer | 1 | Number of returned page, max 30
 per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your declines by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
 
@@ -108,7 +108,7 @@ Scope parameters filter your declines and can also be chained together by passin
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
-page | integer | 1 | Number of returned page, max 25
+page | integer | 1 | Number of returned page, max 30
 per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your declines by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
 

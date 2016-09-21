@@ -70,7 +70,7 @@ Scope parameters filter your responses and can also be chained together by passi
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
-page (optional)| integer | 1 | Number of returned page, max 25
+page (optional)| integer | 1 | Number of returned page, max 30
 per_page (optional) | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
 sort_order (optional)| string | asc | Order in which records are shown. Default is oldest first. Options are `asc` or `desc`
@@ -128,7 +128,7 @@ Scope parameters filter your responses and can also be chained together by passi
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
-page | integer | 1 | Number of returned page, max 25
+page | integer | 1 | Number of returned page, max 30
 per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
 
@@ -186,8 +186,8 @@ Scope parameters filter your promoters responses and can also be chained togethe
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
-page | integer | 1 | Number of returned page
-per_page | integer | 25 | Number of records returned on each page
+page | integer | 1 | Number of returned page, max 30
+per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
 
 
@@ -242,8 +242,8 @@ Scope parameters filter your passives responses and can also be chained together
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
-page | integer | 1 | Number of returned page
-per_page | integer | 25 | Number of records returned on each page
+page | integer | 1 | Number of returned page, max 30
+per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
 
 
@@ -298,8 +298,8 @@ Scope parameters filter your detractors responses and can also be chained togeth
 
 Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
-page | integer | 1 | Number of returned page
-per_page | integer | 25 | Number of records returned on each page
+page | integer | 1 | Number of returned page, max 30
+per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
 
 
