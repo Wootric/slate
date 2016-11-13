@@ -28,14 +28,23 @@ You can use our API to access and update your end users, responses, declines, an
 All responses from the API (including errors) are in JSON. All code examples are in cURL.
 
 # Authentication
-> To retrieve an access token using OAuth, use the following code:
+> To retrieve an access token using OAuth if you have one account on Wootric, use the following code:
 
 ```shell
 curl -i https://api.wootric.com/oauth/token \
      -F grant_type=password \
      -F username=<youremailaddress> \
      -F password=<yourpassword>
-```
+```  
+
+> To retrieve an access token using OAuth if you multiple accounts on Wootric, you would need to pass your account token as query paarameter to the URL as following:
+
+```shell
+curl -i https://api.wootric.com/oauth/token?account_token=NPS-XXXX \
+     -F grant_type=password \
+     -F username=<youremailaddress> \
+     -F password=<yourpassword>
+```        
 
 > The above command returns the following JSON:
 
