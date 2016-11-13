@@ -36,9 +36,18 @@
 <p>All responses from the API (including errors) are in JSON. All code examples are in cURL.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
-<p>To retrieve an access token using OAuth, use the following code:</p>
+<p>To retrieve an access token using OAuth if you have one account on Wootric, use the following code:</p>
 </blockquote>
 <pre><code class="highlight shell">curl -i https://api.wootric.com/oauth/token <span class="se">\</span>
+     -F <span class="nv">grant_type</span><span class="o">=</span>password <span class="se">\</span>
+     -F <span class="nv">username</span><span class="o">=</span>&lt;youremailaddress&gt; <span class="se">\</span>
+     -F <span class="nv">password</span><span class="o">=</span>&lt;yourpassword&gt;
+</code></pre>
+
+<blockquote>
+<p>To retrieve an access token using OAuth if you multiple accounts on Wootric, you would need to pass your account token as query paarameter to the URL as following:</p>
+</blockquote>
+<pre><code class="highlight shell">curl -i https://api.wootric.com/oauth/token?account_token<span class="o">=</span>NPS-XXXX <span class="se">\</span>
      -F <span class="nv">grant_type</span><span class="o">=</span>password <span class="se">\</span>
      -F <span class="nv">username</span><span class="o">=</span>&lt;youremailaddress&gt; <span class="se">\</span>
      -F <span class="nv">password</span><span class="o">=</span>&lt;yourpassword&gt;
