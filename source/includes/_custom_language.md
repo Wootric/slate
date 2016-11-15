@@ -24,18 +24,26 @@ Currently supported languages (with language codes):
 
 Language | Code
 -------- | ----
-Spanish | ES
-Portuguese | PT
-Polish | PL
-French | FR
-German | DE
-Italian | IT
-Turkish | TR
-Dutch | NL
+Arabic | AR
 Chinese (Simplified) | CN_S
 Chinese (Traditional) | CN_T
+Danish | DA
+Dutch | NL
+English | EN
+Finnish | FI
+French | FR
+German | DE
+German -informal | DE-INFORMAL
+Italian | IT
 Japanese | JA
-Vietnamese | VN
-Russian | RU
-Swedish | SV
+Lithuanian | LT
 Norwegian | NO
+Polish | PL
+Portuguese | PT
+Romanina | RO
+Russian | RU
+Spanish | ES
+Spanish - Mexico | ES_MX
+Swedish | SV
+Turkish | TR
+Vietnamese | VN
