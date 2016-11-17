@@ -55,11 +55,21 @@ HashMap<String, String> properties = new HashMap<String, String>();
 properties.put("company", "Wootric");
 properties.put("type", "awesome");
 properties.put("os", "Android");
+// Integer representing the date (Unix timestamp format) of the user's last order with the key suffixed with "_date"
+properties.put("last_order_date", "1479316287");
+// Integer representing the user's total purchases with the key suffixed with "_amount"
+properties.put("total_purchase_amount", "10");
 wootric.setProperties(properties);
 
 wootric.survey();
 ```
 Setting end user properties will help you segment and filter results.
+
+Wootric currently supports Integers, Strings, and Unix formatted dates as values.
+
+Integers must be suffixed with _amount and dates must be in Unix timestamp format and suffixed with _date.
+
+Keys cannot contain characters such as ‘$’, ‘.’ or the NULL character. Values cannot be nested hashes or arrays.
 
 <p align="center" >
   <img src="https://cloud.githubusercontent.com/assets/1431421/17043713/0b202224-4f7f-11e6-86cf-3193cfda998f.png" alt="Properties" title="Wootric">
