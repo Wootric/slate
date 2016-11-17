@@ -587,6 +587,11 @@ While it is not required, setting <code class="prettyprint">setEndUserCreatedAt<
 <span class="p">[</span><span class="n">properties</span> <span class="nf">setObject</span><span class="p">:</span><span class="s">@"Wootric"</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"company"</span><span class="p">];</span>
 <span class="p">[</span><span class="n">properties</span> <span class="nf">setObject</span><span class="p">:</span><span class="s">@"awesome"</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"type"</span><span class="p">];</span>
 <span class="p">[</span><span class="n">properties</span> <span class="nf">setObject</span><span class="p">:</span><span class="s">@"iOS"</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"os"</span><span class="p">];</span>
+<span class="c1">// Integer representing the date (Unix timestamp format) of the user's last order with the key suffixed with "_date"
+</span><span class="p">[</span><span class="n">properties</span> <span class="nf">setObject</span><span class="p">:</span><span class="mi">@1479316287</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"last_order_date"</span><span class="p">];</span>
+<span class="c1">// Integer representing the user's total purchases with the key suffixed with "_amount"
+</span><span class="p">[</span><span class="n">properties</span> <span class="nf">setObject</span><span class="p">:</span><span class="mi">@10</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"total_purchase_amount"</span><span class="p">];</span>
+
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserProperties</span><span class="p">:</span><span class="n">properties</span><span class="p">];</span>
 
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">showSurveyInViewController</span><span class="p">:</span><span class="n">self</span><span class="p">];</span>
@@ -600,9 +605,15 @@ While it is not required, setting <code class="prettyprint">setEndUserCreatedAt<
 // Wootric.forceSurvey(true)
 </span>
 <span class="c1">// Set end user's properties
-</span><span class="k">let</span> <span class="nv">properties</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"company"</span> <span class="p">:</span> <span class="s">"Wootric"</span><span class="p">,</span>
-                                    <span class="s">"type"</span> <span class="p">:</span> <span class="s">"awesome"</span><span class="p">,</span>
-                                    <span class="s">"os"</span> <span class="p">:</span><span class="s">"iOS"</span><span class="p">]</span>
+// Integer representing the date (Unix timestamp format) of the user's last order with the key suffixed with "_date"
+// Integer representing the user's total purchases with the key suffixed with "_amount"
+</span><span class="k">let</span> <span class="nv">properties</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s">"company"</span> <span class="p">:</span> <span class="s">"Wootric"</span><span class="p">,</span>
+  <span class="s">"type"</span> <span class="p">:</span> <span class="s">"awesome"</span><span class="p">,</span>
+  <span class="s">"os"</span> <span class="p">:</span> <span class="s">"iOS"</span><span class="p">,</span>
+  <span class="s">"last_order_date"</span> <span class="p">:</span> <span class="s">"1479316287"</span><span class="p">,</span>
+  <span class="s">"total_purchase_amount"</span> <span class="p">:</span> <span class="s">"10"</span>
+<span class="p">]</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserProperties</span><span class="p">(</span><span class="n">properties</span><span class="p">)</span>
 
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">showSurveyInViewController</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
@@ -616,15 +627,27 @@ While it is not required, setting <code class="prettyprint">setEndUserCreatedAt<
 // Wootric.forceSurvey(true)
 </span>
 <span class="c1">// Set end user's properties
-</span><span class="k">let</span> <span class="nv">properties</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"company"</span> <span class="p">:</span> <span class="s">"Wootric"</span><span class="p">,</span>
-                                    <span class="s">"type"</span> <span class="p">:</span> <span class="s">"awesome"</span><span class="p">,</span>
-                                    <span class="s">"os"</span> <span class="p">:</span><span class="s">"iOS"</span><span class="p">]</span>
+// Integer representing the date (Unix timestamp format) of the user's last order with the key suffixed with "_date"
+// Integer representing the user's total purchases with the key suffixed with "_amount"
+</span><span class="k">let</span> <span class="nv">properties</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s">"company"</span> <span class="p">:</span> <span class="s">"Wootric"</span><span class="p">,</span>
+  <span class="s">"type"</span> <span class="p">:</span> <span class="s">"awesome"</span><span class="p">,</span>
+  <span class="s">"os"</span> <span class="p">:</span> <span class="s">"iOS"</span><span class="p">,</span>
+  <span class="s">"last_order_date"</span> <span class="p">:</span> <span class="s">"1479316287"</span><span class="p">,</span>
+  <span class="s">"total_purchase_amount"</span> <span class="p">:</span> <span class="s">"10"</span>
+<span class="p">]</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserProperties</span><span class="p">(</span><span class="n">properties</span><span class="p">)</span>
 
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">showSurvey</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
 </code></pre>
 
 <p>Setting end user properties will help you segment and filter results.</p>
+
+<p>Wootric currently supports Integers, Strings, and Unix formatted dates as values.</p>
+
+<p>Integers must be suffixed with _amount and dates must be in Unix timestamp format and suffixed with _date.</p>
+
+<p>Keys cannot contain characters such as ‘$’, ‘.’ or the NULL character. Values cannot be nested hashes or arrays.</p>
 
 <p align="center" >
   <img src="https://cloud.githubusercontent.com/assets/1431421/17043713/0b202224-4f7f-11e6-86cf-3193cfda998f.png" alt="Properties" title="Wootric">
