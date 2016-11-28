@@ -292,22 +292,12 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
 <span class="n">properties</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"company"</span><span class="o">,</span> <span class="s">"Wootric"</span><span class="o">);</span>
 <span class="n">properties</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"type"</span><span class="o">,</span> <span class="s">"awesome"</span><span class="o">);</span>
 <span class="n">properties</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"os"</span><span class="o">,</span> <span class="s">"Android"</span><span class="o">);</span>
-<span class="c1">// Integer representing the date (Unix timestamp format) of the user's last order with the key suffixed with "_date"</span>
-<span class="n">properties</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"last_order_date"</span><span class="o">,</span> <span class="s">"1479316287"</span><span class="o">);</span>
-<span class="c1">// Integer representing the user's total purchases with the key suffixed with "_amount"</span>
-<span class="n">properties</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"total_purchase_amount"</span><span class="o">,</span> <span class="s">"10"</span><span class="o">);</span>
 <span class="n">wootric</span><span class="o">.</span><span class="na">setProperties</span><span class="o">(</span><span class="n">properties</span><span class="o">);</span>
 
 <span class="n">wootric</span><span class="o">.</span><span class="na">survey</span><span class="o">();</span>
 </code></pre>
 
 <p>Setting end user properties will help you segment and filter results.</p>
-
-<p>Wootric currently supports Integers, Strings, and Unix formatted dates as values.</p>
-
-<p>Integers must be suffixed with _amount and dates must be in Unix timestamp format and suffixed with _date.</p>
-
-<p>Keys cannot contain characters such as ‘$’, ‘.’ or the NULL character. Values cannot be nested hashes or arrays.</p>
 
 <p align="center" >
   <img src="https://cloud.githubusercontent.com/assets/1431421/17043713/0b202224-4f7f-11e6-86cf-3193cfda998f.png" alt="Properties" title="Wootric">
