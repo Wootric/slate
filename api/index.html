@@ -1374,8 +1374,8 @@ curl -X PUT -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <sp
 </tr>
 </tbody></table>
 
-<h1 id='nps-score'>NPS Score</h1><h2 id='nps-score-object'>NPS Score Object</h2>
-<p>An NPS score object has the following fields:</p>
+<h1 id='metrics'>Metrics</h1><h2 id='nps-object'>NPS Object</h2>
+<p>An NPS object has the following fields:</p>
 
 <table><thead>
 <tr>
@@ -1387,7 +1387,7 @@ curl -X PUT -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <sp
 <tr>
 <td>nps</td>
 <td>integer</td>
-<td>NPS Score for a given date range</td>
+<td>NPS for a given date range</td>
 </tr>
 <tr>
 <td>responses</td>
@@ -1420,11 +1420,19 @@ curl -X PUT -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <sp
 <td>Email response rate percentage for a given date range</td>
 </tr>
 </tbody></table>
-<h2 id='get-nps-score-summary'>Get NPS Score summary</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/nps_score?access_token=myaccesstoken"</span>
+<h2 id='get-nps-summary'>Get NPS summary</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/nps_summary?access_token=myaccesstoken"</span>
 
 or
 
-curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/nps_score"</span>
+curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/nps_summary"</span>
+
+<span class="c"># With params</span>
+
+curl <span class="s2">"https://api.wootric.com/v1/nps_summary?access_token=myaccesstoken"</span> -d <span class="s2">"date[start]='YYYY-MM-DD'&amp;date[end]='YYYY-MM-DD'"</span>
+
+or
+
+curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/nps_summary"</span> -d <span class="s2">"date[start]='YYYY-MM-DD'&amp;date[end]='YYYY-MM-DD'"</span>
 </code></pre>
 
 <blockquote>
@@ -1441,11 +1449,11 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>This endpoint retrieves the NPS score summary for the specified 
-date range. If no date range is specified, the API returns NPS score summary for
+<p>This endpoint retrieves the NPS summary for the specified 
+date range. If no date range is specified, the API returns NPS summary for
 the last month.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET https://api.wootric.com/v1/nps_score</code></p>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/nps_summary</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1459,7 +1467,7 @@ the last month.</p>
 <td>date (optional)</td>
 <td>hash</td>
 <td>{}</td>
-<td>NPS score summary by start date (optional) and end date (optional) (<code class="prettyprint">date[start]=START_DATE&amp;date[end]=END_DATE</code>)</td>
+<td>NPS summary by start date (optional) and end date (optional) (<code class="prettyprint">date[start]=&#39;YYYY-MM-DD&#39;&amp;date[end]=&#39;YYYY-MM-DD&#39;</code>)</td>
 </tr>
 </tbody></table>
 
