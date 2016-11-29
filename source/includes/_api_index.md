@@ -14,7 +14,7 @@ includes:
   - declines
   - page_views
   - end_user_settings
-  - nps_score
+  - nps_summary
   - errors
 
 search: true
