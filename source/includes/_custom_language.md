@@ -34,6 +34,7 @@ Finnish | FI
 French | FR
 German | DE
 German -informal | DE-INFORMAL
+Hungarian | HU
 Italian | IT
 Japanese | JA
 Lithuanian | LT
