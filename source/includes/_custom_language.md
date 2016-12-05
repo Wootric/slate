@@ -35,6 +35,7 @@ French | FR
 German | DE
 German -informal | DE-INFORMAL
 Hungarian | HU
+Indonesian | ID
 Italian | IT
 Japanese | JA
 Lithuanian | LT
