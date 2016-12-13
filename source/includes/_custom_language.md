@@ -44,6 +44,7 @@ Polish | PL
 Portuguese | PT
 Romanina | RO
 Russian | RU
+Slovene | SL
 Spanish | ES
 Spanish - Mexico | ES_MX
 Swedish | SV
