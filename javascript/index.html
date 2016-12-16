@@ -412,6 +412,22 @@ By default, when this property is not set, we display:
 </code></pre>
 
 <p>Modal position can be either <code class="prettyprint">top</code> or <code class="prettyprint">bottom</code> (default).  To set the position, provide <code class="prettyprint">modal_position</code> key-value in <code class="prettyprint">wootricSettings</code> object.</p>
+<h2 id='modal-accessibility-settings'>Modal accessibility settings</h2><pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span><span class="c1">// TODO: The current logged in user's email address.</span>
+  <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-xxxxxxx'</span><span class="p">,</span>
+  <span class="na">aria</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">};</span>
+</code></pre>
+
+<p>By default the modal is already accessible to screen readers.</p>
+
+<p>This flag enables extra ARIA enhancements such as:</p>
+
+<ul>
+<li>improved color contrast.</li>
+<li>JavaScript initiated focus to push screen readers through the survey smoothly.</li>
+</ul>
 
 <h1 id='custom-attributes'>Custom Attributes</h1>
 <p>Wootric now allows you to send custom attributes about your customers. This will give you the
