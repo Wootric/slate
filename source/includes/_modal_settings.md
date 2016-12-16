@@ -100,3 +100,21 @@ window.wootricSettings = {
 <!--­­ end Wootric code --­­>
 ```
 Modal position can be either ```top``` or ```bottom``` (default).  To set the position, provide ```modal_position``` key-value in ```wootricSettings``` object.
+
+## Modal accessibility settings
+
+```js
+window.wootricSettings = {
+  email:'nps@example.com',// TODO: The current logged in user's email address.
+  created_at: 1234567890, // TODO: The current logged in user's sign-up date as a Unix timestamp.
+  account_token: 'NPS-xxxxxxx',
+  aria: true
+};
+```
+
+By default the modal is already accessible to screen readers.
+
+This flag enables extra ARIA enhancements such as:
+
+- improved color contrast.
+- JavaScript initiated focus to push screen readers through the survey smoothly.
