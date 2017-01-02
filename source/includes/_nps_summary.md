@@ -25,11 +25,11 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/nps_su
 
 # With params
 
-curl "https://api.wootric.com/v1/nps_summary?access_token=myaccesstoken" -d "date[start]='YYYY-MM-DD'&date[end]='YYYY-MM-DD'"
+curl "https://api.wootric.com/v1/nps_summary?access_token=myaccesstoken?date%5Bstart%5D='YYYY-MM-DD'&date%5Bend%5D='YYYY-MM-DD'"
 
 or
 
-curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/nps_summary" -d "date[start]='YYYY-MM-DD'&date[end]='YYYY-MM-DD'"
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/nps_summary?date%5Bstart%5D='YYYY-MM-DD'&date%5Bend%5D='YYYY-MM-DD'"
 ```
 
 > The above command returns the following JSON:
