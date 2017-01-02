@@ -1733,11 +1733,11 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 
 <span class="c"># With params</span>
 
-curl <span class="s2">"https://api.wootric.com/v1/nps_summary?access_token=myaccesstoken"</span> -d <span class="s2">"date[start]='YYYY-MM-DD'&amp;date[end]='YYYY-MM-DD'"</span>
+curl <span class="s2">"https://api.wootric.com/v1/nps_summary?access_token=myaccesstoken?date%5Bstart%5D='YYYY-MM-DD'&amp;date%5Bend%5D='YYYY-MM-DD'"</span>
 
 or
 
-curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/nps_summary"</span> -d <span class="s2">"date[start]='YYYY-MM-DD'&amp;date[end]='YYYY-MM-DD'"</span>
+curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/nps_summary?date%5Bstart%5D='YYYY-MM-DD'&amp;date%5Bend%5D='YYYY-MM-DD'"</span>
 </code></pre>
 
 <blockquote>
