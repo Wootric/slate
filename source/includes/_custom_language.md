@@ -33,7 +33,7 @@ English | EN
 Finnish | FI
 French | FR
 German | DE
-German -informal | DE-INFORMAL
+German -informal | DE_DE_X_INFORMAL
 Hungarian | HU
 Indonesian | ID
 Italian | IT
