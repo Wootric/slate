@@ -1757,6 +1757,10 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <p>This endpoint retrieves the NPS summary for the specified 
 date range. If no date range is specified, the API returns NPS summary for
 the last month.</p>
+
+<p><aside class="notice">
+The values returned by this endpoint depend on the Account&rsquo;s time zone setting.
+</aside></p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET https://api.wootric.com/v1/nps_summary</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
