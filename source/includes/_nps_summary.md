@@ -50,6 +50,10 @@ This endpoint retrieves the NPS summary for the specified
 date range. If no date range is specified, the API returns NPS summary for
 the last month.
 
+<aside class="notice">
+The values returned by this endpoint depend on the Account's time zone setting.
+</aside>
+
 ### HTTP Request
 
 `GET https://api.wootric.com/v1/nps_summary`
