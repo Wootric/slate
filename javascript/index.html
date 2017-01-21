@@ -737,6 +737,34 @@ In order to do that, you need to configure <code class="prettyprint">wootricSett
 <h3 id='example-3'>Example 3</h3>
 <p>With this kind of setting we are missing the default <code class="prettyprint">thank_you_link_url</code> and have only detractor url defined. With no <code class="prettyprint">Wootric.thankYouMessages</code> object defined, we will display third page only for detractors if social media share (Facebook and Twitter) is also not defined (because there is no message to display and we can show complete button only for detractors).</p>
 
+<h1 id='wootric-survey-object-api'>Wootric Survey Object API</h1><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-XXXXXXX'</span>
+<span class="p">}</span>
+
+<span class="c1">//run</span>
+<span class="nx">WootricSurvey</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">wootricSettings</span><span class="p">);</span>
+
+<span class="c1">//stop</span>
+<span class="nx">WootricSurvey</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
+
+<span class="c1">//Version</span>
+<span class="nx">WootricSurvey</span><span class="p">.</span><span class="nx">version</span><span class="p">();</span>
+
+<span class="c1">// =&gt; "8f2a6414b81db4a57ead648379fb48ddfee5c3d1"</span>
+</code></pre>
+
+<p>The Wootric Survey object exposes the following methods:</p>
+
+<ul>
+<li><p><strong>run(settings)</strong> <br>
+Shows a survey honoring the passed settings</p></li>
+<li><p><strong>stop()</strong> <br>
+Hides a survey if it&rsquo;s displayed without generating a decline.<br>
+If the delay time is still running stop will abort that survey from happening.</p></li>
+<li><p><strong>version() : string</strong> <br>
+Returns WootricSurvey&rsquo;s object current version</p></li>
+</ul>
+
 <h1 id='survey-types-beta'>Survey Types (BETA)</h1><pre><code class="highlight javascript"><span class="c1">//Example 1</span>
 <span class="kd">var</span> <span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-XXXXXXX'</span><span class="p">,</span>
