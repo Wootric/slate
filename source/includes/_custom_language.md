@@ -20,7 +20,7 @@ To set a custom language add ```language``` parameter to ```wootricSettings``` a
 
 Please be advised, that custom messages and/or placeholder, takes precedence over language settings.
 
-Currently supported languages (with language codes):
+##Net Promoter Score (NPS) currently supports these languages (with language codes):
 
 Language | Code
 -------- | ----
@@ -50,3 +50,20 @@ Spanish - Mexico | ES_MX
 Swedish | SV
 Turkish | TR
 Vietnamese | VN
+
+##Customer Effort Score (CES) currently supports these languages (with language codes):
+
+Language | Code
+-------- | ----
+English | EN
+Spanish | ES
+Spanish - Mexico | ES_MX
+
+##Customer Satisfaction (CSAT) currently supports these languages (with language codes):
+
+Language | Code
+-------- | ----
+English | EN
+Spanish | ES
+Spanish - Mexico | ES_MX
+German | DE
