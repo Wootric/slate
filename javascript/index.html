@@ -693,11 +693,17 @@ In order to do that, you need to configure <code class="prettyprint">wootricSett
   <span class="na">add_score_param_to_url</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="na">add_comment_param_to_url</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="na">thankYouMessages</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">thank_you_setup</span><span class="p">:</span> <span class="s1">'Thank you for all scores!'</span><span class="p">,</span>
+    <span class="na">thank_you_setup</span><span class="p">:</span> <span class="s1">'Request for action for all scores'</span><span class="p">,</span>
     <span class="na">thank_you_setup_list</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">detractor_thank_you_setup</span><span class="p">:</span> <span class="s1">'Detractor thank you'</span><span class="p">,</span>
-      <span class="na">passive_thank_you_setup</span><span class="p">:</span> <span class="s1">'Passive thank you'</span><span class="p">,</span>
-      <span class="na">promoter_thank_you_setup</span><span class="p">:</span> <span class="s1">'Promoter thank you'</span>
+      <span class="na">detractor_thank_you_setup</span><span class="p">:</span> <span class="s1">'Detractor request for action'</span><span class="p">,</span>
+      <span class="na">passive_thank_you_setup</span><span class="p">:</span> <span class="s1">'Passive request for action'</span><span class="p">,</span>
+      <span class="na">promoter_thank_you_setup</span><span class="p">:</span> <span class="s1">'Promoter request for action'</span>
+    <span class="p">},</span>
+    <span class="na">thank_you_main</span><span class="p">:</span> <span class="s1">'Thank you for all scores!'</span><span class="p">,</span>
+    <span class="na">thank_you_main_list</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">detractor_thank_you_main</span><span class="p">:</span> <span class="s1">'Detractor thank you'</span><span class="p">,</span>
+      <span class="na">passive_thank_you_main</span><span class="p">:</span> <span class="s1">'Passive thank you'</span><span class="p">,</span>
+      <span class="na">promoter_thank_you_main</span><span class="p">:</span> <span class="s1">'Promoter thank you'</span>
     <span class="p">}</span>
   <span class="p">},</span>
   <span class="na">thankYouLinks</span><span class="p">:</span> <span class="p">{</span>
@@ -706,7 +712,7 @@ In order to do that, you need to configure <code class="prettyprint">wootricSett
     <span class="na">thank_you_link_text_list</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">detractor_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Detractor thank you text'</span><span class="p">,</span>
       <span class="na">passive_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Passive thank you text'</span><span class="p">,</span>
-      <span class="na">promoter_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Promoter thank you text'</span><span class="p">,</span>
+      <span class="na">promoter_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Promoter thank you text'</span>
     <span class="p">},</span>
     <span class="na">thank_you_link_url_list</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">detractor_thank_you_link_url</span><span class="p">:</span> <span class="s1">'Detractor thank you url'</span><span class="p">,</span>
@@ -720,9 +726,14 @@ In order to do that, you need to configure <code class="prettyprint">wootricSett
 <span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
 </code></pre>
 
-<p>Wootric allows you also to display a customized button and &lsquo;thank you&rsquo; message on a third page of the survey. This feature can be configured to work for all scores.</p>
+<p>Wootric allows you also to display a customized button with a request for action and a &lsquo;thank you&rsquo; message on a third page of the survey. This feature can be configured to work for all scores.</p>
 
-<p>The <code class="prettyprint">Wootric.thankYouMessages</code> object can contain <code class="prettyprint">thank_you_setup</code> which is default value for every score if <code class="prettyprint">thank_you_setup_list</code> is not provided, or a default value for keys missing in <code class="prettyprint">thank_you_setup_list</code></p>
+<p>The <code class="prettyprint">thank_you_setup</code> field is used as a request for action. It will
+appear only if a custom button has been configured and can be used to prompt an
+action from the end user. The <code class="prettyprint">thank_you_main</code> fields appear at the top of
+the third screen of the survey in bold, green font.</p>
+
+<p>The <code class="prettyprint">Wootric.thankYouMessages</code> object can contain <code class="prettyprint">thank_you_setup</code> and <code class="prettyprint">thank_you_main</code> which are the default values for every score if <code class="prettyprint">thank_you_setup_list</code> / <code class="prettyprint">thank_you_main_list</code> are not provided, or a default value for keys missing in <code class="prettyprint">thank_you_setup_list</code> / <code class="prettyprint">thank_you_main_list</code></p>
 
 <p>The <code class="prettyprint">Wootric.thankYouLinks</code> object can contain <code class="prettyprint">thank_you_link_text</code> and <code class="prettyprint">thank_you_link_url</code> which are default text/url for every score if <code class="prettyprint">thank_you_link_text_list</code>/<code class="prettyprint">thank_you_link_url_list</code> are not provided or are missing appropriate keys.</p>
 
@@ -733,18 +744,6 @@ In order to do that, you need to configure <code class="prettyprint">wootricSett
 <p>If you have set for example <code class="prettyprint">&quot;http://promoterurl.com/endpoint&quot;</code> as your url, setting both of the keys to true will result in the url being <code class="prettyprint">http://promoterurl.com/endpoint?wootric_score=SCORE&amp;wootric_comment=COMMENT</code>.</p>
 
 <h1 id='custom-thank-you-examples'>Custom Thank You Examples</h1><pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">1</span> <span class="o">--&gt;</span>
-<span class="kd">var</span> <span class="nx">Wootric</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">thankYouMessages</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">thank_you_setup</span><span class="p">:</span> <span class="s1">'Thank you for all scores!'</span><span class="p">,</span>
-    <span class="na">thank_you_setup_list</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">promoter_thank_you_setup</span><span class="p">:</span> <span class="s1">'Promoter thank you'</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-</code></pre>
-<h3 id='example-1'>Example 1</h3>
-<p>We have defined <code class="prettyprint">thank_you_setup</code> and <code class="prettyprint">promoter_thank_you_setup</code> in <code class="prettyprint">thank_you_setup_list</code>. Therefore on a third page we will display &lsquo;Thank you for all scores!&rsquo; text for passives and detractors, and &lsquo;Promoter thank you&rsquo; for promoters.</p>
-<pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">2</span> <span class="o">--&gt;</span>
 <span class="kd">var</span> <span class="nx">Wootric</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">thankYouLinks</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">thank_you_link_text</span><span class="p">:</span> <span class="s1">'Thank you text for all scores!'</span><span class="p">,</span>
@@ -758,8 +757,32 @@ In order to do that, you need to configure <code class="prettyprint">wootricSett
   <span class="p">}</span>
 <span class="p">};</span>
 </code></pre>
-<h3 id='example-2'>Example 2</h3>
+<h3 id='example-1'>Example 1</h3>
 <p>We have defined both <code class="prettyprint">thank_you_link_text</code> and <code class="prettyprint">thank_you_link_url</code>. We have also defined <code class="prettyprint">promoter_thank_you_link_text</code> and <code class="prettyprint">detractor_thank_you_link_url</code> in respectively <code class="prettyprint">thank_you_link_text_list</code> and <code class="prettyprint">thank_you_link_url_list</code>. This means that we are going to display button with text &lsquo;Promoter thank you text&rsquo; which opens a &lsquo;http://example.com&rsquo; url for a promoter. Passive is going to see button with text &lsquo;Thank you text for all scores!&rsquo; and url &lsquo;http://example.com&rsquo;, while detractor&rsquo;s button url would be &lsquo;http://detractor.com&rsquo; with the same text as passive.</p>
+<pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">2</span> <span class="o">--&gt;</span>
+<span class="kd">var</span> <span class="nx">Wootric</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">thankYouMessages</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">thank_you_setup</span><span class="p">:</span> <span class="s1">'Request for action for all scores'</span><span class="p">,</span>
+    <span class="na">thank_you_setup_list</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">promoter_thank_you_setup</span><span class="p">:</span> <span class="s1">'Promoter request for action'</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="na">thankYouLinks</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">thank_you_link_text</span><span class="p">:</span> <span class="s1">'Thank you text for all scores!'</span><span class="p">,</span>
+    <span class="na">thank_you_link_url</span><span class="p">:</span> <span class="s1">'http://example.com'</span><span class="p">,</span>
+    <span class="na">thank_you_link_text_list</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">promoter_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Promoter thank you text'</span>
+    <span class="p">},</span>
+    <span class="na">thank_you_link_url_list</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">detractor_thank_you_link_url</span><span class="p">:</span> <span class="s1">'http://detractor.com'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+
+<p><br><br><br><br></p>
+<h3 id='example-2'>Example 2</h3>
+<p>In this case, in addition to defining a custom button, we have defined <code class="prettyprint">thank_you_setup</code> and <code class="prettyprint">promoter_thank_you_setup</code> in <code class="prettyprint">thank_you_setup_list</code>. Therefore on a third page, above the custom button, we will display &lsquo;Request for action for all scores&rsquo; text for passives and detractors, and &lsquo;Promoter request for action&rsquo; for promoters.</p>
 <pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">3</span> <span class="o">--&gt;</span>
 <span class="kd">var</span> <span class="nx">Wootric</span> <span class="o">=</span> <span class="p">{</span>
   <span class="c1">// thankYouMessages not defined</span>
@@ -768,16 +791,32 @@ In order to do that, you need to configure <code class="prettyprint">wootricSett
     <span class="na">thank_you_link_text_list</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">detractor_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Detractor thank you text'</span><span class="p">,</span>
       <span class="na">passive_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Passive thank you text'</span><span class="p">,</span>
-      <span class="na">promoter_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Promoter thank you text'</span><span class="p">,</span>
+      <span class="na">promoter_thank_you_link_text</span><span class="p">:</span> <span class="s1">'Promoter thank you text'</span>
     <span class="p">},</span>
     <span class="na">thank_you_link_url_list</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">detractor_thank_you_link_url</span><span class="p">:</span> <span class="s1">'Detractor thank you url'</span><span class="p">,</span>
+      <span class="na">detractor_thank_you_link_url</span><span class="p">:</span> <span class="s1">'Detractor thank you url'</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
 </code></pre>
+
+<p><br><br><br><br><br><br><br><br><br><br><br></p>
 <h3 id='example-3'>Example 3</h3>
-<p>With this kind of setting we are missing the default <code class="prettyprint">thank_you_link_url</code> and have only detractor url defined. With no <code class="prettyprint">Wootric.thankYouMessages</code> object defined, we will display third page only for detractors if social media share (Facebook and Twitter) is also not defined (because there is no message to display and we can show complete button only for detractors).</p>
+<p>With this kind of setting we are missing the default <code class="prettyprint">thank_you_link_url</code> and have only detractor url defined. Thus, the survey will remain open to detractors to display the custom button and, if social media is defined, it will remain open to promoters. For passives, there is nothing to display (neither a custom button or social media buttons), so the survey will close automatically.</p>
+<pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">4</span> <span class="o">--&gt;</span>
+<span class="kd">var</span> <span class="nx">Wootric</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">thankYouMessages</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">thank_you_main</span><span class="p">:</span> <span class="s1">'Thank you for your feedback!'</span><span class="p">,</span>
+    <span class="na">thank_you_main_list</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">promoter_thank_you_main</span><span class="p">:</span> <span class="s1">'Promoter thank you'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+
+<p><br><br><br><br><br><br></p>
+<h3 id='example-4'>Example 4</h3>
+<p>In this example, the third page will display only a thank you message and then disappear. If social media settings are defined, the third page will remain and end users will have time to share on social media. The <code class="prettyprint">thank_you_main</code> (&ldquo;Thank you for your feedback!&rdquo;) message will appear at the top of the survey in bold green font for both the passives and detractors, while the custom <code class="prettyprint">promoter_thank_you_main</code> (&ldquo;Promoter thank you&rdquo;) message will appear for promoters.</p>
 
 <h1 id='wootric-survey-object-api'>Wootric Survey Object API</h1><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-XXXXXXX'</span>

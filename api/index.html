@@ -1780,6 +1780,75 @@ The values returned by this endpoint depend on the Account&rsquo;s time zone set
 </tr>
 </tbody></table>
 
+<h1 id='segments'>Segments</h1><h2 id='segment-object'>Segment Object</h2>
+<p>A Segment object has the following fields:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name of the segment</td>
+</tr>
+<tr>
+<td>data_type</td>
+<td>string</td>
+<td>One of <code class="prettyprint">string</code>, <code class="prettyprint">date</code> or <code class="prettyprint">integer</code> representing the segment data type</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>Datetime representation of when the segment was created</td>
+</tr>
+</tbody></table>
+<h2 id='get-all-segments'>Get All Segments</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/segments?access_token=myaccesstoken"</span>
+
+or
+
+curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/segments"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns the following JSON:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"persona"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-01 12:12:50 -0800"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pricing_plan"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-01 12:12:50 -0800"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product_plan"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-01 12:12:50 -0800"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"purchase_date"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-01 12:12:50 -0800"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"revenue_amount"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-01 12:12:50 -0800"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all segments for an account.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/segments</code></p>
+
 <h1 id='errors'>Errors</h1>
 <p>The Wootric API uses the following error codes:</p>
 
