@@ -846,6 +846,33 @@ If the delay time is still running stop will abort that survey from happening.</
 Returns WootricSurvey&rsquo;s object current version</p></li>
 </ul>
 
+<h1 id='run-multiple-surveys'>Run Multiple Surveys</h1><pre><code class="highlight javascript"><span class="k">if</span> <span class="p">(</span><span class="nx">show_nps_survey</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: The current logged in user's email address.</span>
+    <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.</span>
+    <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-xxxxxxx'</span>
+  <span class="p">};</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">show_ces_survey</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: The current logged in user's email address.</span>
+    <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.</span>
+    <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-yyyyyyy'</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Wootric allows you to run multiple types of surveys within the same app: 
+NPS, CES and CSAT. There will never be more than one survey shown, and each 
+survey can be customized with its own settings.</p>
+
+<p><strong>Note:</strong> This method is for advanced/custom installations only. If you need 
+help with your installation contact <a href="mailto:%20support@wootric.com">support</a>.</p>
+
+<p>To run multiple surveys, you&rsquo;ll need to write code to decide when to display 
+each survey. Check that you only load one survey per page, and that you call 
+<code class="prettyprint">WootricSurvey.run()</code> once. Calling <code class="prettyprint">WootricSurvey.run()</code> multiple times with 
+different settings will break your installation.</p>
+
 
       </div>
       <div class="dark-box">
