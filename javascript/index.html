@@ -846,54 +846,6 @@ If the delay time is still running stop will abort that survey from happening.</
 Returns WootricSurvey&rsquo;s object current version</p></li>
 </ul>
 
-<h1 id='survey-types-beta'>Survey Types (BETA)</h1><pre><code class="highlight javascript"><span class="c1">//Example 1</span>
-<span class="kd">var</span> <span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-XXXXXXX'</span><span class="p">,</span>
-    <span class="na">survey_type</span><span class="p">:</span> <span class="s1">'ces'</span>
-<span class="p">}</span>
-<span class="c1">// =&gt; How easy was it for you to complete this task or action?</span>
-
-<span class="c1">//Example 2</span>
-<span class="kd">var</span> <span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-XXXXXXX'</span><span class="p">,</span>
-    <span class="na">survey_type</span><span class="p">:</span> <span class="s1">'ces'</span><span class="p">,</span>
-    <span class="na">product_name</span><span class="p">:</span> <span class="s1">'tag your responses on the Wootric tags tab'</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="c1">// =&gt; How easy was it for you to tag your responses on the Wootric tags tab?</span>
-
-<span class="c1">//Example 3</span>
-<span class="kd">var</span> <span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-XXXXXXX'</span><span class="p">,</span>
-    <span class="na">survey_type</span><span class="p">:</span> <span class="s1">'csat'</span><span class="p">,</span>
-    <span class="na">product_name</span><span class="p">:</span> <span class="s1">'the Wootric tags tab'</span>
-<span class="p">}</span>
-
-<span class="c1">// =&gt; How satisfied are you with the Wootric tags tab?</span>
-</code></pre>
-
-<p>Wootric allows you to operate your web survey using 3 different type of metrics:</p>
-
-<ul>
-<li>NPS (Net Promoter Score)</li>
-<li>CES (Customer Effort Score)</li>
-<li>CSAT (Customer Satisfaction Score)</li>
-</ul>
-
-<p>In order to get any of these working you should pass the <code class="prettyprint">survey_type</code> key with the desired survey_type value inside the wootricSettings hash.</p>
-
-<p>If no value is specified the <code class="prettyprint">NPS</code> will be used as default.</p>
-
-<p>Product name can be customized for CSAT and CES too.</p>
-
-<p>Additional notes:</p>
-
-<ul>
-<li>Promoter/Passive/Detractor features are disabled (custom thanks, custom placeholders, etc) for CES and CSAT modes</li>
-<li>Currently only supported in English and Spanish language</li>
-<li>Questions about this feature? Reach out at support@wootric.com</li>
-</ul>
-
 
       </div>
       <div class="dark-box">
