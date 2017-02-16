@@ -1,5 +1,5 @@
 # Single Page App (SPA)
-This example is for Angular.js Single Page Web App
+This example is for an Angular.js app. [Click here for an example using Ember.js.](https://github.com/Wootric/spa-examples/tree/master/emberjs)
 ## Step 1. ­Create Factory
 ```javascript
 <!-- begin Wootric code -->
