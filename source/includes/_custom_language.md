@@ -38,6 +38,7 @@ Hungarian | HU
 Indonesian | ID
 Italian | IT
 Japanese | JA
+Latvian | LV
 Lithuanian | LT
 Norwegian | NO
 Polish | PL
