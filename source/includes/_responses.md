@@ -49,6 +49,7 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/respon
         "tags": [
             "PERFORMANCE"
         ],
+        "notes": [],
         "end_user": {
             "properties": {
                 "persona": "Individual",
@@ -72,6 +73,7 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/respon
         "created_at": "2016-12-16 09:10:43 -0800",
         "updated_at": "2016-12-16 09:11:00 -0800",
         "tags": [],
+        "notes": [],
         "end_user": {
             "properties": {
                 "persona": "Individual",
@@ -100,7 +102,7 @@ Parameter | Type | Default | Description
 page (optional)| integer | 1 | Number of returned page, max 30
 per_page (optional) | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
-sort_order (optional)| string | asc | Order in which records are shown. Default is oldest first. Options are `asc` or `desc`
+sort_order (optional)| string | desc | Order in which records are shown. Default is newest first. Options are `asc` or `desc`
 
 We recommend to iterate using `created` parameter if you need to get more data than what you get out of our pagination restriction.
 
@@ -133,6 +135,7 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
         "tags": [
             "PERFORMANCE"
         ],
+        "notes": [],
         "end_user": {
             "properties": {
                 "persona": "Individual",
@@ -158,6 +161,7 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
         "tags": [
             "CALL"
         ],
+        "notes": [],
         "end_user": {
             "properties": {
                 "persona": "Individual",
@@ -186,6 +190,7 @@ Parameter | Type | Default | Description
 page | integer | 1 | Number of returned page, max 30
 per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
+sort_order (optional)| string | desc | Order in which records are shown. Default is newest first. Options are `asc` or `desc`
 
 We recommend to iterate using `created` parameter if you need to get more data than what you get out of our pagination restriction.
 
@@ -218,6 +223,7 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
         "tags": [
             "UX"
         ],
+        "notes": [],
         "end_user": {
             "properties": {
                 "persona": "Business User",
@@ -241,6 +247,7 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
         "created_at": "2016-12-16 14:20:22 -0800",
         "updated_at": "2016-12-16 14:21:10 -0800",
         "tags": [],
+        "notes": [],
         "end_user": {
             "properties": {
                 "persona": "Business User",
@@ -269,6 +276,7 @@ Parameter | Type | Default | Description
 page | integer | 1 | Number of returned page, max 30
 per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
+sort_order (optional)| string | desc | Order in which records are shown. Default is newest first. Options are `asc` or `desc`
 
 ## Get All Passives Responses
 
@@ -299,6 +307,7 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
         "tags": [
             "UX"
         ],
+        "notes": [],
         "end_user": {
             "properties": {
                 "persona": "Individual",
@@ -322,6 +331,7 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
         "created_at": "2016-12-16 12:00:02 -0800",
         "updated_at": "2016-12-16 12:01:00 -0800",
         "tags": [],
+        "notes": [],
         "end_user": {
             "properties": {
                 "persona": "Business User",
@@ -350,6 +360,7 @@ Parameter | Type | Default | Description
 page | integer | 1 | Number of returned page, max 30
 per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
+sort_order (optional)| string | desc | Order in which records are shown. Default is newest first. Options are `asc` or `desc`
 
 
 ## Get All Detractors Responses
@@ -381,6 +392,7 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
         "tags": [
             "PERFORMANCE"
         ],
+        "notes": [],
         "end_user": {
             "properties": {
                 "persona": "Individual",
@@ -406,6 +418,7 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
         "tags": [
             "CALL"
         ],
+        "notes": [],
         "end_user": {
             "properties": {
                 "persona": "Individual",
@@ -434,6 +447,7 @@ Parameter | Type | Default | Description
 page | integer | 1 | Number of returned page, max 30
 per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
+sort_order (optional)| string | desc | Order in which records are shown. Default is newest first. Options are `asc` or `desc`
 
 
 ## Get a Specific Response
@@ -462,6 +476,7 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
     "created_at": "2016-12-16 09:10:43 -0800",
     "updated_at": "2016-12-16 09:11:00 -0800",
     "tags": [],
+    "notes": [],
     "end_user": {
         "properties": {
             "persona": "Individual",

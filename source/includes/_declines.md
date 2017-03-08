@@ -83,6 +83,7 @@ Parameter | Type | Default | Description
 page | integer | 1 | Number of returned page, max 30
 per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your declines by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
+sort_order (optional)| string | desc | Order in which records are shown. Default is newest first. Options are `asc` or `desc`
 
 We recommend to iterate using `created` parameter if you need to get more data than what you get out of our pagination restriction.
 
@@ -154,6 +155,7 @@ Parameter | Type | Default | Description
 page | integer | 1 | Number of returned page, max 30
 per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your declines by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
+sort_order (optional)| string | desc | Order in which records are shown. Default is newest first. Options are `asc` or `desc`
 
 
 ## Get a Specific Decline
