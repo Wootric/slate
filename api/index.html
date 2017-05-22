@@ -11,9 +11,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
       <script src="../javascripts/all_nosearch.js" type="text/javascript"></script>
 
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PF46GT3');
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
 
   <body class="api api_index">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PF46GT3" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -542,6 +558,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"PERFORMANCE"</span><span class="w">
         </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"end_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"persona"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Individual"</span><span class="p">,</span><span class="w">
@@ -565,6 +582,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
         </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-16 09:10:43 -0800"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-16 09:11:00 -0800"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"end_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"persona"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Individual"</span><span class="p">,</span><span class="w">
@@ -613,8 +631,8 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <tr>
 <td>sort_order (optional)</td>
 <td>string</td>
-<td>asc</td>
-<td>Order in which records are shown. Default is oldest first. Options are <code class="prettyprint">asc</code> or <code class="prettyprint">desc</code></td>
+<td>desc</td>
+<td>Order in which records are shown. Default is newest first. Options are <code class="prettyprint">asc</code> or <code class="prettyprint">desc</code></td>
 </tr>
 </tbody></table>
 
@@ -645,6 +663,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"PERFORMANCE"</span><span class="w">
         </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"end_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"persona"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Individual"</span><span class="p">,</span><span class="w">
@@ -670,6 +689,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"CALL"</span><span class="w">
         </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"end_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"persona"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Individual"</span><span class="p">,</span><span class="w">
@@ -715,6 +735,12 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>{}</td>
 <td>Filter your responses by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
+<tr>
+<td>sort_order (optional)</td>
+<td>string</td>
+<td>desc</td>
+<td>Order in which records are shown. Default is newest first. Options are <code class="prettyprint">asc</code> or <code class="prettyprint">desc</code></td>
+</tr>
 </tbody></table>
 
 <p>We recommend to iterate using <code class="prettyprint">created</code> parameter if you need to get more data than what you get out of our pagination restriction.</p>
@@ -744,6 +770,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"UX"</span><span class="w">
         </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"end_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"persona"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business User"</span><span class="p">,</span><span class="w">
@@ -767,6 +794,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
         </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-16 14:20:22 -0800"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-16 14:21:10 -0800"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"end_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"persona"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business User"</span><span class="p">,</span><span class="w">
@@ -812,6 +840,12 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>{}</td>
 <td>Filter your responses by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
+<tr>
+<td>sort_order (optional)</td>
+<td>string</td>
+<td>desc</td>
+<td>Order in which records are shown. Default is newest first. Options are <code class="prettyprint">asc</code> or <code class="prettyprint">desc</code></td>
+</tr>
 </tbody></table>
 <h2 id='get-all-passives-responses'>Get All Passives Responses</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/passives?access_token=myaccesstoken"</span>
 
@@ -839,6 +873,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"UX"</span><span class="w">
         </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"end_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"persona"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Individual"</span><span class="p">,</span><span class="w">
@@ -862,6 +897,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
         </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-16 12:00:02 -0800"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-16 12:01:00 -0800"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"end_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"persona"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business User"</span><span class="p">,</span><span class="w">
@@ -907,6 +943,12 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>{}</td>
 <td>Filter your responses by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
+<tr>
+<td>sort_order (optional)</td>
+<td>string</td>
+<td>desc</td>
+<td>Order in which records are shown. Default is newest first. Options are <code class="prettyprint">asc</code> or <code class="prettyprint">desc</code></td>
+</tr>
 </tbody></table>
 <h2 id='get-all-detractors-responses'>Get All Detractors Responses</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/detractors?access_token=myaccesstoken"</span>
 
@@ -934,6 +976,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"PERFORMANCE"</span><span class="w">
         </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"end_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"persona"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Individual"</span><span class="p">,</span><span class="w">
@@ -959,6 +1002,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"CALL"</span><span class="w">
         </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"end_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"persona"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Individual"</span><span class="p">,</span><span class="w">
@@ -1004,6 +1048,12 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>{}</td>
 <td>Filter your responses by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
+<tr>
+<td>sort_order (optional)</td>
+<td>string</td>
+<td>desc</td>
+<td>Order in which records are shown. Default is newest first. Options are <code class="prettyprint">asc</code> or <code class="prettyprint">desc</code></td>
+</tr>
 </tbody></table>
 <h2 id='get-a-specific-response'>Get a Specific Response</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/2/responses/2?access_token=myaccesstoken"</span>
 
@@ -1028,6 +1078,7 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-16 09:10:43 -0800"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-16 09:11:00 -0800"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
     </span><span class="s2">"end_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"persona"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Individual"</span><span class="p">,</span><span class="w">
@@ -1326,6 +1377,12 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>{}</td>
 <td>Filter your declines by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
+<tr>
+<td>sort_order (optional)</td>
+<td>string</td>
+<td>desc</td>
+<td>Order in which records are shown. Default is newest first. Options are <code class="prettyprint">asc</code> or <code class="prettyprint">desc</code></td>
+</tr>
 </tbody></table>
 
 <p>We recommend to iterate using <code class="prettyprint">created</code> parameter if you need to get more data than what you get out of our pagination restriction.</p>
@@ -1410,6 +1467,12 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>hash</td>
 <td>{}</td>
 <td>Filter your declines by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
+</tr>
+<tr>
+<td>sort_order (optional)</td>
+<td>string</td>
+<td>desc</td>
+<td>Order in which records are shown. Default is newest first. Options are <code class="prettyprint">asc</code> or <code class="prettyprint">desc</code></td>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-decline'>Get a Specific Decline</h2><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/end_users/1/declines/1?access_token=myaccesstoken"</span>
