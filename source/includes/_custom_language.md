@@ -30,6 +30,7 @@ Chinese (Traditional) | CN_T
 Danish | DA
 Dutch | NL
 English | EN
+Estonian | ET
 Finnish | FI
 French | FR
 German | DE
