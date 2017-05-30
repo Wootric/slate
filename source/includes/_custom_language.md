@@ -58,6 +58,7 @@ Vietnamese | VN
 Language | Code
 -------- | ----
 English | EN
+Estonian | ET
 Spanish | ES
 Spanish - Mexico | ES_MX
 
@@ -66,6 +67,7 @@ Spanish - Mexico | ES_MX
 Language | Code
 -------- | ----
 English | EN
+Estonian | ET
 Spanish | ES
 Spanish - Mexico | ES_MX
 German | DE
