@@ -5,6 +5,7 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Wootric Docs</title>
+    <link href="../images/images/favicon-32x32.png" rel="icon" type="image/png" />
 
     <link href="../stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="../stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
@@ -1936,6 +1937,148 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <tr>
 <td>500</td>
 <td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+</tr>
+</tbody></table>
+
+<h1 id='email'>Email</h1><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span class="se">\</span>
+  -d <span class="s2">"access_token=myaccesstoken"</span> <span class="se">\</span>
+  -d <span class="s2">"emails[]=YOUR_EMAIL"</span> <span class="se">\</span>
+  -d <span class="s2">"emails[]=YOUR_EMAIL_2"</span> <span class="se">\ </span><span class="c"># for multiple emails</span>
+  -d <span class="s2">"survey_settings[custom_messages][followup_text]=Gracias!"</span> <span class="se">\</span>
+  -d <span class="s2">"end_user[properties][campaign_name]=New Customers"</span> <span class="se">\</span>
+  -d <span class="s2">"survey_immediately=true"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns the following JSON:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NPS-1e9d8ab"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"emails[]"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YOUR_EMAIL"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"survey_settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"custom_messages"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"followup_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gracias!"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"end_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"campaign_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Customers"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"survey_immediately"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Maximum of 100 emails per request.<br>
+We will automatically create an end user if they don&rsquo;t exist.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>emails</td>
+<td>String Array</td>
+<td>End user emails to survey</td>
+</tr>
+<tr>
+<td>survey_immediately</td>
+<td>Boolean</td>
+<td>Override eligibility check</td>
+</tr>
+<tr>
+<td>survey_settings</td>
+<td>Hash</td>
+<td>Customize survey presentation</td>
+</tr>
+</tbody></table>
+<h3 id='survey_settings-parameters'>survey_settings parameters</h3>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>language</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>audience_text</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>product_name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>custom_messages</td>
+<td>Hash</td>
+<td>Customize messages</td>
+</tr>
+<tr>
+<td>end_user</td>
+<td>Hash</td>
+<td>Properties</td>
+</tr>
+</tbody></table>
+<h3 id='custom_messages-parameters'>custom_messages parameters</h3>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>followup_text</td>
+<td>String</td>
+</tr>
+<tr>
+<td>detractor_followup_text</td>
+<td>String</td>
+</tr>
+<tr>
+<td>passive_followup_text</td>
+<td>String</td>
+</tr>
+<tr>
+<td>promoter_followup_text</td>
+<td>String</td>
+</tr>
+<tr>
+<td>prompt_text</td>
+<td>String</td>
+</tr>
+<tr>
+<td>detractor_prompt_text</td>
+<td>String</td>
+</tr>
+<tr>
+<td>passive_prompt_text</td>
+<td>String</td>
+</tr>
+<tr>
+<td>promoter_prompt_text</td>
+<td>String</td>
+</tr>
+</tbody></table>
+<h3 id='end_user-parameters'>end_user parameters</h3>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>property_name</td>
+<td>String</td>
 </tr>
 </tbody></table>
 
