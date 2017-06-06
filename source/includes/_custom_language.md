@@ -39,6 +39,7 @@ Hungarian | HU
 Indonesian | ID
 Italian | IT
 Japanese | JA
+Korean | KO
 Latvian | LV
 Lithuanian | LT
 Norwegian | NO
@@ -59,6 +60,7 @@ Language | Code
 -------- | ----
 English | EN
 Estonian | ET
+Korean | KO
 Spanish | ES
 Spanish - Mexico | ES_MX
 
@@ -68,6 +70,7 @@ Language | Code
 -------- | ----
 English | EN
 Estonian | ET
+Korean | KO
 Spanish | ES
 Spanish - Mexico | ES_MX
 German | DE
