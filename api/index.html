@@ -5,6 +5,7 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Wootric Docs</title>
+    <link href="../images/favicon-32x32.png" rel="icon" type="image/png" />
 
     <link href="../stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="../stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
@@ -1936,6 +1937,112 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <tr>
 <td>500</td>
 <td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+</tr>
+</tbody></table>
+
+<h1 id='email-survey'>Email Survey</h1><pre><code class="highlight shell">curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span class="se">\</span>
+  -d <span class="s2">"access_token=myaccesstoken"</span> <span class="se">\</span>
+  -d <span class="s2">"emails[]=john@example.com"</span> <span class="se">\</span>
+  -d <span class="s2">"emails[]=jane@example.com"</span> <span class="se">\</span>
+  -d <span class="s2">"survey_immediately=true"</span> <span class="se">\</span>
+  -d <span class="s2">"survey_settings[custom_messages][followup_text]=Thank you!"</span>
+</code></pre>
+
+<ul>
+<li>Maximum of 100 emails per request.<br></li>
+<li>We will automatically create an end user if they don&rsquo;t exist.</li>
+</ul>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>emails</td>
+<td>String Array</td>
+<td>End user emails to survey</td>
+</tr>
+<tr>
+<td>survey_immediately</td>
+<td>Boolean</td>
+<td>Override eligibility check</td>
+</tr>
+<tr>
+<td>survey_settings</td>
+<td>Hash</td>
+<td>See <strong>survey_settings</strong> parameters below</td>
+</tr>
+</tbody></table>
+<h3 id='survey_settings-parameters'>survey_settings parameters</h3>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>language</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>audience_text</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>product_name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>custom_messages</td>
+<td>Hash</td>
+<td>See <strong>custom_messages</strong> parameters below</td>
+</tr>
+</tbody></table>
+<h3 id='custom_messages-parameters'>custom_messages parameters</h3>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>followup_text</td>
+<td>String</td>
+</tr>
+<tr>
+<td>detractor_followup_text</td>
+<td>String</td>
+</tr>
+<tr>
+<td>passive_followup_text</td>
+<td>String</td>
+</tr>
+<tr>
+<td>promoter_followup_text</td>
+<td>String</td>
+</tr>
+<tr>
+<td>prompt_text</td>
+<td>String</td>
+</tr>
+<tr>
+<td>detractor_prompt_text</td>
+<td>String</td>
+</tr>
+<tr>
+<td>passive_prompt_text</td>
+<td>String</td>
+</tr>
+<tr>
+<td>promoter_prompt_text</td>
+<td>String</td>
 </tr>
 </tbody></table>
 
