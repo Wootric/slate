@@ -35,6 +35,7 @@ Finnish | FI
 French | FR
 German | DE
 German -informal | DE_DE_X_INFORMAL
+Greek | EL
 Hungarian | HU
 Indonesian | ID
 Italian | IT
@@ -60,6 +61,7 @@ Language | Code
 -------- | ----
 English | EN
 Estonian | ET
+Greek | EL
 Korean | KO
 Spanish | ES
 Spanish - Mexico | ES_MX
@@ -70,7 +72,8 @@ Language | Code
 -------- | ----
 English | EN
 Estonian | ET
+German | DE
+Greek | EL
 Korean | KO
 Spanish | ES
 Spanish - Mexico | ES_MX
-German | DE
