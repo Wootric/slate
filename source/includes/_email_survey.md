@@ -16,7 +16,19 @@ Param | Type | Description
 ----- | ---- | ------------
 emails | String Array | End user emails to survey
 survey_immediately | Boolean | Override eligibility check
+end_user | Hash | End user properties name as `String`
 survey_settings | Hash | See **survey_settings** parameters below
+
+```sh
+# Example with end_user properties
+
+curl "https://api.wootric.com/v1/email_survey" \
+  -d "access_token=XXXXXXXXXXXXXXXX" \
+  -d "emails[]=john@example.com" \
+  -d "survey_immediately=true" \
+  -d "survey_settings[custom_messages][followup_text]=Thank you!" \
+  -d "end_user[properties][campaign_name]=Campaign Name&end_user[properties][campaign_type]=Campaign Type"
+```
 
 ### survey_settings parameters
 Param | Type | Description
@@ -27,8 +39,8 @@ product_name | String
 custom_messages | Hash | See **custom_messages** parameters below
 
 ### custom_messages parameters
-Param | Type 
------ | ---- 
+Param | Type
+----- | ----
 followup_text | String
 detractor_followup_text | String
 passive_followup_text | String
