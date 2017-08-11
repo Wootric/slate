@@ -46,7 +46,7 @@ Lithuanian | LT
 Norwegian | NO
 Polish | PL
 Portuguese | PT
-Romanina | RO
+Romanian | RO
 Russian | RU
 Slovene | SL
 Spanish | ES
@@ -59,10 +59,14 @@ Vietnamese | VN
 
 Language | Code
 -------- | ----
+Dutch | NL
 English | EN
 Estonian | ET
+French | FR
 Greek | EL
 Korean | KO
+Polish | PL
+Romanian | RO
 Spanish | ES
 Spanish - Mexico | ES_MX
 
@@ -70,10 +74,14 @@ Spanish - Mexico | ES_MX
 
 Language | Code
 -------- | ----
+Dutch | NL
 English | EN
 Estonian | ET
+French | FR
 German | DE
 Greek | EL
 Korean | KO
+Polish | PL
+Romanian | RO
 Spanish | ES
 Spanish - Mexico | ES_MX
