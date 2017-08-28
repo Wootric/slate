@@ -25,6 +25,7 @@ Please be advised, that custom messages and/or placeholder, takes precedence ove
 Language | Code
 -------- | ----
 Arabic | AR
+Bulgarian | BG
 Chinese (Simplified) | CN_S
 Chinese (Traditional) | CN_T
 Danish | DA
@@ -59,6 +60,7 @@ Vietnamese | VN
 
 Language | Code
 -------- | ----
+Bulgarian | BG
 Dutch | NL
 English | EN
 Estonian | ET
@@ -74,6 +76,7 @@ Spanish - Mexico | ES_MX
 
 Language | Code
 -------- | ----
+Bulgarian | BG
 Dutch | NL
 English | EN
 Estonian | ET
