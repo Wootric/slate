@@ -1945,11 +1945,12 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
   -d <span class="s2">"emails[]=john@example.com"</span> <span class="se">\</span>
   -d <span class="s2">"emails[]=jane@example.com"</span> <span class="se">\</span>
   -d <span class="s2">"survey_immediately=true"</span> <span class="se">\</span>
-  -d <span class="s2">"survey_settings[custom_messages][followup_text]=Thank you!"</span>
+  -d <span class="s2">"survey_settings[custom_messages][followup_text]=Thank you!"</span> <span class="se">\</span>
+  -d <span class="s2">"subject=Would you mind sharing your thoughts about our service?"</span>
 </code></pre>
 
 <ul>
-<li>Maximum of 100 emails per request.<br></li>
+<li>Maximum of 100 emails per request.</li>
 <li>We will automatically create an end user if they don&rsquo;t exist.</li>
 </ul>
 
@@ -1971,11 +1972,30 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>Override eligibility check</td>
 </tr>
 <tr>
+<td>end_user</td>
+<td>Hash</td>
+<td>End user properties name as <code class="prettyprint">String</code></td>
+</tr>
+<tr>
 <td>survey_settings</td>
 <td>Hash</td>
 <td>See <strong>survey_settings</strong> parameters below</td>
 </tr>
+<tr>
+<td>subject</td>
+<td>String</td>
+<td>Override default subject line (standard NPS/CES/CSAT question used by default)</td>
+</tr>
 </tbody></table>
+<pre><code class="highlight shell"><span class="c"># Example with end_user properties</span>
+
+curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span class="se">\</span>
+  -d <span class="s2">"access_token=XXXXXXXXXXXXXXXX"</span> <span class="se">\</span>
+  -d <span class="s2">"emails[]=john@example.com"</span> <span class="se">\</span>
+  -d <span class="s2">"survey_immediately=true"</span> <span class="se">\</span>
+  -d <span class="s2">"survey_settings[custom_messages][followup_text]=Thank you!"</span> <span class="se">\</span>
+  -d <span class="s2">"end_user[properties][campaign_name]=Campaign Name&amp;end_user[properties][campaign_type]=Campaign Type"</span>
+</code></pre>
 <h3 id='survey_settings-parameters'>survey_settings parameters</h3>
 <table><thead>
 <tr>
