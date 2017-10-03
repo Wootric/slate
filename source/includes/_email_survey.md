@@ -6,10 +6,11 @@ curl "https://api.wootric.com/v1/email_survey" \
   -d "emails[]=john@example.com" \
   -d "emails[]=jane@example.com" \
   -d "survey_immediately=true" \
-  -d "survey_settings[custom_messages][followup_text]=Thank you!"
+  -d "survey_settings[custom_messages][followup_text]=Thank you!" \
+  -d "subject=Would you mind sharing your thoughts about our service?"
 ```
 
-- Maximum of 100 emails per request.  
+- Maximum of 100 emails per request.
 - We will automatically create an end user if they don't exist.
 
 Param | Type | Description
@@ -18,6 +19,7 @@ emails | String Array | End user emails to survey
 survey_immediately | Boolean | Override eligibility check
 end_user | Hash | End user properties name as `String`
 survey_settings | Hash | See **survey_settings** parameters below
+subject | String | Override default subject line (standard NPS/CES/CSAT question used by default)
 
 ```sh
 # Example with end_user properties
