@@ -1946,7 +1946,8 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
   -d <span class="s2">"emails[]=jane@example.com"</span> <span class="se">\</span>
   -d <span class="s2">"survey_immediately=true"</span> <span class="se">\</span>
   -d <span class="s2">"survey_settings[custom_messages][followup_text]=Thank you!"</span> <span class="se">\</span>
-  -d <span class="s2">"subject=Would you mind sharing your thoughts about our service?"</span>
+  -d <span class="s2">"subject=Would you mind sharing your thoughts about our service?"</span> <span class="se">\</span>
+  -d <span class="s2">"intro=We want you to be our customer for life. That's why your opinion matters."</span>
 </code></pre>
 
 <ul>
@@ -1985,6 +1986,11 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
 <td>subject</td>
 <td>String</td>
 <td>Override default subject line (standard NPS/CES/CSAT question used by default)</td>
+</tr>
+<tr>
+<td>intro</td>
+<td>String</td>
+<td>Intro message for your email. Displayed between logo and question. Default: none.</td>
 </tr>
 </tbody></table>
 <pre><code class="highlight shell"><span class="c"># Example with end_user properties</span>
