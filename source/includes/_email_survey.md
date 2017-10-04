@@ -7,7 +7,8 @@ curl "https://api.wootric.com/v1/email_survey" \
   -d "emails[]=jane@example.com" \
   -d "survey_immediately=true" \
   -d "survey_settings[custom_messages][followup_text]=Thank you!" \
-  -d "subject=Would you mind sharing your thoughts about our service?"
+  -d "subject=Would you mind sharing your thoughts about our service?" \
+  -d "intro=We want you to be our customer for life. That's why your opinion matters."
 ```
 
 - Maximum of 100 emails per request.
@@ -20,6 +21,7 @@ survey_immediately | Boolean | Override eligibility check
 end_user | Hash | End user properties name as `String`
 survey_settings | Hash | See **survey_settings** parameters below
 subject | String | Override default subject line (standard NPS/CES/CSAT question used by default)
+intro | String | Intro message for your email. Displayed between logo and question. Default: none.
 
 ```sh
 # Example with end_user properties
