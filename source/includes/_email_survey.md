@@ -23,6 +23,9 @@ survey_settings | Hash | See **survey_settings** parameters below
 subject | String | Override default subject line (standard NPS/CES/CSAT question used by default)
 intro | String | Intro message for your email. Displayed between logo and question. Default: none.
 
+Email Survey showing Subject and Intro:
+![Compact Survey](email_survey.png)
+
 ```sh
 # Example with end_user properties
 
