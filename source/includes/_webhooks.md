@@ -7,6 +7,8 @@ Wootric can send an HTTP POST request to a specified URL when an event occurs. S
 ```ruby
 # response created sample payload
 response[id]=1128&
+response[email]=nps@example.com&
+response[external_id]=123abc&
 response[score]=7&
 response[text]=&
 response[ip_address]=127.0.0.1&
@@ -23,6 +25,8 @@ timestamp=2016-08-04%2013%3A57%3A31%20-0700
 
 # decline created sample payload
 decline[id]=19&
+decline[email]=nps@example.com&
+decline[external_id]=123abc&
 decline[ip_address]=127.0.0.1&
 decline[origin_url]=https%3A%2F%2Fwootric.com%2F&
 decline[end_user_id]=31&
