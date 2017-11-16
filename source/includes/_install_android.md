@@ -51,7 +51,7 @@ import com.wootric.androidsdk.Wootric;
 // Inside your method
 Wootric wootric = Wootric.init(this, <YOUR_CLIENT_ID>, <YOUR_CLIENT_SECRET>, <YOUR_ACCOUNT_TOKEN>);
 
-// TODO: The current logged in user's email address.
+// TODO: Required to uniquely identify a user. It can be any unique value other than email.
 wootric.setEndUserEmail("nps@example.com");
 // TODO: The current logged in user's sign-up date as a Unix timestamp.
 wootric.setEndUserCreatedAt(1234567890);

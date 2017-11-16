@@ -3,7 +3,7 @@
 ## Using Cocoapods
 
 ```
-// Install Cocoapods 
+// Install Cocoapods
 $ gem install cocoapods
 
 //Inside your Podfile
@@ -17,7 +17,7 @@ $ pod install
 
 **1. Install CocoaPods**
 
-If you don't have Cocoapods already, you can install it by typing 
+If you don't have Cocoapods already, you can install it by typing
 `$ gem install cocoapods` in your terminal
 
 **2. Podfile**
@@ -66,7 +66,7 @@ Drag WootricSDK.framework to the "Embedded Binaries" section of your Xcode proje
 // Inside your method
 [Wootric configureWithClientID:<YOUR_CLIENT_ID> clientSecret:<YOUR_CLIENT_SECRET> accountToken:<YOUR_ACCOUNT_TOKEN>];
 
-// TODO: The current logged in user's email address.
+// TODO: Required to uniquely identify a user. It can be any unique value other than email.
 [Wootric setEndUserEmail:@"nps@example.com"];
 // TODO: The current logged in user's sign-up date as a Unix timestamp.
 [Wootric setEndUserCreatedAt:@1234567890];
@@ -80,7 +80,7 @@ Drag WootricSDK.framework to the "Embedded Binaries" section of your Xcode proje
 // Inside your method
 Wootric.configureWithClientID(<YOUR_CLIENT_ID>, clientSecret: <YOUR_CLIENT_SECRET>, accountToken: <YOUR_ACCOUNT_TOKEN>)
 
-// TODO: The current logged in user's email address.
+// TODO: Required to uniquely identify a user. It can be any unique value other than email.
 Wootric.setEndUserEmail("nps@example.com")
 // TODO: The current logged in user's sign-up date as a Unix timestamp.
 Wootric.setEndUserCreatedAt(1234567890)
@@ -94,7 +94,7 @@ Wootric.showSurveyInViewController(<YOUR_VIEW_CONTROLLER>)
 // Inside your method
 Wootric.configure(withClientID: <YOUR_CLIENT_ID>, clientSecret:<YOUR_CLIENT_SECRET>,, accountToken:<YOUR_ACCOUNT_TOKEN>)
 
-// TODO: The current logged in user's email address.
+// TODO: Required to uniquely identify a user. It can be any unique value other than email.
 Wootric.setEndUserEmail("nps@example.com")
 // TODO: The current logged in user's sign-up date as a Unix timestamp.
 Wootric.setEndUserCreatedAt(1234567890)
