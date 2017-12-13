@@ -18,6 +18,8 @@ Once you are signed up on the Wootric homepage, you will be taken directly to an
 page. If you’re a returning visitor, sign in at [wootric.com](https://www.wootric.com/) and click on the “Settings" button near the top right of the page. Navigate to the [Javascript Setup Guide](https://app.wootric.com/install) and you will see a code snippet with a unique
 account_token for you to install.
 
+For HTML5 async support read [here](#async-support)
+
 ##Step 2. Customize the Survey
 
 This is an important step! [Customize](https://app.wootric.com/user_settings/edit#!/survey-nps) your survey with the name of your product or company. As needed, make changes to our trusted [survey](https://app.wootric.com/user_settings/edit#!/survey-nps) and [sampling](https://app.wootric.com/user_settings/edit#!/sampling) defaults.
@@ -66,3 +68,22 @@ completion page.
 #### Google Tag Manager:
 You may use Google Tag Manager to install and manage the Wootric
 snippet.
+
+### Async Support:
+``` js
+<!-- begin Wootric code -->
+<script type="text/javascript">
+   wootric_survey_immediately = true;
+   window.wootricSettings = {
+      email: 'customer@example.com',
+      created_at: 1234567890,
+      account_token: 'NPS-XXXXXXXX'
+  };
+</script>
+<script type="text/javascript" src="https://disutgh7q0ncc.cloudfront.net/beacon.js" async onload="WootricSurvey.run(wootricSettings)"></script>
+```
+
+We support HTML5 async attribute to load our snippet.
+The `wootricSettings` object is built in the same way as above. The only difference
+rests in how we initialize the `WootricSurvey`.
+Take a close look at the onload attribute, it will guarantee that your service is called when the script has loaded.
