@@ -88,17 +88,32 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
 > The above command returns the following JSON:
 
 ```json
-  {
-    "id": 2,
-    "created_at" : "2014-12-01 18:36:59",
-    "updated_at" : "2014-12-04 12:43:44",
-    "email": "nps2@example.com",
-    "last_surveyed": null,
-    "external_created_at": null,
-    "user_id": 16,
-    "page_views_count" : 3,
-    "properties": {"plan": "Enterprise", "product": "The Company"}
+{
+  "id": 2,
+  "created_at": "2018-01-02 23:03:41 -0800",
+  "updated_at": "2018-01-16 23:07:03 -0800",
+  "email": "nps2@example.com",
+  "last_surveyed": "2018-01-07 15:30:44 -0800",
+  "external_created_at": 1515940485,
+  "last_seen_at": null,
+  "page_views_count": 0,
+  "properties": {
+    "country": "UK",
+    "persona": "Individual",
+    "pricing_plan": "Lite",
+    "product_plan": "Mobile",
+    "purchase_date": 1494569021,
+    "revenue_amount": 10000
+  },
+  "phone_number": null,
+  "external_id": "e9a12f9aa245cfd5",
+  "last_response": null,
+  "settings": {
+    "email_nps": true,
+    "mobile_nps": true,
+    "web_nps": true
   }
+}
 ```
 
 This endpoint retrieves a specific end user.
