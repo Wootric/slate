@@ -69,6 +69,7 @@ French | FR
 Greek | EL
 Korean | KO
 Polish | PL
+Portuguese | PT
 Romanian | RO
 Spanish | ES
 Spanish - Mexico | ES_MX
@@ -87,6 +88,7 @@ German | DE
 Greek | EL
 Korean | KO
 Polish | PL
+Portuguese | PT
 Romanian | RO
 Spanish | ES
 Spanish - Mexico | ES_MX
