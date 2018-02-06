@@ -1,6 +1,8 @@
 #Email Survey
 
 ```sh
+// Basic Example
+
 curl "https://api.wootric.com/v1/email_survey" \
   -d "access_token=myaccesstoken" \
   -d "emails[]=john@example.com" \
@@ -20,8 +22,9 @@ emails | String Array | End user emails to survey
 survey_immediately | Boolean | Override eligibility check
 end_user | Hash | End user properties name as `String`
 survey_settings | Hash | See **survey_settings** parameters below
-subject | String | Override default subject line (standard NPS/CES/CSAT question used by default)
-intro | String | Intro message for your email. Displayed between logo and question. Default: none.
+subject | String | Override default subject line (standard NPS/CES/CSAT question used by default). Can handle placeholder values surrounded by {{my_value}}
+intro | String | Intro message for your email. Displayed between logo and question. Default: none. Can handle placeholder values surrounded by {{my_value}}
+context | Hash Array | Array of hashes containing the values to be replaced in subject and/or intro
 
 Email Survey showing Subject and Intro:
 ![Compact Survey](email_survey.png)
@@ -35,6 +38,22 @@ curl "https://api.wootric.com/v1/email_survey" \
   -d "survey_immediately=true" \
   -d "survey_settings[custom_messages][followup_text]=Thank you!" \
   -d "end_user[properties][campaign_name]=Campaign Name&end_user[properties][campaign_type]=Campaign Type"
+```
+
+```sh
+# Example with custom intro and subject
+
+curl "https://api.wootric.com/v1/email_survey" \
+  -d "access_token=XXXXXXXXXXXXXXXX" \
+  -d "emails[]=john@example.com" \
+  -d "emails[]=martin@example.com" \
+  -d "survey_immediately=true" \
+  -d "survey_settings[custom_messages][followup_text]=Thank you!" \
+  -d "end_user[properties][campaign_name]=Campaign Name&end_user[properties][campaign_type]=Campaign Type" \
+  -d "subject=Would you mind sharing your thoughts about our {{service}}?" \
+  -d "intro=Tell us why you like {{color}} so much." \
+  -d "context[][service]=internet, laundry" \
+  -d "context[][color]=red, blue"
 ```
 
 ### survey_settings parameters
