@@ -2014,6 +2014,11 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span cla
 <td>Hash Array</td>
 <td>Array of hashes containing the values to be replaced in subject and/or intro</td>
 </tr>
+<tr>
+<td>delay</td>
+<td>Integer</td>
+<td>Days we will wait before sending the survey</td>
+</tr>
 </tbody></table>
 
 <p>Email Survey showing Subject and Intro:
@@ -2040,6 +2045,14 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span cla
   -d <span class="s2">"intro=Tell us why you like {{color}} so much."</span> <span class="se">\</span>
   -d <span class="s2">"context[][service]=internet, laundry"</span> <span class="se">\</span>
   -d <span class="s2">"context[][color]=red, blue"</span>
+</code></pre>
+<pre><code class="highlight shell"><span class="c"># Example of an 8 day delay</span>
+
+curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span class="se">\</span>
+  -d <span class="s2">"access_token=XXXXXXXXXXXXXXXX"</span> <span class="se">\</span>
+  -d <span class="s2">"emails[]=john@example.com"</span> <span class="se">\</span>
+  -d <span class="s2">"survey_immediately=true"</span> <span class="se">\</span>
+  -d <span class="s2">"delay=8"</span>
 </code></pre>
 <h3 id='survey_settings-parameters'>survey_settings parameters</h3>
 <table><thead>
