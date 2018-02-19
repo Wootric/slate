@@ -25,7 +25,7 @@ survey_settings | Hash | See **survey_settings** parameters below
 subject | String | Override default subject line (standard NPS/CES/CSAT question used by default). Can handle placeholder values surrounded by {{my_value}}
 intro | String | Intro message for your email. Displayed between logo and question. Default: none. Can handle placeholder values surrounded by {{my_value}}
 context | Hash Array | Array of hashes containing the values to be replaced in subject and/or intro
-delay | Integer | Days we will wait before sending the survey
+delay | Integer | Days we will wait before sending the survey. Delay is optional and it must be between 1 and 31 days.
 
 
 Email Survey showing Subject and Intro:
