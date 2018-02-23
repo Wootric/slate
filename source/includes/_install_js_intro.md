@@ -80,7 +80,7 @@ snippet.
       account_token: 'NPS-XXXXXXXX'
   };
 </script>
-<script type="text/javascript" src="https://disutgh7q0ncc.cloudfront.net/beacon.js" async onload="WootricSurvey.run(wootricSettings)"></script>
+<script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js" async onload="WootricSurvey.run(wootricSettings)"></script>
 ```
 
 We support HTML5 async attribute to load our snippet.
