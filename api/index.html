@@ -48,7 +48,7 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the Wootric API documentation!</p>
 
-<p>You can use our API to access and update your end users, responses, declines, and page views.</p>
+<p>You can use our API to access and update your end users, responses and declines.</p>
 
 <p>All responses from the API (including errors) are in JSON. All code examples are in cURL.</p>
 <h1 id='authentication'>Authentication</h1>
@@ -183,11 +183,6 @@ Never send your credentials (password or client_secret) as query parameter to UR
 <td>UNIX timestamp of when the end user was created externally</td>
 </tr>
 <tr>
-<td>page_views_count</td>
-<td>integer</td>
-<td>Total number of page views</td>
-</tr>
-<tr>
 <td>properties</td>
 <td>hash</td>
 <td>Properties (i.e. plan, product)</td>
@@ -212,7 +207,6 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
     </span><span class="s2">"last_surveyed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"external_created_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"page_views_count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Small Business"</span><span class="p">,</span><span class="w"> </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example"</span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
@@ -223,7 +217,6 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
     </span><span class="s2">"last_surveyed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"external_created_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"page_views_count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enterprise"</span><span class="p">,</span><span class="w"> </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Company"</span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
@@ -294,7 +287,6 @@ curl -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span clas
   </span><span class="s2">"last_surveyed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-07 15:30:44 -0800"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"external_created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1515940485</span><span class="p">,</span><span class="w">
   </span><span class="s2">"last_seen_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"page_views_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"persona"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Individual"</span><span class="p">,</span><span class="w">
@@ -347,7 +339,6 @@ curl -X POST -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <s
     </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-12T06:29:27.000-08:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-12T06:29:27.000-08:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"page_views_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{'company':'TestCompany', 'city':'San Francisco'}"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -397,7 +388,6 @@ curl -X PUT -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> <sp
     </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-12T06:29:27.000-08:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-12T06:29:27.000-08:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"page_views_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{'company':'NewCompany', 'city':'New Reno'}"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -451,7 +441,6 @@ curl -X DELETE -H <span class="s2">"Authorization: Bearer myaccesstoken"</span> 
     </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-12T06:29:27.000-08:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-12T06:29:27.000-08:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"page_views_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{'company':'TestCompany', 'city':'San Francisco'}"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
