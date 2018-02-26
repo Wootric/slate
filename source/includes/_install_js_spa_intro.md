@@ -12,7 +12,7 @@
     account_token: 'NPS-XXXX' //TODO:replace it with your account token       
   };    
 </script>
-<script type="text/javascript" src="https://disutgh7q0ncc.cloudfront.net/beacon.js"></script>
+<script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
 <script>window.wootric("run")</script>
 <!-- end Wootric code -->
 ```
@@ -51,7 +51,7 @@ A way to load the Wootric snippet in a factory file so it can be fired in a sing
 
 ## Angular Step 2. Load Wootric JS SDK
 ```
-<script type="text/javascript" src="https://disutgh7q0ncc.cloudfront.net/beacon.js"></script>
+<script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
 ```
 Add this script tag to the file where you load all other 3rd party scripts
 ## Angular Step 3. Using the factory in your controller
