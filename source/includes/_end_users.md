@@ -12,7 +12,6 @@ updated_at | datetime | Datetime representation of when the end user was last up
 email | string | End user email
 last_surveyed | datetime | Datetime representation of when the end user was last surveyed
 external_created_at | integer | UNIX timestamp of when the end user was created externally
-page_views_count | integer | Total number of page views
 properties | hash | Properties (i.e. plan, product)
 
 ## Get All End Users
@@ -37,7 +36,6 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
     "last_surveyed": null,
     "external_created_at": null,
     "user_id": 16,
-    "page_views_count" : 1,
     "properties": {"plan": "Small Business", "product": "Example"}
   },
   {
@@ -48,7 +46,6 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
     "last_surveyed": null,
     "external_created_at": null,
     "user_id": 16,
-    "page_views_count" : 3,
     "properties": {"plan": "Enterprise", "product": "The Company"}
   }
 ]
@@ -96,7 +93,6 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
   "last_surveyed": "2018-01-07 15:30:44 -0800",
   "external_created_at": 1515940485,
   "last_seen_at": null,
-  "page_views_count": 0,
   "properties": {
     "country": "UK",
     "persona": "Individual",
@@ -150,7 +146,6 @@ curl -X POST -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v
     "created_at" : "2015-02-12T06:29:27.000-08:00",
     "updated_at" : "2015-02-12T06:29:27.000-08:00",
     "user_id": 1,
-    "page_views_count": 0,
     "properties": "{'company':'TestCompany', 'city':'San Francisco'}"
   }
 ```
@@ -191,7 +186,6 @@ curl -X PUT -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1
     "created_at" : "2015-02-12T06:29:27.000-08:00",
     "updated_at" : "2015-02-12T06:29:27.000-08:00",
     "user_id": 1,
-    "page_views_count": 0,
     "properties": "{'company':'NewCompany', 'city':'New Reno'}"
   }
 ```
@@ -233,7 +227,6 @@ curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com
     "created_at" : "2015-02-12T06:29:27.000-08:00",
     "updated_at" : "2015-02-12T06:29:27.000-08:00",
     "user_id": 1,
-    "page_views_count": 0,
     "properties": "{'company':'TestCompany', 'city':'San Francisco'}"
   }
 ```

@@ -12,7 +12,6 @@ includes:
   - end_users
   - responses
   - declines
-  - page_views
   - end_user_settings
   - nps_summary
   - errors
@@ -24,7 +23,7 @@ search: true
 
 Welcome to the Wootric API documentation!
 
-You can use our API to access and update your end users, responses, declines, and page views.
+You can use our API to access and update your end users, responses and declines.
 
 All responses from the API (including errors) are in JSON. All code examples are in cURL.
 
