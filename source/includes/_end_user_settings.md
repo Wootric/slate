@@ -10,7 +10,11 @@ id | integer | The ID of end user settings
 end_user_id | integer | The ID of end user
 created_at | datetime | Datetime representation of when the end user settings were created
 updated_at | datetime | Datetime representation of when the end user settings was last updated
-email_nps | boolean | Specifies whether end user should receive NPS survey through an email
+email_nps | boolean | Specifies whether end user should receive a survey through an email
+mobile_nps | boolean | Specifies whether end user should receive a survey through our mobile SDK
+web_nps | boolean | Specifies whether end user should receive a survey through our web SDK
+force_web_survey | boolean | Flag to override sampling settings. It will make the end user immediately available for a survey via our web SDK
+force_mobile_survey | boolean | Flag to override sampling settings. It will make the end user immediately available for a survey via our mobile SDK
 
 ## Get Specific End User Settings
 
@@ -49,11 +53,11 @@ end_user_id | The ID of the end user
 ## Update End User Settings
 
 ```shell
-curl -X PUT "https://api.wootric.com/v1/end_users/1/settings?access_token=myaccesstoken" -d "email_nps=false"
+curl -X PUT "https://api.wootric.com/v1/end_users/1/settings?access_token=myaccesstoken" -d "email_nps=false&force_web_survey=true"
 
 or
 
-curl -X PUT -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/settings" -d "email_nps=false"
+curl -X PUT -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/settings" -d "email_nps=false&force_web_survey=true"
 ```
 
 > The above command returns the following JSON:
