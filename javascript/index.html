@@ -1016,38 +1016,6 @@ each survey. Check that you only load one survey per page, and that you call
 <code class="prettyprint">WootricSurvey.run()</code> once. Calling <code class="prettyprint">WootricSurvey.run()</code> multiple times with
 different settings will break your installation.</p>
 
-<h1 id='callbacks'>Callbacks</h1><pre><code class="highlight javascript"><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-XXXXXXX'</span><span class="p">,</span>
-  <span class="na">email</span><span class="p">:</span> <span class="s1">'nps@example.com'</span><span class="p">,</span>
-  <span class="na">created_at</span><span class="p">:</span> <span class="mi">1528416000</span><span class="p">,</span>
-  <span class="na">callbacks</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">after_eligible</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">eligible</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Eligibility returned:'</span><span class="p">,</span> <span class="nx">eligible</span><span class="p">);</span>
-    <span class="p">},</span>
-    <span class="na">after_show</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'The Wootric modal is visible'</span><span class="p">);</span>
-    <span class="p">},</span>
-    <span class="nx">after_response</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">score</span><span class="p">,</span> <span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'A response has been submitted with score:'</span><span class="p">,</span> <span class="nx">score</span><span class="p">,</span> <span class="s1">'and text'</span><span class="p">,</span> <span class="nx">text</span><span class="p">);</span>
-    <span class="p">},</span>
-    <span class="nx">after_decline</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'A decline has been submitted'</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-</code></pre>
-
-<p>The Wootric SDK allows you to use callbacks after certain events have happened. You can also get information from some of the events. The list of events that you can subscribe to goes as follow:</p>
-
-<ul>
-<li>after_eligible: This callback runs after the request from Wootric&rsquo;s eligibility server returns. It can tell you if you are eligible for a survey or not.</li>
-<li>after_show: This callback runs after the survey is displayed.</li>
-<li>after_response: This callback runs after the survey is answered. It was also run if the survey is updated. (e.g. score changes) The callback function will receive the score and text.</li>
-<li>after_decline: This callback runs after a decline is created.</li>
-</ul>
-
-<p>To use callbacks, define them inside of a wootricSettings.callbacks object mapping event to callback function.</p>
-
 
       </div>
       <div class="dark-box">
