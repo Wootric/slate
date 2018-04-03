@@ -2048,6 +2048,7 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span cla
   -d <span class="s2">"emails[]=john@example.com"</span> <span class="se">\</span>
   -d <span class="s2">"emails[]=martin@example.com"</span> <span class="se">\</span>
   -d <span class="s2">"survey_immediately=true"</span> <span class="se">\</span>
+  -d <span class="s2">"survey_settings[logo_url]=https://company_logo_url.com"</span> <span class="se">\</span>
   -d <span class="s2">"survey_settings[custom_messages][followup_text]=Thank you!"</span> <span class="se">\</span>
   -d <span class="s2">"end_user[properties][campaign_name]=Campaign Name&amp;end_user[properties][campaign_type]=Campaign Type"</span> <span class="se">\</span>
   -d <span class="s2">"subject=Would you mind sharing your thoughts about our {{service}}?"</span> <span class="se">\</span>
@@ -2073,6 +2074,11 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span cla
 </thead><tbody>
 <tr>
 <td>language</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>logo_url</td>
 <td>String</td>
 <td></td>
 </tr>
