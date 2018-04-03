@@ -50,6 +50,7 @@ curl "https://api.wootric.com/v1/email_survey" \
   -d "emails[]=john@example.com" \
   -d "emails[]=martin@example.com" \
   -d "survey_immediately=true" \
+  -d "survey_settings[logo_url]=https://company_logo_url.com" \
   -d "survey_settings[custom_messages][followup_text]=Thank you!" \
   -d "end_user[properties][campaign_name]=Campaign Name&end_user[properties][campaign_type]=Campaign Type" \
   -d "subject=Would you mind sharing your thoughts about our {{service}}?" \
@@ -72,6 +73,7 @@ curl "https://api.wootric.com/v1/email_survey" \
 Param | Type | Description
 ----- | ---- | ------------
 language | String
+logo_url | String
 audience_text | String
 product_name | String
 custom_messages | Hash | See **custom_messages** parameters below
