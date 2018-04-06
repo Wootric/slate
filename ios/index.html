@@ -116,7 +116,7 @@ $ pod install
 <span class="c1">// Inside your method
 </span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_CLIENT_ID</span><span class="o">&gt;</span> <span class="nf">clientSecret</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_CLIENT_SECRET</span><span class="o">&gt;</span> <span class="nf">accountToken</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;</span><span class="p">];</span>
 
-<span class="c1">// TODO: Required to uniquely identify a user. It can be any unique value other than email.
+<span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
 </span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserEmail</span><span class="p">:</span><span class="s">@"nps@example.com"</span><span class="p">];</span>
 <span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.
 </span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserCreatedAt</span><span class="p">:</span><span class="mi">@1234567890</span><span class="p">];</span>
@@ -129,7 +129,7 @@ $ pod install
 <pre><code class="highlight swift"><span class="c1">// Inside your method
 </span><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">YOUR_CLIENT_ID</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">YOUR_CLIENT_SECRET</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;</span><span class="p">)</span>
 
-<span class="c1">// TODO: Required to uniquely identify a user. It can be any unique value other than email.
+<span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
 </span><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserEmail</span><span class="p">(</span><span class="s">"nps@example.com"</span><span class="p">)</span>
 <span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.
 </span><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserCreatedAt</span><span class="p">(</span><span class="mi">1234567890</span><span class="p">)</span>
@@ -142,7 +142,7 @@ $ pod install
 <pre><code class="highlight swift_three"><span class="c1">// Inside your method
 </span><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="nv">withClientID</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">YOUR_CLIENT_ID</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span><span class="o">&lt;</span><span class="kt">YOUR_CLIENT_SECRET</span><span class="o">&gt;</span><span class="p">,,</span> <span class="nv">accountToken</span><span class="p">:</span><span class="o">&lt;</span><span class="kt">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;</span><span class="p">)</span>
 
-<span class="c1">// TODO: Required to uniquely identify a user. It can be any unique value other than email.
+<span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
 </span><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserEmail</span><span class="p">(</span><span class="s">"nps@example.com"</span><span class="p">)</span>
 <span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.
 </span><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserCreatedAt</span><span class="p">(</span><span class="mi">1234567890</span><span class="p">)</span>

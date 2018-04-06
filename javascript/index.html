@@ -48,7 +48,7 @@
         <h1 id='installing-javascript-sdk'>Installing Javascript SDK</h1><h2 id='step-1--add-the-code'>Step 1. ­Add the code</h2><pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span><span class="c1">// TODO: Required to uniquely identify a user. It can be any unique value other than email.</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span><span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
   <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.</span>
   <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-xxxxxxx'</span>
 <span class="p">};</span>
@@ -73,7 +73,7 @@ account_token for you to install.</p>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
 <span class="nx">wootric_survey_immediately</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span><span class="c1">//Fire immediately for testing</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. It can be any unique value other than email.</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
   <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service.</span>
   <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span> <span class="p">}</span><span class="err">;</span>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
@@ -124,7 +124,7 @@ Take a close look at the onload attribute, it will guarantee that your service i
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
   <span class="nx">wootric_survey_immediately</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">//TODO:comment this in production</span>
   <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">//TODO: Required to uniquely identify a user. It can be any unique value other than email.</span>
+    <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">//TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
     <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">//TODO:replace it with date when your customer signed up           </span>
     <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-XXXX'</span> <span class="c1">//TODO:replace it with your account token       </span>
   <span class="p">};</span>    
@@ -144,7 +144,7 @@ Take a close look at the onload attribute, it will guarantee that your service i
 <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'wootricAngularApp'</span><span class="p">)</span>
 <span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="s1">'wootricFactory'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">email</span><span class="p">:</span> <span class="s1">'nps@example.com'</span><span class="p">,</span><span class="c1">// TODO: Required to uniquely identify a user. It can be any unique value other than email.</span>
+    <span class="na">email</span><span class="p">:</span> <span class="s1">'nps@example.com'</span><span class="p">,</span><span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
     <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current logged in user's sign-up date as a 10 digit Unix timestamp.</span>
     <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-xxxxxxx'</span> <span class="c1">// This is your unique account token.</span>
   <span class="p">};</span>
@@ -382,7 +382,7 @@ By default, when this property is not set, we display:
 <h2 id='modal-theme-settings'>Modal theme settings</h2><pre><code class="highlight javascript"><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. It can be any unique value other than email.</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
   <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current user's sign­up date as a Unix timestamp.</span>
   <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service.</span>
   <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span><span class="p">,</span>
@@ -407,7 +407,7 @@ By default, when this property is not set, we display:
 <h2 id='modal-footprint-settings'>Modal footprint settings</h2><pre><code class="highlight javascript"><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. It can be any unique value other than email.</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
   <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current user's sign­up date as a Unix timestamp.</span>
   <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service.</span>
   <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span><span class="p">,</span>
@@ -435,7 +435,7 @@ By default, when this property is not set, we display:
 <h2 id='modal-position-settings'>Modal position settings</h2><pre><code class="highlight javascript"><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. It can be any unique value other than email.</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
   <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current user's sign­up date as a Unix timestamp.</span>
   <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service.</span>
   <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span><span class="p">,</span>
@@ -452,7 +452,7 @@ By default, when this property is not set, we display:
 
 <p>Modal position can be either <code class="prettyprint">top</code> or <code class="prettyprint">bottom</code> (default).  To set the position, provide <code class="prettyprint">modal_position</code> key-value in <code class="prettyprint">wootricSettings</code> object.</p>
 <h2 id='modal-accessibility-settings'>Modal accessibility settings</h2><pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span><span class="c1">// TODO: Required to uniquely identify a user. It can be any unique value other than email.</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span><span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
   <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.</span>
   <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-xxxxxxx'</span><span class="p">,</span>
   <span class="na">aria</span><span class="p">:</span> <span class="kc">true</span>
@@ -482,7 +482,7 @@ insight into your drivers of satisfaction, and whether these differ by user type
 <pre><code class="highlight javascript"><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. It can be any unique value other than email.</span>
+  <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
   <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current user's sign­up date as a Unix timestamp.</span>
   <span class="na">product_name</span><span class="p">:</span> <span class="s1">'Wootric'</span><span class="p">,</span> <span class="c1">// TODO: The name of the product or service.</span>
   <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS­xxxxxxxx'</span><span class="p">,</span>
@@ -991,13 +991,13 @@ Returns WootricSurvey&rsquo;s object current version</p></li>
 
 <h1 id='run-multiple-surveys'>Run Multiple Surveys</h1><pre><code class="highlight javascript"><span class="k">if</span> <span class="p">(</span><span class="nx">show_nps_survey</span><span class="p">)</span> <span class="p">{</span>
   <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. It can be any unique value other than email.</span>
+    <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
     <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.</span>
     <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-xxxxxxx'</span>
   <span class="p">};</span>
 <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">show_ces_survey</span><span class="p">)</span> <span class="p">{</span>
   <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. It can be any unique value other than email.</span>
+    <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
     <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.</span>
     <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-yyyyyyy'</span>
   <span class="p">};</span>
