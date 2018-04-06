@@ -14,7 +14,7 @@ insight into your drivers of satisfaction, and whether these differ by user type
 <!­­ begin Wootric code ­­>
 <script type="text/javascript">
 window.wootricSettings = {
-  email:'nps@example.com', // TODO: Required to uniquely identify a user. It can be any unique value other than email.
+  email:'nps@example.com', // TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
   created_at: 1234567890, // TODO: The current user's sign­up date as a Unix timestamp.
   product_name: 'Wootric', // TODO: The name of the product or service.
   account_token: 'NPS­xxxxxxxx',

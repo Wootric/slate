@@ -23,7 +23,7 @@ If wootric_recommend_target = "your friends", the question will result in:
 <!­­ begin Wootric code ­­>
 <script type="text/javascript">
 window.wootricSettings = {
-  email:'nps@example.com', // TODO: Required to uniquely identify a user. It can be any unique value other than email.
+  email:'nps@example.com', // TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
   created_at: 1234567890, // TODO: The current user's sign­up date as a Unix timestamp.
   product_name: 'Wootric', // TODO: The name of the product or service.
   account_token: 'NPS­xxxxxxxx',
@@ -53,7 +53,7 @@ Dark:
 <!­­ begin Wootric code ­­>
 <script type="text/javascript">
 window.wootricSettings = {
-  email:'nps@example.com', // TODO: Required to uniquely identify a user. It can be any unique value other than email.
+  email:'nps@example.com', // TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
   created_at: 1234567890, // TODO: The current user's sign­up date as a Unix timestamp.
   product_name: 'Wootric', // TODO: The name of the product or service.
   account_token: 'NPS­xxxxxxxx',
@@ -85,7 +85,7 @@ Spacious:
 <!­­ begin Wootric code ­­>
 <script type="text/javascript">
 window.wootricSettings = {
-  email:'nps@example.com', // TODO: Required to uniquely identify a user. It can be any unique value other than email.
+  email:'nps@example.com', // TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
   created_at: 1234567890, // TODO: The current user's sign­up date as a Unix timestamp.
   product_name: 'Wootric', // TODO: The name of the product or service.
   account_token: 'NPS­xxxxxxxx',
@@ -105,7 +105,7 @@ Modal position can be either ```top``` or ```bottom``` (default).  To set the po
 
 ```js
 window.wootricSettings = {
-  email:'nps@example.com',// TODO: Required to uniquely identify a user. It can be any unique value other than email.
+  email:'nps@example.com',// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
   created_at: 1234567890, // TODO: The current logged in user's sign-up date as a Unix timestamp.
   account_token: 'NPS-xxxxxxx',
   aria: true

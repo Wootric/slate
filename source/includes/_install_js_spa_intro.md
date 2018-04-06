@@ -7,7 +7,7 @@
 <script type="text/javascript">
   wootric_survey_immediately = true; //TODO:comment this in production
   window.wootricSettings = {
-    email:'nps@example.com', //TODO: Required to uniquely identify a user. It can be any unique value other than email.
+    email:'nps@example.com', //TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
     created_at: 1234567890, //TODO:replace it with date when your customer signed up           
     account_token: 'NPS-XXXX' //TODO:replace it with your account token       
   };    
@@ -28,7 +28,7 @@
 angular.module('wootricAngularApp')
 .factory('wootricFactory', function () {
 window.wootricSettings = {
-    email: 'nps@example.com',// TODO: Required to uniquely identify a user. It can be any unique value other than email.
+    email: 'nps@example.com',// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
     created_at: 1234567890, // TODO: The current logged in user's sign-up date as a 10 digit Unix timestamp.
     account_token: 'NPS-xxxxxxx' // This is your unique account token.
   };

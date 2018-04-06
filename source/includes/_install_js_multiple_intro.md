@@ -3,13 +3,13 @@
 ```javascript
 if (show_nps_survey) {
   window.wootricSettings = {
-    email:'nps@example.com', // TODO: Required to uniquely identify a user. It can be any unique value other than email.
+    email:'nps@example.com', // TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
     created_at: 1234567890, // TODO: The current logged in user's sign-up date as a Unix timestamp.
     account_token: 'NPS-xxxxxxx'
   };
 } else if (show_ces_survey) {
   window.wootricSettings = {
-    email:'nps@example.com', // TODO: Required to uniquely identify a user. It can be any unique value other than email.
+    email:'nps@example.com', // TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
     created_at: 1234567890, // TODO: The current logged in user's sign-up date as a Unix timestamp.
     account_token: 'NPS-yyyyyyy'
   };
