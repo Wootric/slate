@@ -103,6 +103,10 @@ This is an important step! [Customize](https://app.wootric.com/user_settings/edi
   <img src="https://cloud.githubusercontent.com/assets/1431421/17188298/0c8dec22-5402-11e6-8925-020e777c36ba.png" alt="Wootric" title="Customization">
 </p>
 
+<aside class="notice">
+[Contact us](mailto:contact@wootric.com) to get your account switched to CSAT or CES and please note all account tokens have the following format: NPS-xxxxxxxx
+</aside>
+
 ##Step 5. View your Responses Live!
 That's it! Once the WootricSDK is installed, eligible users will immediately start being surveyed.
 Depending on the traffic of your app, you could start to see responses within a few minutes.
