@@ -62,6 +62,7 @@ Vietnamese | VN
 Language | Code
 -------- | ----
 Bulgarian | BG
+Danish | DA
 Dutch | NL
 English | EN
 Estonian | ET
