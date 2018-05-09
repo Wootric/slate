@@ -242,3 +242,31 @@ This endpoint deletes the end user.
 Parameter | Description
 --------- | -----------
 end_user_id | The ID of the end user to delete
+
+## Export specific End User's data
+
+```shell
+curl "https://api.wootric.com/v1/end_users/2/export?access_token=myaccesstoken"
+
+or
+
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/2/export"
+```
+
+> The above command returns an empty JSON response. Inspect the response code to see if it was successsful or not:
+
+```http
+HTTP/1.1 202 Accepted
+```
+
+This endpoint schedules an export to be processed for the given end user ID, when the export file is ready we'll send you an email with a link to the final JSON export file.
+
+### HTTP Request
+
+`GET https://api.wootric.com/v1/end_users/<id>/export`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the end user to export
