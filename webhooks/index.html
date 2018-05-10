@@ -39,11 +39,11 @@
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="../images/navbar.png" />
+        <img src="../images/navbar.png" alt="Navbar" />
       </span>
     </a>
     <div class="tocify-wrapper">
-      <a href="/"><img src="../images/logo.png" /></a>
+      <a href="/"><img src="../images/logo.png" alt="Logo" /></a>
         <div class="lang-selector">
               <a href="#" data-language-name="ruby">ruby</a>
         </div>
@@ -63,13 +63,13 @@
       <div class="content">
         <h1 id='outgoing-webhooks'>Outgoing Webhooks</h1>
 <p>Wootric can send an HTTP POST request to a specified URL when an event occurs. See the list of supported events below. </p>
-<h2 id='list-of-events-and-their-payload'>List of events and their payload</h2><pre><code class="highlight ruby"><span class="c1"># response created sample payload</span>
+<h2 id='list-of-events-and-their-payload'>List of events and their payload</h2><div class="highlight"><pre class="highlight ruby"><code><span class="c1"># response created sample payload</span>
 <span class="n">response</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">=</span><span class="mi">1128</span><span class="o">&amp;</span>
 <span class="n">response</span><span class="p">[</span><span class="n">email</span><span class="p">]</span><span class="o">=</span><span class="n">nps</span><span class="vi">@example</span><span class="p">.</span><span class="nf">com</span><span class="o">&amp;</span>
 <span class="n">response</span><span class="p">[</span><span class="n">external_id</span><span class="p">]</span><span class="o">=</span><span class="mi">123</span><span class="n">abc</span><span class="o">&amp;</span>
 <span class="n">response</span><span class="p">[</span><span class="n">score</span><span class="p">]</span><span class="o">=</span><span class="mi">7</span><span class="o">&amp;</span>
 <span class="n">response</span><span class="p">[</span><span class="n">text</span><span class="p">]</span><span class="o">=&amp;</span>
-<span class="n">response</span><span class="p">[</span><span class="n">ip_address</span><span class="p">]</span><span class="o">=</span><span class="mi">127</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span><span class="o">&amp;</span>
+<span class="n">response</span><span class="p">[</span><span class="n">ip_address</span><span class="p">]</span><span class="o">=</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">&amp;</span>
 <span class="n">response</span><span class="p">[</span><span class="n">origin_url</span><span class="p">]</span><span class="o">=</span><span class="n">https</span><span class="o">%</span><span class="mi">3</span><span class="no">A</span><span class="o">%</span><span class="mi">2</span><span class="no">F</span><span class="o">%</span><span class="mi">2</span><span class="no">Fwootric</span><span class="p">.</span><span class="nf">com</span><span class="o">%</span><span class="mi">2</span><span class="no">F</span><span class="o">&amp;</span>
 <span class="n">response</span><span class="p">[</span><span class="n">end_user_id</span><span class="p">]</span><span class="o">=</span><span class="mi">30</span><span class="o">&amp;</span>
 <span class="n">response</span><span class="p">[</span><span class="n">end_user_properties</span><span class="p">][</span><span class="n">pricing_plan</span><span class="p">]</span><span class="o">=</span><span class="no">Enterprise</span><span class="o">&amp;</span>
@@ -85,7 +85,7 @@
 <span class="n">decline</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">=</span><span class="mi">19</span><span class="o">&amp;</span>
 <span class="n">decline</span><span class="p">[</span><span class="n">email</span><span class="p">]</span><span class="o">=</span><span class="n">nps</span><span class="vi">@example</span><span class="p">.</span><span class="nf">com</span><span class="o">&amp;</span>
 <span class="n">decline</span><span class="p">[</span><span class="n">external_id</span><span class="p">]</span><span class="o">=</span><span class="mi">123</span><span class="n">abc</span><span class="o">&amp;</span>
-<span class="n">decline</span><span class="p">[</span><span class="n">ip_address</span><span class="p">]</span><span class="o">=</span><span class="mi">127</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span><span class="o">&amp;</span>
+<span class="n">decline</span><span class="p">[</span><span class="n">ip_address</span><span class="p">]</span><span class="o">=</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">&amp;</span>
 <span class="n">decline</span><span class="p">[</span><span class="n">origin_url</span><span class="p">]</span><span class="o">=</span><span class="n">https</span><span class="o">%</span><span class="mi">3</span><span class="no">A</span><span class="o">%</span><span class="mi">2</span><span class="no">F</span><span class="o">%</span><span class="mi">2</span><span class="no">Fwootric</span><span class="p">.</span><span class="nf">com</span><span class="o">%</span><span class="mi">2</span><span class="no">F</span><span class="o">&amp;</span>
 <span class="n">decline</span><span class="p">[</span><span class="n">end_user_id</span><span class="p">]</span><span class="o">=</span><span class="mi">31</span><span class="o">&amp;</span>
 <span class="n">decline</span><span class="p">[</span><span class="n">end_user_properties</span><span class="p">][</span><span class="n">pricing_plan</span><span class="p">]</span><span class="o">=</span><span class="no">Pro</span><span class="o">&amp;</span>
@@ -95,8 +95,7 @@
 <span class="n">decline</span><span class="p">[</span><span class="n">updated_at</span><span class="p">]</span><span class="o">=</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">04</span><span class="o">%</span><span class="mi">2013</span><span class="o">%</span><span class="mi">3</span><span class="no">A58</span><span class="o">%</span><span class="mi">3</span><span class="no">A21</span><span class="o">%</span><span class="mi">20</span><span class="o">-</span><span class="mo">0700</span><span class="o">&amp;</span>
 <span class="n">event_name</span><span class="o">=</span><span class="n">created</span><span class="o">&amp;</span>
 <span class="n">timestamp</span><span class="o">=</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">04</span><span class="o">%</span><span class="mi">2013</span><span class="o">%</span><span class="mi">3</span><span class="no">A58</span><span class="o">%</span><span class="mi">3</span><span class="no">A23</span><span class="o">%</span><span class="mi">20</span><span class="o">-</span><span class="mo">0700</span>
-</code></pre>
-
+</code></pre></div>
 <ul>
 <li><strong>Response created:</strong> An end user responded to a survey.</li>
 <li><strong>Response updated:</strong> An end user changed the score or added feedback to a response.</li>
@@ -106,7 +105,7 @@
 <p>Webhooks are enabled in the <strong>Outgoing Webhooks</strong> page in the settings, by selecting the required events and adding the URL. The specified URL needs to be publicly accessible.</p>
 
 <p>That&rsquo;s it! Wootric will be sending a POST request to the specified URL when the event happens!</p>
-<h2 id='security'>Security</h2><pre><code class="highlight ruby"><span class="nb">require</span> <span class="s1">'cuba'</span>
+<h2 id='security'>Security</h2><div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'cuba'</span>
 <span class="nb">require</span> <span class="s1">'openssl'</span>
 
 <span class="no">Cuba</span><span class="p">.</span><span class="nf">define</span> <span class="k">do</span>
@@ -135,8 +134,7 @@
     <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</code></pre>
-
+</code></pre></div>
 <p>In order to verify that the request actually came from our servers, we include the <code class="prettyprint">HTTP_X_WOOTRIC_SIGNATURE</code> header, which is an HMAC-SHA1 signature of the payload using the secret token for your account. You can get this token in the <strong>Outgoing Webhooks</strong> configuration page.</p>
 
 

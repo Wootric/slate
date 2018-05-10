@@ -34,11 +34,11 @@
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="../images/navbar.png" />
+        <img src="../images/navbar.png" alt="Navbar" />
       </span>
     </a>
     <div class="tocify-wrapper">
-      <a href="/"><img src="../images/logo.png" /></a>
+      <a href="/"><img src="../images/logo.png" alt="Logo" /></a>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -53,25 +53,22 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='installing-android-sdk'>Installing Android SDK</h1><h2 id='using-maven'>Using Maven</h2><pre><code class="highlight xml"><span class="nt">&lt;dependency&gt;</span>
+        <h1 id='installing-android-sdk'>Installing Android SDK</h1><h2 id='using-maven'>Using Maven</h2><div class="highlight"><pre class="highlight xml"><code><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>com.wootric<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>wootric-sdk-android<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>2.7.0<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre>
-
+</code></pre></div>
 <p>If you use Maven, you can include this library as a dependency.</p>
-<h2 id='using-gradle'>Using Gradle</h2><pre><code class="highlight xml">compile 'com.wootric:wootric-sdk-android:2.7.0'
-</code></pre>
-
+<h2 id='using-gradle'>Using Gradle</h2><div class="highlight"><pre class="highlight xml"><code>compile 'com.wootric:wootric-sdk-android:2.7.0'
+</code></pre></div>
 <p>Add the following to your app’s <code class="prettyprint">build.gradle</code> file, inside the dependencies section.</p>
 <h1 id='presenting-the-survey'>Presenting the survey</h1>
 <p>WootricSDK task is to present a fully functional survey view with just a few lines of code.</p>
-<h2 id='step-1--add-permissions'>Step 1. Add permissions</h2><pre><code class="highlight xml"><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span> <span class="nt">/&gt;</span>
-</code></pre>
-
+<h2 id='step-1--add-permissions'>Step 1. Add permissions</h2><div class="highlight"><pre class="highlight xml"><code><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span> <span class="nt">/&gt;</span>
+</code></pre></div>
 <p>Add the internet permissions to the <code class="prettyprint">AndroidManifest.xml</code> file.</p>
-<h2 id='step-2--add-proguard-rules'>Step 2. Add ProGuard rules</h2><pre><code class="highlight plaintext">-keepattributes *Annotation*, Signature
+<h2 id='step-2--add-proguard-rules'>Step 2. Add ProGuard rules</h2><div class="highlight"><pre class="highlight plaintext"><code>-keepattributes *Annotation*, Signature
 
 ##== Wootric ==
 -keep class com.wootric.** { *; }
@@ -81,10 +78,9 @@
 -keepclassmembernames interface * {
     @retrofit.http.* &lt;methods&gt;;
 }
-</code></pre>
-
+</code></pre></div>
 <p>Add the following to your ProGuard rules file.</p>
-<h2 id='step-3--initialize-wootric'>Step 3. Initialize Wootric</h2><pre><code class="highlight java"><span class="kn">import</span> <span class="nn">com.wootric.androidsdk.Wootric</span><span class="o">;</span>
+<h2 id='step-3--initialize-wootric'>Step 3. Initialize Wootric</h2><div class="highlight"><pre class="highlight java"><code><span class="kn">import</span> <span class="nn">com.wootric.androidsdk.Wootric</span><span class="o">;</span>
 
 <span class="c1">// Inside your method</span>
 <span class="n">Wootric</span> <span class="n">wootric</span> <span class="o">=</span> <span class="n">Wootric</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="o">&lt;</span><span class="n">YOUR_CLIENT_ID</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="n">YOUR_CLIENT_SECRET</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="n">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;);</span>
@@ -98,8 +94,7 @@
 <span class="n">wootric</span><span class="o">.</span><span class="na">setSurveyImmediately</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
 
 <span class="n">wootric</span><span class="o">.</span><span class="na">survey</span><span class="o">();</span>
-</code></pre>
-
+</code></pre></div>
 <p>First import the SDK into your Activity of choosing. Then configure the SDK with your client ID, secret and account token.</p>
 
 <p>Sign in at <a href="https://www.wootric.com/">wootric.com</a> if you haven&rsquo;t already. If you just signed up on the Wootric homepage, you will be taken directly to an installation page. If you’re a returning visitor, click on the “Settings&quot; button near the top right of the page. Navigate to the <a href="https://app.wootric.com/install">Wootric Installation Guide</a> and you will see a unique <strong>account_token</strong> for you to use.</p>
@@ -111,7 +106,7 @@
 <blockquote>
 <p>Comment out the line <code class="prettyprint">wootric.setSurveyImmediately(true)</code> when you are ready for production. Alternatively, leave the line in the code for testing purposes or to survey the customer upon every visit to a view.</p>
 </blockquote>
-<pre><code class="highlight java"><span class="kn">import</span> <span class="nn">com.wootric.androidsdk.Wootric</span><span class="o">;</span>
+<div class="highlight"><pre class="highlight java"><code><span class="kn">import</span> <span class="nn">com.wootric.androidsdk.Wootric</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.wootric.androidsdk.objects.WootricCustomThankYou</span><span class="o">;</span>
 
 <span class="n">Wootric</span> <span class="n">wootric</span> <span class="o">=</span> <span class="n">Wootric</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"your_client_id"</span><span class="o">,</span> <span class="s">"your_client_secret"</span><span class="o">,</span> <span class="s">"NPS­-xxxxxxxx"</span><span class="o">);</span>
@@ -130,8 +125,7 @@
 <span class="n">wootric</span><span class="o">.</span><span class="na">setLanguageCode</span><span class="o">(</span><span class="s">"fr"</span><span class="o">);</span>
 
 <span class="n">wootric</span><span class="o">.</span><span class="na">survey</span><span class="o">();</span>
-</code></pre>
-
+</code></pre></div>
 <p>This is an important step! <a href="https://app.wootric.com/user_settings/edit#!/survey-nps">Customize</a> your survey with the name of your product or company. As needed, make changes to our trusted <a href="https://app.wootric.com/user_settings/edit#!/survey-nps">survey</a> and <a href="https://app.wootric.com/user_settings/edit#!/sampling">sampling</a> defaults. This values can modified from your app.</p>
 
 <p align="center" >
@@ -168,54 +162,46 @@ identification.</p>
 on views that won’t interrupt checkout. The most commonly used location is the transaction
 completion page.</p>
 
-<h1 id='sdk-reference'>SDK Reference</h1><h2 id='setenduseremail'>setEndUserEmail</h2><pre><code class="highlight java"><span class="n">wootric</span><span class="o">.</span><span class="na">setEndUserEmail</span><span class="o">(&lt;</span><span class="n">END_USER_EMAIL</span><span class="o">&gt;);</span>
-</code></pre>
-
+<h1 id='sdk-reference'>SDK Reference</h1><h2 id='setenduseremail'>setEndUserEmail</h2><div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">setEndUserEmail</span><span class="o">(&lt;</span><span class="n">END_USER_EMAIL</span><span class="o">&gt;);</span>
+</code></pre></div>
 <p>While end user email is not required it is HIGHLY recommended to set it if possible.</p>
-<h2 id='setenduserexternalid'>setEndUserExternalId</h2><pre><code class="highlight java"><span class="n">wootric</span><span class="o">.</span><span class="na">setEndUserExternalId</span><span class="o">(&lt;</span><span class="n">END_USER_EXTERNAL_ID</span><span class="o">&gt;);</span>
-</code></pre>
-
+<h2 id='setenduserexternalid'>setEndUserExternalId</h2><div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">setEndUserExternalId</span><span class="o">(&lt;</span><span class="n">END_USER_EXTERNAL_ID</span><span class="o">&gt;);</span>
+</code></pre></div>
 <p>Set an external ID for the end user. This value is optional.</p>
-<h2 id='setsurveyimmediately'>setSurveyImmediately</h2><pre><code class="highlight java"><span class="n">wootric</span><span class="o">.</span><span class="na">setSurveyImmediately</span><span class="o">(&lt;</span><span class="n">BOOL</span><span class="o">&gt;);</span>
-</code></pre>
-
+<h2 id='setsurveyimmediately'>setSurveyImmediately</h2><div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">setSurveyImmediately</span><span class="o">(&lt;</span><span class="n">BOOL</span><span class="o">&gt;);</span>
+</code></pre></div>
 <p>If setSurveyImmediately is set to <code class="prettyprint">true</code> and user wasn&rsquo;t surveyed yet - eligibility check will return <code class="prettyprint">true</code> and survey will be displayed.</p>
 
 <p><aside class="warning">
 This should not be used in production.
 </aside></p>
-<h2 id='setendusercreatedat'>setEndUserCreatedAt</h2><pre><code class="highlight java"><span class="n">wootric</span><span class="o">.</span><span class="na">setEndUserCreatedAt</span><span class="o">(&lt;</span><span class="n">UNIX</span> <span class="n">Timestamp</span><span class="o">&gt;);</span>
-</code></pre>
-
+<h2 id='setendusercreatedat'>setEndUserCreatedAt</h2><div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">setEndUserCreatedAt</span><span class="o">(&lt;</span><span class="n">UNIX</span> <span class="n">Timestamp</span><span class="o">&gt;);</span>
+</code></pre></div>
 <p>When creating a new end user for survey, it will set the external creation date (so for example, date, when end user was created in your Android application).
 This value is also used in eligibility check, to determine if end user should be surveyed.</p>
-<h2 id='setfirstsurveydelay'>setFirstSurveyDelay</h2><pre><code class="highlight java"><span class="n">wootric</span><span class="o">.</span><span class="na">setFirstSurveyDelay</span><span class="o">(&lt;</span><span class="n">NUMBER_OF_DAYS</span><span class="o">&gt;);</span>
-</code></pre>
-
+<h2 id='setfirstsurveydelay'>setFirstSurveyDelay</h2><div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">setFirstSurveyDelay</span><span class="o">(&lt;</span><span class="n">NUMBER_OF_DAYS</span><span class="o">&gt;);</span>
+</code></pre></div>
 <p>If not set, defaults to value from admin panel. Used to check if end user was created/last seen earlier than <NUMBER_OF_DAYS> ago and therefore if survey is required.</p>
-<h2 id='setproperties'>setProperties</h2><pre><code class="highlight java"><span class="n">wootric</span><span class="o">.</span><span class="na">setProperties</span><span class="o">(</span><span class="n">properties</span><span class="o">);</span>
-</code></pre>
-
+<h2 id='setproperties'>setProperties</h2><div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">setProperties</span><span class="o">(</span><span class="n">properties</span><span class="o">);</span>
+</code></pre></div>
 <p>End user properties can be provided as a <code class="prettyprint">HashMap&lt;String, String&gt;</code> object.</p>
-<h2 id='shouldskipfollowupscreenforpromoters'>shouldSkipFollowupScreenForPromoters</h2><pre><code class="highlight java"><span class="n">wootric</span><span class="o">.</span><span class="na">shouldSkipFollowupScreenForPromoters</span><span class="o">(&lt;</span><span class="n">BOOL</span><span class="o">&gt;);</span>
-</code></pre>
-
+<h2 id='shouldskipfollowupscreenforpromoters'>shouldSkipFollowupScreenForPromoters</h2><div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">shouldSkipFollowupScreenForPromoters</span><span class="o">(&lt;</span><span class="n">BOOL</span><span class="o">&gt;);</span>
+</code></pre></div>
 <p>With this option enabled, promoters (score 9-10) will be taken directly to third (social share) screen, skipping the second (feedback) one.</p>
 
 <h1 id='custom-language-audience-text-and-product-name-configuration'>Custom language, audience text and product name configuration:</h1>
 <hr>
-<pre><code class="highlight java"><span class="n">wootric</span><span class="o">.</span><span class="na">setLanguageCode</span><span class="o">(&lt;</span><span class="n">LANGUAGE_CODE</span><span class="o">&gt;);</span>
+<div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">setLanguageCode</span><span class="o">(&lt;</span><span class="n">LANGUAGE_CODE</span><span class="o">&gt;);</span>
 <span class="n">wootric</span><span class="o">.</span><span class="na">setRecommendTarget</span><span class="o">(&lt;</span><span class="n">CUSTOM_AUDIENCE</span><span class="o">&gt;);</span>
 <span class="n">wootric</span><span class="o">.</span><span class="na">setProductName</span><span class="o">(&lt;</span><span class="n">CUSTOM_PRODUCT_NAME</span><span class="o">&gt;);</span>
-</code></pre>
-
+</code></pre></div>
 <p>Please refer to our <a href="http://docs.wootric.com/install/#custom-language-setting">docs</a> for available languages.</p>
 
 <p><code class="prettyprint">setProductName</code> sets the product name for the end user. This will change the default question.
 e.g. How likely are you to recommend productName to a friend or co-worker?
 <code class="prettyprint">setRecommendTarget</code> will substitute &ldquo;friend or co-worker&rdquo;. It also takes precedence over values set in admin panel.</p>
 
-<h1 id='custom-messages'>Custom messages</h1><pre><code class="highlight java"><span class="n">WootricCustomMessage</span> <span class="n">customMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WootricCustomMessage</span><span class="o">();</span>
+<h1 id='custom-messages'>Custom messages</h1><div class="highlight"><pre class="highlight java"><code><span class="n">WootricCustomMessage</span> <span class="n">customMessage</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WootricCustomMessage</span><span class="o">();</span>
 <span class="n">customMessage</span><span class="o">.</span><span class="na">setFollowupQuestion</span><span class="o">(</span><span class="s">"custom followup"</span><span class="o">);</span>
 <span class="n">customMessage</span><span class="o">.</span><span class="na">setDetractorFollowupQuestion</span><span class="o">(</span><span class="s">"custom detractor"</span><span class="o">);</span>
 <span class="n">customMessage</span><span class="o">.</span><span class="na">setPassiveFollowupQuestion</span><span class="o">(</span><span class="s">"custom passive"</span><span class="o">);</span>
@@ -226,10 +212,9 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
 <span class="n">customMessage</span><span class="o">.</span><span class="na">setPromoterPlaceholderText</span><span class="o">(</span><span class="s">"custom promoter placeholder"</span><span class="o">);</span>
 
 <span class="n">wootric</span><span class="o">.</span><span class="na">setCustomMessage</span><span class="o">(</span><span class="n">customMessage</span><span class="o">);</span>
-</code></pre>
-
+</code></pre></div>
 <p>Wootric provides designated class for providing custom messages -<code class="prettyprint">WootricCustomMessages</code></p>
-<h1 id='custom-thank-you'>Custom thank you</h1><pre><code class="highlight java"><span class="n">WootricCustomThankYou</span> <span class="n">customThankYou</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WootricCustomThankYou</span><span class="o">();</span>
+<h1 id='custom-thank-you'>Custom thank you</h1><div class="highlight"><pre class="highlight java"><code><span class="n">WootricCustomThankYou</span> <span class="n">customThankYou</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WootricCustomThankYou</span><span class="o">();</span>
 <span class="n">customThankYou</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Thank you!!"</span><span class="o">);</span>
 <span class="n">customThankYou</span><span class="o">.</span><span class="na">setDetractorText</span><span class="o">(</span><span class="s">"Detractor thank you"</span><span class="o">);</span>
 <span class="n">customThankYou</span><span class="o">.</span><span class="na">setPassiveText</span><span class="o">(</span><span class="s">"Passive thank you"</span><span class="o">);</span>
@@ -245,10 +230,9 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
 <span class="n">customThankYou</span><span class="o">.</span><span class="na">setScoreInUrl</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
 <span class="n">customThankYou</span><span class="o">.</span><span class="na">setCommentInUrl</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
 <span class="n">wootric</span><span class="o">.</span><span class="na">setCustomThankYou</span><span class="o">(</span><span class="n">customThankYou</span><span class="o">);</span>
-</code></pre>
-
+</code></pre></div>
 <p>Wootric provides designated class for providing custom thank you -<code class="prettyprint">WootricCustomThankYou</code></p>
-<h1 id='color-customization-smartphones-only'>Color customization (smartphones only)</h1><pre><code class="highlight java"><span class="c1">// Changes background color and text buttons color for the survey</span>
+<h1 id='color-customization-smartphones-only'>Color customization (smartphones only)</h1><div class="highlight"><pre class="highlight java"><code><span class="c1">// Changes background color and text buttons color for the survey</span>
 <span class="n">wootric</span><span class="o">.</span><span class="na">setSurveyColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">survey_color</span><span class="o">);</span>
 
 <span class="c1">// Changes score selector color and comment highlight color</span>
@@ -259,11 +243,10 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
 
 <span class="c1">// Changes Facebook and Twitter buttons colors</span>
 <span class="n">wootric</span><span class="o">.</span><span class="na">setSocialSharingColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">social_color</span><span class="o">);</span>
-</code></pre>
-
+</code></pre></div>
 <p>Colors can be customized for the smartphone&rsquo;s version.</p>
 
-<h1 id='samples'>Samples</h1><h2 id='rate-application-on-the-play-store'>Rate application on the Play Store</h2><pre><code class="highlight java">
+<h1 id='samples'>Samples</h1><h2 id='rate-application-on-the-play-store'>Rate application on the Play Store</h2><div class="highlight"><pre class="highlight java"><code>
 <span class="kn">import</span> <span class="nn">com.wootric.androidsdk.Wootric</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.wootric.androidsdk.objects.WootricCustomThankYou</span><span class="o">;</span>
 
@@ -287,14 +270,13 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
 
 <span class="n">wootric</span><span class="o">.</span><span class="na">setCustomThankYou</span><span class="o">(</span><span class="n">customThankYou</span><span class="o">);</span>
 <span class="n">wootric</span><span class="o">.</span><span class="na">survey</span><span class="o">();</span>
-</code></pre>
-
+</code></pre></div>
 <p>You can set the last button to go to the Play Store so users can rate your app.</p>
 
 <p align="center" >
   <img src="https://cloud.githubusercontent.com/assets/1431421/16964379/bc8e7c06-4dc0-11e6-900a-bf6a3d4501b6.png" alt="Wootric" title="Wootric" style="height:400px;">
 </p>
-<h2 id='set-end-user-properties'>Set End User Properties</h2><pre><code class="highlight java"><span class="kn">import</span> <span class="nn">com.wootric.androidsdk.Wootric</span><span class="o">;</span>
+<h2 id='set-end-user-properties'>Set End User Properties</h2><div class="highlight"><pre class="highlight java"><code><span class="kn">import</span> <span class="nn">com.wootric.androidsdk.Wootric</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.wootric.androidsdk.objects.WootricCustomThankYou</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
 
@@ -320,8 +302,7 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
 <span class="n">wootric</span><span class="o">.</span><span class="na">setProperties</span><span class="o">(</span><span class="n">properties</span><span class="o">);</span>
 
 <span class="n">wootric</span><span class="o">.</span><span class="na">survey</span><span class="o">();</span>
-</code></pre>
-
+</code></pre></div>
 <p>Setting end user properties will help you segment and filter results.</p>
 
 <p>Wootric currently supports Integers, Strings, and Unix formatted dates as values.</p>
@@ -355,15 +336,14 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
 <p>Wootric provides an integration for <a href="https://segment.com/">Segment</a>. The library can be found on <a href="https://github.com/Wootric/segment-android-integration-wootric">our Github</a>. </p>
 
 <p>This library is distributed as Android library project so it can be included by referencing it as a library project.</p>
-<h2 id='install-with-maven'>Install with Maven</h2><pre><code class="highlight xml"><span class="nt">&lt;dependency&gt;</span>
+<h2 id='install-with-maven'>Install with Maven</h2><div class="highlight"><pre class="highlight xml"><code><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>com.wootric<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>analytics-integration-wootric<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>0.1.4<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre>
-
+</code></pre></div>
 <p>If you use Maven, you can include this library as a dependency.</p>
-<h2 id='install-with-gradle'>Install with Gradle</h2><pre><code class="highlight groovy"><span class="n">compile</span> <span class="s1">'com.wootric:analytics-integration-wootric:0.1.4'</span>
+<h2 id='install-with-gradle'>Install with Gradle</h2><div class="highlight"><pre class="highlight groovy"><code><span class="n">compile</span> <span class="s1">'com.wootric:analytics-integration-wootric:0.1.4'</span>
 
 <span class="n">dependencies</span> <span class="o">{</span>
   <span class="n">repositories</span> <span class="o">{</span>
@@ -373,10 +353,9 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
 
   <span class="n">compile</span> <span class="s1">'com.segment.analytics.android:analytics:4.1.4-SNAPSHOT'</span>
 <span class="o">}</span>
-</code></pre>
-
+</code></pre></div>
 <p>It is assumed that Segment&rsquo;s android analytics is available. The latest version can be added as dependency this way.</p>
-<h2 id='intialize-analytics'>Intialize Analytics</h2><pre><code class="highlight java"><span class="kn">import</span> <span class="nn">com.segment.analytics.Analytics</span><span class="o">;</span>
+<h2 id='intialize-analytics'>Intialize Analytics</h2><div class="highlight"><pre class="highlight java"><code><span class="kn">import</span> <span class="nn">com.segment.analytics.Analytics</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.wootric.analytics.android.integrations.wootric.WootricIntegration</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainApplication</span> <span class="kd">extends</span> <span class="n">Application</span> <span class="o">{</span>
@@ -384,7 +363,7 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
     <span class="n">Analytics</span> <span class="n">analytics</span><span class="o">;</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">();</span>
 
         <span class="n">analytics</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Analytics</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"write_key"</span><span class="o">)</span>
@@ -392,27 +371,26 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
                 <span class="o">.</span><span class="na">build</span><span class="o">();</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="n">Analytics</span> <span class="n">getAnalytics</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">Analytics</span> <span class="nf">getAnalytics</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">analytics</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-
+</code></pre></div>
 <p>Analytics object should be initialized in the Application class, specifying that the WootricIntegration should be user.</p>
-<h2 id='wootric-object'>Wootric object</h2><pre><code class="highlight java">
+<h2 id='wootric-object'>Wootric object</h2><div class="highlight"><pre class="highlight java"><code>
 <span class="kn">import</span> <span class="nn">com.segment.analytics.Analytics</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.wootric.analytics.android.integrations.wootric.WootricIntegration</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.wootric.androidsdk.Wootric</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onResume</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
 
         <span class="n">Analytics</span> <span class="n">analytics</span> <span class="o">=</span> <span class="o">((</span><span class="n">MainApplication</span><span class="o">)</span> <span class="n">getApplication</span><span class="o">()).</span><span class="na">getAnalytics</span><span class="o">();</span>
         <span class="n">analytics</span><span class="o">.</span><span class="na">onIntegrationReady</span><span class="o">(</span><span class="n">WootricIntegration</span><span class="o">.</span><span class="na">FACTORY</span><span class="o">.</span><span class="na">key</span><span class="o">(),</span> <span class="k">new</span> <span class="n">Analytics</span><span class="o">.</span><span class="na">Callback</span><span class="o">&lt;</span><span class="n">Wootric</span><span class="o">&gt;()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onReady</span><span class="o">(</span><span class="n">Wootric</span> <span class="n">wootric</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReady</span><span class="o">(</span><span class="n">Wootric</span> <span class="n">wootric</span><span class="o">)</span> <span class="o">{</span>
                 <span class="c1">// Set all aptional configuration here like:</span>
                 <span class="c1">// wootric.setSurveyImmediately(true);</span>
                 <span class="c1">// wootric.setLanguageCode("PL");</span>
@@ -421,8 +399,7 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
         <span class="o">});</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-
+</code></pre></div>
 <p>In your Activity of choosing the Wootric object can be used to set all optional configurations and call <code class="prettyprint">survey()</code> method.</p>
 <h1 id='mparticle-integration'>mParticle Integration</h1>
 <p>Wootric provides an integration for <a href="http://mparticle.com/">mParticle</a>. </p>

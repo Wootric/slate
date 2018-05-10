@@ -34,18 +34,18 @@
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="../images/navbar.png" />
+        <img src="../images/navbar.png" alt="Navbar" />
       </span>
     </a>
     <div class="tocify-wrapper">
-      <a href="/"><img src="../images/logo.png" /></a>
+      <a href="/"><img src="../images/logo.png" alt="Logo" /></a>
       <div id="toc">
       </div>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='installing-javascript-sdk'>Installing Javascript SDK</h1><h2 id='step-1--add-the-code'>Step 1. ­Add the code</h2><pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
+        <h1 id='installing-javascript-sdk'>Installing Javascript SDK</h1><h2 id='step-1--add-the-code'>Step 1. ­Add the code</h2><div class="highlight"><pre class="highlight javascript"><code><span class="c">&lt;!--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span><span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
@@ -56,8 +56,7 @@
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="p">...</span><span class="c1">//The rest of the widget...</span>
 <span class="c">&lt;!--</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
-</code></pre>
-
+</code></pre></div>
 <p>Once you are signed up on the Wootric homepage, you will be taken directly to an installation
 page. If you’re a returning visitor, sign in at <a href="https://www.wootric.com/">wootric.com</a> and click on the “Settings&quot; button near the top right of the page. Navigate to the <a href="https://app.wootric.com/install">Javascript Setup Guide</a> and you will see a code snippet with a unique
 account_token for you to install.</p>
@@ -69,7 +68,7 @@ account_token for you to install.</p>
 <blockquote>
 <p>Comment out the line wootric_survey_immediately = true when you are ready for production. Alternatively, leave the line in the code for testing purposes or to survey the customer upon every visit to a specific page.</p>
 </blockquote>
-<pre><code class="highlight javascript"><span class="o">&lt;!</span><span class="err">­­</span><span class="o">--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="o">&lt;!</span><span class="err">­­</span><span class="o">--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
 <span class="nx">wootric_survey_immediately</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span><span class="c1">//Fire immediately for testing</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
@@ -79,8 +78,7 @@ account_token for you to install.</p>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
 <span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
-</code></pre>
-
+</code></pre></div>
 <p>That&rsquo;s it! Once your Wootric snippet is installed, eligible users will immediately start being surveyed.
 Depending on the traffic of your site, you could start to see responses within a few minutes.
 Responses will come in to your Wootric dash in real time.</p>
@@ -101,7 +99,7 @@ completion page.</p>
 <h4 id='google-tag-manager'>Google Tag Manager:</h4>
 <p>You may use Google Tag Manager to install and manage the Wootric
 snippet.</p>
-<h3 id='async-support'>Async Support:</h3><pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
+<h3 id='async-support'>Async Support:</h3><div class="highlight"><pre class="highlight javascript"><code><span class="c">&lt;!--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
    <span class="nx">wootric_survey_immediately</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
    <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
@@ -110,9 +108,8 @@ snippet.</p>
       <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-XXXXXXXX'</span>
   <span class="p">};</span>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://cdn.wootric.com/wootric-sdk.js"</span> <span class="nx">async</span> <span class="nx">onload</span><span class="o">=</span><span class="s2">"WootricSurvey.run(wootricSettings)"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
-
+</span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://cdn.wootric.com/wootric-sdk.js"</span> <span class="k">async</span> <span class="nx">onload</span><span class="o">=</span><span class="s2">"WootricSurvey.run(wootricSettings)"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div>
 <p>We support HTML5 async attribute to load our snippet.
 The <code class="prettyprint">wootricSettings</code> object is built in the same way as above. The only difference
 rests in how we initialize the <code class="prettyprint">WootricSurvey</code>.
@@ -120,7 +117,7 @@ Take a close look at the onload attribute, it will guarantee that your service i
 
 <h1 id='single-page-app-spa'>Single Page App (SPA)</h1>
 <p><a href="https://github.com/Wootric/spa-examples">Click here for complete examples of different frameworks such as Angular, Ember and React.</a></p>
-<h2 id='the-simplest-integration'>The simplest integration</h2><pre><code class="highlight javascript"> <span class="c">&lt;!--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
+<h2 id='the-simplest-integration'>The simplest integration</h2><div class="highlight"><pre class="highlight javascript"><code> <span class="c">&lt;!--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
   <span class="nx">wootric_survey_immediately</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">//TODO:comment this in production</span>
   <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
@@ -132,15 +129,14 @@ Take a close look at the onload attribute, it will guarantee that your service i
 </span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://cdn.wootric.com/wootric-sdk.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span><span class="nb">window</span><span class="p">.</span><span class="nx">wootric</span><span class="p">(</span><span class="s2">"run"</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="c">&lt;!--</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
-</code></pre>
-
+</code></pre></div>
 <ul>
 <li>Put this code snippet on your index.html</li>
 <li>Update the TODOs</li>
 <li>When you re-load the page, you should see Wootric survey show up.</li>
 <li>You are done.</li>
 </ul>
-<h2 id='angular-step-1-create-factory'>Angular Step 1: Create Factory</h2><pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
+<h2 id='angular-step-1-create-factory'>Angular Step 1: Create Factory</h2><div class="highlight"><pre class="highlight javascript"><code><span class="c">&lt;!--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
 <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'wootricAngularApp'</span><span class="p">)</span>
 <span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="s1">'wootricFactory'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
@@ -162,26 +158,22 @@ Take a close look at the onload attribute, it will guarantee that your service i
   <span class="p">}</span>
 <span class="p">]);</span>
 <span class="c">&lt;!--</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
-</code></pre>
-
+</code></pre></div>
 <p>A way to load the Wootric snippet in a factory file so it can be fired in a single-page application with wootricFactory.run();  </p>
-<h2 id='angular-step-2--load-wootric-js-sdk'>Angular Step 2. Load Wootric JS SDK</h2><pre><code class="highlight plaintext">&lt;script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"&gt;&lt;/script&gt;
-</code></pre>
-
+<h2 id='angular-step-2--load-wootric-js-sdk'>Angular Step 2. Load Wootric JS SDK</h2><div class="highlight"><pre class="highlight plaintext"><code>&lt;script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"&gt;&lt;/script&gt;
+</code></pre></div>
 <p>Add this script tag to the file where you load all other 3rd party scripts</p>
-<h2 id='angular-step-3--using-the-factory-in-your-controller'>Angular Step 3. Using the factory in your controller</h2><pre><code class="highlight javascript"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'wootricAngularApp'</span><span class="p">)</span>
+<h2 id='angular-step-3--using-the-factory-in-your-controller'>Angular Step 3. Using the factory in your controller</h2><div class="highlight"><pre class="highlight javascript"><code><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'wootricAngularApp'</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'MainCtrl'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'wootricFactory'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">wootricFactory</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">wootricFactory</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
   <span class="p">}]);</span>
-</code></pre>
-<h2 id='optional-more-control-on-survey-display'>Optional: More control on survey display</h2>
+</code></pre></div><h2 id='optional-more-control-on-survey-display'>Optional: More control on survey display</h2>
 <p>Say you want to delay the &ldquo;triggering&rdquo; of Wootric until after user data is available.</p>
-<pre><code class="highlight javascript">  <span class="nx">User</span><span class="p">.</span><span class="nx">getData</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">wootricFactory</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript"><code>  <span class="nx">User</span><span class="p">.</span><span class="nx">getData</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">wootricFactory</span><span class="p">)</span> <span class="p">{</span>
      <span class="nx">wootricFactory</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
   <span class="p">});</span>
 <span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
-</code></pre>
-
+</code></pre></div>
 <p>That&rsquo;s it! Once your Wootric snippet is installed, eligible users will immediately start being surveyed.
 Depending on the traffic of your site, you could start to see responses within a few minutes.
 Responses will come in to your Wootric dash in real time.</p>
@@ -205,7 +197,7 @@ be presented instead. By default, we present the following messages:</p>
 <li>The default placeholder text:
 <strong>&ldquo;Help us by explaining your score.&rdquo;</strong></li>
 </ul>
-<h2 id='full-example'>Full example</h2><pre><code class="highlight javascript">
+<h2 id='full-example'>Full example</h2><div class="highlight"><pre class="highlight javascript"><code>
 <span class="c">&lt;!--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
   <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
@@ -230,8 +222,7 @@ be presented instead. By default, we present the following messages:</p>
   <span class="p">};</span>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
-</code></pre>
-
+</code></pre></div>
 <p>This example shows how the full ready Wootric snippet looks like with
 the custom messages specified.</p>
 
@@ -242,11 +233,10 @@ will be shown.</p>
 <blockquote>
 <p>This will be shown after choosing the score regardless of its value.</p>
 </blockquote>
-<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
       <span class="na">followup_question</span><span class="p">:</span> <span class="s2">"Custom message for all scores"</span><span class="p">,</span>
   <span class="p">};</span>
-</code></pre>
-
+</code></pre></div>
 <p>Defines the main follow-up question for all scores.
 Therefore, you will see the same question, regardless of which score you have chosen.</p>
 
@@ -267,7 +257,7 @@ passives and promoters.</p>
 <p>If you set e.g. one property of the three available, you will see the message
 for the property that you have specified. For the rest of the properties,
 the default message will be presented according to the score that the user has selected.</p>
-<pre><code class="highlight javascript">
+<div class="highlight"><pre class="highlight javascript"><code>
 <span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">followup_questions_list</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">detractor_question</span><span class="p">:</span> <span class="s2">"Custom message for detractors"</span><span class="p">,</span>
@@ -276,52 +266,46 @@ the default message will be presented according to the score that the user has s
     <span class="p">}</span>
 <span class="p">};</span>
 
-</code></pre>
-<h2 id='detractor_question'>detractor_question</h2>
+</code></pre></div><h2 id='detractor_question'>detractor_question</h2>
 <p>Contains the message that will be presented to a detractor i.e.
 when a user selects the score from the range of 0-6.</p>
-<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">followup_questions_list</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">detractor_question</span><span class="p">:</span> <span class="s2">"Custom message for detractors"</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-<h2 id='passive_question'>passive_question</h2>
+</code></pre></div><h2 id='passive_question'>passive_question</h2>
 <p>Contains the message that will be presented to a passive i.e.
 when a user selects the score from the range of 7-8.</p>
-<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">followup_questions_list</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">passive_question</span><span class="p">:</span> <span class="s2">"Custom message for passives"</span>
     <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-<h2 id='promoter_question'>promoter_question</h2>
+</code></pre></div><h2 id='promoter_question'>promoter_question</h2>
 <p>Contains the message that will be presented to a promoter i.e.
 when a user selects the score from the range of 910.</p>
-<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">followup_questions_list</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">promoter_question</span><span class="p">:</span> <span class="s2">"Custom message for promoters"</span>
     <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-<h2 id='placeholder_text'>placeholder_text</h2>
+</code></pre></div><h2 id='placeholder_text'>placeholder_text</h2>
 <p>Contains a placeholder text that is presented to the user
 after selecting the score.</p>
 
 <p>If this property is not specified, the default placeholder will be shown instead.</p>
-<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">placeholder_text</span><span class="p">:</span> <span class="s2">"Custom placeholder for all scores"</span>
 <span class="p">};</span>
-</code></pre>
-<h2 id='placeholder_texts_list'>placeholder_texts_list</h2><pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+</code></pre></div><h2 id='placeholder_texts_list'>placeholder_texts_list</h2><div class="highlight"><pre class="highlight javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">placeholder_texts_list</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">detractor_text</span><span class="p">:</span> <span class="s2">"Custom placeholder text for detractors"</span><span class="p">,</span>
     <span class="na">passive_text</span><span class="p">:</span> <span class="s2">"Custom placeholder text for passives"</span><span class="p">,</span>
     <span class="na">promoter_text</span><span class="p">:</span> <span class="s2">"Custom placeholder text for promoters"</span>
   <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-
+</code></pre></div>
 <p>An object that holds custom placeholder texts for detractors, passives and promoters.</p>
 
 <p>Currently we offer the following properties for you to specify:</p>
@@ -338,38 +322,34 @@ the default placeholder text will be presented according to the score that the u
 <h2 id='detractor_text'>detractor_text</h2>
 <p>Contains a placeholder text presented to a detractor when the score
 value from the range of 0-6 has been selected.</p>
-<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">placeholder_texts_list</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">detractor_text</span><span class="p">:</span> <span class="s2">"Custom placeholder text for detractors"</span>
   <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-<h2 id='passive_text'>passive_text</h2>
+</code></pre></div><h2 id='passive_text'>passive_text</h2>
 <p>Contains a placeholder text presented to a passive when the score
 value from the range of 7-8 has been selected.</p>
-<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">placeholder_texts_list</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">passive_text</span><span class="p">:</span> <span class="s2">"Custom placeholder text for passives"</span>
   <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-<h2 id='promoter_text'>promoter_text</h2>
+</code></pre></div><h2 id='promoter_text'>promoter_text</h2>
 <p>Contains a placeholder text presented to a promoter when the score
 value from the range of 9-10 has been selected.</p>
-<pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">customMessages</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">placeholder_texts_list</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">promoter_question</span><span class="p">:</span> <span class="s2">"Custom message for promoters"</span>
   <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-
+</code></pre></div>
 <h1 id='modal-settings'>Modal Settings</h1>
 <p>There are three settings available for customizing the wootric modal: <code class="prettyprint">modal_theme</code>, <code class="prettyprint">modal_footprint</code> and <code class="prettyprint">modal_position</code>. If no settings are provided the modal will default to &ldquo;light normal bottom&rdquo;, same if you skipped some of them - default value will be used for the missing ones.</p>
-<h2 id='wootric_recommend_target'>wootric_recommend_target</h2><pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+<h2 id='wootric_recommend_target'>wootric_recommend_target</h2><div class="highlight"><pre class="highlight javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">wootric_recommend_target</span><span class="p">:</span> <span class="s2">"Custom Wootric recommend target text"</span>
 <span class="p">};</span>
-</code></pre>
-
+</code></pre></div>
 <p>Contains a customized recommend target text that is the end part of the
 question.
 By default, when this property is not set, we display:
@@ -379,7 +359,7 @@ By default, when this property is not set, we display:
 
 <p>If wootric_recommend_target = &ldquo;your friends&rdquo;, the question will result in:
 &ldquo;How likely are you to recommend Wootric to your friends?&rdquo;</p>
-<h2 id='modal-theme-settings'>Modal theme settings</h2><pre><code class="highlight javascript"><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
+<h2 id='modal-theme-settings'>Modal theme settings</h2><div class="highlight"><pre class="highlight javascript"><code><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
@@ -395,8 +375,7 @@ By default, when this property is not set, we display:
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
 <span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
-</code></pre>
-
+</code></pre></div>
 <p>Modal comes with two themes: <code class="prettyprint">light</code> (default) and <code class="prettyprint">dark</code>. To set the theme, provide <code class="prettyprint">modal_theme</code> key-value in <code class="prettyprint">wootricSettings</code> object.</p>
 
 <p>Light:
@@ -404,7 +383,7 @@ By default, when this property is not set, we display:
 
 <p>Dark:
 <img alt="Compact Survey" src="../images/spacious_dark.png" /></p>
-<h2 id='modal-footprint-settings'>Modal footprint settings</h2><pre><code class="highlight javascript"><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
+<h2 id='modal-footprint-settings'>Modal footprint settings</h2><div class="highlight"><pre class="highlight javascript"><code><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
@@ -420,8 +399,7 @@ By default, when this property is not set, we display:
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
 <span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
-</code></pre>
-
+</code></pre></div>
 <p>You can set modal footprint to be <code class="prettyprint">compact</code> for tighter spaces, <code class="prettyprint">spacious</code> for huge spaces or <code class="prettyprint">normal</code> which is default value. To set the footprint, provide <code class="prettyprint">modal_footprint</code> key-value in <code class="prettyprint">wootricSettings</code> object.</p>
 
 <p>Compact:
@@ -432,7 +410,7 @@ By default, when this property is not set, we display:
 
 <p>Spacious:
 <img alt="Compact Survey" src="../images/spacious_light.png" /></p>
-<h2 id='modal-position-settings'>Modal position settings</h2><pre><code class="highlight javascript"><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
+<h2 id='modal-position-settings'>Modal position settings</h2><div class="highlight"><pre class="highlight javascript"><code><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
@@ -448,17 +426,15 @@ By default, when this property is not set, we display:
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
 <span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
-</code></pre>
-
+</code></pre></div>
 <p>Modal position can be either <code class="prettyprint">top</code> or <code class="prettyprint">bottom</code> (default).  To set the position, provide <code class="prettyprint">modal_position</code> key-value in <code class="prettyprint">wootricSettings</code> object.</p>
-<h2 id='modal-accessibility-settings'>Modal accessibility settings</h2><pre><code class="highlight javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+<h2 id='modal-accessibility-settings'>Modal accessibility settings</h2><div class="highlight"><pre class="highlight javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span><span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
   <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.</span>
   <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-xxxxxxx'</span><span class="p">,</span>
   <span class="na">aria</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">};</span>
-</code></pre>
-
+</code></pre></div>
 <p>By default the modal is already accessible to screen readers.</p>
 
 <p>This flag enables extra ARIA enhancements such as:</p>
@@ -479,7 +455,7 @@ insight into your drivers of satisfaction, and whether these differ by user type
 <blockquote>
 <p>Here&rsquo;s an example of custom attributes set within the Wootric snippet:</p>
 </blockquote>
-<pre><code class="highlight javascript"><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="o">&lt;!</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
@@ -496,8 +472,7 @@ insight into your drivers of satisfaction, and whether these differ by user type
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
 <span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
-</code></pre>
-
+</code></pre></div>
 <p>You add custom attributes within the Wootric JS code snippet as additional key/value pairs.
 <strong>Make sure to double check that your custom attribute keys always have a JSON­ valid
 value</strong>; this means quotes around strings and sending null as a value when there isn’t a value for
@@ -520,7 +495,7 @@ type, price plan, engagement, and geography.</p>
 show up on the left hand side of the dash, and can be selected to filter scores, trend graphs, and
 responses.</p>
 
-<h1 id='custom-language-setting'>Custom Language Setting</h1><pre><code class="highlight javascript"><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+<h1 id='custom-language-setting'>Custom Language Setting</h1><div class="highlight"><pre class="highlight javascript"><code><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
 <span class="nx">wootric_first_survey</span><span class="o">=</span><span class="mi">45</span><span class="p">;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
@@ -532,8 +507,7 @@ responses.</p>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
 <span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
-</code></pre>
-
+</code></pre></div>
 <p>Wootric allows you to set a custom language for the survey modal.
 To set a custom language add <code class="prettyprint">language</code> parameter to <code class="prettyprint">wootricSettings</code> and pass appropriate language code.</p>
 
@@ -803,7 +777,7 @@ To set a custom language add <code class="prettyprint">language</code> parameter
 </tr>
 </tbody></table>
 
-<h1 id='social-media-share-settings'>Social Media Share Settings</h1><pre><code class="highlight javascript"><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+<h1 id='social-media-share-settings'>Social Media Share Settings</h1><div class="highlight"><pre class="highlight javascript"><code><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
 <span class="nx">wootric_first_survey</span><span class="o">=</span><span class="mi">45</span><span class="p">;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
@@ -816,14 +790,13 @@ To set a custom language add <code class="prettyprint">language</code> parameter
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
 <span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
-</code></pre>
-
+</code></pre></div>
 <p>Wootric allows you to display a social share screen for your promoters (9-10).
 In order to do that, you need to configure <code class="prettyprint">wootricSettings</code> passing your product&rsquo;s <code class="prettyprint">twitter_account</code> and/or <code class="prettyprint">facebook_page</code>. In addition, Twitter option will only display if promoter provided a feedback text.</p>
 
 <p>If configured properly, Wootric will display a third page, right after promoter submits feedback, asking &ldquo;Would you be willing to share your positive comments?&rdquo; and allowing the end user to &ldquo;like&rdquo; your Facebook page or share a comment through the Twitter.</p>
 
-<h1 id='custom-thank-you-settings'>Custom Thank You Settings</h1><pre><code class="highlight javascript"><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+<h1 id='custom-thank-you-settings'>Custom Thank You Settings</h1><div class="highlight"><pre class="highlight javascript"><code><span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
 <span class="nx">wootric_first_survey</span><span class="o">=</span><span class="mi">45</span><span class="p">;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
@@ -871,8 +844,7 @@ In order to do that, you need to configure <code class="prettyprint">wootricSett
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="p">....</span><span class="c1">//The rest of the widget...</span>
 <span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--</span><span class="err">­­</span><span class="o">&gt;</span>
-</code></pre>
-
+</code></pre></div>
 <p>Wootric allows you also to display a customized button with a request for action and a &lsquo;thank you&rsquo; message on a third page of the survey. This feature can be configured to work for all scores.</p>
 
 <p>The <code class="prettyprint">thank_you_setup</code> field is used as a request for action. It will
@@ -890,7 +862,7 @@ the third screen of the survey in bold, green font.</p>
 
 <p>If you have set for example <code class="prettyprint">&quot;http://promoterurl.com/endpoint&quot;</code> as your url, setting both of the keys to true will result in the url being <code class="prettyprint">http://promoterurl.com/endpoint?wootric_score=SCORE&amp;wootric_comment=COMMENT</code>.</p>
 
-<h1 id='custom-thank-you-examples'>Custom Thank You Examples</h1><pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">1</span> <span class="o">--&gt;</span>
+<h1 id='custom-thank-you-examples'>Custom Thank You Examples</h1><div class="highlight"><pre class="highlight javascript"><code><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">1</span> <span class="o">--&gt;</span>
 <span class="kd">var</span> <span class="nx">Wootric</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">thankYouLinks</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">thank_you_link_text</span><span class="p">:</span> <span class="s1">'Thank you text for all scores!'</span><span class="p">,</span>
@@ -903,10 +875,9 @@ the third screen of the survey in bold, green font.</p>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-<h3 id='example-1'>Example 1</h3>
+</code></pre></div><h3 id='example-1'>Example 1</h3>
 <p>We have defined both <code class="prettyprint">thank_you_link_text</code> and <code class="prettyprint">thank_you_link_url</code>. We have also defined <code class="prettyprint">promoter_thank_you_link_text</code> and <code class="prettyprint">detractor_thank_you_link_url</code> in respectively <code class="prettyprint">thank_you_link_text_list</code> and <code class="prettyprint">thank_you_link_url_list</code>. This means that we are going to display button with text &lsquo;Promoter thank you text&rsquo; which opens a &lsquo;http://example.com&rsquo; url for a promoter. Passive is going to see button with text &lsquo;Thank you text for all scores!&rsquo; and url &lsquo;http://example.com&rsquo;, while detractor&rsquo;s button url would be &lsquo;http://detractor.com&rsquo; with the same text as passive.</p>
-<pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">2</span> <span class="o">--&gt;</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">2</span> <span class="o">--&gt;</span>
 <span class="kd">var</span> <span class="nx">Wootric</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">thankYouMessages</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">thank_you_setup</span><span class="p">:</span> <span class="s1">'Request for action for all scores'</span><span class="p">,</span>
@@ -925,12 +896,11 @@ the third screen of the survey in bold, green font.</p>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-
+</code></pre></div>
 <p><br><br><br><br></p>
 <h3 id='example-2'>Example 2</h3>
 <p>In this case, in addition to defining a custom button, we have defined <code class="prettyprint">thank_you_setup</code> and <code class="prettyprint">promoter_thank_you_setup</code> in <code class="prettyprint">thank_you_setup_list</code>. Therefore on a third page, above the custom button, we will display &lsquo;Request for action for all scores&rsquo; text for passives and detractors, and &lsquo;Promoter request for action&rsquo; for promoters.</p>
-<pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">3</span> <span class="o">--&gt;</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">3</span> <span class="o">--&gt;</span>
 <span class="kd">var</span> <span class="nx">Wootric</span> <span class="o">=</span> <span class="p">{</span>
   <span class="c1">// thankYouMessages not defined</span>
   <span class="na">thankYouLinks</span><span class="p">:</span> <span class="p">{</span>
@@ -945,12 +915,11 @@ the third screen of the survey in bold, green font.</p>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-
+</code></pre></div>
 <p><br><br><br><br><br><br><br><br><br><br><br></p>
 <h3 id='example-3'>Example 3</h3>
 <p>With this kind of setting we are missing the default <code class="prettyprint">thank_you_link_url</code> and have only detractor url defined. Thus, the survey will remain open to detractors to display the custom button and, if social media is defined, it will remain open to promoters. For passives, there is nothing to display (neither a custom button or social media buttons), so the survey will close automatically.</p>
-<pre><code class="highlight javascript"><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">4</span> <span class="o">--&gt;</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="c">&lt;!--</span> <span class="nx">Example</span> <span class="mi">4</span> <span class="o">--&gt;</span>
 <span class="kd">var</span> <span class="nx">Wootric</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">thankYouMessages</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">thank_you_main</span><span class="p">:</span> <span class="s1">'Thank you for your feedback!'</span><span class="p">,</span>
@@ -959,13 +928,12 @@ the third screen of the survey in bold, green font.</p>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-
+</code></pre></div>
 <p><br><br><br><br><br><br></p>
 <h3 id='example-4'>Example 4</h3>
 <p>In this example, the third page will display only a thank you message and then disappear. If social media settings are defined, the third page will remain and end users will have time to share on social media. The <code class="prettyprint">thank_you_main</code> (&ldquo;Thank you for your feedback!&rdquo;) message will appear at the top of the survey in bold green font for both the passives and detractors, while the custom <code class="prettyprint">promoter_thank_you_main</code> (&ldquo;Promoter thank you&rdquo;) message will appear for promoters.</p>
 
-<h1 id='wootric-survey-object-api'>Wootric Survey Object API</h1><pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+<h1 id='wootric-survey-object-api'>Wootric Survey Object API</h1><div class="highlight"><pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-XXXXXXX'</span>
 <span class="p">}</span>
 
@@ -979,8 +947,7 @@ the third screen of the survey in bold, green font.</p>
 <span class="nx">WootricSurvey</span><span class="p">.</span><span class="nx">version</span><span class="p">();</span>
 
 <span class="c1">// =&gt; "8f2a6414b81db4a57ead648379fb48ddfee5c3d1"</span>
-</code></pre>
-
+</code></pre></div>
 <p>The Wootric Survey object exposes the following methods:</p>
 
 <ul>
@@ -993,7 +960,7 @@ If the delay time is still running stop will abort that survey from happening.</
 Returns WootricSurvey&rsquo;s object current version</p></li>
 </ul>
 
-<h1 id='run-multiple-surveys'>Run Multiple Surveys</h1><pre><code class="highlight javascript"><span class="k">if</span> <span class="p">(</span><span class="nx">show_nps_survey</span><span class="p">)</span> <span class="p">{</span>
+<h1 id='run-multiple-surveys'>Run Multiple Surveys</h1><div class="highlight"><pre class="highlight javascript"><code><span class="k">if</span> <span class="p">(</span><span class="nx">show_nps_survey</span><span class="p">)</span> <span class="p">{</span>
   <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
     <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.</span>
@@ -1006,8 +973,7 @@ Returns WootricSurvey&rsquo;s object current version</p></li>
     <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-yyyyyyy'</span>
   <span class="p">};</span>
 <span class="p">}</span>
-</code></pre>
-
+</code></pre></div>
 <p>Wootric allows you to run multiple types of surveys within the same app:
 NPS, CES and CSAT. There will never be more than one survey shown, and each
 survey can be customized with its own settings.</p>
