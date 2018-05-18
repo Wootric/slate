@@ -2,7 +2,7 @@
 
 **Survey not showing up?**
 
-Check that client ID, client secret and account token are correct. Account token should have a "NPS-xxxxxxxx" format
+Check that client ID and account token are correct. Account token should have a "NPS-xxxxxxxx" format
 
 **Does the SDK work with Amazon devices?**
 

@@ -8,7 +8,7 @@ import com.wootric.androidsdk.objects.WootricCustomThankYou;
 
 ...
 
-Wootric wootric = Wootric.init(this, CLIENT_ID, CLIENT_SECRET, ACCOUNT_TOKEN);
+Wootric wootric = Wootric.init(this, CLIENT_ID, ACCOUNT_TOKEN);
 
 wootric.setEndUserEmail("nps@example.com");
 
@@ -42,7 +42,7 @@ import java.util.HashMap;
 
 ...
 
-Wootric wootric = Wootric.init(this, CLIENT_ID, CLIENT_SECRET, ACCOUNT_TOKEN);
+Wootric wootric = Wootric.init(this, CLIENT_ID, ACCOUNT_TOKEN);
 
 wootric.setEndUserEmail("nps@example.com");
 

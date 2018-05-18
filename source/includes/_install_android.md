@@ -5,7 +5,7 @@
 <dependency>
     <groupId>com.wootric</groupId>
     <artifactId>wootric-sdk-android</artifactId>
-    <version>2.7.0</version>
+    <version>2.8.0</version>
 </dependency>
 ```
 
@@ -13,7 +13,7 @@ If you use Maven, you can include this library as a dependency.
 
 ## Using Gradle
 ```xml
-compile 'com.wootric:wootric-sdk-android:2.7.0'
+compile 'com.wootric:wootric-sdk-android:2.8.0'
 ```
 
  Add the following to your app’s `build.gradle` file, inside the dependencies section.
@@ -49,7 +49,7 @@ Add the following to your ProGuard rules file.
 import com.wootric.androidsdk.Wootric;
 
 // Inside your method
-Wootric wootric = Wootric.init(this, <YOUR_CLIENT_ID>, <YOUR_CLIENT_SECRET>, <YOUR_ACCOUNT_TOKEN>);
+Wootric wootric = Wootric.init(this, <YOUR_CLIENT_ID>, <YOUR_ACCOUNT_TOKEN>);
 
 // TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
 wootric.setEndUserEmail("nps@example.com");
@@ -61,11 +61,11 @@ wootric.setSurveyImmediately(true);
 
 wootric.survey();
 ```
-First import the SDK into your Activity of choosing. Then configure the SDK with your client ID, secret and account token.
+First import the SDK into your Activity of choosing. Then configure the SDK with your client ID and account token.
 
 Sign in at [wootric.com](https://www.wootric.com/) if you haven't already. If you just signed up on the Wootric homepage, you will be taken directly to an installation page. If you’re a returning visitor, click on the “Settings" button near the top right of the page. Navigate to the [Wootric Installation Guide](https://app.wootric.com/install) and you will see a unique **account_token** for you to use.
 
-The **client_id** and **client_secret** can also be found on your Settings page, on the [API section](https://app.wootric.com/account_settings/edit#!/api).
+The **client_id** can also be found on your Settings page, on the [API section](https://app.wootric.com/account_settings/edit#!/api).
 
 To display the survey just use `wootric.survey();`. If the user is eligible (this check is built in the method) the SDK will show the survey.
 
@@ -78,7 +78,7 @@ To display the survey just use `wootric.survey();`. If the user is eligible (thi
 import com.wootric.androidsdk.Wootric;
 import com.wootric.androidsdk.objects.WootricCustomThankYou;
 
-Wootric wootric = Wootric.init(this, "your_client_id", "your_client_secret", "NPS­-xxxxxxxx");
+Wootric wootric = Wootric.init(this, "your_client_id", "NPS­-xxxxxxxx");
 wootric.setEndUserEmail("nps@example.com");
 wootric.setEndUserCreatedAt(1234567890);
 

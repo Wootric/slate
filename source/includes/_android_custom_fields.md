@@ -41,6 +41,12 @@ wootric.setProperties(properties);
 ```
 End user properties can be provided as a `HashMap<String, String>` object.
 
+##setShowOptOut
+```java
+wootric.setShowOptOut(<BOOL>);
+```
+If setShowOptOut is set to `true` then opt out link will be seen.
+
 ##shouldSkipFollowupScreenForPromoters
 ```java
 wootric.shouldSkipFollowupScreenForPromoters(<BOOL>);
