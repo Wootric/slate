@@ -56,11 +56,11 @@
         <h1 id='installing-android-sdk'>Installing Android SDK</h1><h2 id='using-maven'>Using Maven</h2><div class="highlight"><pre class="highlight xml"><code><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>com.wootric<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>wootric-sdk-android<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;</span>2.7.0<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;version&gt;</span>2.8.0<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </code></pre></div>
 <p>If you use Maven, you can include this library as a dependency.</p>
-<h2 id='using-gradle'>Using Gradle</h2><div class="highlight"><pre class="highlight xml"><code>compile 'com.wootric:wootric-sdk-android:2.7.0'
+<h2 id='using-gradle'>Using Gradle</h2><div class="highlight"><pre class="highlight xml"><code>compile 'com.wootric:wootric-sdk-android:2.8.0'
 </code></pre></div>
 <p>Add the following to your app’s <code class="prettyprint">build.gradle</code> file, inside the dependencies section.</p>
 <h1 id='presenting-the-survey'>Presenting the survey</h1>
@@ -83,7 +83,7 @@
 <h2 id='step-3--initialize-wootric'>Step 3. Initialize Wootric</h2><div class="highlight"><pre class="highlight java"><code><span class="kn">import</span> <span class="nn">com.wootric.androidsdk.Wootric</span><span class="o">;</span>
 
 <span class="c1">// Inside your method</span>
-<span class="n">Wootric</span> <span class="n">wootric</span> <span class="o">=</span> <span class="n">Wootric</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="o">&lt;</span><span class="n">YOUR_CLIENT_ID</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="n">YOUR_CLIENT_SECRET</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="n">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;);</span>
+<span class="n">Wootric</span> <span class="n">wootric</span> <span class="o">=</span> <span class="n">Wootric</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="o">&lt;</span><span class="n">YOUR_CLIENT_ID</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="n">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;);</span>
 
 <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
 <span class="n">wootric</span><span class="o">.</span><span class="na">setEndUserEmail</span><span class="o">(</span><span class="s">"nps@example.com"</span><span class="o">);</span>
@@ -95,11 +95,11 @@
 
 <span class="n">wootric</span><span class="o">.</span><span class="na">survey</span><span class="o">();</span>
 </code></pre></div>
-<p>First import the SDK into your Activity of choosing. Then configure the SDK with your client ID, secret and account token.</p>
+<p>First import the SDK into your Activity of choosing. Then configure the SDK with your client ID and account token.</p>
 
 <p>Sign in at <a href="https://www.wootric.com/">wootric.com</a> if you haven&rsquo;t already. If you just signed up on the Wootric homepage, you will be taken directly to an installation page. If you’re a returning visitor, click on the “Settings&quot; button near the top right of the page. Navigate to the <a href="https://app.wootric.com/install">Wootric Installation Guide</a> and you will see a unique <strong>account_token</strong> for you to use.</p>
 
-<p>The <strong>client_id</strong> and <strong>client_secret</strong> can also be found on your Settings page, on the <a href="https://app.wootric.com/account_settings/edit#!/api">API section</a>.</p>
+<p>The <strong>client_id</strong> can also be found on your Settings page, on the <a href="https://app.wootric.com/account_settings/edit#!/api">API section</a>.</p>
 
 <p>To display the survey just use <code class="prettyprint">wootric.survey();</code>. If the user is eligible (this check is built in the method) the SDK will show the survey.</p>
 <h2 id='step-4--customize-the-survey'>Step 4. Customize the Survey</h2>
@@ -109,7 +109,7 @@
 <div class="highlight"><pre class="highlight java"><code><span class="kn">import</span> <span class="nn">com.wootric.androidsdk.Wootric</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.wootric.androidsdk.objects.WootricCustomThankYou</span><span class="o">;</span>
 
-<span class="n">Wootric</span> <span class="n">wootric</span> <span class="o">=</span> <span class="n">Wootric</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"your_client_id"</span><span class="o">,</span> <span class="s">"your_client_secret"</span><span class="o">,</span> <span class="s">"NPS­-xxxxxxxx"</span><span class="o">);</span>
+<span class="n">Wootric</span> <span class="n">wootric</span> <span class="o">=</span> <span class="n">Wootric</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"your_client_id"</span><span class="o">,</span> <span class="s">"NPS­-xxxxxxxx"</span><span class="o">);</span>
 <span class="n">wootric</span><span class="o">.</span><span class="na">setEndUserEmail</span><span class="o">(</span><span class="s">"nps@example.com"</span><span class="o">);</span>
 <span class="n">wootric</span><span class="o">.</span><span class="na">setEndUserCreatedAt</span><span class="o">(</span><span class="mi">1234567890</span><span class="o">);</span>
 
@@ -185,6 +185,9 @@ This value is also used in eligibility check, to determine if end user should be
 <h2 id='setproperties'>setProperties</h2><div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">setProperties</span><span class="o">(</span><span class="n">properties</span><span class="o">);</span>
 </code></pre></div>
 <p>End user properties can be provided as a <code class="prettyprint">HashMap&lt;String, String&gt;</code> object.</p>
+<h2 id='setshowoptout'>setShowOptOut</h2><div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">setShowOptOut</span><span class="o">(&lt;</span><span class="n">BOOL</span><span class="o">&gt;);</span>
+</code></pre></div>
+<p>If setShowOptOut is set to <code class="prettyprint">true</code> then opt out link will be seen.</p>
 <h2 id='shouldskipfollowupscreenforpromoters'>shouldSkipFollowupScreenForPromoters</h2><div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">shouldSkipFollowupScreenForPromoters</span><span class="o">(&lt;</span><span class="n">BOOL</span><span class="o">&gt;);</span>
 </code></pre></div>
 <p>With this option enabled, promoters (score 9-10) will be taken directly to third (social share) screen, skipping the second (feedback) one.</p>
@@ -252,7 +255,7 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
 
 <span class="o">...</span>
 
-<span class="n">Wootric</span> <span class="n">wootric</span> <span class="o">=</span> <span class="n">Wootric</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">CLIENT_ID</span><span class="o">,</span> <span class="n">CLIENT_SECRET</span><span class="o">,</span> <span class="n">ACCOUNT_TOKEN</span><span class="o">);</span>
+<span class="n">Wootric</span> <span class="n">wootric</span> <span class="o">=</span> <span class="n">Wootric</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">CLIENT_ID</span><span class="o">,</span> <span class="n">ACCOUNT_TOKEN</span><span class="o">);</span>
 
 <span class="n">wootric</span><span class="o">.</span><span class="na">setEndUserEmail</span><span class="o">(</span><span class="s">"nps@example.com"</span><span class="o">);</span>
 
@@ -282,7 +285,7 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
 
 <span class="o">...</span>
 
-<span class="n">Wootric</span> <span class="n">wootric</span> <span class="o">=</span> <span class="n">Wootric</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">CLIENT_ID</span><span class="o">,</span> <span class="n">CLIENT_SECRET</span><span class="o">,</span> <span class="n">ACCOUNT_TOKEN</span><span class="o">);</span>
+<span class="n">Wootric</span> <span class="n">wootric</span> <span class="o">=</span> <span class="n">Wootric</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">CLIENT_ID</span><span class="o">,</span> <span class="n">ACCOUNT_TOKEN</span><span class="o">);</span>
 
 <span class="n">wootric</span><span class="o">.</span><span class="na">setEndUserEmail</span><span class="o">(</span><span class="s">"nps@example.com"</span><span class="o">);</span>
 
@@ -318,7 +321,7 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
 <h1 id='troubleshooting'>Troubleshooting</h1>
 <p><strong>Survey not showing up?</strong></p>
 
-<p>Check that client ID, client secret and account token are correct. Account token should have a &ldquo;NPS-xxxxxxxx&rdquo; format</p>
+<p>Check that client ID and account token are correct. Account token should have a &ldquo;NPS-xxxxxxxx&rdquo; format</p>
 
 <p><strong>Does the SDK work with Amazon devices?</strong></p>
 
