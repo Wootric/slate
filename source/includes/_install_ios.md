@@ -64,7 +64,7 @@ Drag WootricSDK.framework to the "Embedded Binaries" section of your Xcode proje
 #import <WootricSDK/WootricSDK.h>
 
 // Inside your method
-[Wootric configureWithClientID:<YOUR_CLIENT_ID> clientSecret:<YOUR_CLIENT_SECRET> accountToken:<YOUR_ACCOUNT_TOKEN>];
+[Wootric configureWithClientID:<YOUR_CLIENT_ID> accountToken:<YOUR_ACCOUNT_TOKEN>];
 
 // TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
 [Wootric setEndUserEmail:@"nps@example.com"];
@@ -78,7 +78,7 @@ Drag WootricSDK.framework to the "Embedded Binaries" section of your Xcode proje
 ```
 ``` swift
 // Inside your method
-Wootric.configureWithClientID(<YOUR_CLIENT_ID>, clientSecret: <YOUR_CLIENT_SECRET>, accountToken: <YOUR_ACCOUNT_TOKEN>)
+Wootric.configureWithClientID(<YOUR_CLIENT_ID>, accountToken: <YOUR_ACCOUNT_TOKEN>)
 
 // TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
 Wootric.setEndUserEmail("nps@example.com")
@@ -92,7 +92,7 @@ Wootric.showSurveyInViewController(<YOUR_VIEW_CONTROLLER>)
 ```
 ``` swift_three
 // Inside your method
-Wootric.configure(withClientID: <YOUR_CLIENT_ID>, clientSecret:<YOUR_CLIENT_SECRET>,, accountToken:<YOUR_ACCOUNT_TOKEN>)
+Wootric.configure(withClientID: <YOUR_CLIENT_ID> , accountToken:<YOUR_ACCOUNT_TOKEN>)
 
 // TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
 Wootric.setEndUserEmail("nps@example.com")
@@ -104,11 +104,11 @@ Wootric.forceSurvey(true)
 
 Wootric.showSurvey(in: <YOUR_VIEW_CONTROLLER>)
 ```
-First import the SDK into your ViewController of choosing. Then configure the SDK with your client ID, secret and account token.
+First import the SDK into your ViewController of choosing. Then configure the SDK with your client ID and account token.
 
 Sign in at [wootric.com](https://www.wootric.com/) if you haven't already. If you just signed up on the Wootric homepage, you will be taken directly to an installation page. If you’re a returning visitor, click on the “Settings" button near the top right of the page. Navigate to the [Wootric Installation Guide](https://app.wootric.com/install) and you will see a unique **account_token** for you to use.
 
-The **client_id** and **client_secret** can be found on your account's settings [API section](https://app.wootric.com/account_settings/edit#!/api).
+The **client_id** can be found on your account's settings [API section](https://app.wootric.com/account_settings/edit#!/api).
 
 To display the survey just use `showSurveyInViewController`. If the user is eligible (this check is built in the method) the SDK will show the survey.
 
@@ -124,7 +124,7 @@ If you are using Swift, don't forget to import WootricSDK in your `Bridging-Head
 ```objective_c
 #import <WootricSDK/WootricSDK.h>
 
-[Wootric configureWithClientID:@"your_client_id" clientSecret:@"your_client_secret" accountToken:@"NPS­-xxxxxxxx"];
+[Wootric configureWithClientID:@"your_client_id" accountToken:@"NPS­-xxxxxxxx"];
 [Wootric setEndUserEmail:@"nps@example.com"];
 [Wootric setEndUserCreatedAt:@1234567890];
 
@@ -139,7 +139,7 @@ If you are using Swift, don't forget to import WootricSDK in your `Bridging-Head
 [Wootric showSurveyInViewController:self];
 ```
 ```swift
-Wootric.configureWithClientID("your_client_id", clientSecret: "your_client_secret", accountToken: "NPS­-xxxxxxxx")
+Wootric.configureWithClientID("your_client_id", accountToken: "NPS­-xxxxxxxx")
 Wootric.setEndUserEmail("nps@example.com")
 Wootric.setEndUserCreatedAt(1234567890)
 
@@ -154,7 +154,7 @@ Wootric.setCustomLanguage("fr")
 Wootric.showSurveyInViewController(self)
 ```
 ```swift_three
-Wootric.configure(withClientID:"your_client_id", clientSecret: "your_client_secret", accountToken: "NPS­-xxxxxxxx")
+Wootric.configure(withClientID:"your_client_id", accountToken: "NPS­-xxxxxxxx")
 Wootric.setEndUserEmail("nps@example.com")
 Wootric.setEndUserCreatedAt(1234567890)
 
