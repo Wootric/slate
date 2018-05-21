@@ -113,7 +113,7 @@ $ pod install
 <h1 id='presenting-the-survey'>Presenting the survey</h1><h2 id='step-1--initialize-wootric'>Step 1. Initialize Wootric</h2><div class="highlight"><pre class="highlight objective_c"><code><span class="cp">#import &lt;WootricSDK/WootricSDK.h&gt;
 </span>
 <span class="c1">// Inside your method
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_CLIENT_ID</span><span class="o">&gt;</span> <span class="nf">clientSecret</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_CLIENT_SECRET</span><span class="o">&gt;</span> <span class="n">accountToken</span><span class="o">:&lt;</span><span class="n">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;</span><span class="p">];</span>
+</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_CLIENT_ID</span><span class="o">&gt;</span> <span class="nf">accountToken</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;</span><span class="p">];</span>
 
 <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
 </span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserEmail</span><span class="p">:</span><span class="s">@"nps@example.com"</span><span class="p">];</span>
@@ -125,7 +125,7 @@ $ pod install
 
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">showSurveyInViewController</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_VIEW_CONTROLLER</span><span class="o">&gt;</span><span class="p">];</span>
 </code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="c1">// Inside your method</span>
-<span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">YOUR_CLIENT_ID</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">YOUR_CLIENT_SECRET</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">YOUR_CLIENT_ID</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;</span><span class="p">)</span>
 
 <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserEmail</span><span class="p">(</span><span class="s">"nps@example.com"</span><span class="p">)</span>
@@ -137,7 +137,7 @@ $ pod install
 
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">showSurveyInViewController</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">YOUR_VIEW_CONTROLLER</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight swift_three"><code><span class="c1">// Inside your method</span>
-<span class="kt">Wootric</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="nv">withClientID</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">YOUR_CLIENT_ID</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span><span class="o">&lt;</span><span class="kt">YOUR_CLIENT_SECRET</span><span class="o">&gt;</span><span class="p">,,</span> <span class="nv">accountToken</span><span class="p">:</span><span class="o">&lt;</span><span class="kt">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="kt">Wootric</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="nv">withClientID</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">YOUR_CLIENT_ID</span><span class="o">&gt;</span> <span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span><span class="o">&lt;</span><span class="kt">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;</span><span class="p">)</span>
 
 <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserEmail</span><span class="p">(</span><span class="s">"nps@example.com"</span><span class="p">)</span>
@@ -149,11 +149,11 @@ $ pod install
 
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">showSurvey</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">YOUR_VIEW_CONTROLLER</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre></div>
-<p>First import the SDK into your ViewController of choosing. Then configure the SDK with your client ID, secret and account token.</p>
+<p>First import the SDK into your ViewController of choosing. Then configure the SDK with your client ID and account token.</p>
 
 <p>Sign in at <a href="https://www.wootric.com/">wootric.com</a> if you haven&rsquo;t already. If you just signed up on the Wootric homepage, you will be taken directly to an installation page. If you’re a returning visitor, click on the “Settings&quot; button near the top right of the page. Navigate to the <a href="https://app.wootric.com/install">Wootric Installation Guide</a> and you will see a unique <strong>account_token</strong> for you to use.</p>
 
-<p>The <strong>client_id</strong> and <strong>client_secret</strong> can be found on your account&rsquo;s settings <a href="https://app.wootric.com/account_settings/edit#!/api">API section</a>.</p>
+<p>The <strong>client_id</strong> can be found on your account&rsquo;s settings <a href="https://app.wootric.com/account_settings/edit#!/api">API section</a>.</p>
 
 <p>To display the survey just use <code class="prettyprint">showSurveyInViewController</code>. If the user is eligible (this check is built in the method) the SDK will show the survey.</p>
 
@@ -166,7 +166,7 @@ If you are using Swift, don&rsquo;t forget to import WootricSDK in your <code cl
 </blockquote>
 <div class="highlight"><pre class="highlight objective_c"><code><span class="cp">#import &lt;WootricSDK/WootricSDK.h&gt;
 </span>
-<span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="s">@"your_client_id"</span> <span class="nf">clientSecret</span><span class="p">:</span><span class="s">@"your_client_secret"</span> <span class="n">accountToken</span><span class="o">:</span><span class="s">@"NPS­-xxxxxxxx"</span><span class="p">];</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="s">@"your_client_id"</span> <span class="nf">accountToken</span><span class="p">:</span><span class="s">@"NPS­-xxxxxxxx"</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserEmail</span><span class="p">:</span><span class="s">@"nps@example.com"</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserCreatedAt</span><span class="p">:</span><span class="mi">@1234567890</span><span class="p">];</span>
 
@@ -179,7 +179,7 @@ If you are using Swift, don&rsquo;t forget to import WootricSDK in your <code cl
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setCustomLanguage</span><span class="p">:</span><span class="s">@"fr"</span><span class="p">];</span>
 
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">showSurveyInViewController</span><span class="p">:</span><span class="n">self</span><span class="p">];</span>
-</code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="s">"your_client_id"</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span> <span class="s">"your_client_secret"</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span> <span class="s">"NPS­-xxxxxxxx"</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="s">"your_client_id"</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span> <span class="s">"NPS­-xxxxxxxx"</span><span class="p">)</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserEmail</span><span class="p">(</span><span class="s">"nps@example.com"</span><span class="p">)</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserCreatedAt</span><span class="p">(</span><span class="mi">1234567890</span><span class="p">)</span>
 
@@ -192,7 +192,7 @@ If you are using Swift, don&rsquo;t forget to import WootricSDK in your <code cl
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setCustomLanguage</span><span class="p">(</span><span class="s">"fr"</span><span class="p">)</span>
 
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">showSurveyInViewController</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight swift_three"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="nv">withClientID</span><span class="p">:</span><span class="s">"your_client_id"</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span> <span class="s">"your_client_secret"</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span> <span class="s">"NPS­-xxxxxxxx"</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift_three"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="nv">withClientID</span><span class="p">:</span><span class="s">"your_client_id"</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span> <span class="s">"NPS­-xxxxxxxx"</span><span class="p">)</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserEmail</span><span class="p">(</span><span class="s">"nps@example.com"</span><span class="p">)</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserCreatedAt</span><span class="p">(</span><span class="mi">1234567890</span><span class="p">)</span>
 
@@ -303,6 +303,26 @@ If your survey throttle is different than 90 days and/or you don&rsquo;t want to
 </code></pre></div><div class="highlight"><pre class="highlight swift_three"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">skipFeedbackScreen</span><span class="p">(</span><span class="nv">forPromoter</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
 </code></pre></div>
 <p>With this option enabled, promoters (score 9-10) will be taken directly to third (social share) screen, skipping the second (feedback) one.</p>
+<h2 id='showoptout'>showOptOut</h2><div class="highlight"><pre class="highlight objective_c"><code><span class="p">[</span><span class="n">Wootric</span> <span class="nf">forceSurvey</span><span class="p">:</span><span class="o">&lt;</span><span class="n">BOOL</span><span class="o">&gt;</span><span class="p">];</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">showOptOut</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift_three"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">showOptOut</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</code></pre></div>
+<p>If showOptOut is set to YES, it will show an option for the end user to opt out of being surveyed. Default value is NO.</p>
+<h2 id='setloglevelnone'>setLogLevelNone</h2><div class="highlight"><pre class="highlight objective_c"><code><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setLogLevelNone</span><span class="p">];</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setLogLevelNone</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift_three"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setLogLevelNone</span><span class="p">()</span>
+</code></pre></div>
+<p>Set WTRLogger level to None i.e. it won&rsquo;t show any log from the WootricSDK.</p>
+<h2 id='setloglevelerror'>setLogLevelError</h2><div class="highlight"><pre class="highlight objective_c"><code><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setLogLevelError</span><span class="p">];</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setLogLevelError</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift_three"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setLogLevelError</span><span class="p">()</span>
+</code></pre></div>
+<p>Set WTRLogger level to Error i.e. it will only show error logs from the WootricSDK.</p>
+<h2 id='setloglevelverbose'>setLogLevelVerbose</h2><div class="highlight"><pre class="highlight objective_c"><code><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setLogLevelVerbose</span><span class="p">];</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setLogLevelVerbose</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift_three"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setLogLevelVerbose</span><span class="p">()</span>
+</code></pre></div>
+<p>Set WTRLogger level to Verbose i.e. it will show all logs from the WootricSDK.</p>
 
 <h1 id='per-view-configuration'>Per view configuration</h1>
 <p>While Wootric is using values you have set in admin panel, it is possible to override these values directly in code.</p>
@@ -449,7 +469,7 @@ While it is not required, setting <code class="prettyprint">setEndUserCreatedAt<
 </span>
 <span class="p">...</span>
 
-<span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="n">clientID</span> <span class="nf">clientSecret</span><span class="p">:</span><span class="n">clientSecret</span> <span class="n">accountToken</span><span class="o">:</span><span class="n">accountToken</span><span class="p">];</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="n">clientID</span> <span class="nf">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserEmail</span><span class="p">:</span><span class="s">@"nps@example.com"</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserCreatedAt</span><span class="p">:</span><span class="mi">@1234567890</span><span class="p">];</span>
 
@@ -472,7 +492,7 @@ While it is not required, setting <code class="prettyprint">setEndUserCreatedAt<
 //[Wootric forceSurvey:YES];
 </span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">showSurveyInViewController</span><span class="p">:</span><span class="n">self</span><span class="p">];</span>
-</code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span><span class="n">clientSecret</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">)</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserEmail</span><span class="p">(</span><span class="s">"nps@example.com"</span><span class="p">)</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserCreatedAt</span><span class="p">(</span><span class="mi">1234567890</span><span class="p">)</span>
 
@@ -495,7 +515,7 @@ While it is not required, setting <code class="prettyprint">setEndUserCreatedAt<
 <span class="c1">// Wootric.forceSurvey(true)</span>
 
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">showSurveyInViewController</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight swift_three"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="nv">withClientID</span><span class="p">:</span> <span class="n">clientID</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span><span class="n">clientSecret</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift_three"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="nv">withClientID</span><span class="p">:</span> <span class="n">clientID</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">)</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserEmail</span><span class="p">(</span><span class="s">"nps@example.com"</span><span class="p">)</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserCreatedAt</span><span class="p">(</span><span class="mi">1234567890</span><span class="p">)</span>
 
@@ -528,7 +548,7 @@ While it is not required, setting <code class="prettyprint">setEndUserCreatedAt<
 </span>
 <span class="p">...</span>
 
-<span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="n">clientID</span> <span class="nf">clientSecret</span><span class="p">:</span><span class="n">clientSecret</span> <span class="n">accountToken</span><span class="o">:</span><span class="n">accountToken</span><span class="p">];</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="n">clientID</span> <span class="nf">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">];</span>
 
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserEmail</span><span class="p">:</span><span class="s">@"nps@example.com"</span><span class="p">];</span>
 
@@ -549,7 +569,7 @@ While it is not required, setting <code class="prettyprint">setEndUserCreatedAt<
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserProperties</span><span class="p">:</span><span class="n">properties</span><span class="p">];</span>
 
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">showSurveyInViewController</span><span class="p">:</span><span class="n">self</span><span class="p">];</span>
-</code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span><span class="n">clientSecret</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">)</span>
 
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserEmail</span><span class="p">(</span><span class="s">"nps@example.com"</span><span class="p">)</span>
 
@@ -570,7 +590,7 @@ While it is not required, setting <code class="prettyprint">setEndUserCreatedAt<
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserProperties</span><span class="p">(</span><span class="n">properties</span><span class="p">)</span>
 
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">showSurveyInViewController</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight swift_three"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="nv">withClientID</span><span class="p">:</span> <span class="n">clientID</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span><span class="n">clientSecret</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift_three"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="nv">withClientID</span><span class="p">:</span> <span class="n">clientID</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">)</span>
 
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserEmail</span><span class="p">(</span><span class="s">"nps@example.com"</span><span class="p">)</span>
 
@@ -607,7 +627,7 @@ While it is not required, setting <code class="prettyprint">setEndUserCreatedAt<
 <h1 id='troubleshooting'>Troubleshooting</h1>
 <p><strong>Survey not showing up or is blank?</strong></p>
 
-<p>Check that client ID, client secret and account token are correct. Account token should have a &ldquo;NPS-xxxxxxxx&rdquo; format</p>
+<p>Check that client ID and account token are correct. Account token should have a &ldquo;NPS-xxxxxxxx&rdquo; format</p>
 
 <p><strong>I&rsquo;m using <code class="prettyprint">forceSurvey</code> but getting <code class="prettyprint">User not eligible</code></strong></p>
 
@@ -646,7 +666,7 @@ it, simply add the following line to your <code class="prettyprint">Podfile</cod
 
 <span class="kt">WTRWootricIntegration</span><span class="o">.</span><span class="nf">showSurvey</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
 </code></pre></div>
-<p>First of all you need to provide values for account token, clientID and client secret in Segment&rsquo;s dashboard for Wootric integration, then import Segment-Wootric.</p>
+<p>First of all you need to provide values for account token and clientID in Segment&rsquo;s dashboard for Wootric integration, then import Segment-Wootric.</p>
 
 <p>Then init the Analytics with Wootric integration. Wootric integration responds to <code class="prettyprint">identify</code> call, to read more about it, visit <a href="https://segment.com/docs/libraries/ios/#identify">Segment identify method documentation</a>.
 In identify call <code class="prettyprint">traits</code> dictionary is set as <code class="prettyprint">endUserProperties</code> in WootricSDK,  except keys <code class="prettyprint">email</code> and <code class="prettyprint">createdAt</code> which are set as <code class="prettyprint">endUserEmail</code> and <code class="prettyprint">endUserCreatedAt</code> respectively.</p>
