@@ -40,7 +40,7 @@ SEGAnalytics.setup(with: config)
 
 WTRWootricIntegration.showSurvey(in: self)
 ```
-First of all you need to provide values for account token, clientID and client secret in Segment's dashboard for Wootric integration, then import Segment-Wootric.
+First of all you need to provide values for account token and clientID in Segment's dashboard for Wootric integration, then import Segment-Wootric.
 
 Then init the Analytics with Wootric integration. Wootric integration responds to ```identify``` call, to read more about it, visit [Segment identify method documentation](https://segment.com/docs/libraries/ios/#identify).
 In identify call ```traits``` dictionary is set as ```endUserProperties``` in WootricSDK,  except keys ```email``` and ```createdAt``` which are set as ```endUserEmail``` and ```endUserCreatedAt``` respectively.

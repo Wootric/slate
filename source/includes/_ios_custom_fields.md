@@ -137,3 +137,51 @@ Wootric.skipFeedbackScreenForPromoter(<BOOL>)
 Wootric.skipFeedbackScreen(forPromoter: true)
 ```
 With this option enabled, promoters (score 9-10) will be taken directly to third (social share) screen, skipping the second (feedback) one.
+
+## showOptOut
+```objective_c
+[Wootric forceSurvey:<BOOL>];
+```
+```swift
+Wootric.showOptOut(true)
+```
+```swift_three
+Wootric.showOptOut(true)
+```
+If showOptOut is set to YES, it will show an option for the end user to opt out of being surveyed. Default value is NO.
+
+## setLogLevelNone
+```objective_c
+[Wootric setLogLevelNone];
+```
+```swift
+Wootric.setLogLevelNone()
+```
+```swift_three
+Wootric.setLogLevelNone()
+```
+Set WTRLogger level to None i.e. it won't show any log from the WootricSDK.
+
+## setLogLevelError
+```objective_c
+[Wootric setLogLevelError];
+```
+```swift
+Wootric.setLogLevelError()
+```
+```swift_three
+Wootric.setLogLevelError()
+```
+Set WTRLogger level to Error i.e. it will only show error logs from the WootricSDK.
+
+## setLogLevelVerbose
+```objective_c
+[Wootric setLogLevelVerbose];
+```
+```swift
+Wootric.setLogLevelVerbose()
+```
+```swift_three
+Wootric.setLogLevelVerbose()
+```
+Set WTRLogger level to Verbose i.e. it will show all logs from the WootricSDK.

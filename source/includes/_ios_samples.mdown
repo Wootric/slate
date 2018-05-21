@@ -6,7 +6,7 @@
 
 ...
 
-[Wootric configureWithClientID:clientID clientSecret:clientSecret accountToken:accountToken];
+[Wootric configureWithClientID:clientID accountToken:accountToken];
 [Wootric setEndUserEmail:@"nps@example.com"];
 [Wootric setEndUserCreatedAt:@1234567890];
 
@@ -31,7 +31,7 @@ NSURL *appStoreURL = [NSURL URLWithString:@"itms-apps://itunes.apple.com/WebObje
 [Wootric showSurveyInViewController:self];
 ```
 ```swift
-Wootric.configureWithClientID(clientID, clientSecret:clientSecret, accountToken:accountToken)
+Wootric.configureWithClientID(clientID, accountToken:accountToken)
 Wootric.setEndUserEmail("nps@example.com")
 Wootric.setEndUserCreatedAt(1234567890)
 
@@ -56,7 +56,7 @@ Wootric.skipFeedbackScreenForPromoter(true)
 Wootric.showSurveyInViewController(self)
 ```
 ```swift_three
-Wootric.configure(withClientID: clientID, clientSecret:clientSecret, accountToken:accountToken)
+Wootric.configure(withClientID: clientID, accountToken:accountToken)
 Wootric.setEndUserEmail("nps@example.com")
 Wootric.setEndUserCreatedAt(1234567890)
 
@@ -93,7 +93,7 @@ You can set the last button to go to the App Store so users can rate your app.
 
 ...
 
-[Wootric configureWithClientID:clientID clientSecret:clientSecret accountToken:accountToken];
+[Wootric configureWithClientID:clientID accountToken:accountToken];
 
 [Wootric setEndUserEmail:@"nps@example.com"];
 
@@ -116,7 +116,7 @@ NSMutableDictionary *properties = [NSMutableDictionary new];
 [Wootric showSurveyInViewController:self];
 ```
 ```swift
-Wootric.configureWithClientID(clientID, clientSecret:clientSecret, accountToken:accountToken)
+Wootric.configureWithClientID(clientID, accountToken:accountToken)
     
 Wootric.setEndUserEmail("nps@example.com")
 
@@ -139,7 +139,7 @@ Wootric.setEndUserProperties(properties)
 Wootric.showSurveyInViewController(self)
 ```
 ```swift_three
-Wootric.configure(withClientID: clientID, clientSecret:clientSecret, accountToken:accountToken)
+Wootric.configure(withClientID: clientID, accountToken:accountToken)
     
 Wootric.setEndUserEmail("nps@example.com")
 
