@@ -209,11 +209,21 @@ properties (optional) | Hash of additional properties
 ## Delete End User
 
 ```shell
+# Using the end user's ID:
+
 curl -X DELETE "https://api.wootric.com/v1/end_users/1?access_token=myaccesstoken"
 
 or
 
 curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1"
+
+# Using the end user's email address:
+
+curl -X DELETE "https://api.wootric.com/v1/end_users/user@domain.com?access_token=myaccesstoken"
+
+or
+
+curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/user@domain.com"
 ```
 
 > The above command returns the following JSON:
@@ -231,17 +241,17 @@ curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com
   }
 ```
 
-This endpoint deletes the end user.
+This endpoint marks the end user for deletion. Deletion would be performed the following day at 7 AM UTC.
 
 ### HTTP Request
 
-`DELETE https://api.wootric.com/v1/end_users/<end_user_id>`
+`DELETE https://api.wootric.com/v1/end_users/<end_user_id_or_email>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-end_user_id | The ID of the end user to delete
+end_user_id_or_email | The ID or the email of the end user to delete
 
 ## Export specific End User's data
 
