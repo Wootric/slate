@@ -408,11 +408,21 @@ curl <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">
 <td>Hash of additional properties</td>
 </tr>
 </tbody></table>
-<h2 id='delete-end-user'>Delete End User</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> DELETE <span class="s2">"https://api.wootric.com/v1/end_users/1?access_token=myaccesstoken"</span>
+<h2 id='delete-end-user'>Delete End User</h2><div class="highlight"><pre class="highlight shell"><code><span class="c"># Using the end user's ID:</span>
+
+curl <span class="nt">-X</span> DELETE <span class="s2">"https://api.wootric.com/v1/end_users/1?access_token=myaccesstoken"</span>
 
 or
 
 curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1"</span>
+
+<span class="c"># Using the end user's email address:</span>
+
+curl <span class="nt">-X</span> DELETE <span class="s2">"https://api.wootric.com/v1/end_users/user@domain.com?access_token=myaccesstoken"</span>
+
+or
+
+curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/user@domain.com"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -428,9 +438,9 @@ curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s
     </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{'company':'TestCompany', 'city':'San Francisco'}"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint deletes the end user.</p>
+<p>This endpoint marks the end user for deletion. Deletion would be performed the following day at 7 AM UTC.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">DELETE https://api.wootric.com/v1/end_users/&lt;end_user_id&gt;</code></p>
+<p><code class="prettyprint">DELETE https://api.wootric.com/v1/end_users/&lt;end_user_id_or_email&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -439,8 +449,8 @@ curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s
 </tr>
 </thead><tbody>
 <tr>
-<td>end_user_id</td>
-<td>The ID of the end user to delete</td>
+<td>end_user_id_or_email</td>
+<td>The ID or the email of the end user to delete</td>
 </tr>
 </tbody></table>
 <h2 id='export-specific-end-user39s-data'>Export specific End User&rsquo;s data</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/2/export?access_token=myaccesstoken"</span>
