@@ -68,6 +68,8 @@ English | EN
 Estonian | ET
 French | FR
 Greek | EL
+Italian | IT
+Japanese | JA
 Korean | KO
 Polish | PL
 Portuguese | PT
@@ -87,6 +89,8 @@ Estonian | ET
 French | FR
 German | DE
 Greek | EL
+Italian | IT
+Japanese | JA
 Korean | KO
 Polish | PL
 Portuguese | PT
