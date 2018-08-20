@@ -76,6 +76,7 @@ Portuguese | PT
 Romanian | RO
 Spanish | ES
 Spanish - Mexico | ES_MX
+Swedish | SV
 Ukrainian | UK
 
 ##Customer Satisfaction (CSAT) currently supports these languages (with language codes):
@@ -97,4 +98,5 @@ Portuguese | PT
 Romanian | RO
 Spanish | ES
 Spanish - Mexico | ES_MX
+Swedish | SV
 Ukrainian | UK
