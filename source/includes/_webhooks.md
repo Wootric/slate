@@ -1,6 +1,6 @@
 # Outgoing Webhooks
 
-Wootric can send an HTTP POST request to a specified URL when an event occurs. See the list of supported events below. 
+Wootric can send an HTTP POST request to a specified URL when an event occurs. See the list of supported events below.
 
 ## List of events and their payload
 
@@ -21,6 +21,8 @@ response[created_at]=2016-08-04%2013%3A57%3A26%20-0700&
 response[updated_at]=2016-08-04%2013%3A57%3A26%20-0700&
 response[excluded_from_calculations]=false&
 event_name=created&
+account_token=NPS-xxxxxxx&
+survey_mode=NPS&
 timestamp=2016-08-04%2013%3A57%3A31%20-0700
 
 # decline created sample payload
@@ -36,6 +38,8 @@ decline[survey_id]=1147&
 decline[created_at]=2016-08-04%2013%3A58%3A21%20-0700&
 decline[updated_at]=2016-08-04%2013%3A58%3A21%20-0700&
 event_name=created&
+account_token=NPS-xxxxxxx&
+survey_mode=NPS&
 timestamp=2016-08-04%2013%3A58%3A23%20-0700
 ```
 
@@ -84,5 +88,3 @@ end
 ```
 
 In order to verify that the request actually came from our servers, we include the `HTTP_X_WOOTRIC_SIGNATURE` header, which is an HMAC-SHA1 signature of the payload using the secret token for your account. You can get this token in the **Outgoing Webhooks** configuration page.
-
-
