@@ -62,7 +62,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='outgoing-webhooks'>Outgoing Webhooks</h1>
-<p>Wootric can send an HTTP POST request to a specified URL when an event occurs. See the list of supported events below. </p>
+<p>Wootric can send an HTTP POST request to a specified URL when an event occurs. See the list of supported events below.</p>
 <h2 id='list-of-events-and-their-payload'>List of events and their payload</h2><div class="highlight"><pre class="highlight ruby"><code><span class="c1"># response created sample payload</span>
 <span class="n">response</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">=</span><span class="mi">1128</span><span class="o">&amp;</span>
 <span class="n">response</span><span class="p">[</span><span class="n">email</span><span class="p">]</span><span class="o">=</span><span class="n">nps</span><span class="vi">@example</span><span class="p">.</span><span class="nf">com</span><span class="o">&amp;</span>
@@ -79,6 +79,8 @@
 <span class="n">response</span><span class="p">[</span><span class="n">updated_at</span><span class="p">]</span><span class="o">=</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">04</span><span class="o">%</span><span class="mi">2013</span><span class="o">%</span><span class="mi">3</span><span class="no">A57</span><span class="o">%</span><span class="mi">3</span><span class="no">A26</span><span class="o">%</span><span class="mi">20</span><span class="o">-</span><span class="mo">0700</span><span class="o">&amp;</span>
 <span class="n">response</span><span class="p">[</span><span class="n">excluded_from_calculations</span><span class="p">]</span><span class="o">=</span><span class="kp">false</span><span class="o">&amp;</span>
 <span class="n">event_name</span><span class="o">=</span><span class="n">created</span><span class="o">&amp;</span>
+<span class="n">account_token</span><span class="o">=</span><span class="no">NPS</span><span class="o">-</span><span class="n">xxxxxxx</span><span class="o">&amp;</span>
+<span class="n">survey_mode</span><span class="o">=</span><span class="no">NPS</span><span class="o">&amp;</span>
 <span class="n">timestamp</span><span class="o">=</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">04</span><span class="o">%</span><span class="mi">2013</span><span class="o">%</span><span class="mi">3</span><span class="no">A57</span><span class="o">%</span><span class="mi">3</span><span class="no">A31</span><span class="o">%</span><span class="mi">20</span><span class="o">-</span><span class="mo">0700</span>
 
 <span class="c1"># decline created sample payload</span>
@@ -94,6 +96,8 @@
 <span class="n">decline</span><span class="p">[</span><span class="n">created_at</span><span class="p">]</span><span class="o">=</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">04</span><span class="o">%</span><span class="mi">2013</span><span class="o">%</span><span class="mi">3</span><span class="no">A58</span><span class="o">%</span><span class="mi">3</span><span class="no">A21</span><span class="o">%</span><span class="mi">20</span><span class="o">-</span><span class="mo">0700</span><span class="o">&amp;</span>
 <span class="n">decline</span><span class="p">[</span><span class="n">updated_at</span><span class="p">]</span><span class="o">=</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">04</span><span class="o">%</span><span class="mi">2013</span><span class="o">%</span><span class="mi">3</span><span class="no">A58</span><span class="o">%</span><span class="mi">3</span><span class="no">A21</span><span class="o">%</span><span class="mi">20</span><span class="o">-</span><span class="mo">0700</span><span class="o">&amp;</span>
 <span class="n">event_name</span><span class="o">=</span><span class="n">created</span><span class="o">&amp;</span>
+<span class="n">account_token</span><span class="o">=</span><span class="no">NPS</span><span class="o">-</span><span class="n">xxxxxxx</span><span class="o">&amp;</span>
+<span class="n">survey_mode</span><span class="o">=</span><span class="no">NPS</span><span class="o">&amp;</span>
 <span class="n">timestamp</span><span class="o">=</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">04</span><span class="o">%</span><span class="mi">2013</span><span class="o">%</span><span class="mi">3</span><span class="no">A58</span><span class="o">%</span><span class="mi">3</span><span class="no">A23</span><span class="o">%</span><span class="mi">20</span><span class="o">-</span><span class="mo">0700</span>
 </code></pre></div>
 <ul>
