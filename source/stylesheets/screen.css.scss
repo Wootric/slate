@@ -49,30 +49,17 @@ html, body {
 }
 
 @mixin embossed-bg {
-  @include background(
-    linear-gradient(top,
-                    rgba(#000, 0.2),
-                    rgba(#000, 0) 8px),
-    linear-gradient(bottom,
-                    rgba(#000, 0.2),
-                    rgba(#000, 0) 8px),
-    linear-gradient(top,
-                    rgba($nav-embossed-border-top, 1),
-                    rgba($nav-embossed-border-top, 0) 1.5px),
-    linear-gradient(bottom,
-                    rgba($nav-embossed-border-bottom, 1),
-                    rgba($nav-embossed-border-bottom, 0) 1.5px),
-    $nav-subitem-bg
-  );
+  @include background($nav-subitem-bg);
 }
 
 .tocify-wrapper {
+  @extend %nav-font;
   @include transition(left ease-in-out 0.3s);
   overflow-y: auto;
   overflow-x: hidden;
   position: fixed;
   z-index: 30;
-  top: 0;
+  top: 76px;
   left: 0;
   bottom: 0;
   width: $nav-width;
@@ -98,22 +85,25 @@ html, body {
     position: relative;
 
     input {
-      background: $nav-bg;
-      border-width: 0 0 1px 0;
-      border-color: $search-box-border-color;
-      padding: 6px 0 6px 20px;
       @include box-sizing(border-box);
-      margin: $nav-v-padding $nav-padding;
-      width: $nav-width - 30;
-      outline: none;
+      background: $main-bg;
+      border-bottom: 1px solid $search-box-border-color;
+      border-left: 1px solid $search-box-border-color;
+      border-radius: 44px !important;
+      border-right: 1px solid $search-box-border-color;
+      border-top: 1px solid $search-box-border-color;
       color: $nav-text;
+      margin: $nav-v-padding $nav-padding;
+      outline: none;
+      padding: 10px 10px 10px 35px;
+      width: $nav-width - 40;
       border-radius: 0; /* ios has a default border radius */
     }
 
     &:before {
       position: absolute;
-      top: 17px;
-      left: $nav-padding;
+      top: 21px;
+      left: $nav-padding + 12;
       color: $nav-text;
       @extend %icon-search;
     }
@@ -156,7 +146,7 @@ html, body {
 
 
   .tocify-item>a, .toc-footer li {
-    padding: 0 $nav-padding 0 $nav-padding;
+    padding: 5px $nav-padding;
     display: block;
     overflow-x: hidden;
     white-space: nowrap;
@@ -167,10 +157,13 @@ html, body {
   // unordered lists.  These styles remove the default
   // styling of an unordered list because it is ugly.
   ul, li {
+    font-size: 14px;
+    font-weight: normal;
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 28px;
+    line-height: 40px;
+    background-size: 100px;
   }
 
   li {
@@ -182,9 +175,9 @@ html, body {
 
   // This is the currently selected ToC entry
   .tocify-focus {
-    @include box-shadow(0px 1px 0px $nav-active-shadow);
     background-color: $nav-active-bg;
     color: $nav-active-text;
+    font-weight: bold;
   }
 
   // Subheaders are the submenus that slide open
@@ -208,15 +201,20 @@ html, body {
   .toc-footer {
     padding: 1em 0;
     margin-top: 1em;
-    border-top: 1px dashed $nav-footer-border-color;
+    border-top: 1px solid $nav-footer-border-color;
 
-    li,a {
+    li {
       color: $nav-text;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    a {
+      color: $blue;
+      text-decoration: none;
+
+      &:hover {
+        color: $medium-blue;
+      }
     }
 
     li {
@@ -255,12 +253,416 @@ html, body {
     vertical-align: bottom;
   }
 
-  @include transition(left ease-in-out 0.3s);
+  @include transition(left ease-in-out 0.1s);
 
   &:hover { opacity: 1; }
   &.open {left: $nav-width}
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// WOOTRIC CUSTOM CSS
+////////////////////////////////////////////////////////////////////////////////
+
+.wootric-doc-topbar {
+  align-items: center;
+  border-bottom: 1px solid lighten($lighter-gray, 20%);
+  background: $main-bg;
+  display: flex;
+  height: 75px;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  width: calc(100% - 40px);
+  z-index: 100;
+
+  &__logo {
+    a {
+      background-image: url(../images/wootric-docs_logo.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: block;
+      height: 38px;
+      width: 306px;
+    }
+  }
+
+  &__docs-nav {
+    margin-left: 3%;
+    position: relative;
+
+    @media screen and (max-width: 780px) {
+      display: none;
+    }
+
+    &__header {
+      color: $darker-gray;
+      line-height: normal;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 25px 0 22px;
+      text-transform: uppercase;
+
+      &__icn {
+        background-image: url(../images/wootric-docs_nav-icons.png);
+        background-repeat: no-repeat;
+        background-size: 192px;
+        background-position: 0px -3px;
+        display: inline-block;
+        margin-left: 4px;
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    &__dropdown-caret {
+      border: 0 solid transparent;
+      border-right-width: 10px;
+      border-left-width: 10px;
+      border-bottom: 10px solid $main-bg;
+      display: none;
+      height: 0;
+      left: 20px;
+      position: absolute;
+      top: 56px;
+      width: 0;
+      z-index: 105;
+    }
+
+    &__dropdown-caret::after{
+      box-sizing: content-box;
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: -11px;
+      top: 12px;
+
+      border: 8px solid black;
+      border-color: $main-bg $main-bg transparent transparent;
+      transform-origin: 0 0;
+      transform: rotate(-45deg);
+      box-shadow: 2px -2px 3px 0 rgba(127,124,125,0.3);
+    }
+
+    &__dropdown {
+      background: $white;
+      border-radius: 5px;
+      box-shadow: rgba(127,124,125,0.75) 0 0 4px;
+      display: none;
+      font-size: 16px;
+      padding: 5px 0;
+      position: absolute;
+      width: 200px;
+      z-index: 101;
+
+      a {
+        color: $gray;
+        display: block;
+        font-weight: normal;
+        padding: 15px;
+        text-decoration: none;
+
+        &:hover {
+          background: $light-hover-gray;
+        }
+
+        &.active{
+          background: $nav-active-bg;
+          color: $white;
+          cursor: default;
+          font-weight: bold;
+          pointer-events: none;
+        }
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .wootric-doc-topbar__docs-nav__dropdown-caret,
+      .wootric-doc-topbar__docs-nav__dropdown {
+        display: block !important;
+      }
+    }
+  }
+
+  &__space {
+    flex-grow: 2;
+  }
+
+  &__sign {
+    line-height: normal;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 780px) {
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    &-in {
+      @include transition(ease-in-out 0.1s);
+      color: $light-gray;
+      margin-right: 28px;
+
+      &:hover {
+        color: $wootric-green;
+      }
+    }
+
+    &-up {
+      @include transition(ease-in-out 0.1s);
+      background-color: $wootric-green;
+      border-radius: 6px;
+      color: $main-bg;
+      padding: 10px 15px;
+
+      &:hover {
+        background-color: darken($wootric-green, 10%);
+        color: darken($main-bg, 10%);
+      }
+    }
+  }
+}
+
+.wootric-doc-landing {
+  font-family: "Lato", sans-serif;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+
+  .wootric-doc-header {
+    padding: 50px 0;
+
+    &__main {
+      color: $darker-gray;
+      margin-bottom: 20px;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    &__sub {
+      color: $gray;
+      font-size: 28px;
+      font-weight: 300;
+    }
+  }
+
+  .wootric-doc-landing-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 90%;
+
+    @media screen and (max-width: 450px) {
+      flex-direction: column;
+    }
+
+    &__type {
+      @include transition(ease-in-out 0.1s);
+      height: auto;
+      padding-top: 8px;
+      padding-right: 20px;
+      padding-bottom: 12px;
+      max-width: 422px;
+      min-width: 122px;
+      position: relative;
+      text-decoration: none;
+      width: calc(33% - 30px);
+
+      a {
+        border: 1px solid $lightest-gray;
+        border-radius: 6px;
+        background-color: $main-bg;
+        box-shadow: 0 1px 6px 0 $dark-gray;
+        box-sizing: border-box;
+        display: inline-block;
+        height: 100%;
+        padding: 20px;
+        width: 100%;
+      }
+
+      &:nth-child(3n+3) {
+        padding-right: 0;
+      }
+
+      @media screen and (max-width: 450px) {
+        width: 100%;
+      }
+
+      &:hover {
+        padding-top: 0px;
+        padding-bottom: 20px;
+      }
+
+      &__img {
+        background-color: $lightest-gray;
+        background-image: url(../images/doc_icons.png);
+        background-repeat: no-repeat;
+        border-radius: 100%;
+        height: 80px;
+        margin: 0 auto 20px;
+        width: 80px;
+        display: block;
+
+        &--javascript {
+          background-position: 19px 18px;
+          background-size: 200px;
+        }
+
+        &--segment {
+          background-position: -58px 18px;
+          background-size: 200px;
+        }
+
+        &--ios {
+          background-position: -136px 16px;
+          background-size: 200px;
+        }
+
+        &--android {
+          background-position: 20px -60px;
+          background-size: 200px;
+        }
+
+        &--api {
+          background-position: -58px -59px;
+          background-size: 200px;
+        }
+
+        &--webhooks {
+          background-position: -136px -60px;
+          background-size: 200px;
+        }
+      }
+
+      &__title {
+        color: $gray;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.wootric-tocify {
+  .wootric-tocify-main-header {
+    background: $nav-main-header-bg;
+    color: $nav-main-header-text-color;
+    padding: 10px 20px;
+    text-transform: uppercase;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  .tocify-header,
+  .tocify-subheader {
+    .tocify-item,
+    .tocify-focus {
+      position: relative;
+
+      .wootric-tocify-header-item__icn {
+        background-image: url(../images/wootric-docs_nav-icons.png);
+        background-repeat: no-repeat;
+        background-color: transparent !important;
+        background-size: 180px;
+        border-radius: 0 !important;
+        height: 18px;
+        position: absolute;
+        width: 18px !important;
+      }
+    }
+  }
+
+  .tocify-header {
+    .tocify-item,
+    .tocify-focus {
+      .wootric-tocify-header-item__icn {
+        right: 20px;
+        top: 16px;
+      }
+    }
+
+    .tocify-item {
+      .wootric-tocify-header-item__icn {
+        z-index: 10000;
+
+        background-position: -69px 1px;
+      }
+    }
+
+    .tocify-focus {
+      .wootric-tocify-header-item__icn {
+        z-index: 10000;
+
+        background-position: -164px 1px;
+      }
+    }
+
+    &:not(.contains-subheader) {
+      .tocify-item,
+      .tocify-focus {
+        .wootric-tocify-header-item__icn {
+          display: none;
+        }
+      }
+    }
+
+    &.subheader-visible {
+      .tocify-item {
+        .wootric-tocify-header-item__icn {
+          background-position: -45px 1px;
+        }
+      }
+
+      .tocify-focus {
+        .wootric-tocify-header-item__icn {
+          background-position: -140px 1px;
+        }
+      }
+
+      .tocify-subheader {
+        .tocify-item,
+        .tocify-focus {
+          .wootric-tocify-header-item__icn {
+            left: 20px;
+            top: 16px;
+          }
+        }
+
+        .tocify-item {
+          .wootric-tocify-header-item__icn {
+            background-position: -116px 2px;
+          }
+        }
+
+        .tocify-focus {
+          .wootric-tocify-header-item__icn {
+            background-position: -92px 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.page-wrapper {
+  a {
+    color: $blue;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $medium-blue;
+  }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // PAGE LAYOUT AND CODE SAMPLE BACKGROUND
@@ -269,6 +671,7 @@ html, body {
 .page-wrapper {
   margin-left: $nav-width;
   position: relative;
+  top: 75px;
   z-index: 10;
   background-color: $main-bg;
   min-height: 100%;
@@ -292,28 +695,45 @@ html, body {
   .lang-selector {
     position: fixed;
     z-index: 50;
-    border-bottom: 5px solid $lang-select-active-bg;
+
+    &__border-line {
+      background-color: $lighter-gray;
+      bottom: 0;
+      height: 1px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+    }
   }
 }
 
 .lang-selector {
   background-color: $lang-select-bg;
+  padding: 10px 10px 0 10px;
   width: 100%;
   font-weight: bold;
+
   a {
+    color: $lang-select-text;
     display: block;
     float:left;
-    color: $lang-select-text;
-    text-decoration: none;
-    padding: 0 10px;
+    font-size: 14px;
     line-height: 30px;
+    padding: 0 10px;
+    text-decoration: none;
 
-    &:active {
+    &:hover {
       background-color: $lang-select-pressed-bg;
+      border-radius: 4px 4px 0 0;
       color: $lang-select-pressed-text;
     }
 
     &.active {
+      border-top: 1px solid $lighter-gray;
+      border-left: 1px solid $lighter-gray;
+      border-right: 1px solid $lighter-gray;
+      border-radius: 4px 4px 0 0;
       background-color: $lang-select-active-bg;
       color: $lang-select-active-text;
     }
@@ -367,7 +787,7 @@ html, body {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     border-bottom: 1px solid #ccc;
-    margin-bottom: $h1-margin-bottom;
+    margin-bottom: 20px;
     margin-top: 2em;
     border-top: 1px solid #ddd;
     @include background-image(
@@ -378,6 +798,7 @@ html, body {
   h1:first-child, div:first-child + h1 {
     border-top-width: 0;
     margin-top: 0;
+    margin-bottom: 20px;
   }
 
   h2 {
@@ -396,7 +817,7 @@ html, body {
   // h2s right after h1s should bump right up
   // against the h1s.
   h1 + h2, h1 + div + h2 {
-    margin-top: $h1-margin-bottom * -1;
+    margin-top: $h1-margin-bottom * -1px;
     border-top: none;
   }
 
@@ -481,6 +902,8 @@ html, body {
   }
 
   aside {
+    border-top: 1px solid $aside-notice-border;
+    border-bottom: 1px solid $aside-notice-border;
     padding-top: 1em;
     padding-bottom: 1em;
     @include text-shadow(0 1px 0 lighten($aside-notice-bg, 15%));

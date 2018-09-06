@@ -20,21 +20,39 @@ under the License.
 ////////////////////////////////////////////////////////////////////////////////
 // Use these settings to help adjust the appearance of Slate
 
+// WOOTRIC COLORS
+////////////////////
+$blue: #428cc7;
+$medium-blue: #1565c0;
+$darker-gray: #605A5C;
+$dark-gray: rgba(140, 136, 137, 0.5);
+$gray: #626262;
+$light-gray: #9B9B9B;
+$lighter-gray: rgba(155,155,155,0.6);
+$lightest-gray: #F7F7F7;
+$light-hover-gray: #eeeeee;
+$wootric-green: #8AC154;
+$white: #ffffff;
+
+// NAV COLUMN
+$nav-main-header-bg: #e5e5e5;
+$nav-main-header-text-color: #676767;
 
 // BACKGROUND COLORS
 ////////////////////
-$nav-bg: #1b4857;
+$nav-bg: #F7F7F7;
 $examples-bg: #fff;
 $code-bg: #1b4857;
 $code-annotation-bg: #1c1c1c;
-$nav-subitem-bg: #8da3aa;
-$nav-active-bg: #8fc852;
-$lang-select-border: #000;
-$lang-select-bg: #222;
+$nav-subitem-bg: transparent;
+$nav-active-bg: #4196c3;
+$lang-select-border: $light-gray;
+$lang-select-bg: $lightest-gray;
 $lang-select-active-bg: $examples-bg; // feel free to change this to blue or something
-$lang-select-pressed-bg: #111; // color of language tab bg when mouse is pressed
+$lang-select-pressed-bg: $blue; // color of language tab bg when mouse is pressed
 $main-bg: #fff;
-$aside-notice-bg: #8fbcd4;
+$aside-notice-bg: rgba(100,169,203,0.1);
+$aside-notice-border: $blue;
 $aside-warning-bg: #c97a7e;
 $aside-success-bg: #6ac174;
 $search-notice-bg: #c97a7e;
@@ -42,25 +60,25 @@ $search-notice-bg: #c97a7e;
 
 // TEXT COLORS
 ////////////////////
-$main-text: #333; // main content text color
-$nav-text: #fff;
+$main-text: #605A5C; // main content text color
+$nav-text: $gray;
 $nav-active-text: #fff;
-$lang-select-text: #fff; // color of unselected language tab text
-$lang-select-active-text: #000; // color of selected language tab text
+$lang-select-text: $darker-gray; // color of unselected language tab text
+$lang-select-active-text: $blue; // color of selected language tab text
 $lang-select-pressed-text: #fff; // color of language tab text when mouse is pressed
 
 
 // SIZES
 ////////////////////
-$nav-width: 230px; // width of the navbar
+$nav-width: 290px; // width of the navbar
 $examples-width: 50%; // portion of the screen taken up by code examples
 $logo-margin: 20px; // margin between nav items and logo, ignored if search is active
 $main-padding: 28px; // padding to left and right of content & examples
-$nav-padding: 15px; // padding to left and right of navbar
+$nav-padding: 20px; // padding to left and right of navbar
 $nav-v-padding: 10px; // padding used vertically around search boxes and results
-$nav-indent: 10px; // extra padding for ToC subitems
+$nav-indent: 25px; // extra padding for ToC subitems
 $code-annotation-padding: 13px; // padding inside code annotations
-$h1-margin-bottom: 21px; // padding under the largest header tags
+$h1-margin-bottom: 1; // padding under the largest header tags
 $tablet-width: 930px; // min width before reverting to tablet size
 $phone-width: $tablet-width - $nav-width; // min width before reverting to mobile size
 
@@ -68,7 +86,7 @@ $phone-width: $tablet-width - $nav-width; // min width before reverting to mobil
 // FONTS
 ////////////////////
 %default-font {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
 }
 
@@ -83,15 +101,19 @@ $phone-width: $tablet-width - $nav-width; // min width before reverting to mobil
   line-height: 1.5;
 }
 
+%nav-font {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 
 // OTHER
 ////////////////////
-$nav-active-shadow: #8fc852;
-$nav-footer-border-color: #8fc852;
-$nav-embossed-border-top: #000;
-$nav-embossed-border-bottom: #8fc852;
+$nav-active-shadow: transparent;
+$nav-footer-border-color: lighten($lighter-gray, 25%);
+$nav-embossed-border-top: transparent;
+$nav-embossed-border-bottom: transparent;
 $main-embossed-text-shadow: 0px 1px 0px #fff;
-$search-box-border-color: #666;
+$search-box-border-color: lighten($lighter-gray, 25%);
 
 
 ////////////////////////////////////////////////////////////////////////////////
