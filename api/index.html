@@ -2010,6 +2010,16 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span cla
 <td>Array of hashes containing the values to be replaced in subject and/or intro</td>
 </tr>
 <tr>
+<td>senders_name</td>
+<td>String</td>
+<td>Override senders name</td>
+</tr>
+<tr>
+<td>reply_to_email</td>
+<td>String</td>
+<td>Override reply-to email</td>
+</tr>
+<tr>
 <td>delay</td>
 <td>Integer</td>
 <td>Days we will wait before sending the survey. Delay is optional and it must be between 1 and 31 days.</td>
@@ -2040,6 +2050,14 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span cla
   <span class="nt">-d</span> <span class="s2">"intro=Tell us why you like {{color}} so much."</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s2">"context[][service]=internet, laundry"</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s2">"context[][color]=red, blue"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell"><code><span class="c"># Example with senders name and reply-to email</span>
+
+curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s2">"access_token=XXXXXXXXXXXXXXXX"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s2">"emails[]=john@example.com"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s2">"survey_immediately=true"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s2">"senders_name=Sender Name"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s2">"reply_to_email=replyto@email.com"</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell"><code><span class="c"># Example of an 8 day delay</span>
 
 curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span class="se">\</span>
