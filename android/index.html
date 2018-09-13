@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Android Documentation</title>
+    <title>Android SDK Documentation | Wootric</title>
     <link href="../images/favicon-32x32.png" rel="icon" type="image/png" />
 
     <link href="../stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
@@ -31,26 +31,50 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <a href="#" id="nav-button">
-      <span>
-        NAV
-        <img src="../images/navbar.png" alt="Navbar" />
-      </span>
-    </a>
-    <div class="tocify-wrapper">
-      <a href="/"><img src="../images/logo.png" alt="Logo" /></a>
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
-      <div id="toc">
+    <div class="wootric-doc-topbar">
+      <div class="wootric-doc-topbar__logo">
+        <a href="/" title="Wootric Documentation Home"></a>
       </div>
-        <ul class="toc-footer">
-            <li><a href='https://www.wootric.com/'>Sign Up</a></li>
-            <li><a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
-        </ul>
+        <div class="wootric-doc-topbar__docs-nav">
+          <div class="wootric-doc-topbar__docs-nav__header">Documentation <span class="wootric-doc-topbar__docs-nav__header__icn"></span></div>
+          <div class="wootric-doc-topbar__docs-nav__dropdown-caret"></div>
+          <div class="wootric-doc-topbar__docs-nav__dropdown">
+            <a href="/javascript" >Javascript SDK</a>
+            <a href="/segment" >Segment</a>
+            <a href="/ios" >iOS SDK</a>
+            <a href="/android" class="active">Android SDK</a>
+            <a href="/api" >REST API</a>
+            <a href="/webhooks" >Outgoing Webhooks</a>
+          </div>
+        </div>
+      <div class="wootric-doc-topbar__space"></div>
+      <div class="wootric-doc-topbar__sign">
+        <a class="wootric-doc-topbar__sign-in" href="https://app.wootric.com/sign_in">sign in</a>
+        <a class="wootric-doc-topbar__sign-up" href="https://app.wootric.com/sign_up">sign up free</a>
+      </div>
     </div>
-    <div class="page-wrapper">
+
+      <a href="#" id="nav-button">
+        <span>
+          NAV
+          <img src="../images/navbar.png" alt="Navbar" />
+        </span>
+      </a>
+      <div class="tocify-wrapper">
+          <div class="search">
+            <input type="text" class="search" id="input-search" placeholder="Search">
+          </div>
+          <ul class="search-results"></ul>
+        <div id="toc" class="wootric-tocify">
+          <div class="wootric-tocify-main-header">
+              Android SDK
+          </div>
+        </div>
+          <ul class="toc-footer">
+              <li>© 2018 Wootric&nbsp; | &nbsp;Docs powered by <a href='http://github.com/tripit/slate'>Slate</a></li>
+          </ul>
+      </div>
+    <div class="page-wrapper" >
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='installing-android-sdk'>Installing Android SDK</h1><h2 id='using-maven'>Using Maven</h2><div class="highlight"><pre class="highlight xml"><code><span class="nt">&lt;dependency&gt;</span>
@@ -415,3 +439,17 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
     </div>
   </body>
 </html>
+
+
+<!-- begin Wootric code -->
+<script type="text/javascript">
+  window.wootricSettings = {
+    account_token: 'NPS-2a62eaf4'
+  };
+</script>
+<script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
+<script type="text/javascript">
+  // This loads the Wootric survey
+  window.wootric('run');
+</script>
+<!-- end Wootric code -->
