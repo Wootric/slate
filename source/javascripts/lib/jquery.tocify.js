@@ -284,6 +284,8 @@
                                 return;
                             }
 
+                            ul.addClass('contains-subheader');
+
                             self._appendSubheaders.call(this, self, ul);
 
                         });
@@ -400,7 +402,9 @@
 
                 "data-unique": hashValue
 
-            }).append($("<a/>", {
+            }).append($("<span/>", {
+                "class": "wootric-tocify-header-item__icn"
+            })).append($("<a/>", {
 
                 "text": self.text()
 
@@ -786,6 +790,7 @@
             if (!elem.is(":visible")) {
 
                 // If the current element does not have any nested subheaders, is not a header, and its parent is not visible
+
                 if(!elem.find(subheaderClass).length && !elem.parent().is(headerClass) && !elem.parent().is(":visible")) {
 
                     // Sets the current element to all of the subheaders within the current header
@@ -809,12 +814,16 @@
 
                         elem.show();
 
+                        elem.parent().addClass("subheader-visible");
+
                     break;
 
                     //Uses the jQuery `show` special effect
                     case "show":
 
                         elem.show(self.options.showEffectSpeed);
+
+                        elem.parent().addClass("subheader-visible");
 
                     break;
 
@@ -823,6 +832,8 @@
 
                         elem.slideDown(self.options.showEffectSpeed);
 
+                        elem.parent().addClass("subheader-visible");
+
                     break;
 
                     //Uses the jQuery `fadeIn` special effect
@@ -830,12 +841,16 @@
 
                         elem.fadeIn(self.options.showEffectSpeed);
 
+                        elem.parent().addClass("subheader-visible");
+
                     break;
 
                     //If none of the above options were passed, then a `jQueryUI show effect` is expected
                     default:
 
                         elem.show();
+
+                        elem.parent().addClass("subheader-visible");
 
                     break;
 
@@ -880,12 +895,16 @@
 
                     elem.hide();
 
+                    elem.parent().removeClass("subheader-visible");
+
                 break;
 
                 // Uses the jQuery `hide` special effect
                 case "hide":
 
                     elem.hide(self.options.hideEffectSpeed);
+
+                    elem.parent().removeClass("subheader-visible");
 
                 break;
 
@@ -894,6 +913,8 @@
 
                     elem.slideUp(self.options.hideEffectSpeed);
 
+                    elem.parent().removeClass("subheader-visible");
+
                 break;
 
                 // Uses the jQuery `fadeOut` special effect
@@ -901,12 +922,16 @@
 
                     elem.fadeOut(self.options.hideEffectSpeed);
 
+                    elem.parent().removeClass("subheader-visible");
+
                 break;
 
                 // If none of the above options were passed, then a `jqueryUI hide effect` is expected
                 default:
 
                     elem.hide();
+
+                    elem.parent().removeClass("subheader-visible");
 
                 break;
 

@@ -1,18 +1,54 @@
-# Welcome to the Wootric Docs.
-
-Here is a list of the docs to integrate and use Wootric. It should not take more than 15 minutes. :-)
-<b>
-<br><br>
-* <a href="/javascript" style="text-decoration:none;color:#000">Install Wootric using Javascript</a>
-<br><br>
-* <a href="/segment" style="text-decoration:none;color:#000">Install Wootric using Segment.com</a>
-<br><br>
-* <a href="/ios" style="text-decoration:none;color:#000">Install Wootric using iOS SDK</a>
-<br><br>
-* <a href="/android" style="text-decoration:none;color:#000">Install Wootric using Android SDK</a>
-<br><br>
-* <a href="/api" style="text-decoration:none;color:#000">REST API</a>
-<br><br>
-* <a href="/webhooks" style="text-decoration:none;color:#000">Outgoing Webhooks</a>
-<br><br>
-</b>
+<div class="wootric-doc-landing">
+    <div class="wootric-doc-header">
+        <div class="wootric-doc-header__main">
+            Welcome to the Wootric documentation page!
+        </div>
+        <div class="wootric-doc-header__sub">
+            Select a documentation to get started
+        </div>
+    </div>
+    <div class="wootric-doc-landing-content">
+        <div class="wootric-doc-landing-content__type">
+            <a class="wootric-doc-landing-content__type--javascript" href="/javascript">
+                <div class="wootric-doc-landing-content__type__img
+                            wootric-doc-landing-content__type__img--javascript"></div>
+                <div class="wootric-doc-landing-content__type__title">Install Wootric using Javascript</div>
+            </a>
+        </div>
+        <div class="wootric-doc-landing-content__type">
+            <a class="wootric-doc-landing-content__type--segment" href="/segment">
+                <div class="wootric-doc-landing-content__type__img
+                            wootric-doc-landing-content__type__img--segment"></div>
+                <div class="wootric-doc-landing-content__type__title">Install Wootric using Segment</div>
+            </a>
+        </div>
+        <div class="wootric-doc-landing-content__type">
+            <a class="wootric-doc-landing-content__type--ios" href="/ios">
+                <div class="wootric-doc-landing-content__type__img
+                            wootric-doc-landing-content__type__img--ios"></div>
+                <div class="wootric-doc-landing-content__type__title">Install Wootric using iOS SDK</div>
+            </a>
+        </div>
+        <div class="wootric-doc-landing-content__type">
+            <a class="wootric-doc-landing-content__type--android" href="/android">
+                <div class="wootric-doc-landing-content__type__img
+                            wootric-doc-landing-content__type__img--android"></div>
+                <div class="wootric-doc-landing-content__type__title">Install Wootric using Android SDK</div>
+            </a>
+        </div>
+        <div class="wootric-doc-landing-content__type">
+            <a class="wootric-doc-landing-content__type--api" href="/api">
+                <div class="wootric-doc-landing-content__type__img
+                            wootric-doc-landing-content__type__img--api"></div>
+                <div class="wootric-doc-landing-content__type__title">REST API</div>
+            </a>
+        </div>
+        <div class="wootric-doc-landing-content__type">
+            <a class="wootric-doc-landing-content__type--webhooks" href="/webhooks">
+                <div class="wootric-doc-landing-content__type__img
+                            wootric-doc-landing-content__type__img--webhooks"></div>
+                <div class="wootric-doc-landing-content__type__title">Outgoing Webhooks</div>
+            </a>
+        </div>
+    </div>
+</div>

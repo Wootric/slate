@@ -20,7 +20,7 @@ under the License.
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title><%= current_page.data.title || "Wootric Docs" %></title>
+    <title><%= current_page.data.title || "Wootric Documentation" %> | Wootric</title>
     <%= favicon_tag 'favicon-32x32.png' %>
 
     <%= stylesheet_link_tag :screen, media: :screen %>
@@ -58,42 +58,83 @@ under the License.
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <a href="#" id="nav-button">
-      <span>
-        NAV
-        <%= image_tag('navbar.png') %>
-      </span>
-    </a>
-    <div class="tocify-wrapper">
-      <a href="/"><%= image_tag "logo.png" %></a>
-      <% if language_tabs %>
-        <div class="lang-selector">
-          <% language_tabs.each do |lang| %>
-            <% if lang.is_a? Hash %>
-              <a href="#" data-language-name="<%= lang.keys.first %>"><%= lang.values.first %></a>
-            <% else %>
-              <a href="#" data-language-name="<%= lang %>"><%= lang %></a>
-            <% end %>
-          <% end %>
-        </div>
-      <% end %>
-      <% if current_page.data.search %>
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
-      <% end %>
-      <div id="toc">
+    <div class="wootric-doc-topbar">
+      <div class="wootric-doc-topbar__logo">
+        <a href="/" title="Wootric Documentation Home"></a>
       </div>
-      <% if current_page.data.toc_footers %>
-        <ul class="toc-footer">
-          <% current_page.data.toc_footers.each do |footer| %>
-            <li><%= footer %></li>
-          <% end %>
-        </ul>
+      <% unless current_page.url == '/' %>
+        <div class="wootric-doc-topbar__docs-nav">
+          <div class="wootric-doc-topbar__docs-nav__header">Documentation <span class="wootric-doc-topbar__docs-nav__header__icn"></span></div>
+          <div class="wootric-doc-topbar__docs-nav__dropdown-caret"></div>
+          <div class="wootric-doc-topbar__docs-nav__dropdown">
+            <a href="/javascript" <% if current_page.url == '/javascript/' %>class="active"<% end %>>Javascript SDK</a>
+            <a href="/segment" <% if current_page.url == '/segment/' %>class="active"<% end %>>Segment</a>
+            <a href="/ios" <% if current_page.url == '/ios/' %>class="active"<% end %>>iOS SDK</a>
+            <a href="/android" <% if current_page.url == '/android/' %>class="active"<% end %>>Android SDK</a>
+            <a href="/api" <% if current_page.url == '/api/' %>class="active"<% end %>>REST API</a>
+            <a href="/webhooks" <% if current_page.url == '/webhooks/' %>class="active"<% end %>>Outgoing Webhooks</a>
+          </div>
+        </div>
       <% end %>
+      <div class="wootric-doc-topbar__space"></div>
+      <div class="wootric-doc-topbar__sign">
+        <a class="wootric-doc-topbar__sign-in" href="https://app.wootric.com/sign_in">sign in</a>
+        <a class="wootric-doc-topbar__sign-up" href="https://app.wootric.com/sign_up">sign up free</a>
+      </div>
     </div>
-    <div class="page-wrapper">
+
+    <% unless current_page.url == '/' %>
+      <a href="#" id="nav-button">
+        <span>
+          NAV
+          <%= image_tag('navbar.png') %>
+        </span>
+      </a>
+      <div class="tocify-wrapper">
+        <% if language_tabs %>
+          <div class="lang-selector">
+            <% language_tabs.each do |lang| %>
+              <% if lang.is_a? Hash %>
+                <a href="#" data-language-name="<%= lang.keys.first %>"><%= lang.values.first %></a>
+              <% else %>
+                <a href="#" data-language-name="<%= lang %>"><%= lang %></a>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+        <% if current_page.data.search %>
+          <div class="search">
+            <input type="text" class="search" id="input-search" placeholder="Search">
+          </div>
+          <ul class="search-results"></ul>
+        <% end %>
+        <div id="toc" class="wootric-tocify">
+          <div class="wootric-tocify-main-header">
+            <% if current_page.url == '/javascript/' %>
+              Javascript SDK
+            <% elsif current_page.url == '/segment/' %>
+              Segment
+            <% elsif current_page.url == '/ios/' %>
+              iOS SDK
+            <% elsif current_page.url == '/android/' %>
+              Android SDK
+            <% elsif current_page.url == '/api/' %>
+              REST API
+            <% elsif current_page.url == '/webhooks/' %>
+              Outgoing Webhooks
+            <% end %>
+          </div>
+        </div>
+        <% if current_page.data.toc_footers %>
+          <ul class="toc-footer">
+            <% current_page.data.toc_footers.each do |footer| %>
+              <li><%= footer %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="page-wrapper" <% unless current_page.url != '/' %>style="margin-left: 0px;"<% end %>>
       <div class="dark-box"></div>
       <div class="content">
         <%= yield %>
@@ -111,9 +152,24 @@ under the License.
                 <a href="#" data-language-name="<%= lang %>"><%= lang %></a>
               <% end %>
             <% end %>
+            <div class="lang-selector__border-line"></div>
           </div>
         <% end %>
       </div>
     </div>
   </body>
 </html>
+
+
+<!-- begin Wootric code -->
+<script type="text/javascript">
+  window.wootricSettings = {
+    account_token: 'NPS-2a62eaf4'
+  };
+</script>
+<script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
+<script type="text/javascript">
+  // This loads the Wootric survey
+  window.wootric('run');
+</script>
+<!-- end Wootric code -->

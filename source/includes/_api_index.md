@@ -5,8 +5,7 @@ language_tabs:
   - shell
 
 toc_footers:
-  - <a href='https://www.wootric.com/'>Sign Up</a>
-  - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - © 2018 Wootric&nbsp; | &nbsp;Docs powered by <a href='http://github.com/tripit/slate'>Slate</a>
 
 includes:
   - end_users
@@ -35,7 +34,7 @@ curl -i https://api.wootric.com/oauth/token \
      -F grant_type=password \
      -F username=<youremailaddress> \
      -F password=<yourpassword>
-```  
+```
 
 > To retrieve an access token using OAuth if you multiple accounts on Wootric, you would need to pass your account token as query paarameter to the URL as following:
 
@@ -44,7 +43,7 @@ curl -i https://api.wootric.com/oauth/token?account_token=NPS-XXXX \
      -F grant_type=password \
      -F username=<youremailaddress> \
      -F password=<yourpassword>
-```        
+```
 
 > The above command returns the following JSON:
 
@@ -94,7 +93,7 @@ curl -X POST https://api.wootric.com/oauth/token \
   "access_token":"<youraccesstoken>",
   "token_type":"bearer",
   "expires_in":7200,
-  "scope":"public"  
+  "scope":"public"
 }
 ```
 
