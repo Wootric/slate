@@ -25,6 +25,8 @@ survey_settings | Hash | See **survey_settings** parameters below
 subject | String | Override default subject line (standard NPS/CES/CSAT question used by default). Can handle placeholder values surrounded by {{my_value}}
 intro | String | Intro message for your email. Displayed between logo and question. Default: none. Can handle placeholder values surrounded by {{my_value}}
 context | Hash Array | Array of hashes containing the values to be replaced in subject and/or intro
+senders_name | String | Override senders name
+reply_to_email | String | Override reply-to email
 delay | Integer | Days we will wait before sending the survey. Delay is optional and it must be between 1 and 31 days.
 
 
@@ -57,6 +59,17 @@ curl "https://api.wootric.com/v1/email_survey" \
   -d "intro=Tell us why you like {{color}} so much." \
   -d "context[][service]=internet, laundry" \
   -d "context[][color]=red, blue"
+```
+
+```sh
+# Example with senders name and reply-to email
+
+curl "https://api.wootric.com/v1/email_survey" \
+  -d "access_token=XXXXXXXXXXXXXXXX" \
+  -d "emails[]=john@example.com" \
+  -d "survey_immediately=true" \
+  -d "senders_name=Sender Name" \
+  -d "reply_to_email=replyto@email.com"
 ```
 
 ```sh
