@@ -72,7 +72,7 @@ sort_order (optional)| string | asc | Order in which records are shown. Default 
 We recommend to iterate using `created` parameter if you need to get more data than what you get out of our pagination restriction.  
 
 
-## Get a Specific End User
+## Get a Specific End User by ID
 
 ```shell
 curl "https://api.wootric.com/v1/end_users/2?access_token=myaccesstoken"
@@ -112,7 +112,7 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
 }
 ```
 
-This endpoint retrieves a specific end user.
+This endpoint retrieves a specific end user by id.
 
 
 ### HTTP Request
@@ -124,6 +124,59 @@ This endpoint retrieves a specific end user.
 Parameter | Description
 --------- | -----------
 id | The ID of the end user to retrieve
+
+## Get a Specific End User by Email
+
+```shell
+curl "https://api.wootric.com/v1/end_users/2?access_token=myaccesstoken"
+
+or
+
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/nps2@example.com"
+```
+
+> The above command returns the following JSON:
+
+```json
+{
+  "id": 2,
+  "created_at": "2018-01-02 23:03:41 -0800",
+  "updated_at": "2018-01-16 23:07:03 -0800",
+  "email": "nps2@example.com",
+  "last_surveyed": "2018-01-07 15:30:44 -0800",
+  "external_created_at": 1515940485,
+  "last_seen_at": null,
+  "properties": {
+    "country": "UK",
+    "persona": "Individual",
+    "pricing_plan": "Lite",
+    "product_plan": "Mobile",
+    "purchase_date": 1494569021,
+    "revenue_amount": 10000
+  },
+  "phone_number": null,
+  "external_id": "e9a12f9aa245cfd5",
+  "last_response": null,
+  "settings": {
+    "email_nps": true,
+    "mobile_nps": true,
+    "web_nps": true
+  }
+}
+```
+
+This endpoint retrieves a specific end user by email.
+
+
+### HTTP Request
+
+`GET https://api.wootric.com/v1/end_users/<email>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+email | The Email of the end user to retrieve
 
 ## Create End User
 
