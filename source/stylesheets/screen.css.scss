@@ -399,10 +399,36 @@ html, body {
       @include transition(ease-in-out 0.1s);
       color: $darker-gray;
       text-decoration: none;
+
+      [data-icon]:before {
+        @include transition(ease-in-out 0.1s);
+        background: #605A5C;
+        border-radius: 100%;
+        color: #ffffff;
+        content: attr(data-icon);
+        display: inline-block;
+        font-family: Arial Black, Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        font-size: 12px;
+        font-style: normal;
+        height: 10px;
+        line-height: 14px;
+        margin-right: 3px;
+        padding: 0px 2px 3px 1px;
+        position: relative;
+        text-align: center;
+        top: -1px;
+        width: 10px;
+      }
     }
 
     a:hover {
       color: $wootric-green;
+
+      [data-icon]:before {
+        background: $wootric-green;
+        color: #ffffff;
+      }
     }
   }
 
