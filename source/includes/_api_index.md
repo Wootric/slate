@@ -116,3 +116,25 @@ You must replace `myaccesstoken` with your personal Access Token.
 <aside class="notice">
 Never send your credentials (password or client_secret) as query parameter to URL even when using POST request. Query parameters get logged in plain text as your API requests hop through different servers on the way to Wootric servers and hence it can be **exploited**.
 </aside>
+
+# Limits
+
+```shell
+$ curl -I -s -H "Authorization: Bearer <youraccesstoken>" -X GET "https://api.wootric.com/v1/end_users"
+HTTP/1.1 200 OK
+X-Rate-Limit-Limit: 100
+X-Rate-Limit-Remaining: 97
+X-Rate-Limit-Reset: 1537971859
+```
+
+We recently introduced usage limits to some of our API endpoints, which only allow for a certain number of requests within a minute. When that limit is reached, the API starts responding with HTTP status `429` and the client is only allowed to continue querying the API after a minute has passed. To find out if the endpoints you're using are affected by these limits and how many requests you're allowed to perform within a minute, check the `X-Rate-Limit-*` headers included in each API response (see below). If you can't find these headers it means that the endpoint is not limited.
+
+Header | Description
+--------- | -------
+X-Rate-Limit-Limit | The maximum number of requests that the client can perform on this account within a minute.
+X-Rate-Limit-Remaining | The number of remaining requests.
+X-Rate-Limit-Reset | A timestamp indicating when the counter will be reset.
+
+<aside class="notice">
+If you find that the current rate limit on your account is too low for your needs, please contacts us.
+</aside>
