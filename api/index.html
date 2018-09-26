@@ -163,6 +163,37 @@ You must replace <code class="prettyprint">myaccesstoken</code> with your person
 <p><aside class="notice">
 Never send your credentials (password or client_secret) as query parameter to URL even when using POST request. Query parameters get logged in plain text as your API requests hop through different servers on the way to Wootric servers and hence it can be <strong>exploited</strong>.
 </aside></p>
+<h1 id='limits'>Limits</h1><div class="highlight"><pre class="highlight shell"><code><span class="nv">$ </span>curl <span class="nt">-I</span> <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;youraccesstoken&gt;"</span> <span class="nt">-X</span> GET <span class="s2">"https://api.wootric.com/v1/end_users"</span>
+HTTP/1.1 200 OK
+X-Rate-Limit-Limit: 100
+X-Rate-Limit-Remaining: 97
+X-Rate-Limit-Reset: 1537971859
+</code></pre></div>
+<p>We recently introduced usage limits to some of our API endpoints, which only allow for a certain number of requests within a minute. When that limit is reached, the API starts responding with HTTP status <code class="prettyprint">429</code> and the client is only allowed to continue querying the API after a minute has passed. To find out if the endpoints you&rsquo;re using are affected by these limits and how many requests you&rsquo;re allowed to perform within a minute, check the <code class="prettyprint">X-Rate-Limit-*</code> headers included in each API response (see below). If you can&rsquo;t find these headers it means that the endpoint is not limited.</p>
+
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X-Rate-Limit-Limit</td>
+<td>The maximum number of requests that the client can perform on this account within a minute.</td>
+</tr>
+<tr>
+<td>X-Rate-Limit-Remaining</td>
+<td>The number of remaining requests.</td>
+</tr>
+<tr>
+<td>X-Rate-Limit-Reset</td>
+<td>A timestamp indicating when the counter will be reset.</td>
+</tr>
+</tbody></table>
+
+<p><aside class="notice">
+If you find that the current rate limit on your account is too low for your needs, please contacts us.
+</aside></p>
 
 <h1 id='end-users'>End Users</h1><h2 id='end-user-object'>End User Object</h2>
 <p>A end user object has the following fields:</p>
