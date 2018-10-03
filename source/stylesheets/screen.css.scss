@@ -64,7 +64,7 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
 
   // language selector for mobile devices
@@ -157,7 +157,7 @@ html, body {
   // unordered lists.  These styles remove the default
   // styling of an unordered list because it is ugly.
   ul, li {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: normal;
     list-style: none;
     margin: 0;
@@ -188,7 +188,7 @@ html, body {
     font-weight: 500;
     .tocify-item>a {
       padding-left: $nav-padding + $nav-indent;
-      font-size: 12px;
+      font-size: 14px;
     }
 
     // for embossed look:
@@ -411,14 +411,14 @@ html, body {
         font-weight: bold;
         font-size: 12px;
         font-style: normal;
-        height: 10px;
+        height: 12px;
         line-height: 14px;
         margin-right: 3px;
-        padding: 0px 2px 3px 1px;
+        padding: 1px 2px 2px 2px;
         position: relative;
         text-align: center;
-        top: -1px;
-        width: 10px;
+        top: -1.5px;
+        width: 11px;
       }
     }
 
@@ -746,6 +746,10 @@ html, body {
 
         background-position: -69px 1px;
       }
+
+      &:hover {
+        background: $light-hover-gray;
+      }
     }
 
     .tocify-focus {
@@ -753,6 +757,10 @@ html, body {
         z-index: 10000;
 
         background-position: -164px 1px;
+      }
+
+      &:hover {
+        background: $nav-active-bg;
       }
     }
 
@@ -1064,11 +1072,15 @@ html, body {
 
     &.warning {
       background-color: $aside-warning-bg;
+      border-top: 1px solid darken($aside-warning-bg, 30%);
+      border-bottom: 1px solid darken($aside-warning-bg, 30%);
       @include text-shadow(0 1px 0 lighten($aside-warning-bg, 15%));
     }
 
     &.success {
       background-color: $aside-success-bg;
+      border-top: 1px solid darken($aside-success-bg, 30%);
+      border-bottom: 1px solid darken($aside-success-bg, 30%);
       @include text-shadow(0 1px 0 lighten($aside-success-bg, 15%));
     }
   }
