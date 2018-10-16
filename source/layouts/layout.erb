@@ -171,7 +171,8 @@ under the License.
 </script>
 <script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
 <script type="text/javascript">
-  // This loads the Wootric survey
-  window.wootric('run');
+  if (window.location.pathname.length > 1) {
+    window.wootric('run');
+  }
 </script>
 <!-- end Wootric code -->
