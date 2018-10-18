@@ -1,10 +1,7 @@
 <div class="wootric-doc-landing">
     <div class="wootric-doc-header">
         <div class="wootric-doc-header__main">
-            Welcome to the Wootric documentation page!
-        </div>
-        <div class="wootric-doc-header__sub">
-            Select a document to get started
+            Welcome to Wootric documentation
         </div>
     </div>
     <div class="wootric-doc-landing-content">
