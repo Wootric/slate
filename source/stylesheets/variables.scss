@@ -24,6 +24,7 @@ under the License.
 ////////////////////
 $blue: #428cc7;
 $medium-blue: #1565c0;
+$darkest-gray: #4a4a4a;
 $darker-gray: #605A5C;
 $dark-gray: rgba(140, 136, 137, 0.5);
 $gray: #626262;
@@ -86,7 +87,7 @@ $phone-width: $tablet-width - $nav-width; // min width before reverting to mobil
 // FONTS
 ////////////////////
 %default-font {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
 
@@ -102,7 +103,7 @@ $phone-width: $tablet-width - $nav-width; // min width before reverting to mobil
 }
 
 %nav-font {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 

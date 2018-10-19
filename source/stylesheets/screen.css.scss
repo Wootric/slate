@@ -4,6 +4,66 @@
 @import 'variables';
 @import 'syntax';
 @import 'icon-font';
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Light.ttf") format("ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-LightItalic.ttf") format("ttf");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Italic.ttf") format("ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-SemiBold.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-SemiBoldItalic.ttf") format("ttf");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-BoldItalic.ttf") format("ttf");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-ExtraBold.ttf") format("ttf");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-ExtraBoldItalic.ttf") format("ttf");
+  font-weight: 800;
+  font-style: italic;
+}
 
 /*
 Copyright 2008-2013 Concur Technologies, Inc.
@@ -59,7 +119,7 @@ html, body {
   overflow-x: hidden;
   position: fixed;
   z-index: 30;
-  top: 76px;
+  top: 83px;
   left: 0;
   bottom: 0;
   width: $nav-width;
@@ -101,11 +161,11 @@ html, body {
     }
 
     &:before {
-      position: absolute;
-      top: 21px;
-      left: $nav-padding + 12;
-      color: $nav-text;
       @extend %icon-search;
+      color: $nav-text;
+      left: $nav-padding + 12;
+      position: absolute;
+      top: 24px;
     }
   }
 
@@ -268,7 +328,7 @@ html, body {
   border-bottom: 1px solid lighten($lighter-gray, 20%);
   background: $main-bg;
   display: flex;
-  height: 75px;
+  height: 82px;
   justify-content: space-between;
   padding: 0 20px;
   position: fixed;
@@ -282,7 +342,7 @@ html, body {
       background-size: cover;
       display: block;
       height: 40px;
-      width: 306px;
+      width: 330px;
     }
   }
 
@@ -298,8 +358,8 @@ html, body {
       color: $darker-gray;
       line-height: normal;
       font-size: 16px;
-      font-weight: bold;
-      padding: 24px 0;
+      font-weight: 400;
+      padding: 25px 0 23px;
       text-transform: uppercase;
 
       &__icn {
@@ -323,7 +383,7 @@ html, body {
       height: 0;
       left: 20px;
       position: absolute;
-      top: 56px;
+      top: 58px;
       width: 0;
       z-index: 105;
     }
@@ -389,9 +449,9 @@ html, body {
   &__help-link {
     line-height: normal;
     font-size: 16px;
-    font-weight: bold;
-    margin-left: 3%;
-    margin-right: 3%;
+    font-weight: 600;
+    margin-left: 2%;
+    margin-right: 2%;
     position: relative;
     text-transform: uppercase;
 
@@ -400,34 +460,8 @@ html, body {
       color: $darker-gray;
       text-decoration: none;
 
-      [data-icon]:before {
-        @include transition(ease-in-out 0.1s);
-        background: #605A5C;
-        border-radius: 100%;
-        color: #ffffff;
-        content: attr(data-icon);
-        display: inline-block;
-        font-family: Arial Black, Helvetica, Arial, sans-serif;
-        font-weight: bold;
-        font-size: 12px;
-        font-style: normal;
-        height: 12px;
-        line-height: 14px;
-        margin-right: 3px;
-        padding: 1px 2px 2px 2px;
-        position: relative;
-        text-align: center;
-        top: -1.5px;
-        width: 11px;
-      }
-    }
-
-    a:hover {
-      color: $wootric-green;
-
-      [data-icon]:before {
-        background: $wootric-green;
-        color: #ffffff;
+      &:hover {
+        color: $wootric-green;
       }
     }
   }
@@ -439,7 +473,7 @@ html, body {
   &__sign {
     line-height: normal;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     text-transform: uppercase;
 
     @media screen and (max-width: 925px) {
@@ -476,7 +510,7 @@ html, body {
 }
 
 .wootric-doc-landing {
-  font-family: "Lato", sans-serif;
+  @extend %default-font;
   position: absolute;
   text-align: center;
   width: 100%;
@@ -489,10 +523,11 @@ html, body {
     }
 
     &__main {
-      color: $darker-gray;
+      color: $darkest-gray;
+      font-size: 38px;
+      font-weight: 400;
       margin-bottom: 20px;
-      font-size: 32px;
-      font-weight: bold;
+      padding: 0 20px;
     }
 
     &__sub {
@@ -532,8 +567,9 @@ html, body {
       &__header{
         color: $darker-gray;
         margin: 0 0 20px;
-        font-size: 22px;
-        font-weight: bold;
+        font-size: 26px;
+        font-weight: 400;
+        text-transform: uppercase;
         width: 100%;
       }
 
@@ -693,8 +729,8 @@ html, body {
 
       &__title {
         color: $gray;
-        font-size: 16px;
-        font-weight: bold;
+        font-size: 18px;
+        font-weight: 400;
       }
     }
   }
@@ -829,7 +865,7 @@ html, body {
 .page-wrapper {
   margin-left: $nav-width;
   position: relative;
-  top: 75px;
+  top: 82px;
   z-index: 10;
   background-color: $main-bg;
   min-height: 100%;
