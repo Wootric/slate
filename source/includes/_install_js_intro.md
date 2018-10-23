@@ -53,6 +53,48 @@ data.
 You can easily install Wootric in your development environment for testing. The snippet is
 already set up to show the survey immediately for testing purposes only.
 
+## The Wootric Settings Object:
+
+```javascript
+window.wootricSettings = {
+  account_token: 'NPS-ABCD1234',
+  aria: true,
+  created_at: '1528416000',
+  email: 'nps@example.com',
+  facebook_page: 'https://www.facebook.com/test',
+  language: 'EN',
+  product_name: 'your product name',
+  properties : { country: 'MX' },
+  twitter_account: 'test',
+  wootric_close_position: 'left',
+  wootric_recommend_target: 'your audience'
+};
+```
+
+This is a list of the values you can set into your wootricSettings object and its defaults.
+Keep in mind that your code settings will always override whatever you set in your Wootric Account Settings page.
+
+Variable | Default | Description
+---- | ---- | -------
+account_token | null | Your account token. Required.
+aria | null | Enable extended accessibility features such as high contrast and extended aria support.
+created_at | null | The created_at date in your app for the end_user you are attempting to survey.
+email | null | The email of the end_user you are attempting to survey.
+facebook_page | null | A Facebook link you can use to refer promoters to your Facebook page.
+language | null | The language code of the survey.
+product_name | depends on the language | Your product name. 
+properties | null | The custom properties of the end_user you are attempting to survey.
+twitter_account | null | A Twitter link you can use to tag your account anytime a promoter leaves a comment.
+wootric_close_position | left | The position of the close button of your survey.
+wootric_recommend_target | depends on the language | Your audience.
+
+### The code example generates the following survey:
+
+### Question screen:
+![Example](https://user-images.githubusercontent.com/316711/47119535-0d604700-d220-11e8-8111-1d980d6866e6.png)
+### Social screen:
+![Example2](https://user-images.githubusercontent.com/316711/47119536-0d604700-d220-11e8-88f9-61ce4001c17e.png)
+
 ### Additional notes on Wootric snippet placement:
 
 #### For sites with registered users:
