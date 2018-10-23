@@ -53,7 +53,7 @@ data.
 You can easily install Wootric in your development environment for testing. The snippet is
 already set up to show the survey immediately for testing purposes only.
 
-## The Wootric Settings Object:
+## The Wootric Settings Object
 
 ```javascript
 window.wootricSettings = {
