@@ -97,7 +97,7 @@
                 </div>
                 <div class="wootric-doc-landing-content__type">
                     <a class="wootric-doc-landing-content__type--intercom"
-                       href="http://help.wootric.com/integrations/how-do-i-insert-a-wootric-survey-into-an-intercom-messenger-chat"
+                       href="http://help.wootric.com/integrations/how-do-i-send-wootric-surveys-in-intercom-messenger"
                        target="_blank"
                        title="Opens in another tab">
                         <div class="wootric-doc-landing-content__type__img
