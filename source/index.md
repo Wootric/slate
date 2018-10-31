@@ -37,6 +37,20 @@
                     </a>
                 </div>
                 <div class="wootric-doc-landing-content__type">
+                    <a class="wootric-doc-landing-content__type--api" href="http://help.wootric.com/email-surveys">
+                        <div class="wootric-doc-landing-content__type__img
+                                    wootric-doc-landing-content__type__img--email"></div>
+                        <div class="wootric-doc-landing-content__type__title">Email Templates</div>
+                    </a>
+                </div>
+                <div class="wootric-doc-landing-content__type">
+                    <a class="wootric-doc-landing-content__type--api" href="/api/#email-survey">
+                        <div class="wootric-doc-landing-content__type__img
+                                    wootric-doc-landing-content__type__img--api"></div>
+                        <div class="wootric-doc-landing-content__type__title">Email API</div>
+                    </a>
+                </div>
+                <div class="wootric-doc-landing-content__type">
                     <a class="wootric-doc-landing-content__type--api" href="/api">
                         <div class="wootric-doc-landing-content__type__img
                                     wootric-doc-landing-content__type__img--api"></div>

@@ -701,22 +701,27 @@ html, body {
         }
 
         &--intercom {
-          background-position: -303px -66px;
+          background-position: -300px -66px;
           background-size: 520px;
         }
 
         &--slack {
-          background-position: -303px 16px;
+          background-position: -300px 16px;
           background-size: 520px;
         }
 
         &--zapier {
-          background-position: -414px 13px;
+          background-position: -410px 13px;
           background-size: 560px;
         }
 
         &--zendesk {
-          background-position: -381px -62px;
+          background-position: -378px -62px;
+          background-size: 520px;
+        }
+
+        &--email {
+          background-position: -455px -65px;
           background-size: 520px;
         }
 
