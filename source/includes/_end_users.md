@@ -178,6 +178,58 @@ Parameter | Description
 --------- | -----------
 email | The Email of the end user to retrieve
 
+## Get a Specific End User by Phone Number
+
+```shell
+curl "https://api.wootric.com/v1/end_users/phone_number/+14155554131?access_token=myaccesstoken"
+
+or
+
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/phone_number/+14155554131"
+```
+
+> The above command returns the following JSON:
+
+```json
+{
+  "id": 2,
+  "created_at": "2018-01-02 23:03:41 -0800",
+  "updated_at": "2018-01-16 23:07:03 -0800",
+  "email": "nps2@example.com",
+  "last_surveyed": "2018-01-07 15:30:44 -0800",
+  "external_created_at": 1515940485,
+  "last_seen_at": null,
+  "properties": {
+    "country": "UK",
+    "persona": "Individual",
+    "pricing_plan": "Lite",
+    "product_plan": "Mobile",
+    "purchase_date": 1494569021,
+    "revenue_amount": 10000
+  },
+  "phone_number": "+14155554131",
+  "external_id": "e9a12f9aa245cfd5",
+  "last_response": null,
+  "settings": {
+    "email_nps": true,
+    "mobile_nps": true,
+    "web_nps": true
+  }
+}
+```
+
+This endpoint retrieves a specific end user by phone number.
+
+### HTTP Request
+
+`GET https://api.wootric.com/v1/end_users/phone_number/<phone_number>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+phone_number | The Phone Number of the end user to retrieve. The phone number must be prefixed with '+'. If it's just digits, it will look up by id.
+
 ## Create End User
 
 ```shell
