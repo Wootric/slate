@@ -82,6 +82,16 @@ curl "https://api.wootric.com/v1/email_survey" \
   -d "delay=8"
 ```
 
+```sh
+# Example of sampling override.
+
+curl "https://api.wootric.com/v1/email_survey" \
+  -d "access_token=XXXXXXXXXXXXXXXX" \
+  -d "emails[]=john@example.com" \
+  -d "survey_settings[sampling][first_survey_delay]=10" \
+  -d "survey_settings[sampling][registered_percent]=50"
+```
+
 ### survey_settings parameters
 Param | Type | Description
 ----- | ---- | ------------
@@ -90,6 +100,7 @@ logo_url | String
 audience_text | String
 product_name | String
 custom_messages | Hash | See **custom_messages** parameters below
+sampling | Hash | See **sampling** parameters below
 
 ### custom_messages parameters
 Param | Type
@@ -102,3 +113,13 @@ prompt_text | String
 detractor_prompt_text | String
 passive_prompt_text | String
 promoter_prompt_text | String
+
+### sampling parameters
+You may use these parameters to overwrite the settings you have in your Wootric settings panel.
+
+Param | Type | Description
+----- | ---- | ----
+first_survey_delay | Integer | Number of days that have to pass since end user's created_at to show a survey
+response_throttle | Integer | Number of days that have to pass after answering a survey to be eligible again
+decline_throttle | Integer | Number of days that have to pass after declining a survey to be eligible again
+registered_percent | Integer | Chances from 0 to 100 to serve a survey
