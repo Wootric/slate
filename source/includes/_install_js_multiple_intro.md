@@ -14,6 +14,9 @@ if (show_nps_survey) {
     account_token: 'NPS-yyyyyyy'
   };
 }
+
+// Request a survey
+window.wootric('run');
 ```
 
 Wootric allows you to run multiple types of surveys within the same app:
@@ -25,5 +28,4 @@ help with your installation contact [support](mailto: support@wootric.com).
 
 To run multiple surveys, you'll need to write code to decide when to display
 each survey. Check that you only load one survey per page, and that you call
-`WootricSurvey.run()` once. Calling `WootricSurvey.run()` multiple times with
-different settings will break your installation.
+`window.wootric('run')` once. Calling `window.wootric('run')` multiple times with different settings will break your installation.

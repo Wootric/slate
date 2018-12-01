@@ -3,17 +3,21 @@
 
 ## The simplest integration
 ```javascript
- <!-- begin Wootric code -->
+<!-- Pull the Wootric Snippet -->
+<script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
+<!-- begin Wootric code -->
 <script type="text/javascript">
-  wootric_survey_immediately = true; //TODO:comment this in production
+  // TEST ONLY FLAGS - REMOVE BEFORE GOING LIVE
+  wootric_survey_immediately=true; //Overwrites sampling settings and forces the server to return true to all survey requests.
+  wootric_no_surveyed_cookie = true; //Disables the cookie writing after a survey is taken effectively disabling any client side mechanisms to prevent multiple surveys from being rendered.
+  // END OF TEST ONLY FLAGS
   window.wootricSettings = {
     email:'nps@example.com', //TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
     created_at: 1234567890, //TODO:replace it with date when your customer signed up           
     account_token: 'NPS-XXXX' //TODO:replace it with your account token       
-  };    
+  };
+  window.wootric('run');
 </script>
-<script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
-<script>window.wootric("run")</script>
 <!-- end Wootric code -->
 ```
 * Put this code snippet on your index.html
