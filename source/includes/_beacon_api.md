@@ -6,7 +6,7 @@ var wootricSettings = {
 }
 
 //run
-WootricSurvey.run(wootricSettings);
+WootricSurvey.run(wootricSettings); OR wootric('run')
 
 //stop
 WootricSurvey.stop();

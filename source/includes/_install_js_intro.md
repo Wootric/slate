@@ -2,14 +2,19 @@
 
 ## Step 1. ­Add the code
 ```javascript
+
+<!-- Pull the Wootric Snippet -->
+<script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
 <!-- begin Wootric code -->
 <script type="text/javascript">
-window.wootricSettings = {
-  email:'nps@example.com',// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
-  created_at: 1234567890, // TODO: The current logged in user's sign-up date as a Unix timestamp.
-  account_token: 'NPS-xxxxxxx'
-};
+  window.wootricSettings = {
+    email:'nps@example.com',// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
+    created_at: 1234567890, // TODO: The current logged in user's sign-up date as a Unix timestamp.
+    account_token: 'NPS-xxxxxxx'
+  };
 
+  // Request a survey
+  window.wootric('run');
 </script>
 ...//The rest of the widget...
 <!-- end Wootric code -->
@@ -25,18 +30,27 @@ For HTML5 async support read [here](#async-support)
 This is an important step! [Customize](https://app.wootric.com/user_settings/edit#!/survey-nps) your survey with the name of your product or company. As needed, make changes to our trusted [survey](https://app.wootric.com/user_settings/edit#!/survey-nps) and [sampling](https://app.wootric.com/user_settings/edit#!/sampling) defaults.
 
 ## Step 3. View your Responses Live!
-> Comment out the line wootric_survey_immediately = true when you are ready for production. Alternatively, leave the line in the code for testing purposes or to survey the customer upon every visit to a specific page.
+> Comment out the lines wootric_survey_immediately = true and wootric_no_surveyed_cookie = true when you are ready for production. Alternatively, leave the line in the code for testing purposes or to survey the customer upon every visit to a specific page.
 
 ```javascript
+<!-- Pull the Wootric Snippet -->
+<script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
+
 <!­­-- begin Wootric code ­­-->
 <script type="text/javascript">
-wootric_survey_immediately=true;//Fire immediately for testing
-window.wootricSettings = {
-  email:'nps@example.com', // TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
-  product_name: 'Wootric', // TODO: The name of the product or service.
-  account_token: 'NPS­xxxxxxxx' };
+  // TEST ONLY FLAGS - REMOVE BEFORE GOING LIVE
+  wootric_survey_immediately=true; //Overwrites sampling settings and forces the server to return true to all survey requests.
+  wootric_no_surveyed_cookie = true; //Disables the cookie writing after a survey is taken effectively disabling any client side mechanisms to prevent multiple surveys from being rendered.
+  // END OF TEST ONLY FLAGS
+
+  window.wootricSettings = {
+    email:'nps@example.com', // TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
+    product_name: 'Wootric', // TODO: The name of the product or service.
+    account_token: 'NPS­xxxxxxxx' };
+
+  //Request a survey
+  window.wootric('run';)
 </script>
-....//The rest of the widget...
 <!--­­ end Wootric code ­­-->
 ```
 
@@ -107,10 +121,6 @@ If your site has a checkout flow, we recommend that you paste the tag
 on pages that won’t interrupt checkout. The most commonly used location is the transaction
 completion page.
 
-#### Google Tag Manager:
-You may use Google Tag Manager to install and manage the Wootric
-snippet.
-
 ### Async Support:
 ``` js
 <!-- begin Wootric code -->
@@ -122,10 +132,17 @@ snippet.
       account_token: 'NPS-XXXXXXXX'
   };
 </script>
-<script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js" async onload="WootricSurvey.run(wootricSettings)"></script>
+<script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js" async onload="window.wootric('run')"></script>
 ```
 
-We support HTML5 async attribute to load our snippet.
-The `wootricSettings` object is built in the same way as above. The only difference
-rests in how we initialize the `WootricSurvey`.
+We support the HTML5 async attribute to load our snippet.
+The `wootricSettings` object is initialized as depicted above.
 Take a close look at the onload attribute, it will guarantee that your service is called when the script has loaded.
+
+## Google Tag Manager:
+You may use Google Tag Manager to install and manage the Wootric snippet.
+
+- Add a new tag of type `custom HTML`
+- Paste the Step 1 snippet inside the HTML container
+- Tweak tag firing priority if required
+- Set tag firing options to trigger once per page
