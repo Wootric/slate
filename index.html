@@ -33,10 +33,10 @@
 
     <div class="wootric-doc-topbar">
       <div class="wootric-doc-topbar__logo">
-        <a href="/" title="Wootric Documentation Home"></a>
+        <a href="//wootric.com" title="Wootric Home"></a>
       </div>
       <div class="wootric-doc-topbar__space"></div>
-      <div class="wootric-doc-topbar__help-link"><a href="http://help.wootric.com" target="_blank"><i data-icon="?"></i> help center</a></div>
+      <div class="wootric-doc-topbar__help-link"><a href="http://help.wootric.com" target="_blank">help center</a></div>
       <div class="wootric-doc-topbar__sign">
         <a class="wootric-doc-topbar__sign-in" href="https://app.wootric.com/sign_in">sign in</a>
         <a class="wootric-doc-topbar__sign-up" href="https://app.wootric.com/sign_up">sign up free</a>
@@ -49,10 +49,7 @@
         <div class="wootric-doc-landing">
     <div class="wootric-doc-header">
         <div class="wootric-doc-header__main">
-            Welcome to the Wootric documentation page!
-        </div>
-        <div class="wootric-doc-header__sub">
-            Select a document to get started
+            Welcome to Wootric documentation
         </div>
     </div>
     <div class="wootric-doc-landing-content">
@@ -85,6 +82,20 @@
                         <div class="wootric-doc-landing-content__type__img
                                     wootric-doc-landing-content__type__img--android"></div>
                         <div class="wootric-doc-landing-content__type__title">Install Wootric using Android SDK</div>
+                    </a>
+                </div>
+                <div class="wootric-doc-landing-content__type">
+                    <a class="wootric-doc-landing-content__type--api" href="http://help.wootric.com/email-surveys">
+                        <div class="wootric-doc-landing-content__type__img
+                                    wootric-doc-landing-content__type__img--email"></div>
+                        <div class="wootric-doc-landing-content__type__title">Email Templates</div>
+                    </a>
+                </div>
+                <div class="wootric-doc-landing-content__type">
+                    <a class="wootric-doc-landing-content__type--api" href="/api/#email-survey">
+                        <div class="wootric-doc-landing-content__type__img
+                                    wootric-doc-landing-content__type__img--api"></div>
+                        <div class="wootric-doc-landing-content__type__title">Email API</div>
                     </a>
                 </div>
                 <div class="wootric-doc-landing-content__type">
@@ -148,7 +159,7 @@
                 </div>
                 <div class="wootric-doc-landing-content__type">
                     <a class="wootric-doc-landing-content__type--intercom"
-                       href="http://help.wootric.com/integrations/how-do-i-insert-a-wootric-survey-into-an-intercom-messenger-chat"
+                       href="http://help.wootric.com/integrations/how-do-i-send-wootric-surveys-in-intercom-messenger"
                        target="_blank"
                        title="Opens in another tab">
                         <div class="wootric-doc-landing-content__type__img
@@ -213,12 +224,14 @@
 <!-- begin Wootric code -->
 <script type="text/javascript">
   window.wootricSettings = {
-    account_token: 'NPS-2a62eaf4'
+    account_token: 'NPS-2a62eaf4',
+    open_ended: true
   };
 </script>
 <script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
 <script type="text/javascript">
-  // This loads the Wootric survey
-  window.wootric('run');
+  if (window.location.pathname.length > 1) {
+    window.wootric('run');
+  }
 </script>
 <!-- end Wootric code -->

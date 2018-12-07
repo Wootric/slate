@@ -48,12 +48,13 @@
             <a href="/segment" >Segment</a>
             <a href="/ios" class="active">iOS SDK</a>
             <a href="/android" >Android SDK</a>
+            <a href="http://help.wootric.com/email-surveys">Email Templates</a>
             <a href="/api" >REST API</a>
             <a href="/webhooks" >Outgoing Webhooks</a>
           </div>
         </div>
       <div class="wootric-doc-topbar__space"></div>
-      <div class="wootric-doc-topbar__help-link"><a href="http://help.wootric.com" target="_blank"><i data-icon="?"></i> help center</a></div>
+      <div class="wootric-doc-topbar__help-link"><a href="http://help.wootric.com" target="_blank">help center</a></div>
       <div class="wootric-doc-topbar__sign">
         <a class="wootric-doc-topbar__sign-in" href="https://app.wootric.com/sign_in">sign in</a>
         <a class="wootric-doc-topbar__sign-up" href="https://app.wootric.com/sign_up">sign up free</a>
@@ -729,12 +730,14 @@ If you are using Swift, don&rsquo;t forget to import
 <!-- begin Wootric code -->
 <script type="text/javascript">
   window.wootricSettings = {
-    account_token: 'NPS-2a62eaf4'
+    account_token: 'NPS-2a62eaf4',
+    open_ended: true
   };
 </script>
 <script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
 <script type="text/javascript">
-  // This loads the Wootric survey
-  window.wootric('run');
+  if (window.location.pathname.length > 1) {
+    window.wootric('run');
+  }
 </script>
 <!-- end Wootric code -->

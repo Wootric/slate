@@ -43,12 +43,13 @@
             <a href="/segment" >Segment</a>
             <a href="/ios" >iOS SDK</a>
             <a href="/android" >Android SDK</a>
+            <a href="http://help.wootric.com/email-surveys">Email Templates</a>
             <a href="/api" class="active">REST API</a>
             <a href="/webhooks" >Outgoing Webhooks</a>
           </div>
         </div>
       <div class="wootric-doc-topbar__space"></div>
-      <div class="wootric-doc-topbar__help-link"><a href="http://help.wootric.com" target="_blank"><i data-icon="?"></i> help center</a></div>
+      <div class="wootric-doc-topbar__help-link"><a href="http://help.wootric.com" target="_blank">help center</a></div>
       <div class="wootric-doc-topbar__sign">
         <a class="wootric-doc-topbar__sign-in" href="https://app.wootric.com/sign_in">sign in</a>
         <a class="wootric-doc-topbar__sign-up" href="https://app.wootric.com/sign_up">sign up free</a>
@@ -418,6 +419,56 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <tr>
 <td>email</td>
 <td>The Email of the end user to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-end-user-by-phone-number'>Get a Specific End User by Phone Number</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/phone_number/+14155554131?access_token=myaccesstoken"</span>
+
+or
+
+curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/phone_number/+14155554131"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns the following JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-02 23:03:41 -0800"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-16 23:07:03 -0800"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nps2@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_surveyed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-07 15:30:44 -0800"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"external_created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1515940485</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_seen_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"persona"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Individual"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pricing_plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lite"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"product_plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mobile"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"purchase_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494569021</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"revenue_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+14155554131"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e9a12f9aa245cfd5"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_response"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"email_nps"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mobile_nps"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"web_nps"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific end user by phone number.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/phone_number/&lt;phone_number&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>phone_number</td>
+<td>The Phone Number of the end user to retrieve. The phone number must be prefixed with &lsquo;+&rsquo;. If it&rsquo;s just digits, it will look up by id.</td>
 </tr>
 </tbody></table>
 <h2 id='create-end-user'>Create End User</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.wootric.com/v1/end_users?access_token=myaccesstoken"</span> <span class="nt">-d</span> <span class="s2">"email=enduser@example.com&amp;last_surveyed=1423732280&amp;properties[company]=TestCompany&amp;properties[city]=San Francisco"</span>
@@ -2175,6 +2226,13 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span cla
   <span class="nt">-d</span> <span class="s2">"emails[]=john@example.com"</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s2">"survey_immediately=true"</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s2">"delay=8"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell"><code><span class="c"># Example of sampling override.</span>
+
+curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s2">"access_token=XXXXXXXXXXXXXXXX"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s2">"emails[]=john@example.com"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s2">"survey_settings[sampling][first_survey_delay]=10"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s2">"survey_settings[sampling][registered_percent]=50"</span>
 </code></pre></div><h3 id='survey_settings-parameters'>survey_settings parameters</h3>
 <table><thead>
 <tr>
@@ -2207,6 +2265,11 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span cla
 <td>custom_messages</td>
 <td>Hash</td>
 <td>See <strong>custom_messages</strong> parameters below</td>
+</tr>
+<tr>
+<td>sampling</td>
+<td>Hash</td>
+<td>See <strong>sampling</strong> parameters below</td>
 </tr>
 </tbody></table>
 <h3 id='custom_messages-parameters'>custom_messages parameters</h3>
@@ -2249,6 +2312,37 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span cla
 <td>String</td>
 </tr>
 </tbody></table>
+<h3 id='sampling-parameters'>sampling parameters</h3>
+<p>You may use these parameters to overwrite the settings you have in your Wootric settings panel.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>first_survey_delay</td>
+<td>Integer</td>
+<td>Number of days that have to pass since end user&rsquo;s created_at to show a survey</td>
+</tr>
+<tr>
+<td>response_throttle</td>
+<td>Integer</td>
+<td>Number of days that have to pass after answering a survey to be eligible again</td>
+</tr>
+<tr>
+<td>decline_throttle</td>
+<td>Integer</td>
+<td>Number of days that have to pass after declining a survey to be eligible again</td>
+</tr>
+<tr>
+<td>registered_percent</td>
+<td>Integer</td>
+<td>Chances from 0 to 100 to serve a survey</td>
+</tr>
+</tbody></table>
 
 
       </div>
@@ -2262,12 +2356,14 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span cla
 <!-- begin Wootric code -->
 <script type="text/javascript">
   window.wootricSettings = {
-    account_token: 'NPS-2a62eaf4'
+    account_token: 'NPS-2a62eaf4',
+    open_ended: true
   };
 </script>
 <script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
 <script type="text/javascript">
-  // This loads the Wootric survey
-  window.wootric('run');
+  if (window.location.pathname.length > 1) {
+    window.wootric('run');
+  }
 </script>
 <!-- end Wootric code -->
