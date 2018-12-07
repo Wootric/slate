@@ -62,6 +62,8 @@ Vietnamese | VN
 Language | Code
 -------- | ----
 Bulgarian | BG
+Chinese (Simplified) | CN_S
+Chinese (Traditional) | CN_T
 Danish | DA
 Dutch | NL
 English | EN
@@ -84,6 +86,8 @@ Ukrainian | UK
 Language | Code
 -------- | ----
 Bulgarian | BG
+Chinese (Simplified) | CN_S
+Chinese (Traditional) | CN_T
 Dutch | NL
 English | EN
 Estonian | ET
