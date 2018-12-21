@@ -237,6 +237,11 @@ If you find that the current rate limit on your account is too low for your need
 <td>UNIX timestamp of when the end user was created externally</td>
 </tr>
 <tr>
+<td>external_id</td>
+<td>string</td>
+<td>An optional unique string identifier</td>
+</tr>
+<tr>
 <td>properties</td>
 <td>hash</td>
 <td>Properties (i.e. plan, product)</td>
@@ -514,6 +519,10 @@ curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2"
 <td>Date of creation of the end user in external application (UNIX Timestamp)</td>
 </tr>
 <tr>
+<td>external_id (optional)</td>
+<td>A unique string identifier</td>
+</tr>
+<tr>
 <td>properties (optional)</td>
 <td>Hash of additional properties</td>
 </tr>
@@ -563,6 +572,10 @@ curl <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">
 <tr>
 <td>external_created_at (optional)</td>
 <td>Date of creation of the end user in external application (UNIX Timestamp)</td>
+</tr>
+<tr>
+<td>external_id (optional)</td>
+<td>A unique string identifier</td>
 </tr>
 <tr>
 <td>properties (optional)</td>
