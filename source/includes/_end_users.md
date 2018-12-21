@@ -12,6 +12,7 @@ updated_at | datetime | Datetime representation of when the end user was last up
 email | string | End user email
 last_surveyed | datetime | Datetime representation of when the end user was last surveyed
 external_created_at | integer | UNIX timestamp of when the end user was created externally
+external_id | string | An optional unique string identifier
 properties | hash | Properties (i.e. plan, product)
 
 ## Get All End Users
@@ -268,6 +269,7 @@ Parameter | Description
 email | End user's email address
 last_surveyed (optional) | Date of last survey for the end user (UNIX Timestamp)
 external_created_at (optional) | Date of creation of the end user in external application (UNIX Timestamp)
+external_id (optional) | A unique string identifier
 properties (optional) | Hash of additional properties
 
 ## Update End User
@@ -309,6 +311,7 @@ END_USER_ID | The ID of the end user to update
 email (optional) | End User's Email Address
 last_surveyed (optional) | Date of last survey for the end user (UNIX Timestamp)
 external_created_at (optional) | Date of creation of the end user in external application (UNIX Timestamp)
+external_id (optional) | A unique string identifier
 properties (optional) | Hash of additional properties
 
 ## Delete End User
