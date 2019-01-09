@@ -661,73 +661,78 @@ html, body {
         display: block;
 
         &--javascript {
-          background-position: 19px 16px;
+          background-position: 22px 18px;
           background-size: 520px;
         }
 
         &--segment {
-          background-position: -63px 16px;
+          background-position: -50px 20px;
           background-size: 520px;
         }
 
         &--ios {
-          background-position: -146px 15px;
+          background-position: -122px 18px;
           background-size: 520px;
         }
 
         &--android {
-          background-position: 19px -65px;
+          background-position: 22px -52px;
           background-size: 520px;
         }
 
         &--api {
-          background-position: -63px -65px;
+          background-position: -50px -50px;
           background-size: 520px;
         }
 
         &--webhooks {
-          background-position: -146px -66px;
+          background-position: -120px -52px;
           background-size: 520px;
         }
 
         &--salesforce {
-          background-position: -255px -77px;
+          background-position: -212px -60px;
           background-size: 585px;
         }
 
         &--hubspot {
-          background-position: -223px 17px;
+          background-position: -188px 19px;
           background-size: 520px;
         }
 
         &--intercom {
-          background-position: -300px -66px;
+          background-position: -255px -52px;
           background-size: 520px;
         }
 
         &--slack {
-          background-position: -300px 16px;
+          background-position: -255px 18px;
           background-size: 520px;
         }
 
         &--zapier {
-          background-position: -410px 13px;
+          background-position: -350px 16px;
           background-size: 560px;
         }
 
         &--zendesk {
-          background-position: -378px -62px;
+          background-position: -322px -50px;
           background-size: 520px;
         }
 
         &--email {
-          background-position: -455px -65px;
+          background-position: -390px -50px;
+          background-size: 520px;
+        }
+
+        &--react {
+          background-position: -460px 18px;
           background-size: 520px;
         }
 
         &--more {
           background-color: transparent !important;
-          background-position: -363px 20px;
+          background-position: -308px 20px;
           background-size: 420px;
         }
       }

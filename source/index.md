@@ -37,6 +37,13 @@
                     </a>
                 </div>
                 <div class="wootric-doc-landing-content__type">
+                    <a class="wootric-doc-landing-content__type--react" href="https://github.com/Wootric/react-native-wootric">
+                        <div class="wootric-doc-landing-content__type__img
+                                    wootric-doc-landing-content__type__img--react"></div>
+                        <div class="wootric-doc-landing-content__type__title">Install Wootric using React Native</div>
+                    </a>
+                </div>
+                <div class="wootric-doc-landing-content__type">
                     <a class="wootric-doc-landing-content__type--api" href="http://help.wootric.com/email-surveys">
                         <div class="wootric-doc-landing-content__type__img
                                     wootric-doc-landing-content__type__img--email"></div>
