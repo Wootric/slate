@@ -80,6 +80,7 @@ Spanish | ES
 Spanish - Mexico | ES_MX
 Swedish | SV
 Ukrainian | UK
+Vietnamese | VN
 
 ##Customer Satisfaction (CSAT) currently supports these languages (with language codes):
 
