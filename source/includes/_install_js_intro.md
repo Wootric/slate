@@ -49,7 +49,7 @@ This is an important step! [Customize](https://app.wootric.com/user_settings/edi
     account_token: 'NPS­xxxxxxxx' };
 
   //Request a survey
-  window.wootric('run';)
+  window.wootric('run');
 </script>
 <!--­­ end Wootric code ­­-->
 ```
