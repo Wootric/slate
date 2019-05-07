@@ -382,6 +382,101 @@ If your survey throttle is different than 90 days and/or you don&rsquo;t want to
 </code></pre></div>
 <p>Same as with custom question, it allows you to set custom placeholder text in feedback text view for each type of end user. Be advised that this setting takes precedence over values set in Wootric&rsquo;s from admin panel.</p>
 
+<h1 id='survey-delegate'>Survey Delegate</h1>
+<p>The <code class="prettyprint">WTRSurveyDelegate</code> can be used to be informed of when the SDK will or
+already perform certain actions. To use the delegate, first a class needs
+to conform to the protocol and assign that class to the WootricSDK.</p>
+
+<p>Imagine you have a view controller <code class="prettyprint">SampleViewController.m</code>. You can
+specific that this class inherits to <code class="prettyprint">WTRSurveyDelegate</code> and it will be
+the one where the methods specified by the protocol are implemented.</p>
+<div class="highlight"><pre class="highlight objective_c"><code>
+<span class="c1">// Assign WTRSurveyDelegate to class
+</span><span class="k">@interface</span> <span class="nc">SampleViewController</span> <span class="p">()</span> <span class="o">&lt;</span><span class="n">WTRSurveyDelegate</span><span class="o">&gt;</span>
+
+<span class="k">@end</span>
+
+<span class="c1">// Set the SDK's delegate
+</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setDelegate</span><span class="p">:</span><span class="n">self</span><span class="p">];</span>
+
+<span class="c1">// Implement protocol methods
+</span><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">willPresentSurvey</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">didPresentSurvey</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">willHideSurvey</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">didHideSurvey</span><span class="o">:</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="n">data</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift"><code>
+<span class="c1">// Assign WTRSurveyDelegate to class</span>
+<span class="kd">class</span> <span class="kt">SampleViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">WTRSurveyDelegate</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Set the SDK's delegate</span>
+<span class="kt">Wootric</span><span class="o">.</span><span class="nf">setDelegate</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
+
+<span class="c1">// Implement protocol methods</span>
+<span class="kd">func</span> <span class="nf">willPresentSurvey</span><span class="p">()</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">didPresentSurvey</span><span class="p">()</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">willHideSurvey</span><span class="p">()</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">didHideSurvey</span><span class="p">(</span><span class="n">_</span> <span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift_three"><code>
+<span class="c1">// Assign WTRSurveyDelegate to class</span>
+<span class="kd">class</span> <span class="kt">SampleViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">WTRSurveyDelegate</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Set the SDK's delegate</span>
+<span class="kt">Wootric</span><span class="o">.</span><span class="nf">setDelegate</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
+
+<span class="c1">// Implement protocol methods</span>
+<span class="kd">func</span> <span class="nf">willPresentSurvey</span><span class="p">()</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">didPresentSurvey</span><span class="p">()</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">willHideSurvey</span><span class="p">()</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">didHideSurvey</span><span class="p">(</span><span class="n">_</span> <span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div><h2 id='willpresentsurvey'>willPresentSurvey</h2>
+<p>Called by the WootricSDK when the survey is about to appear.</p>
+<h2 id='didpresentsurvey'>didPresentSurvey</h2>
+<p>Called by the WootricSDK when the survey has already appeared.</p>
+<h2 id='willhidesurvey'>willHideSurvey</h2>
+<p>Called by the WootricSDK when the survey is about to be dismissed.</p>
+<h2 id='didhidesurvey'>didHideSurvey</h2>
+<p>Called by the WootricSDK when the survey has disappeared. This method
+receives a <code class="prettyprint">data</code> dictionary with the type of survey (response or
+decline). If the survey was a response, it also returns the score and the
+feedback provided by the end user.</p>
+
 <h1 id='custom-language-audience-text-and-product-name-configuration'>Custom language, audience text and product name configuration:</h1>
 <hr>
 <div class="highlight"><pre class="highlight objective_c"><code><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setCustomLanguage</span><span class="p">:</span><span class="o">&lt;</span><span class="n">LANGUAGE_CODE</span><span class="o">&gt;</span><span class="p">];</span>
