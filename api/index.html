@@ -310,7 +310,13 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <td>created (optional)</td>
 <td>hash</td>
 <td>{}</td>
-<td>Filter your end users by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP     &amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
+<td>Filter your end users by time of creation (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">created[gt]=UNIX_TIMESTAMP&amp;created[lt]=UNIX_TIMESTAMP</code>)</td>
+</tr>
+<tr>
+<td>updated (optional)</td>
+<td>hash</td>
+<td>{}</td>
+<td>Filter your end users by update time (UNIX timestamp type) -  <em>eq</em>, <em>lt</em>, <em>lte</em>, <em>gt</em>, <em>gte</em> (<code class="prettyprint">updated[gt]=UNIX_TIMESTAMP&amp;updated[lt]=UNIX_TIMESTAMP</code>)</td>
 </tr>
 <tr>
 <td>email (optional)</td>
@@ -323,6 +329,12 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <td>string</td>
 <td>asc</td>
 <td>Order in which records are shown. Default is oldest first. Options are <code class="prettyprint">asc</code> or <code class="prettyprint">desc</code></td>
+</tr>
+<tr>
+<td>sort_key (optional)</td>
+<td>string</td>
+<td>email</td>
+<td>Sort your results based on this attribute. Default is end_user&rsquo;s <code class="prettyprint">email</code>. It could be one of <code class="prettyprint">email</code>, <code class="prettyprint">updated_at</code>, <code class="prettyprint">created_at</code>.</td>
 </tr>
 </tbody></table>
 
