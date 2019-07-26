@@ -66,9 +66,11 @@ Parameter | Type | Default | Description
 --------- | ------- | ------- | -----
 page (optional) | integer | 1 | Number of returned page, max 30
 per_page (optional) | integer | 25 | Number of records returned on each page, max 50
-created (optional) | hash | {} | Filter your end users by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
+created (optional) | hash | {} | Filter your end users by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP&created[lt]=UNIX_TIMESTAMP`)
+updated (optional) | hash | {} | Filter your end users by update time (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`updated[gt]=UNIX_TIMESTAMP&updated[lt]=UNIX_TIMESTAMP`)
 email (optional) | string | None | Filter end users by email (will return an array containing a single end user object if the end user with provided email exists)
 sort_order (optional)| string | asc | Order in which records are shown. Default is oldest first. Options are `asc` or `desc`
+sort_key (optional)| string | email | Sort your results based on this attribute. Default is end_user's `email`. It could be one of `email`, `updated_at`, `created_at`.
 
 We recommend to iterate using `created` parameter if you need to get more data than what you get out of our pagination restriction.  
 
