@@ -52,3 +52,10 @@ If setShowOptOut is set to `true` then opt out link will be seen.
 wootric.shouldSkipFollowupScreenForPromoters(<BOOL>);
 ```
 With this option enabled, promoters (score 9-10) will be taken directly to third (social share) screen, skipping the second (feedback) one.
+
+##skipFeebackScreen
+```java
+wootric.skipFeebackScreen(<BOOL>);
+```
+With this option enabled, the open feedback screen will be skipped and go
+directly to the third screen (thank you message).
