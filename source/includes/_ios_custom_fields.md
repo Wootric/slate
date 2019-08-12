@@ -138,6 +138,18 @@ Wootric.skipFeedbackScreen(forPromoter: true)
 ```
 With this option enabled, promoters (score 9-10) will be taken directly to third (social share) screen, skipping the second (feedback) one.
 
+##skipFeedbackScreen
+```objective_c
+[Wootric skipFeedbackScreen:<BOOL>];
+```
+```swift
+Wootric.skipFeedbackScreen(<BOOL>)
+```
+```swift_three
+Wootric.skipFeedbackScreen(<BOOL>)
+```
+With this option enabled, the open feedback screen will be skipped and go directly to the third screen (thank you message).
+
 ## showOptOut
 ```objective_c
 [Wootric forceSurvey:<BOOL>];
