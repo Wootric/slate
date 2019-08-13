@@ -218,6 +218,10 @@ This value is also used in eligibility check, to determine if end user should be
 <h2 id='shouldskipfollowupscreenforpromoters'>shouldSkipFollowupScreenForPromoters</h2><div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">shouldSkipFollowupScreenForPromoters</span><span class="o">(&lt;</span><span class="n">BOOL</span><span class="o">&gt;);</span>
 </code></pre></div>
 <p>With this option enabled, promoters (score 9-10) will be taken directly to third (social share) screen, skipping the second (feedback) one.</p>
+<h2 id='skipfeebackscreen'>skipFeebackScreen</h2><div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">skipFeebackScreen</span><span class="o">(&lt;</span><span class="n">BOOL</span><span class="o">&gt;);</span>
+</code></pre></div>
+<p>With this option enabled, the open feedback screen will be skipped and go
+directly to the third screen (thank you message).</p>
 
 <h1 id='custom-language-audience-text-and-product-name-configuration'>Custom language, audience text and product name configuration:</h1>
 <hr>
@@ -275,6 +279,53 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
 <span class="n">wootric</span><span class="o">.</span><span class="na">setSocialSharingColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">social_color</span><span class="o">);</span>
 </code></pre></div>
 <p>Colors can be customized for the smartphone&rsquo;s version.</p>
+
+<h1 id='survey-callbacks'>Survey Callbacks</h1>
+<p>The <code class="prettyprint">WootricSurveyCallback</code> can be used to be informed of when the SDK will or
+already perform certain actions. To use the Listener, first a class needs
+to conform to the protocol and assign that class to the WootricSDK.</p>
+
+<p>Imagine you have an Activity/FragmentActivity <code class="prettyprint">MainActivity.java</code>. You can
+specify that this class implements the <code class="prettyprint">WootricSurveyCallback</code> and it will be
+the one where the methods specified by the protocol are implemented.</p>
+<div class="highlight"><pre class="highlight java"><code>
+<span class="c1">// Implements WootricSurveyCallback</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">FragmentActivity</span> <span class="kd">implements</span> <span class="n">WootricSurveyCallback</span> <span class="o">{</span>
+
+
+<span class="c1">// Set the SDK's Callback class</span>
+<span class="n">wootric</span><span class="o">.</span><span class="na">setSurveyCallback</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+
+<span class="c1">// Implement protocol methods</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSurveyWillShow</span><span class="o">(){</span>
+
+<span class="o">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSurveyDidShow</span><span class="o">(){</span>
+
+<span class="o">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSurveyWillHide</span><span class="o">(){</span>
+
+<span class="o">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSurveyDidHide</span><span class="o">(</span><span class="n">HashMap</span> <span class="n">values</span><span class="o">){</span>
+
+<span class="o">}</span>
+</code></pre></div><h2 id='onsurveywillshow'>onSurveyWillShow</h2>
+<p>Called by the WootricSDK when the survey is about to appear.</p>
+<h2 id='onsurveydidshow'>onSurveyDidShow</h2>
+<p>Called by the WootricSDK when the survey has already appeared.</p>
+<h2 id='onsurveywillhide'>onSurveyWillHide</h2>
+<p>Called by the WootricSDK when the survey is about to be dismissed.</p>
+<h2 id='onsurveydidhide'>onSurveyDidHide</h2>
+<p>Called by the WootricSDK when the survey has disappeared. This method
+receives a <code class="prettyprint">values</code> HashMap with the score and the text provided by the
+end user. If the end user dismissed the survey, it returns a score of -1.</p>
 
 <h1 id='samples'>Samples</h1><h2 id='rate-application-on-the-play-store'>Rate application on the Play Store</h2><div class="highlight"><pre class="highlight java"><code>
 <span class="kn">import</span> <span class="nn">com.wootric.androidsdk.Wootric</span><span class="o">;</span>
@@ -435,6 +486,7 @@ e.g. How likely are you to recommend productName to a friend or co-worker?
 <p>Wootric provides an integration for <a href="http://mparticle.com/">mParticle</a>. </p>
 
 <p>Instructions on how to setup the mParticle Android SDK can be found on <a href="https://github.com/mParticle/mparticle-android-sdk">mParticle&rsquo;s Github</a>.</p>
+
 
       </div>
       <div class="dark-box">
