@@ -81,7 +81,8 @@ window.wootricSettings = {
   properties : { country: 'MX' },
   twitter_account: 'test',
   wootric_close_position: 'left',
-  wootric_recommend_target: 'your audience'
+  wootric_recommend_target: 'your audience',
+  ask_permission_to_share_feedback: true
 };
 ```
 
@@ -101,6 +102,7 @@ properties | null | The custom properties of the end_user you are attempting to 
 twitter_account | null | A Twitter link you can use to tag your account anytime a promoter leaves a comment.
 wootric_close_position | left | The position of the close button of your survey.
 wootric_recommend_target | depends on the language | Your audience.
+ask_permission_to_share_feedback | false | Ask your end users if they wish to be contacted after leaving written feedback.
 
 ### The code example generates the following survey:
 
