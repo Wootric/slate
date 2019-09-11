@@ -62,7 +62,7 @@ The ```Wootric.thankYouMessages``` object can contain ```thank_you_setup``` and 
 
 The ```Wootric.thankYouLinks``` object can contain ```thank_you_link_text``` and ```thank_you_link_url``` which are default text/url for every score if ```thank_you_link_text_list```/```thank_you_link_url_list``` are not provided or are missing appropriate keys.
 
-If you are using your own url and would like to pass score and/or comment as a parameters, you can set ```add_score_param_to_url``` and/or ```add_comment_param_to_url``` keys to ```true```. You can skip them entirely in ```Wootric``` var if they are not needed.
+If you are using your own URL and would like to hide score, comment and/or email as parameters, you can set ```add_score_param_to_url```, ```add_comment_param_to_url``` and/or ```add_email_param_to_url```keys to ```false```. They will be included in the URL by default.
 
 Parameters names are ```wootric_score``` for score and ```wootric_comment``` for comment.
 
