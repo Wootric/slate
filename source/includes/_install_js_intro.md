@@ -103,6 +103,7 @@ twitter_account | null | A Twitter link you can use to tag your account anytime 
 wootric_close_position | left | The position of the close button of your survey.
 wootric_recommend_target | depends on the language | Your audience.
 ask_permission_to_share_feedback | false | Ask your end users if they wish to be contacted after leaving written feedback.
+event_name | null | Set an event name here to be used with Wootric's Targeted Sampling.
 
 ### The code example generates the following survey:
 
