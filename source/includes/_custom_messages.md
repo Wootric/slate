@@ -201,3 +201,25 @@ window.customMessages = {
     promoter_question: "Custom message for promoters"
   }
 };
+```
+
+## ask_permission_to_share_feedback
+A variable to ask your users if they wish to be contacted about their feedback.  This option creates a checkbox on the open-ended feedback section of the survey,  which by default is selected.  The user’s selection (opt in/out) creates a filter in your Wootric Dashboard to indicate and sort by their status.
+It’s also possible to customize the wording of the label by using the permission_labels flag. The default wording is:  ‘I give permission to contact me about sharing my feedback’ in English.  Each language you wish to customize should have its own key and value.  Otherwise, the survey will revert to the default English text.
+
+We will create a filter to identify the users who opted in as shown in the picture.
+
+```javascript
+window.wootricSettings = {
+  account_token: 'NPS-YOURTOKEN',
+  email: 'your@email.com'
+  ask_permission_to_share_feedback: true
+  permission_labels: {
+    EN: 'I give permission to contact me about sharing my feedback',
+    JA: '私は私のフィードバックを共有することについて私に連絡する許可を与える'
+  }
+}
+```
+
+<img src="https://wootric-marketing.s3.amazonaws.com/authorize.png" width="400">
+
