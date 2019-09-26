@@ -166,7 +166,7 @@ Take a close look at the onload attribute, it will guarantee that your service i
 </ul>
 
 <h1 id='single-page-app-spa'>Single Page App (SPA)</h1>
-<p><a href="https://github.com/Wootric/spa-examples">Click here for complete examples of different frameworks such as Angular, Ember and React.</a></p>
+<p><a href="https://github.com/Wootric/spa-examples">Click here for complete examples of different frameworks such as Angular, React, Vue and Ember.</a></p>
 <h2 id='the-simplest-integration'>The simplest integration</h2><div class="highlight"><pre class="highlight javascript"><code><span class="c">&lt;!--</span> <span class="nx">Pull</span> <span class="nx">the</span> <span class="nx">Wootric</span> <span class="nx">Snippet</span> <span class="o">--&gt;</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://cdn.wootric.com/wootric-sdk.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="c">&lt;!--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
@@ -176,7 +176,7 @@ Take a close look at the onload attribute, it will guarantee that your service i
   <span class="nx">wootric_no_surveyed_cookie</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">//Disables the cookie writing after a survey is taken effectively disabling any client side mechanisms to prevent multiple surveys from being rendered.</span>
   <span class="c1">// END OF TEST ONLY FLAGS</span>
   <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">email</span><span class="p">:</span><span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">//TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
+    <span class="na">email</span><span class="p">:</span><span class="s1">'customer@example.com'</span><span class="p">,</span> <span class="c1">//TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
     <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">//TODO:replace it with date when your customer signed up           </span>
     <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-XXXX'</span> <span class="c1">//TODO:replace it with your account token       </span>
   <span class="p">};</span>
@@ -190,44 +190,158 @@ Take a close look at the onload attribute, it will guarantee that your service i
 <li>When you re-load the page, you should see Wootric survey show up.</li>
 <li>You are done.</li>
 </ul>
-<h2 id='angular-step-1-create-factory'>Angular Step 1: Create Factory</h2><div class="highlight"><pre class="highlight javascript"><code><span class="c">&lt;!--</span> <span class="nx">begin</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
-<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'wootricAngularApp'</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="s1">'wootricFactory'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">email</span><span class="p">:</span> <span class="s1">'nps@example.com'</span><span class="p">,</span><span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
+<h2 id='angularjs-example-using-factory'>AngularJS Example (using Factory)</h2><div class="highlight"><pre class="highlight javascript"><code><span class="c1">// 1. Load Wootric JS SDK</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://cdn.wootric.com/wootric-sdk.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+<span class="c1">// 2. Create Factory</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="s1">'wootricFactory'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">email</span><span class="p">:</span> <span class="s1">'customer@example.com'</span><span class="p">,</span><span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
     <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current logged in user's sign-up date as a 10 digit Unix timestamp.</span>
-    <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-xxxxxxx'</span> <span class="c1">// This is your unique account token.</span>
+    <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-xxxxxxxx'</span> <span class="c1">// This is your unique account token.</span>
   <span class="p">};</span>
   <span class="k">return</span> <span class="p">{</span>
     <span class="na">run</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nb">window</span><span class="p">.</span><span class="nx">wootric_survey_immediately</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// TODO: Comment out for production.      </span>
+      <span class="nb">window</span><span class="p">.</span><span class="nx">wootric_survey_immediately</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// Shows survey immediately for testing purposes.  TODO: Comment out for production.</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nx">wootric_no_surveyed_cookie</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// Bypass cookie based throttle for testing purposes.  TODO: Comment out for production.     </span>
       <span class="nb">window</span><span class="p">.</span><span class="nx">wootric</span><span class="p">(</span><span class="s2">"run"</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">});</span>
+
+<span class="c1">// 3. Using the factory in your controller</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'myController'</span><span class="p">,</span> <span class="p">[</span>
   <span class="s1">'wootricFactory'</span><span class="p">,</span>
-  <span class="kd">function</span><span class="p">(</span><span class="nx">wootricFactory</span><span class="p">,</span> <span class="nx">$scope</span><span class="p">,</span> <span class="nx">$location</span><span class="p">){</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">wootricFactory</span><span class="p">){</span>
     <span class="nx">wootricFactory</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
   <span class="p">}</span>
 <span class="p">]);</span>
-<span class="c">&lt;!--</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="o">--&gt;</span>
-</code></pre></div>
-<p>A way to load the Wootric snippet in a factory file so it can be fired in a single-page application with wootricFactory.run();  </p>
-<h2 id='angular-step-2--load-wootric-js-sdk'>Angular Step 2. Load Wootric JS SDK</h2><div class="highlight"><pre class="highlight plaintext"><code>&lt;script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"&gt;&lt;/script&gt;
-</code></pre></div>
-<p>Add this script tag to the file where you load all other 3rd party scripts</p>
-<h2 id='angular-step-3--using-the-factory-in-your-controller'>Angular Step 3. Using the factory in your controller</h2><div class="highlight"><pre class="highlight javascript"><code><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'wootricAngularApp'</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'MainCtrl'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'wootricFactory'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">wootricFactory</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="c1">// 4. Optional: More control on survey display </span>
+<span class="nx">User</span><span class="p">.</span><span class="nx">getData</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">wootricFactory</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">wootricFactory</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
-  <span class="p">}]);</span>
-</code></pre></div><h2 id='optional-more-control-on-survey-display'>Optional: More control on survey display</h2>
-<p>Say you want to delay the &ldquo;triggering&rdquo; of Wootric until after user data is available.</p>
-<div class="highlight"><pre class="highlight javascript"><code>  <span class="nx">User</span><span class="p">.</span><span class="nx">getData</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">wootricFactory</span><span class="p">)</span> <span class="p">{</span>
-     <span class="nx">wootricFactory</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
-  <span class="p">});</span>
-<span class="c">&lt;!--</span><span class="err">­­</span> <span class="nx">end</span> <span class="nx">Wootric</span> <span class="nx">code</span> <span class="err">­­</span><span class="o">--&gt;</span>
+<span class="p">});</span>
 </code></pre></div>
+<ol>
+<li>Load Wootric JS SDK: add below script tag to the file where you load all other 3rd party script.</li>
+<li>Create Factory: add below code snippet to create wootricFactory so it can be fired in a single-page application with wootricFactory.run().</li>
+<li>Using the factory in your controller.</li>
+<li>Optional: More control on survey display &ndash; say you want to delay the &ldquo;triggering&rdquo; of Wootric until after user data is available.</li>
+</ol>
+
+<p><a href="https://github.com/Wootric/spa-examples/tree/master/angularjs">Click here for angularjs code example</a></p>
+<h2 id='angular-example-using-directive'>Angular Example (using Directive)</h2><div class="highlight"><pre class="highlight javascript"><code><span class="c1">// 1. Create Directive</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Directive</span><span class="p">,</span> <span class="nx">AfterViewInit</span><span class="p">,</span> <span class="nx">ElementRef</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Directive</span><span class="p">({</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="s1">'[appWootric]'</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">WootricDirective</span> <span class="kr">implements</span> <span class="nx">AfterViewInit</span> <span class="p">{</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">elementRef</span><span class="p">:</span> <span class="nx">ElementRef</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">window</span><span class="p">[</span><span class="s1">'wootric_no_surveyed_cookie'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// Shows survey immediately for testing purposes.  TODO: Comment out for production.</span>
+    <span class="nb">window</span><span class="p">[</span><span class="s1">'wootric_survey_immediately'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// Bypass cookie based throttle for testing purposes.  TODO: Comment out for production.</span>
+    <span class="nb">window</span><span class="p">[</span><span class="s1">'wootricSettings'</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">email</span><span class="p">:</span> <span class="s1">'nps@example.com'</span><span class="p">,</span> <span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
+      <span class="na">created_at</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="c1">// TODO: The current logged in user's sign-up date as a 10 digit Unix timestamp.</span>
+      <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-xxxxxxxx'</span> <span class="c1">// This is your unique account token.</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+
+  <span class="nx">ngAfterViewInit</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+
+    <span class="nx">script</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'text/javascript'</span><span class="p">;</span>
+    <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">'https://cdn.wootric.com/wootric-sdk.js'</span><span class="p">;</span>
+    <span class="nx">script</span><span class="p">.</span><span class="k">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="nx">script</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nb">window</span><span class="p">[</span><span class="s1">'WootricSurvey'</span><span class="p">].</span><span class="nx">run</span><span class="p">();</span>
+    <span class="p">};</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">elementRef</span><span class="p">.</span><span class="nx">nativeElement</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 2. Use Directive</span>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"text-align:center"</span> <span class="nx">appWootric</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span>
+    <span class="nx">Welcome</span> <span class="nx">to</span> <span class="nx">Wootric</span><span class="o">!</span>
+  <span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span></code></pre></div>
+<ol>
+<li>Create Directive</li>
+<li>Use Directive</li>
+</ol>
+
+<p><a href="https://github.com/Wootric/spa-examples/tree/master/angular">Click here for Angular code example</a></p>
+<h2 id='react-example-using-component'>React Example (using Component)</h2><div class="highlight"><pre class="highlight javascript"><code><span class="c1">// 1. Create Component</span>
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">Wootric</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">setupScript</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+    <span class="nx">setupScript</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'text/javascript'</span><span class="p">;</span>
+    <span class="nx">setupScript</span><span class="p">.</span><span class="k">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="nx">setupScript</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`
+      wootric_no_surveyed_cookie = true;
+      wootric_survey_immediately = true;
+      window.wootricSettings = {
+        email: 'customer@example.com',
+        created_at: 1234567890,
+        account_token: 'NPS-xxxxxxxx'
+      };
+    `</span><span class="p">;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">setupScript</span><span class="p">);</span>
+
+    <span class="c1">// Beacon</span>
+    <span class="kd">let</span> <span class="nx">beacon</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+    <span class="nx">beacon</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'text/javascript'</span><span class="p">;</span>
+    <span class="nx">beacon</span><span class="p">.</span><span class="k">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+    <span class="nx">beacon</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">'https://cdn.wootric.com/wootric-sdk.js'</span><span class="p">;</span>
+    <span class="nx">beacon</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nx">wootric</span><span class="p">(</span><span class="s1">'run'</span><span class="p">);</span>
+    <span class="p">};</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">beacon</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">/&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Wootric</span><span class="p">;</span>
+
+<span class="c1">// 2. Use Component</span>
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Wootric</span> <span class="k">from</span> <span class="s1">'./Wootric'</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"App"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">header</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"App-header"</span><span class="o">&gt;</span>
+          <span class="nx">Welcome</span> <span class="nx">to</span> <span class="nx">Wootric</span>
+        <span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/header</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">Wootric</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></div>
+<ol>
+<li>Create Component</li>
+<li>Use Component</li>
+</ol>
+
+<p><a href="https://github.com/Wootric/spa-examples/tree/master/react-example">Click here for React code example</a></p>
+<h2 id='more-examples'>More Examples</h2>
+<p>More code examples can be found <a href="https://github.com/Wootric/spa-examples">here</a>.</p>
+
 <p>That&rsquo;s it! Once your Wootric snippet is installed, eligible users will immediately start being surveyed.
 Depending on the traffic of your site, you could start to see responses within a few minutes.
 Responses will come in to your Wootric dash in real time.</p>
