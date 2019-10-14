@@ -55,7 +55,7 @@ Spanish - Mexico | ES_MX
 Swedish | SV
 Turkish | TR
 Ukrainian | UK
-Vietnamese | VN
+Vietnamese | VI
 
 ##Customer Effort Score (CES) currently supports these languages (with language codes):
 
@@ -80,7 +80,7 @@ Spanish | ES
 Spanish - Mexico | ES_MX
 Swedish | SV
 Ukrainian | UK
-Vietnamese | VN
+Vietnamese | VI
 
 ##Customer Satisfaction (CSAT) currently supports these languages (with language codes):
 
