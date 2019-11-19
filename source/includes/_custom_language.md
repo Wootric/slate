@@ -9,7 +9,8 @@ window.wootricSettings = {
   created_at: 1234567890,
   product_name: 'Wootric',
   account_token: 'NPS­xxxxxxxx',
-  language: 'XX' };
+  language: 'XX'
+};
 </script>
 ....//The rest of the widget...
 <!--­­ end Wootric code --­­>
