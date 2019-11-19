@@ -19,9 +19,9 @@ window.wootricSettings = {
   product_name: 'Wootric', // TODO: The name of the product or service.
   account_token: 'NPS­xxxxxxxx',
   properties:{
-    role:'manager',// TODO: The current user's role.
-    pricing_plan:'Enterprise'// TODO: The current user's pricing plan.
-    total_purchase_amount: 12 // Integer representing the user's total purchases with the key suffixed with "_amount"
+    role:'manager', // TODO: The current user's role.
+    pricing_plan:'Enterprise', // TODO: The current user's pricing plan.
+    total_purchase_amount: 12, // Integer representing the user's total purchases with the key suffixed with "_amount"
     last_order_date: 1350466020 // Integer representing the date (Unix timestamp format) of the user's last order with the key suffixed with "_date"
   }
 };
