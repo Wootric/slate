@@ -387,6 +387,51 @@ If your survey throttle is different than 90 days and/or you don&rsquo;t want to
 </code></pre></div>
 <p>Same as with custom question, it allows you to set custom placeholder text in feedback text view for each type of end user. Be advised that this setting takes precedence over values set in Wootric&rsquo;s from admin panel.</p>
 
+<h1 id='targeted-sampling'>Targeted Sampling</h1><div class="highlight"><pre class="highlight objective_c"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">clientID</span> <span class="o">=</span> <span class="s">@"CLIENT_ID"</span><span class="p">;</span>
+<span class="n">NSString</span> <span class="o">*</span><span class="n">accountToken</span> <span class="o">=</span> <span class="s">@"ACCOUNT_TOKEN"</span><span class="p">;</span>
+
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="n">clientID</span> <span class="nf">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">];</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserEmail</span><span class="p">:</span><span class="s">@"nps@example.com"</span><span class="p">];</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserCreatedAt</span><span class="p">:</span><span class="mi">@1234567890</span><span class="p">];</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserProperties</span><span class="p">:@{</span> <span class="s">@"Example_string"</span><span class="o">:</span> <span class="s">@"pro_plan"</span><span class="p">,</span> <span class="s">@"Example_value"</span><span class="o">:</span> <span class="mi">@12</span><span class="p">}];</span>
+
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">showSurveyInViewController</span><span class="p">:</span><span class="n">self</span> <span class="nf">event</span><span class="p">:</span><span class="s">@"On Purchase Event"</span><span class="p">];</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="k">let</span> <span class="nv">clientID</span> <span class="o">=</span> <span class="s">"CLIENT_ID"</span>
+<span class="k">let</span> <span class="nv">accountToken</span> <span class="o">=</span> <span class="s">"ACCOUNT_TOKEN"</span>
+
+<span class="kt">Wootric</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="nv">withClientID</span><span class="p">:</span> <span class="n">clientID</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span> <span class="n">accountToken</span><span class="p">)</span>
+<span class="kt">Wootric</span><span class="o">.</span><span class="n">endUserEmail</span> <span class="o">=</span> <span class="s">"nps@example.com"</span>
+<span class="kt">Wootric</span><span class="o">.</span><span class="n">endUserCreatedAt</span> <span class="o">=</span> <span class="kt">NSNumber</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">)</span>
+<span class="kt">Wootric</span><span class="o">.</span><span class="n">endUserProperties</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s">"Example_string"</span><span class="p">:</span> <span class="s">"pro_plan"</span><span class="p">,</span>
+  <span class="s">"Example_value"</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">12</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="kt">Wootric</span><span class="o">.</span><span class="nf">showSurvey</span><span class="p">(</span><span class="nv">inViewController</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">event</span><span class="p">:</span> <span class="s">"On Purchase Event"</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift_three"><code><span class="k">let</span> <span class="nv">clientID</span> <span class="o">=</span> <span class="s">"CLIENT_ID"</span>
+<span class="k">let</span> <span class="nv">accountToken</span> <span class="o">=</span> <span class="s">"ACCOUNT_TOKEN"</span>
+
+<span class="kt">Wootric</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="nv">withClientID</span><span class="p">:</span> <span class="n">clientID</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span> <span class="n">accountToken</span><span class="p">)</span>
+<span class="kt">Wootric</span><span class="o">.</span><span class="n">endUserEmail</span> <span class="o">=</span> <span class="s">"nps@example.com"</span>
+<span class="kt">Wootric</span><span class="o">.</span><span class="n">endUserCreatedAt</span> <span class="o">=</span> <span class="kt">NSNumber</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">1234567890</span><span class="p">)</span>
+<span class="kt">Wootric</span><span class="o">.</span><span class="n">endUserProperties</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s">"Example_string"</span><span class="p">:</span> <span class="s">"pro_plan"</span><span class="p">,</span>
+  <span class="s">"Example_value"</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">12</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="kt">Wootric</span><span class="o">.</span><span class="nf">showSurvey</span><span class="p">(</span><span class="nv">inViewController</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">event</span><span class="p">:</span> <span class="s">"On Purchase Event"</span><span class="p">)</span>
+</code></pre></div>
+<p>You can trigger surveys based on an end-user&rsquo;s property, an event that you might be tracking in your app or a combination of both. You must configure the rules that trigger these surveys inside Wootric Settings Panel.</p>
+
+<p>To set the properties for the end user you can pass an dictionary to
+the <code class="prettyprint">setEndUserProperties</code> method.</p>
+
+<p>To trigger a survey with an event you ned to use
+<code class="prettyprint">showSurveyInViewController:event:</code>.</p>
+
+<p>For more information on how to configure Targeted Sampling, visit
+<a href="http://help.wootric.com/en/articles/3472284-how-do-i-setup-targeted-sampling-for-in-app-surveys">How do I setup targeted sampling for in-app surveys?</a></p>
+
 <h1 id='survey-delegate'>Survey Delegate</h1>
 <p>The <code class="prettyprint">WTRSurveyDelegate</code> can be used to be informed of when the SDK will or
 already perform certain actions. To use the delegate, first a class needs
