@@ -4,10 +4,61 @@ Wootric can send an HTTP POST request to a specified URL when an event occurs. S
 
 ## List of events and their payload
 
+```javascript
+/* JSON: response created sample payload */
+{
+  "response": {
+    "id": 1128,
+    "email": "nps@example.com",
+    "external_id": "123abc",
+    "score": 7,
+    "text": null,
+    "ip_address": "127.0.0.1",
+    "origin_url": "https://wootric.com/",
+    "end_user_id": 30,
+    "end_user_properties": {
+      "pricing_plan": "Enterprise",
+      "product_plan": "Web App"
+    },
+    "survey_id": 1146,
+    "created_at": "2016-08-04T13:57:26.558-07:00",
+    "updated_at": "2016-08-04T13:57:26.558-07:00",
+    "excluded_from_calculations": false
+  },
+  "event_name": "created",
+  "timestamp": "2016-08-04T13:57:31.329-07:00",
+  "account_token": "NPS-xxxxxxxx",
+  "survey_mode": "NPS"
+}
+
+/* JSON: decline created sample payload */
+{
+  "decline": {
+    "id": 19,
+    "email": "nps@example.com",
+    "external_id": "123abc",
+    "ip_address": "127.0.0.1",
+    "origin_url": "https://wootric.com/",
+    "end_user_id": 31,
+    "end_user_properties": {
+      "pricing_plan": "Pro",
+      "product_plan": "Web App"
+    },
+    "survey_id": 1147,
+    "created_at": "2016-08-04T13:58:21.122-07:00",
+    "updated_at": "2016-08-04T13:58:21.122-07:00",
+  },
+  "event_name": "created",
+  "timestamp": "2016-08-04T13:58:23.309-07:00",
+  "account_token": "NPS-xxxxxxxx",
+  "survey_mode": "NPS"
+}
+```
+
 ```ruby
-# response created sample payload
+# URL Encoded: response created sample payload
 response[id]=1128&
-response[email]=nps@example.com&
+response[email]=nps%40example.com&
 response[external_id]=123abc&
 response[score]=7&
 response[text]=&
@@ -21,11 +72,11 @@ response[created_at]=2016-08-04%2013%3A57%3A26%20-0700&
 response[updated_at]=2016-08-04%2013%3A57%3A26%20-0700&
 response[excluded_from_calculations]=false&
 event_name=created&
-account_token=NPS-xxxxxxx&
-survey_mode=NPS&
-timestamp=2016-08-04%2013%3A57%3A31%20-0700
+timestamp=2016-08-04%2013%3A57%3A31%20-0700&
+account_token=NPS-xxxxxxxx&
+survey_mode=NPS
 
-# decline created sample payload
+# URL Encoded: decline created sample payload
 decline[id]=19&
 decline[email]=nps@example.com&
 decline[external_id]=123abc&
@@ -38,9 +89,9 @@ decline[survey_id]=1147&
 decline[created_at]=2016-08-04%2013%3A58%3A21%20-0700&
 decline[updated_at]=2016-08-04%2013%3A58%3A21%20-0700&
 event_name=created&
-account_token=NPS-xxxxxxx&
-survey_mode=NPS&
-timestamp=2016-08-04%2013%3A58%3A23%20-0700
+timestamp=2016-08-04%2013%3A58%3A23%20-0700&
+account_token=NPS-xxxxxxxx&
+survey_mode=NPS
 ```
 
 * **Response created:** An end user responded to a survey.
@@ -58,6 +109,7 @@ That's it! Wootric will be sending a POST request to the specified URL when the 
 ```ruby
 require 'cuba'
 require 'openssl'
+require 'json'
 
 Cuba.define do
   on post do
@@ -67,18 +119,23 @@ Cuba.define do
       calculated_digest = OpenSSL::HMAC.hexdigest('sha1', '09dfb1b73af998743fb011f8bfda8912', body)
 
       if Rack::Utils.secure_compare(req.env['HTTP_X_WOOTRIC_SIGNATURE'], "sha1=#{calculated_digest}")
-        if req.params.has_key?('response')
-          case req.params['event_name']
+        # Attempt to parse JSON. Otherwise use URL encoded.
+        # This example accepts boths formats. You can select the desired format
+        # when the webhook is configured.
+        parsed_payload = JSON.parse(body) rescue req.params
+        if parsed_payload.has_key?('response')
+          case parsed_payload['event_name']
           when 'created'
-            puts "Response submitted with a score of #{req.params['response']['score']}"
+            puts "Response submitted with a score of #{parsed_payload['response']['score']}."
           when 'updated'
-            puts "Response updated with a score of #{req.params['response']['score']} and the following comment: #{req.params['response']['text']}"
+            puts "Response updated with a score of #{parsed_payload['response']['score']} "\
+              "and the following comment: #{parsed_payload['response']['text']}."
           end
-        elsif req.params.has_key?('decline')
-          puts 'Survey declined'
+        elsif parsed_payload.has_key?('decline')
+          puts 'Survey declined.'
         end
       else
-        puts "Ignoring request with invalid signature from ip #{req.ip}"
+        puts "Ignoring request with invalid signature from ip #{req.ip}."
       end
 
       res.write ''
