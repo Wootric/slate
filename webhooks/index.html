@@ -82,9 +82,57 @@
       <div class="content">
         <h1 id='outgoing-webhooks'>Outgoing Webhooks</h1>
 <p>Wootric can send an HTTP POST request to a specified URL when an event occurs. See the list of supported events below.</p>
-<h2 id='list-of-events-and-their-payload'>List of events and their payload</h2><div class="highlight"><pre class="highlight ruby"><code><span class="c1"># response created sample payload</span>
+<h2 id='list-of-events-and-their-payload'>List of events and their payload</h2><div class="highlight"><pre class="highlight javascript"><code><span class="cm">/* JSON: response created sample payload */</span>
+<span class="p">{</span>
+  <span class="s2">"response"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"id"</span><span class="p">:</span> <span class="mi">1128</span><span class="p">,</span>
+    <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"nps@example.com"</span><span class="p">,</span>
+    <span class="s2">"external_id"</span><span class="p">:</span> <span class="s2">"123abc"</span><span class="p">,</span>
+    <span class="s2">"score"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="s2">"text"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="s2">"ip_address"</span><span class="p">:</span> <span class="s2">"127.0.0.1"</span><span class="p">,</span>
+    <span class="s2">"origin_url"</span><span class="p">:</span> <span class="s2">"https://wootric.com/"</span><span class="p">,</span>
+    <span class="s2">"end_user_id"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">"end_user_properties"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"pricing_plan"</span><span class="p">:</span> <span class="s2">"Enterprise"</span><span class="p">,</span>
+      <span class="s2">"product_plan"</span><span class="p">:</span> <span class="s2">"Web App"</span>
+    <span class="p">},</span>
+    <span class="s2">"survey_id"</span><span class="p">:</span> <span class="mi">1146</span><span class="p">,</span>
+    <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"2016-08-04T13:57:26.558-07:00"</span><span class="p">,</span>
+    <span class="s2">"updated_at"</span><span class="p">:</span> <span class="s2">"2016-08-04T13:57:26.558-07:00"</span><span class="p">,</span>
+    <span class="s2">"excluded_from_calculations"</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">},</span>
+  <span class="s2">"event_name"</span><span class="p">:</span> <span class="s2">"created"</span><span class="p">,</span>
+  <span class="s2">"timestamp"</span><span class="p">:</span> <span class="s2">"2016-08-04T13:57:31.329-07:00"</span><span class="p">,</span>
+  <span class="s2">"account_token"</span><span class="p">:</span> <span class="s2">"NPS-xxxxxxxx"</span><span class="p">,</span>
+  <span class="s2">"survey_mode"</span><span class="p">:</span> <span class="s2">"NPS"</span>
+<span class="p">}</span>
+
+<span class="cm">/* JSON: decline created sample payload */</span>
+<span class="p">{</span>
+  <span class="s2">"decline"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"id"</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+    <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"nps@example.com"</span><span class="p">,</span>
+    <span class="s2">"external_id"</span><span class="p">:</span> <span class="s2">"123abc"</span><span class="p">,</span>
+    <span class="s2">"ip_address"</span><span class="p">:</span> <span class="s2">"127.0.0.1"</span><span class="p">,</span>
+    <span class="s2">"origin_url"</span><span class="p">:</span> <span class="s2">"https://wootric.com/"</span><span class="p">,</span>
+    <span class="s2">"end_user_id"</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span>
+    <span class="s2">"end_user_properties"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"pricing_plan"</span><span class="p">:</span> <span class="s2">"Pro"</span><span class="p">,</span>
+      <span class="s2">"product_plan"</span><span class="p">:</span> <span class="s2">"Web App"</span>
+    <span class="p">},</span>
+    <span class="s2">"survey_id"</span><span class="p">:</span> <span class="mi">1147</span><span class="p">,</span>
+    <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"2016-08-04T13:58:21.122-07:00"</span><span class="p">,</span>
+    <span class="s2">"updated_at"</span><span class="p">:</span> <span class="s2">"2016-08-04T13:58:21.122-07:00"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s2">"event_name"</span><span class="p">:</span> <span class="s2">"created"</span><span class="p">,</span>
+  <span class="s2">"timestamp"</span><span class="p">:</span> <span class="s2">"2016-08-04T13:58:23.309-07:00"</span><span class="p">,</span>
+  <span class="s2">"account_token"</span><span class="p">:</span> <span class="s2">"NPS-xxxxxxxx"</span><span class="p">,</span>
+  <span class="s2">"survey_mode"</span><span class="p">:</span> <span class="s2">"NPS"</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight ruby"><code><span class="c1"># URL Encoded: response created sample payload</span>
 <span class="n">response</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">=</span><span class="mi">1128</span><span class="o">&amp;</span>
-<span class="n">response</span><span class="p">[</span><span class="n">email</span><span class="p">]</span><span class="o">=</span><span class="n">nps</span><span class="vi">@example</span><span class="p">.</span><span class="nf">com</span><span class="o">&amp;</span>
+<span class="n">response</span><span class="p">[</span><span class="n">email</span><span class="p">]</span><span class="o">=</span><span class="n">nps</span><span class="o">%</span><span class="mi">40</span><span class="n">example</span><span class="p">.</span><span class="nf">com</span><span class="o">&amp;</span>
 <span class="n">response</span><span class="p">[</span><span class="n">external_id</span><span class="p">]</span><span class="o">=</span><span class="mi">123</span><span class="n">abc</span><span class="o">&amp;</span>
 <span class="n">response</span><span class="p">[</span><span class="n">score</span><span class="p">]</span><span class="o">=</span><span class="mi">7</span><span class="o">&amp;</span>
 <span class="n">response</span><span class="p">[</span><span class="n">text</span><span class="p">]</span><span class="o">=&amp;</span>
@@ -98,11 +146,11 @@
 <span class="n">response</span><span class="p">[</span><span class="n">updated_at</span><span class="p">]</span><span class="o">=</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">04</span><span class="o">%</span><span class="mi">2013</span><span class="o">%</span><span class="mi">3</span><span class="no">A57</span><span class="o">%</span><span class="mi">3</span><span class="no">A26</span><span class="o">%</span><span class="mi">20</span><span class="o">-</span><span class="mo">0700</span><span class="o">&amp;</span>
 <span class="n">response</span><span class="p">[</span><span class="n">excluded_from_calculations</span><span class="p">]</span><span class="o">=</span><span class="kp">false</span><span class="o">&amp;</span>
 <span class="n">event_name</span><span class="o">=</span><span class="n">created</span><span class="o">&amp;</span>
-<span class="n">account_token</span><span class="o">=</span><span class="no">NPS</span><span class="o">-</span><span class="n">xxxxxxx</span><span class="o">&amp;</span>
-<span class="n">survey_mode</span><span class="o">=</span><span class="no">NPS</span><span class="o">&amp;</span>
-<span class="n">timestamp</span><span class="o">=</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">04</span><span class="o">%</span><span class="mi">2013</span><span class="o">%</span><span class="mi">3</span><span class="no">A57</span><span class="o">%</span><span class="mi">3</span><span class="no">A31</span><span class="o">%</span><span class="mi">20</span><span class="o">-</span><span class="mo">0700</span>
+<span class="n">timestamp</span><span class="o">=</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">04</span><span class="o">%</span><span class="mi">2013</span><span class="o">%</span><span class="mi">3</span><span class="no">A57</span><span class="o">%</span><span class="mi">3</span><span class="no">A31</span><span class="o">%</span><span class="mi">20</span><span class="o">-</span><span class="mo">0700</span><span class="o">&amp;</span>
+<span class="n">account_token</span><span class="o">=</span><span class="no">NPS</span><span class="o">-</span><span class="n">xxxxxxxx</span><span class="o">&amp;</span>
+<span class="n">survey_mode</span><span class="o">=</span><span class="no">NPS</span>
 
-<span class="c1"># decline created sample payload</span>
+<span class="c1"># URL Encoded: decline created sample payload</span>
 <span class="n">decline</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">=</span><span class="mi">19</span><span class="o">&amp;</span>
 <span class="n">decline</span><span class="p">[</span><span class="n">email</span><span class="p">]</span><span class="o">=</span><span class="n">nps</span><span class="vi">@example</span><span class="p">.</span><span class="nf">com</span><span class="o">&amp;</span>
 <span class="n">decline</span><span class="p">[</span><span class="n">external_id</span><span class="p">]</span><span class="o">=</span><span class="mi">123</span><span class="n">abc</span><span class="o">&amp;</span>
@@ -115,9 +163,9 @@
 <span class="n">decline</span><span class="p">[</span><span class="n">created_at</span><span class="p">]</span><span class="o">=</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">04</span><span class="o">%</span><span class="mi">2013</span><span class="o">%</span><span class="mi">3</span><span class="no">A58</span><span class="o">%</span><span class="mi">3</span><span class="no">A21</span><span class="o">%</span><span class="mi">20</span><span class="o">-</span><span class="mo">0700</span><span class="o">&amp;</span>
 <span class="n">decline</span><span class="p">[</span><span class="n">updated_at</span><span class="p">]</span><span class="o">=</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">04</span><span class="o">%</span><span class="mi">2013</span><span class="o">%</span><span class="mi">3</span><span class="no">A58</span><span class="o">%</span><span class="mi">3</span><span class="no">A21</span><span class="o">%</span><span class="mi">20</span><span class="o">-</span><span class="mo">0700</span><span class="o">&amp;</span>
 <span class="n">event_name</span><span class="o">=</span><span class="n">created</span><span class="o">&amp;</span>
-<span class="n">account_token</span><span class="o">=</span><span class="no">NPS</span><span class="o">-</span><span class="n">xxxxxxx</span><span class="o">&amp;</span>
-<span class="n">survey_mode</span><span class="o">=</span><span class="no">NPS</span><span class="o">&amp;</span>
-<span class="n">timestamp</span><span class="o">=</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">04</span><span class="o">%</span><span class="mi">2013</span><span class="o">%</span><span class="mi">3</span><span class="no">A58</span><span class="o">%</span><span class="mi">3</span><span class="no">A23</span><span class="o">%</span><span class="mi">20</span><span class="o">-</span><span class="mo">0700</span>
+<span class="n">timestamp</span><span class="o">=</span><span class="mi">2016</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">04</span><span class="o">%</span><span class="mi">2013</span><span class="o">%</span><span class="mi">3</span><span class="no">A58</span><span class="o">%</span><span class="mi">3</span><span class="no">A23</span><span class="o">%</span><span class="mi">20</span><span class="o">-</span><span class="mo">0700</span><span class="o">&amp;</span>
+<span class="n">account_token</span><span class="o">=</span><span class="no">NPS</span><span class="o">-</span><span class="n">xxxxxxxx</span><span class="o">&amp;</span>
+<span class="n">survey_mode</span><span class="o">=</span><span class="no">NPS</span>
 </code></pre></div>
 <ul>
 <li><strong>Response created:</strong> An end user responded to a survey.</li>
@@ -130,6 +178,7 @@
 <p>That&rsquo;s it! Wootric will be sending a POST request to the specified URL when the event happens!</p>
 <h2 id='security'>Security</h2><div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'cuba'</span>
 <span class="nb">require</span> <span class="s1">'openssl'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
 
 <span class="no">Cuba</span><span class="p">.</span><span class="nf">define</span> <span class="k">do</span>
   <span class="n">on</span> <span class="n">post</span> <span class="k">do</span>
@@ -139,18 +188,23 @@
       <span class="n">calculated_digest</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">HMAC</span><span class="p">.</span><span class="nf">hexdigest</span><span class="p">(</span><span class="s1">'sha1'</span><span class="p">,</span> <span class="s1">'09dfb1b73af998743fb011f8bfda8912'</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
 
       <span class="k">if</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Utils</span><span class="p">.</span><span class="nf">secure_compare</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="nf">env</span><span class="p">[</span><span class="s1">'HTTP_X_WOOTRIC_SIGNATURE'</span><span class="p">],</span> <span class="s2">"sha1=</span><span class="si">#{</span><span class="n">calculated_digest</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">req</span><span class="p">.</span><span class="nf">params</span><span class="p">.</span><span class="nf">has_key?</span><span class="p">(</span><span class="s1">'response'</span><span class="p">)</span>
-          <span class="k">case</span> <span class="n">req</span><span class="p">.</span><span class="nf">params</span><span class="p">[</span><span class="s1">'event_name'</span><span class="p">]</span>
+        <span class="c1"># Attempt to parse JSON. Otherwise use URL encoded.</span>
+        <span class="c1"># This example accepts boths formats. You can select the desired format</span>
+        <span class="c1"># when the webhook is configured.</span>
+        <span class="n">parsed_payload</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">body</span><span class="p">)</span> <span class="k">rescue</span> <span class="n">req</span><span class="p">.</span><span class="nf">params</span>
+        <span class="k">if</span> <span class="n">parsed_payload</span><span class="p">.</span><span class="nf">has_key?</span><span class="p">(</span><span class="s1">'response'</span><span class="p">)</span>
+          <span class="k">case</span> <span class="n">parsed_payload</span><span class="p">[</span><span class="s1">'event_name'</span><span class="p">]</span>
           <span class="k">when</span> <span class="s1">'created'</span>
-            <span class="nb">puts</span> <span class="s2">"Response submitted with a score of </span><span class="si">#{</span><span class="n">req</span><span class="p">.</span><span class="nf">params</span><span class="p">[</span><span class="s1">'response'</span><span class="p">][</span><span class="s1">'score'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+            <span class="nb">puts</span> <span class="s2">"Response submitted with a score of </span><span class="si">#{</span><span class="n">parsed_payload</span><span class="p">[</span><span class="s1">'response'</span><span class="p">][</span><span class="s1">'score'</span><span class="p">]</span><span class="si">}</span><span class="s2">."</span>
           <span class="k">when</span> <span class="s1">'updated'</span>
-            <span class="nb">puts</span> <span class="s2">"Response updated with a score of </span><span class="si">#{</span><span class="n">req</span><span class="p">.</span><span class="nf">params</span><span class="p">[</span><span class="s1">'response'</span><span class="p">][</span><span class="s1">'score'</span><span class="p">]</span><span class="si">}</span><span class="s2"> and the following comment: </span><span class="si">#{</span><span class="n">req</span><span class="p">.</span><span class="nf">params</span><span class="p">[</span><span class="s1">'response'</span><span class="p">][</span><span class="s1">'text'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+            <span class="nb">puts</span> <span class="s2">"Response updated with a score of </span><span class="si">#{</span><span class="n">parsed_payload</span><span class="p">[</span><span class="s1">'response'</span><span class="p">][</span><span class="s1">'score'</span><span class="p">]</span><span class="si">}</span><span class="s2"> "</span><span class="p">\</span>
+              <span class="s2">"and the following comment: </span><span class="si">#{</span><span class="n">parsed_payload</span><span class="p">[</span><span class="s1">'response'</span><span class="p">][</span><span class="s1">'text'</span><span class="p">]</span><span class="si">}</span><span class="s2">."</span>
           <span class="k">end</span>
-        <span class="k">elsif</span> <span class="n">req</span><span class="p">.</span><span class="nf">params</span><span class="p">.</span><span class="nf">has_key?</span><span class="p">(</span><span class="s1">'decline'</span><span class="p">)</span>
-          <span class="nb">puts</span> <span class="s1">'Survey declined'</span>
+        <span class="k">elsif</span> <span class="n">parsed_payload</span><span class="p">.</span><span class="nf">has_key?</span><span class="p">(</span><span class="s1">'decline'</span><span class="p">)</span>
+          <span class="nb">puts</span> <span class="s1">'Survey declined.'</span>
         <span class="k">end</span>
       <span class="k">else</span>
-        <span class="nb">puts</span> <span class="s2">"Ignoring request with invalid signature from ip </span><span class="si">#{</span><span class="n">req</span><span class="p">.</span><span class="nf">ip</span><span class="si">}</span><span class="s2">"</span>
+        <span class="nb">puts</span> <span class="s2">"Ignoring request with invalid signature from ip </span><span class="si">#{</span><span class="n">req</span><span class="p">.</span><span class="nf">ip</span><span class="si">}</span><span class="s2">."</span>
       <span class="k">end</span>
 
       <span class="n">res</span><span class="p">.</span><span class="nf">write</span> <span class="s1">''</span>
