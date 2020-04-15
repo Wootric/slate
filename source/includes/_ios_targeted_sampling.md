@@ -42,7 +42,7 @@ Wootric.showSurvey(inViewController: self, event: "On Purchase Event")
 
 You can trigger surveys based on an end-user's property, an event that you might be tracking in your app or a combination of both. You must configure the rules that trigger these surveys inside Wootric Settings Panel.
 
-To set the properties for the end user you can pass an dictionary to
+To set the properties for the end user you can pass a dictionary to
 the `setEndUserProperties` method.
 
 To trigger a survey with an event you ned to use
