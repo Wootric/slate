@@ -1,0 +1,137 @@
+<%
+  sdks = [
+    {
+      icon: 'javascript',
+      href: '/javascript',
+      name: 'Install Wootric using JavaScript',
+    },
+    {
+      icon: 'segment',
+      href: '/segment',
+      name: 'Install Wootric using Segment'
+    },
+    {
+      icon: 'ios',
+      href: '/ios',
+      name: 'Install Wootric using iOS SDK'
+    },
+    {
+      icon: 'android',
+      href: '/android',
+      name: 'Install Wootric using Android SDK'
+    },
+    {
+      icon: 'react',
+      href: 'https://github.com/Wootric/react-native-wootric',
+      name: 'Install Wootric using React Native'
+    },
+    {
+      icon: 'email',
+      href: 'http://help.wootric.com/email-surveys',
+      name: 'Email Templates'
+    },
+    {
+      icon: 'api',
+      href: '/api/#email-survey',
+      name: 'Email API'
+    },
+    {
+      icon: 'api',
+      href: '/api',
+      name: 'REST API'
+    },
+    {
+      icon: 'webhooks',
+      href: '/webhooks',
+      name: 'Outgoing Webhooks'
+    },
+  ]
+
+  integrations = [
+    {
+      icon: 'salesforce',
+      href: 'http://help.wootric.com/integrations/salesforce/salesforce-integration-faq',
+      name: 'Salesforce Managed Package'
+    },
+    {
+      icon: 'salesforce',
+      href: 'http://help.wootric.com/integrations/salesforce/salesforce-integration-faq',
+      name: 'Trigger Surveys from Salesforce'
+    },
+    {
+      icon: 'hubspot',
+      href: 'http://help.wootric.com/integrations/hubspot-integration',
+      name: 'Hubspot Integration'
+    },
+    {
+      icon: 'intercom',
+      href: 'http://help.wootric.com/integrations/how-do-i-post-wootric-responses-to-intercom',
+      name: 'Intercom Integration'
+    },
+    {
+      icon: 'intercom',
+      href: 'http://help.wootric.com/integrations/how-do-i-send-wootric-surveys-in-intercom-messenger',
+      name: 'Intercom Messenger App'
+    },
+    {
+      icon: 'slack',
+      href: 'http://help.wootric.com/integrations/how-do-i-post-my-wootric-responses-to-slack',
+      name: 'Slack Integration'
+    },
+    {
+      icon: 'zapier',
+      href: 'http://help.wootric.com/integrations/wootric-integrations-with-zapier',
+      name: 'Zapier Integration'
+    },
+    {
+      icon: 'zendesk',
+      href: 'http://help.wootric.com/integrations/zendesk/enable-wootric-zendesk-integration-to-trigger-surveys',
+      name: 'Zendesk Triggers'
+    },
+    {
+      icon: 'more',
+      href: 'https://www.wootric.com/integrations/',
+      name: 'More Integrations'
+    },
+  ]
+%>
+
+<div class="wootric-doc-landing">
+  <div class="wootric-doc-header">
+    <div class="wootric-doc-header__main">
+      Welcome to Wootric Documentation
+    </div>
+  </div>
+
+  <div class="wootric-doc-landing-content">
+    <div class="wootric-doc-landing-content__col">
+      <div class="wootric-doc-landing-content__col__header">SDKs &amp; APIs</div>
+      <div class="wootric-doc-landing-content__type-wrapper">
+        <% sdks.each do |item| %>
+          <div class="wootric-doc-landing-content__type">
+            <a href="<%= item[:href] %>">
+              <div class="wootric-doc-landing-content__type__img
+                          wootric-doc-landing-content__type__img--<%= item[:icon] %>"></div>
+              <div class="wootric-doc-landing-content__type__title"><%= item[:name] %></div>
+            </a>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="wootric-doc-landing-content__col">
+      <div class="wootric-doc-landing-content__col__header">Integrations</div>
+      <div class="wootric-doc-landing-content__type-wrapper wootric-doc-landing-content__type-wrapper--integrations">
+        <% integrations.each do |item| %>
+          <div class="wootric-doc-landing-content__type">
+            <a href="<%= item[:href] %>" target="_blank">
+              <div class="wootric-doc-landing-content__type__img
+                          wootric-doc-landing-content__type__img--<%= item[:icon] %>"></div>
+              <div class="wootric-doc-landing-content__type__title"><%= item[:name] %></div>
+            </a>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
