@@ -555,13 +555,11 @@ html, body {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding-right: 20px;
       width: calc(50% - 42px);
 
       &:last-child {
         border-right: 0;
-        padding-right: 0;
-        padding-left: 20px;
+        padding-left: 27px;
       }
 
       &__header{
@@ -605,7 +603,6 @@ html, body {
       &-wrapper {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
       }
 
       a {
@@ -1225,7 +1222,7 @@ html, body {
     margin-left: 0;
   }
 
-  #nav-button {
+bottom  #nav-button {
     display: block;
   }
 
@@ -1259,5 +1256,15 @@ html, body {
 
   %right-col + %left-col {
     margin-top: $main-padding;
+  }
+}
+
+.static-survey {
+  padding: 20px;
+  margin: 50px 0;
+
+  button[type="submit"] {
+    background: $blue !important;
+    color: $white;
   }
 }
