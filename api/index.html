@@ -389,11 +389,11 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <td>The ID of the end user to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-end-user-by-email'>Get a Specific End User by Email</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/2?access_token=myaccesstoken"</span>
+<h2 id='get-a-specific-end-user-by-email'>Get a Specific End User by Email</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/nps2@example.com?access_token=myaccesstoken&amp;lookup_by_email=true"</span>
 
 or
 
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/nps2@example.com"</span>
+curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/nps2@example.com"</span> <span class="nt">-d</span> <span class="s2">"lookup_by_email=true"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -437,6 +437,10 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <tr>
 <td>email</td>
 <td>The Email of the end user to retrieve</td>
+</tr>
+<tr>
+<td>lookup_by_email (optional)</td>
+<td>Looks the user by email if true. Default value is false</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-end-user-by-phone-number'>Get a Specific End User by Phone Number</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/phone_number/+14155554131?access_token=myaccesstoken"</span>
