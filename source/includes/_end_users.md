@@ -131,11 +131,11 @@ id | The ID of the end user to retrieve
 ## Get a Specific End User by Email
 
 ```shell
-curl "https://api.wootric.com/v1/end_users/2?access_token=myaccesstoken"
+curl "https://api.wootric.com/v1/end_users/nps2@example.com?access_token=myaccesstoken&lookup_by_email=true"
 
 or
 
-curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/nps2@example.com"
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/nps2@example.com" -d "lookup_by_email=true"
 ```
 
 > The above command returns the following JSON:
@@ -180,6 +180,7 @@ This endpoint retrieves a specific end user by email.
 Parameter | Description
 --------- | -----------
 email | The Email of the end user to retrieve
+lookup_by_email (optional) | Looks the user by email if true. Default value is false
 
 ## Get a Specific End User by Phone Number
 
