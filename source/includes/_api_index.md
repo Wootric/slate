@@ -103,10 +103,6 @@ Wootric expects the  token to be included in all API requests regardless of gran
 
 `curl -H "Authorization: Bearer <youraccesstoken>" https://api.wootric.com/v1/end_users`
 
-Token can be sent as query parameters as well but we **do not recommend** it for security purposes. For example
-
-`https://api.wootric.com/v1/end_users?access_token=myaccesstoken`
-
 Access tokens expire 2 hours after creation. New access_token can be obtained using refresh tokens as detailed in the cURL example to the right.
 
 <aside class="notice">

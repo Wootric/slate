@@ -18,10 +18,6 @@ properties | hash | Properties (i.e. plan, product)
 ## Get All End Users
 
 ```shell
-curl "https://api.wootric.com/v1/end_users?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users"
 ```
 
@@ -78,10 +74,6 @@ We recommend to iterate using `created` parameter if you need to get more data t
 ## Get a Specific End User by ID
 
 ```shell
-curl "https://api.wootric.com/v1/end_users/2?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/2"
 ```
 
@@ -131,10 +123,6 @@ id | The ID of the end user to retrieve
 ## Get a Specific End User by Email
 
 ```shell
-curl "https://api.wootric.com/v1/end_users/nps2@example.com?access_token=myaccesstoken&lookup_by_email=true"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/nps2@example.com" -d "lookup_by_email=true"
 ```
 
@@ -185,10 +173,6 @@ lookup_by_email (optional) | Looks the user by email if true. Default value is f
 ## Get a Specific End User by Phone Number
 
 ```shell
-curl "https://api.wootric.com/v1/end_users/phone_number/+14155554131?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/phone_number/+14155554131"
 ```
 
@@ -237,10 +221,6 @@ phone_number | The Phone Number of the end user to retrieve. The phone number mu
 ## Create End User
 
 ```shell
-curl -X POST "https://api.wootric.com/v1/end_users?access_token=myaccesstoken" -d "email=enduser@example.com&last_surveyed=1423732280&properties[company]=TestCompany&properties[city]=San Francisco"
-
-or
-
 curl -X POST -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users" -d "email=enduser@example.com&last_surveyed=1423732280&properties[company]=TestCompany&properties[city]=San Francisco"
 ```
 
@@ -278,10 +258,6 @@ properties (optional) | Hash of additional properties
 ## Update End User
 
 ```shell
-curl -X PUT "https://api.wootric.com/v1/end_users/1?access_token=myaccesstoken" -d "email=enduser_new@example.com&properties[company]=NewCompany&properties[city]=New Reno"
-
-or
-
 curl -X PUT -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1" -d "email=enduser_new@example.com&properties[company]=NewCompany&properties[city]=New Reno"
 ```
 
@@ -322,17 +298,9 @@ properties (optional) | Hash of additional properties
 ```shell
 # Using the end user's ID:
 
-curl -X DELETE "https://api.wootric.com/v1/end_users/1?access_token=myaccesstoken"
-
-or
-
 curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1"
 
 # Using the end user's email address:
-
-curl -X DELETE "https://api.wootric.com/v1/end_users/user@domain.com?access_token=myaccesstoken"
-
-or
 
 curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/user@domain.com"
 ```
@@ -367,10 +335,6 @@ end_user_id_or_email | The ID or the email of the end user to delete
 ## Export specific End User's data
 
 ```shell
-curl "https://api.wootric.com/v1/end_users/2/export?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/2/export"
 ```
 

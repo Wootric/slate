@@ -13,10 +13,6 @@ created_at | datetime | Datetime representation of when the segment was created
 ## Get All Segments
 
 ```shell
-curl "https://api.wootric.com/v1/segments?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/segments"
 ```
 

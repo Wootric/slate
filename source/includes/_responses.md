@@ -23,10 +23,6 @@ end_user.properties | hash | The end user properties at the moment the survey wa
 ## Get All Responses
 
 ```shell
-curl "https://api.wootric.com/v1/responses?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/responses"
 ```
 
@@ -109,10 +105,6 @@ We recommend to iterate using `created` parameter if you need to get more data t
 ## Get All End User's Responses
 
 ```shell
-curl "https://api.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses"
 ```
 
@@ -197,10 +189,6 @@ We recommend to iterate using `created` parameter if you need to get more data t
 ## Get All Promoters Responses
 
 ```shell
-curl "https://api.wootric.com/v1/end_users/1/responses/promoters?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses/promoters"
 ```
 
@@ -281,10 +269,6 @@ sort_order (optional)| string | desc | Order in which records are shown. Default
 ## Get All Passives Responses
 
 ```shell
-curl "https://api.wootric.com/v1/end_users/1/responses/passives?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses/passives"
 ```
 
@@ -366,10 +350,6 @@ sort_order (optional)| string | desc | Order in which records are shown. Default
 ## Get All Detractors Responses
 
 ```shell
-curl "https://api.wootric.com/v1/end_users/1/responses/detractors?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses/detractors"
 ```
 
@@ -453,10 +433,6 @@ sort_order (optional)| string | desc | Order in which records are shown. Default
 ## Get a Specific Response
 
 ```shell
-curl "https://api.wootric.com/v1/end_users/2/responses/2?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/2/responses/2"
 ```
 
@@ -505,10 +481,6 @@ id | integer | The ID of the decline to retrieve
 ## Create Response
 
 ```shell
-curl -X POST "https://api.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken" -d "score=5&text=test response&ip_address=192.168.0.1&origin_url=http://example.com"
-
-or
-
 curl -X POST -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses" -d "score=5&text=test response&ip_address=192.168.0.1&origin_url=http://example.com"
 ```
 
@@ -533,10 +505,6 @@ end_user.properties (optional) | hash | An object containing the current propert
 ## Update Response
 
 ```shell
-curl -X PUT "https://api.wootric.com/v1/responses/1?access_token=myaccesstoken" -d "completed=true&excluded_from_calculations=false"
-
-or
-
 curl -X PUT -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/responses/1" -d "completed=true&excluded_from_calculations=false"
 ```
 
@@ -560,10 +528,6 @@ end_user.properties (optional) | hash | An object containing the new set of prop
 ## Delete Response
 
 ```shell
-curl -X DELETE "https://api.wootric.com/v1/end_users/1/responses/1?access_token=myaccesstoken"
-
-or
-
 curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/responses/1"
 ```
 

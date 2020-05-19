@@ -17,17 +17,9 @@ email_response_rate | integer | Email response rate percentage for a given date 
 ## Get NPS summary
 
 ```shell
-curl "https://api.wootric.com/v1/nps_summary?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/nps_summary"
 
 # With params
-
-curl "https://api.wootric.com/v1/nps_summary?access_token=myaccesstoken?date%5Bstart%5D='YYYY-MM-DD'&date%5Bend%5D='YYYY-MM-DD'"
-
-or
 
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/nps_summary?date%5Bstart%5D='YYYY-MM-DD'&date%5Bend%5D='YYYY-MM-DD'"
 ```

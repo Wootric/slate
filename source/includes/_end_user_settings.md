@@ -19,10 +19,6 @@ force_mobile_survey | boolean | Flag to override sampling settings. It will make
 ## Get Specific End User Settings
 
 ```shell
-curl "https://api.wootric.com/v1/end_users/1/settings?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/settings"
 ```
 
@@ -53,10 +49,6 @@ end_user_id | The ID of the end user
 ## Update End User Settings
 
 ```shell
-curl -X PUT "https://api.wootric.com/v1/end_users/1/settings?access_token=myaccesstoken" -d "email_nps=false&force_web_survey=true"
-
-or
-
 curl -X PUT -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/settings" -d "email_nps=false&force_web_survey=true"
 ```
 

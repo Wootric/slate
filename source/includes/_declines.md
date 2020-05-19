@@ -18,10 +18,6 @@ end_user.properties | hash | The end user properties at the moment the survey wa
 ## Get All Declines
 
 ```shell
-curl "https://api.wootric.com/v1/declines?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/declines"
 ```
 
@@ -90,10 +86,6 @@ We recommend to iterate using `created` parameter if you need to get more data t
 ## Get All End User's Declines
 
 ```shell
-curl "https://api.wootric.com/v1/end_users/1/declines?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/declines"
 ```
 
@@ -161,10 +153,6 @@ sort_order (optional)| string | desc | Order in which records are shown. Default
 ## Get a Specific Decline
 
 ```shell
-curl "https://api.wootric.com/v1/end_users/1/declines/1?access_token=myaccesstoken"
-
-or
-
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/declines/1"
 ```
 
@@ -207,10 +195,6 @@ id | integer | The ID of the decline to retrieve
 ## Create Decline
 
 ```shell
-curl -X POST "https://api.wootric.com/v1/end_users/1/declines?access_token=myaccesstoken"
-
-or
-
 curl -X POST -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/declines"
 ```
 
@@ -232,10 +216,6 @@ end_user.properties (optional) | hash | An object containing the current propert
 ## Update Decline
 
 ```shell
-curl -X PUT "https://api.wootric.com/v1/declines/1?access_token=myaccesstoken" -d "end_user[properties][persona]=Individual"
-
-or
-
 curl -X PUT -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/declines/1" -d "end_user[properties][persona]=Individual"
 ```
 
@@ -257,10 +237,6 @@ end_user.properties (optional) | hash | An object containing the new set of prop
 ## Delete Decline
 
 ```shell
-curl -X DELETE "https://api.wootric.com/v1/end_users/1/declines/1?access_token=myaccesstoken"
-
-or
-
 curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/1/declines/1"
 ```
 
