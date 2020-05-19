@@ -152,10 +152,6 @@
 
 <p><code class="prettyprint">curl -H &quot;Authorization: Bearer &lt;youraccesstoken&gt;&quot; https://api.wootric.com/v1/end_users</code></p>
 
-<p>Token can be sent as query parameters as well but we <strong>do not recommend</strong> it for security purposes. For example</p>
-
-<p><code class="prettyprint">https://api.wootric.com/v1/end_users?access_token=myaccesstoken</code></p>
-
 <p>Access tokens expire 2 hours after creation. New access_token can be obtained using refresh tokens as detailed in the cURL example to the right.</p>
 
 <p><aside class="notice">
@@ -248,11 +244,7 @@ If you find that the current rate limit on your account is too low for your need
 <td>Properties (i.e. plan, product)</td>
 </tr>
 </tbody></table>
-<h2 id='get-all-end-users'>Get All End Users</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users"</span>
+<h2 id='get-all-end-users'>Get All End Users</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -339,11 +331,7 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 </tbody></table>
 
 <p>We recommend to iterate using <code class="prettyprint">created</code> parameter if you need to get more data than what you get out of our pagination restriction.  </p>
-<h2 id='get-a-specific-end-user-by-id'>Get a Specific End User by ID</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/2?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/2"</span>
+<h2 id='get-a-specific-end-user-by-id'>Get a Specific End User by ID</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/2"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -389,11 +377,7 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <td>The ID of the end user to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-end-user-by-email'>Get a Specific End User by Email</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/nps2@example.com?access_token=myaccesstoken&amp;lookup_by_email=true"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/nps2@example.com"</span> <span class="nt">-d</span> <span class="s2">"lookup_by_email=true"</span>
+<h2 id='get-a-specific-end-user-by-email'>Get a Specific End User by Email</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/nps2@example.com"</span> <span class="nt">-d</span> <span class="s2">"lookup_by_email=true"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -443,11 +427,7 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <td>Looks the user by email if true. Default value is false</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-end-user-by-phone-number'>Get a Specific End User by Phone Number</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/phone_number/+14155554131?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/phone_number/+14155554131"</span>
+<h2 id='get-a-specific-end-user-by-phone-number'>Get a Specific End User by Phone Number</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/phone_number/+14155554131"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -493,11 +473,7 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <td>The Phone Number of the end user to retrieve. The phone number must be prefixed with &lsquo;+&rsquo;. If it&rsquo;s just digits, it will look up by id.</td>
 </tr>
 </tbody></table>
-<h2 id='create-end-user'>Create End User</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.wootric.com/v1/end_users?access_token=myaccesstoken"</span> <span class="nt">-d</span> <span class="s2">"email=enduser@example.com&amp;last_surveyed=1423732280&amp;properties[company]=TestCompany&amp;properties[city]=San Francisco"</span>
-
-or
-
-curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users"</span> <span class="nt">-d</span> <span class="s2">"email=enduser@example.com&amp;last_surveyed=1423732280&amp;properties[company]=TestCompany&amp;properties[city]=San Francisco"</span>
+<h2 id='create-end-user'>Create End User</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users"</span> <span class="nt">-d</span> <span class="s2">"email=enduser@example.com&amp;last_surveyed=1423732280&amp;properties[company]=TestCompany&amp;properties[city]=San Francisco"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -544,11 +520,7 @@ curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2"
 <td>Hash of additional properties</td>
 </tr>
 </tbody></table>
-<h2 id='update-end-user'>Update End User</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://api.wootric.com/v1/end_users/1?access_token=myaccesstoken"</span> <span class="nt">-d</span> <span class="s2">"email=enduser_new@example.com&amp;properties[company]=NewCompany&amp;properties[city]=New Reno"</span>
-
-or
-
-curl <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1"</span> <span class="nt">-d</span> <span class="s2">"email=enduser_new@example.com&amp;properties[company]=NewCompany&amp;properties[city]=New Reno"</span>
+<h2 id='update-end-user'>Update End User</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1"</span> <span class="nt">-d</span> <span class="s2">"email=enduser_new@example.com&amp;properties[company]=NewCompany&amp;properties[city]=New Reno"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -601,17 +573,9 @@ curl <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">
 </tbody></table>
 <h2 id='delete-end-user'>Delete End User</h2><div class="highlight"><pre class="highlight shell"><code><span class="c"># Using the end user's ID:</span>
 
-curl <span class="nt">-X</span> DELETE <span class="s2">"https://api.wootric.com/v1/end_users/1?access_token=myaccesstoken"</span>
-
-or
-
 curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1"</span>
 
 <span class="c"># Using the end user's email address:</span>
-
-curl <span class="nt">-X</span> DELETE <span class="s2">"https://api.wootric.com/v1/end_users/user@domain.com?access_token=myaccesstoken"</span>
-
-or
 
 curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/user@domain.com"</span>
 </code></pre></div>
@@ -644,11 +608,7 @@ curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s
 <td>The ID or the email of the end user to delete</td>
 </tr>
 </tbody></table>
-<h2 id='export-specific-end-user39s-data'>Export specific End User&rsquo;s data</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/2/export?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/2/export"</span>
+<h2 id='export-specific-end-user39s-data'>Export specific End User&rsquo;s data</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/2/export"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns an empty JSON response. Inspect the response code to see if it was successsful or not:</p>
@@ -747,11 +707,7 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <td>The end user properties at the moment the survey was taken</td>
 </tr>
 </tbody></table>
-<h2 id='get-all-responses'>Get All Responses</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/responses?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/responses"</span>
+<h2 id='get-all-responses'>Get All Responses</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/responses"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -850,11 +806,7 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 </tbody></table>
 
 <p>We recommend to iterate using <code class="prettyprint">created</code> parameter if you need to get more data than what you get out of our pagination restriction.</p>
-<h2 id='get-all-end-user39s-responses'>Get All End User&rsquo;s Responses</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses"</span>
+<h2 id='get-all-end-user39s-responses'>Get All End User&rsquo;s Responses</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -955,11 +907,7 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 </tbody></table>
 
 <p>We recommend to iterate using <code class="prettyprint">created</code> parameter if you need to get more data than what you get out of our pagination restriction.</p>
-<h2 id='get-all-promoters-responses'>Get All Promoters Responses</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/promoters?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/promoters"</span>
+<h2 id='get-all-promoters-responses'>Get All Promoters Responses</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/promoters"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -1056,11 +1004,7 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <td>Order in which records are shown. Default is newest first. Options are <code class="prettyprint">asc</code> or <code class="prettyprint">desc</code></td>
 </tr>
 </tbody></table>
-<h2 id='get-all-passives-responses'>Get All Passives Responses</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/passives?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/passives"</span>
+<h2 id='get-all-passives-responses'>Get All Passives Responses</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/passives"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -1157,11 +1101,7 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <td>Order in which records are shown. Default is newest first. Options are <code class="prettyprint">asc</code> or <code class="prettyprint">desc</code></td>
 </tr>
 </tbody></table>
-<h2 id='get-all-detractors-responses'>Get All Detractors Responses</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/detractors?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/detractors"</span>
+<h2 id='get-all-detractors-responses'>Get All Detractors Responses</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/detractors"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -1260,11 +1200,7 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <td>Order in which records are shown. Default is newest first. Options are <code class="prettyprint">asc</code> or <code class="prettyprint">desc</code></td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-response'>Get a Specific Response</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/2/responses/2?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/2/responses/2"</span>
+<h2 id='get-a-specific-response'>Get a Specific Response</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/2/responses/2"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -1316,11 +1252,7 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <td>The ID of the decline to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='create-response'>Create Response</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.wootric.com/v1/end_users/1/responses?access_token=myaccesstoken"</span> <span class="nt">-d</span> <span class="s2">"score=5&amp;text=test response&amp;ip_address=192.168.0.1&amp;origin_url=http://example.com"</span>
-
-or
-
-curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses"</span> <span class="nt">-d</span> <span class="s2">"score=5&amp;text=test response&amp;ip_address=192.168.0.1&amp;origin_url=http://example.com"</span>
+<h2 id='create-response'>Create Response</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses"</span> <span class="nt">-d</span> <span class="s2">"score=5&amp;text=test response&amp;ip_address=192.168.0.1&amp;origin_url=http://example.com"</span>
 </code></pre></div>
 <p>This endpoint creates a response for the end user.</p>
 <h3 id='http-request'>HTTP Request</h3>
@@ -1369,11 +1301,7 @@ curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2"
 <td>An object containing the current properties for this end user. If supplied, the end user profile will be updated and the new properties will be associated to this response.</td>
 </tr>
 </tbody></table>
-<h2 id='update-response'>Update Response</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://api.wootric.com/v1/responses/1?access_token=myaccesstoken"</span> <span class="nt">-d</span> <span class="s2">"completed=true&amp;excluded_from_calculations=false"</span>
-
-or
-
-curl <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/responses/1"</span> <span class="nt">-d</span> <span class="s2">"completed=true&amp;excluded_from_calculations=false"</span>
+<h2 id='update-response'>Update Response</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/responses/1"</span> <span class="nt">-d</span> <span class="s2">"completed=true&amp;excluded_from_calculations=false"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns and empty response with status 204.</p>
@@ -1411,11 +1339,7 @@ curl <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">
 <td>An object containing the new set of properties for this response. This will only update the properties that the end user had at this point in time. The current end user properties won&rsquo;t be updated. Since this feature allows to edit historical data, it&rsquo;s not enabled by default. Please contact us to enable it. A 423 error will be returned when attempting to use this feature if it&rsquo;s not enabled.</td>
 </tr>
 </tbody></table>
-<h2 id='delete-response'>Delete Response</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> DELETE <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/1?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/1"</span>
+<h2 id='delete-response'>Delete Response</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/responses/1"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns and empty response with status 204.</p>
@@ -1495,11 +1419,7 @@ curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s
 <td>The end user properties at the moment the survey was taken</td>
 </tr>
 </tbody></table>
-<h2 id='get-all-declines'>Get All Declines</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/declines?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/declines"</span>
+<h2 id='get-all-declines'>Get All Declines</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/declines"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -1584,11 +1504,7 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 </tbody></table>
 
 <p>We recommend to iterate using <code class="prettyprint">created</code> parameter if you need to get more data than what you get out of our pagination restriction.</p>
-<h2 id='get-all-end-user39s-declines'>Get All End User&rsquo;s Declines</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/1/declines?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/declines"</span>
+<h2 id='get-all-end-user39s-declines'>Get All End User&rsquo;s Declines</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/declines"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -1671,11 +1587,7 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <td>Order in which records are shown. Default is newest first. Options are <code class="prettyprint">asc</code> or <code class="prettyprint">desc</code></td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-decline'>Get a Specific Decline</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/1/declines/1?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/declines/1"</span>
+<h2 id='get-a-specific-decline'>Get a Specific Decline</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/declines/1"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -1721,11 +1633,7 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <td>The ID of the decline to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='create-decline'>Create Decline</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.wootric.com/v1/end_users/1/declines?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/declines"</span>
+<h2 id='create-decline'>Create Decline</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/declines"</span>
 </code></pre></div>
 <p>This endpoint creates a decline for the end user.</p>
 <h3 id='http-request'>HTTP Request</h3>
@@ -1759,11 +1667,7 @@ curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2"
 <td>An object containing the current properties for this end user. If supplied, the end user profile will be updated and the new properties will be associated to this decline.</td>
 </tr>
 </tbody></table>
-<h2 id='update-decline'>Update Decline</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://api.wootric.com/v1/declines/1?access_token=myaccesstoken"</span> <span class="nt">-d</span> <span class="s2">"end_user[properties][persona]=Individual"</span>
-
-or
-
-curl <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/declines/1"</span> <span class="nt">-d</span> <span class="s2">"end_user[properties][persona]=Individual"</span>
+<h2 id='update-decline'>Update Decline</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/declines/1"</span> <span class="nt">-d</span> <span class="s2">"end_user[properties][persona]=Individual"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns and empty response with status 204.</p>
@@ -1791,11 +1695,7 @@ curl <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">
 <td>An object containing the new set of properties for this decline. This will only update the properties that the end user had at this point in time. The current end user properties won&rsquo;t be updated. Since this feature allows to edit historical data, it&rsquo;s not enabled by default. Please contact us to enable it. A 423 error will be returned when attempting to use this feature if it&rsquo;s not enabled.</td>
 </tr>
 </tbody></table>
-<h2 id='delete-decline'>Delete Decline</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> DELETE <span class="s2">"https://api.wootric.com/v1/end_users/1/declines/1?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/declines/1"</span>
+<h2 id='delete-decline'>Delete Decline</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/declines/1"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns and empty response with status 204.</p>
@@ -1880,11 +1780,7 @@ curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s
 <td>Flag to override sampling settings. It will make the end user immediately available for a survey via our mobile SDK</td>
 </tr>
 </tbody></table>
-<h2 id='get-specific-end-user-settings'>Get Specific End User Settings</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/end_users/1/settings?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/settings"</span>
+<h2 id='get-specific-end-user-settings'>Get Specific End User Settings</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/settings"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -1912,11 +1808,7 @@ curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccess
 <td>The ID of the end user</td>
 </tr>
 </tbody></table>
-<h2 id='update-end-user-settings'>Update End User Settings</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://api.wootric.com/v1/end_users/1/settings?access_token=myaccesstoken"</span> <span class="nt">-d</span> <span class="s2">"email_nps=false&amp;force_web_survey=true"</span>
-
-or
-
-curl <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/settings"</span> <span class="nt">-d</span> <span class="s2">"email_nps=false&amp;force_web_survey=true"</span>
+<h2 id='update-end-user-settings'>Update End User Settings</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/1/settings"</span> <span class="nt">-d</span> <span class="s2">"email_nps=false&amp;force_web_survey=true"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
@@ -1995,17 +1887,9 @@ curl <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">
 <td>Email response rate percentage for a given date range</td>
 </tr>
 </tbody></table>
-<h2 id='get-nps-summary'>Get NPS summary</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/nps_summary?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/nps_summary"</span>
+<h2 id='get-nps-summary'>Get NPS summary</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/nps_summary"</span>
 
 <span class="c"># With params</span>
-
-curl <span class="s2">"https://api.wootric.com/v1/nps_summary?access_token=myaccesstoken?date%5Bstart%5D='YYYY-MM-DD'&amp;date%5Bend%5D='YYYY-MM-DD'"</span>
-
-or
 
 curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/nps_summary?date%5Bstart%5D='YYYY-MM-DD'&amp;date%5Bend%5D='YYYY-MM-DD'"</span>
 </code></pre></div>
@@ -2074,11 +1958,7 @@ The values returned by this endpoint depend on the Account&rsquo;s time zone set
 <td>Datetime representation of when the segment was created</td>
 </tr>
 </tbody></table>
-<h2 id='get-all-segments'>Get All Segments</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="s2">"https://api.wootric.com/v1/segments?access_token=myaccesstoken"</span>
-
-or
-
-curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/segments"</span>
+<h2 id='get-all-segments'>Get All Segments</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/segments"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns the following JSON:</p>
