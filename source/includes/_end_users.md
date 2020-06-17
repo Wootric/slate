@@ -12,8 +12,34 @@ updated_at | datetime | Datetime representation of when the end user was last up
 email | string | End user email
 last_surveyed | datetime | Datetime representation of when the end user was last surveyed
 external_created_at | integer | UNIX timestamp of when the end user was created externally
-external_id | string | An optional unique string identifier
+last_seen_at | datetime | Datetime representation of when the end user was last seen
 properties | hash | Properties (i.e. plan, product)
+phone_number | string | End user phone number
+external_id | string | An optional unique string identifier
+last_response | hash | The last response of the end user
+settings | hash | The end user's settings (i.e. email_nps, mobile_nps)
+
+
+### Last Response
+
+The last_response hash has the following fields:
+
+Attribute | Type | Description
+--------- | ------- | -----------
+id | string | The ID of response
+score | integer | The response’s score
+text | string | The response’s comment
+survey | hash | The survey object data
+
+### Survey
+
+
+The survey hash has the following field:
+
+Attribute | Type | Description
+--------- | ------- | -----------
+channel | string | The channel of the survey
+
 
 ## Get All End Users
 
@@ -32,18 +58,56 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
     "email": "nps@example.com",
     "last_surveyed": null,
     "external_created_at": null,
-    "user_id": 16,
-    "properties": {"plan": "Small Business", "product": "Example"}
+    "properties": {
+      "plan": "Small Business",
+      "product": "Example"
+    },
+    "phone_number": null,
+    "external_id": null,
+    "last_response": null,
+    "settings": {
+      "email_nps": true,
+      "mobile_nps": true,
+      "web_nps": true,
+      "force_mobile_survey": null,
+      "force_web_survey": null,
+      "surveys_disabled_by_end_user": null
+    }
   },
   {
     "id": 2,
-    "created_at" : "2014-12-01 18:36:59",
-    "updated_at" : "2014-12-04 12:43:44",
+    "created_at": "2018-01-02 23:03:41 -0800",
+    "updated_at": "2018-01-16 23:07:03 -0800",
     "email": "nps2@example.com",
-    "last_surveyed": null,
-    "external_created_at": null,
-    "user_id": 16,
-    "properties": {"plan": "Enterprise", "product": "The Company"}
+    "last_surveyed": "2018-01-07 15:30:44 -0800",
+    "external_created_at": 1515940485,
+    "last_seen_at": null,
+    "properties": {
+      "country": "UK",
+      "persona": "Individual",
+      "pricing_plan": "Lite",
+      "product_plan": "Mobile",
+      "purchase_date": 1494569021,
+      "revenue_amount": 10000
+    },
+    "phone_number": null,
+    "external_id": "e9a12f9aa245cfd5",
+    "last_response": {
+      "id": 505550023,
+      "score": 9,
+      "text": "It's a great service.",
+      "survey": {
+        "channel": "mobile:ios"
+      }
+    },
+    "settings": {
+      "email_nps": true,
+      "mobile_nps": true,
+      "web_nps": true,
+      "force_mobile_survey": null,
+      "force_web_survey": null,
+      "surveys_disabled_by_end_user": null
+    }
   }
 ]
 ```
@@ -98,11 +162,21 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
   },
   "phone_number": null,
   "external_id": "e9a12f9aa245cfd5",
-  "last_response": null,
+  "last_response": {
+    "id": 505550023,
+    "score": 9,
+    "text": "It's a great service.",
+    "survey": {
+      "channel": "mobile:ios"
+    }
+  },
   "settings": {
     "email_nps": true,
     "mobile_nps": true,
-    "web_nps": true
+    "web_nps": true,
+    "force_mobile_survey": null,
+    "force_web_survey": null,
+    "surveys_disabled_by_end_user": null
   }
 }
 ```
@@ -147,11 +221,21 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
   },
   "phone_number": null,
   "external_id": "e9a12f9aa245cfd5",
-  "last_response": null,
+  "last_response": {
+    "id": 505550023,
+    "score": 9,
+    "text": "It's a great service.",
+    "survey": {
+      "channel": "mobile:ios"
+    }
+  },
   "settings": {
     "email_nps": true,
     "mobile_nps": true,
-    "web_nps": true
+    "web_nps": true,
+    "force_mobile_survey": null,
+    "force_web_survey": null,
+    "surveys_disabled_by_end_user": null
   }
 }
 ```
@@ -197,11 +281,21 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
   },
   "phone_number": "+14155554131",
   "external_id": "e9a12f9aa245cfd5",
-  "last_response": null,
+  "last_response": {
+    "id": 505550023,
+    "score": 9,
+    "text": "It's a great service.",
+    "survey": {
+      "channel": "mobile:ios"
+    }
+  },
   "settings": {
     "email_nps": true,
     "mobile_nps": true,
-    "web_nps": true
+    "web_nps": true,
+    "force_mobile_survey": null,
+    "force_web_survey": null,
+    "surveys_disabled_by_end_user": null
   }
 }
 ```
