@@ -245,14 +245,74 @@ This endpoint retrieves a specific end user by email.
 
 ### HTTP Request
 
-`GET https://api.wootric.com/v1/end_users/<email>`
+`GET https://api.wootric.com/v1/end_users/<email>?lookup_by_email=true`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 email | The Email of the end user to retrieve
-lookup_by_email (optional) | Looks the user by email if true. Default value is false
+lookup_by_email (optional) | Looks up the user by email if true. Default value is false
+
+## Get a Specific End User by External ID
+
+```shell
+curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_users/my-external-id-1234" -d "lookup_by_external_id=true"
+```
+
+> The above command returns the following JSON:
+
+```json
+{
+  "id": 3,
+  "created_at": "2018-01-02 23:03:41 -0800",
+  "updated_at": "2018-01-16 23:07:03 -0800",
+  "email": "nps3@example.com",
+  "last_surveyed": "2018-01-07 15:30:44 -0800",
+  "external_created_at": 1515940485,
+  "last_seen_at": null,
+  "properties": {
+    "country": "UK",
+    "persona": "Individual",
+    "pricing_plan": "Lite",
+    "product_plan": "Mobile",
+    "purchase_date": 1494569021,
+    "revenue_amount": 10000
+  },
+  "phone_number": null,
+  "external_id": "my-external-id-1234",
+  "last_response": {
+    "id": 505550023,
+    "score": 9,
+    "text": "It's a great service.",
+    "survey": {
+      "channel": "mobile:ios"
+    }
+  },
+  "settings": {
+    "email_nps": true,
+    "mobile_nps": true,
+    "web_nps": true,
+    "force_mobile_survey": null,
+    "force_web_survey": null,
+    "surveys_disabled_by_end_user": null
+  }
+}
+```
+
+This endpoint retrieves a specific end user by external_id.
+
+
+### HTTP Request
+
+`GET https://api.wootric.com/v1/end_users/<external_id>?lookup_by_external_id=true`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+external_id | The External ID of the end user to retrieve
+lookup_by_eternal_id (optional) | Looks up the user by external if true. Default value is false
 
 ## Get a Specific End User by Phone Number
 
