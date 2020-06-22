@@ -118,3 +118,24 @@ This flag enables extra ARIA enhancements such as:
 
 - improved color contrast.
 - JavaScript initiated focus to push screen readers through the survey smoothly.
+
+## Modal scale color
+
+```js
+window.wootricSettings = {
+  scale_color: 'three-color' // The options are 'three-color' and 'gradient'.
+};
+```
+
+The modal comes with 2 scale color themes: `three-color` and `gradient`.
+
+To set a scale color theme, set `scale_color` to either `three-color` or
+`gradient` in your `wootricSettings` object.
+
+Three-Color:
+![Scale Color Three-Color](scale_color_three_color.png)
+
+Gradient:
+![Scale Color Three-Color](scale_color_gradient.png)
+
+*This feature requires beacon version 1.4.0 and above.*
