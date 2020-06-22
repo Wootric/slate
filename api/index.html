@@ -535,7 +535,7 @@ If you find that the current rate limit on your account is too low for your need
 </span></code></pre></div>
 <p>This endpoint retrieves a specific end user by email.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/&lt;email&gt;</code></p>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/&lt;email&gt;?lookup_by_email=true</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -549,7 +549,67 @@ If you find that the current rate limit on your account is too low for your need
 </tr>
 <tr>
 <td>lookup_by_email (optional)</td>
-<td>Looks the user by email if true. Default value is false</td>
+<td>Looks up the user by email if true. Default value is false</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-end-user-by-external-id'>Get a Specific End User by External ID</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/my-external-id-1234"</span> <span class="nt">-d</span> <span class="s2">"lookup_by_external_id=true"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns the following JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-02 23:03:41 -0800"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-16 23:07:03 -0800"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nps3@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_surveyed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-07 15:30:44 -0800"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"external_created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1515940485</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_seen_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"persona"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Individual"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pricing_plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lite"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"product_plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mobile"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"purchase_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1494569021</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"revenue_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-external-id-1234"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">505550023</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"It's a great service."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"survey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mobile:ios"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"email_nps"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mobile_nps"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"web_nps"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"force_mobile_survey"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"force_web_survey"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"surveys_disabled_by_end_user"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific end user by external_id.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://api.wootric.com/v1/end_users/&lt;external_id&gt;?lookup_by_external_id=true</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>external_id</td>
+<td>The External ID of the end user to retrieve</td>
+</tr>
+<tr>
+<td>lookup_by_eternal_id (optional)</td>
+<td>Looks up the user by external if true. Default value is false</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-end-user-by-phone-number'>Get a Specific End User by Phone Number</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/end_users/phone_number/+14155554131"</span>
