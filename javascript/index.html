@@ -633,6 +633,22 @@ By default, when this property is not set, we display:
 <li>improved color contrast.</li>
 <li>JavaScript initiated focus to push screen readers through the survey smoothly.</li>
 </ul>
+<h2 id='modal-scale-color'>Modal scale color</h2><div class="highlight"><pre class="highlight javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">scale_color</span><span class="p">:</span> <span class="s1">'three-color'</span> <span class="c1">// The options are 'three-color' and 'gradient'.</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>The modal comes with 2 scale color themes: <code class="prettyprint">three-color</code> and <code class="prettyprint">gradient</code>.</p>
+
+<p>To set a scale color theme, set <code class="prettyprint">scale_color</code> to either <code class="prettyprint">three-color</code> or
+<code class="prettyprint">gradient</code> in your <code class="prettyprint">wootricSettings</code> object.</p>
+
+<p>Three-Color:
+<img alt="Scale Color Three-Color" src="../images/scale_color_three_color.png" /></p>
+
+<p>Gradient:
+<img alt="Scale Color Three-Color" src="../images/scale_color_gradient.png" /></p>
+
+<p><em>This feature requires beacon version 1.4.0 and above.</em></p>
 
 <h1 id='custom-properties'>Custom Properties</h1>
 <p>Wootric now allows you to send custom properties about your customers. This will give you the
