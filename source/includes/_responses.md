@@ -66,8 +66,8 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/respon
         "excluded_from_calculations": false,
         "ip_address": "127.0.0.1",
         "origin_url": "https://wootric.com",
-        "created_at": "2016-12-16 09:10:43 -0800",
-        "updated_at": "2016-12-16 09:11:00 -0800",
+        "created_at": "2017-12-16 09:10:43 -0800",
+        "updated_at": "2017-12-16 09:11:00 -0800",
         "tags": [],
         "notes": [],
         "end_user": {
@@ -76,6 +76,43 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/respon
                 "pricing_plan": "Small Business",
                 "product_plan": "Web",
                 "purchase_date": 1473177888,
+                "revenue_amount": 5000
+            }
+        }
+    }
+]
+```
+```shell
+TIMESTAMP=$(date --date="2016-12-25" "+%s")
+curl -X GET -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/responses" -d "created[lt]=$TIMESTAMP"
+```
+
+> The above command returns the following JSON:
+
+```json
+[
+    {
+        "id": 1,
+        "end_user_id": 1,
+        "survey_id": 1,
+        "score": 0,
+        "text": "Better performance would mean a higher score. Site is often slow.",
+        "completed": false,
+        "excluded_from_calculations": false,
+        "ip_address": "127.0.0.1",
+        "origin_url": "https://wootric.com",
+        "created_at": "2016-12-16 09:05:00 -0800",
+        "updated_at": "2016-12-16 09:05:13 -0800",
+        "tags": [
+            "PERFORMANCE"
+        ],
+        "notes": [],
+        "end_user": {
+            "properties": {
+                "persona": "Individual",
+                "pricing_plan": "Small Business",
+                "product_plan": "Mobile",
+                "purchase_date": 1473177881,
                 "revenue_amount": 5000
             }
         }
