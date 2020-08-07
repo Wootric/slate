@@ -1237,6 +1237,34 @@ help with your installation contact <a href="mailto:%20support@wootric.com">supp
 each survey. Check that you only load one survey per page, and that you call
 <code class="prettyprint">window.wootric(&#39;run&#39;)</code> once. Calling <code class="prettyprint">window.wootric(&#39;run&#39;)</code> multiple times with different settings will break your installation.</p>
 
+<h1 id='event-triggered-survey'>Event Triggered Survey</h1><div class="highlight"><pre class="highlight javascript"><code><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-YOURTOKEN'</span><span class="p">,</span>
+  <span class="na">email</span><span class="p">:</span> <span class="s1">'user@example.com'</span><span class="p">,</span>
+  <span class="na">created_at</span><span class="p">:</span> <span class="mi">1528416000</span><span class="p">,</span>
+  <span class="na">properties</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">favorite_color</span><span class="p">:</span> <span class="s1">'blue'</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// You assign the event name when a given action happens</span>
+<span class="nx">wootricSettings</span><span class="p">.</span><span class="nx">event_name</span> <span class="o">=</span> <span class="s1">'on_purchase'</span>
+
+<span class="c1">// You call Wootric whenever you want to check if the event you set might be eligible for a survey</span>
+<span class="nx">wootric</span><span class="p">(</span><span class="s1">'run'</span><span class="p">);</span>
+</code></pre></div>
+<p>When you install Wootric via our Segment integration events are automatically passed to us and you can trigger surveys based on them.</p>
+
+<p>This article will help you to set up your Wootric Targeted Sampling Surveys using a native Wootric installation.</p>
+
+<p>Prerequisites:</p>
+
+<ul>
+<li>Your account must be using <a href="http://help.wootric.com/en/articles/3472284-how-do-i-setup-targeted-sampling-for-in-app-surveys">Wootric’s Targeted Sampling</a>
+For JavaScript installations: SDK version 1.1.0 or newer. You can check your version by running <code class="prettyprint">WootricSurvey.version()</code> in the browser’s console whenever your Wootric snipped is embedded.</li>
+</ul>
+
+<p>For more details, please check <a href="http://help.wootric.com/en/articles/4136958-how-to-pass-events-in-your-native-wootric-sdk-installs">following article</a>.</p>
+
 <h1 id='the-wootric-settings-object'>The Wootric Settings Object</h1><div class="highlight"><pre class="highlight javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">wootricSettings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">account_token</span><span class="p">:</span> <span class="s1">'NPS-ABCD1234'</span><span class="p">,</span>
   <span class="na">aria</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
