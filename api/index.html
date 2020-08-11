@@ -944,8 +944,8 @@ curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s
         </span><span class="s2">"excluded_from_calculations"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ip_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"origin_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://wootric.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-16 09:10:43 -0800"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-16 09:11:00 -0800"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-16 09:10:43 -0800"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-16 09:11:00 -0800"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"end_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -954,6 +954,40 @@ curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s
                 </span><span class="s2">"pricing_plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Small Business"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"product_plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Web"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"purchase_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1473177888</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"revenue_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight shell"><code><span class="nv">TIMESTAMP</span><span class="o">=</span><span class="k">$(</span>date <span class="nt">--date</span><span class="o">=</span><span class="s2">"2016-12-25"</span> <span class="s2">"+%s"</span><span class="k">)</span>
+curl <span class="nt">-X</span> GET <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/responses"</span> <span class="nt">-d</span> <span class="s2">"created[lt]=</span><span class="nv">$TIMESTAMP</span><span class="s2">"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns the following JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"end_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"survey_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Better performance would mean a higher score. Site is often slow."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"excluded_from_calculations"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ip_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"origin_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://wootric.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-16 09:05:00 -0800"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-16 09:05:13 -0800"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"PERFORMANCE"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"end_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"persona"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Individual"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"pricing_plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Small Business"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"product_plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mobile"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"purchase_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1473177881</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"revenue_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
