@@ -2324,6 +2324,11 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span cla
 <td>Integer</td>
 <td>Days we will wait before sending the survey. Delay is optional and it must be between 1 and 31 days.</td>
 </tr>
+<tr>
+<td>external_ids</td>
+<td>String Array</td>
+<td>External ids for each end user.</td>
+</tr>
 </tbody></table>
 
 <p>Email Survey showing Subject and Intro:
@@ -2372,6 +2377,12 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span cla
   <span class="nt">-d</span> <span class="s2">"emails[]=john@example.com"</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s2">"survey_settings[sampling][first_survey_delay]=10"</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s2">"survey_settings[sampling][registered_percent]=50"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell"><code><span class="c"># Example of multiple external_ids.</span>
+
+curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s2">"access_token=XXXXXXXXXXXXXXXX"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s2">"emails[]=john@example.com,harry@example.com"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s2">"external_ids[]=42-JOHN-USA,21-HARRY-UK"</span>
 </code></pre></div><h3 id='survey_settings-parameters'>survey_settings parameters</h3>
 <table><thead>
 <tr>
