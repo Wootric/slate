@@ -28,6 +28,7 @@ context | Hash Array | Array of hashes containing the values to be replaced in s
 senders_name | String | Override senders name
 reply_to_email | String | Override reply-to email
 delay | Integer | Days we will wait before sending the survey. Delay is optional and it must be between 1 and 31 days.
+external_ids | String Array | External ids for each end user.
 
 
 Email Survey showing Subject and Intro:
@@ -91,6 +92,16 @@ curl "https://api.wootric.com/v1/email_survey" \
   -d "survey_settings[sampling][first_survey_delay]=10" \
   -d "survey_settings[sampling][registered_percent]=50"
 ```
+
+```sh
+# Example of multiple external_ids.
+
+curl "https://api.wootric.com/v1/email_survey" \
+  -d "access_token=XXXXXXXXXXXXXXXX" \
+  -d "emails[]=john@example.com,harry@example.com" \
+  -d "external_ids[]=42-JOHN-USA,21-HARRY-UK"
+```
+
 
 ### survey_settings parameters
 Param | Type | Description
