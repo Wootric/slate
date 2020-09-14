@@ -26,83 +26,115 @@ Please be advised, that custom messages and/or placeholder, takes precedence ove
 Language | Code
 -------- | ----
 Arabic | AR
+Belarusian | BE
 Bulgarian | BG
-Chinese (Simplified) | CN_S
-Chinese (Traditional) | CN_T
+Chinese - Simplified | ZH_HANS
+Chinese - Traditional | ZH_HANT
+Czech | CZ
 Danish | DA
 Dutch | NL
+Dutch - Informal | NL_NL_X_INFORMAL
 English | EN
 Estonian | ET
 Finnish | FI
 French | FR
 German | DE
-German -informal | DE_DE_X_INFORMAL
+German - Informal | DE_DE_X_INFORMAL
 Greek | EL
 Hungarian | HU
 Indonesian | ID
 Italian | IT
 Japanese | JA
 Korean | KO
-Latvian | LV
 Lithuanian | LT
+Latvian | LV
+Malay | MS
 Norwegian | NO
 Polish | PL
-Portuguese | PT
+Portuguese - Brazil | PT
+Portuguese - Portugal | PT_PT
 Romanian | RO
 Russian | RU
 Slovene | SL
 Spanish | ES
 Spanish - Mexico | ES_MX
 Swedish | SV
+Thai | TH
 Turkish | TR
-Ukrainian | UK
+Ukranian | UK
 Vietnamese | VI
 
 ##Customer Effort Score (CES) currently supports these languages (with language codes):
 
 Language | Code
 -------- | ----
+Arabic | AR
+Belarusian | BE
 Bulgarian | BG
-Chinese (Simplified) | CN_S
-Chinese (Traditional) | CN_T
+Chinese - Simplified | ZH_HANS
+Chinese - Traditional | ZH_HANT
 Danish | DA
 Dutch | NL
+Dutch - Informal | NL_NL_X_INFORMAL
 English | EN
 Estonian | ET
+Finnish | FI
 French | FR
+German | DE
+German - Informal | DE_DE_X_INFORMAL
 Greek | EL
+Hungarian | HU
 Italian | IT
 Japanese | JA
 Korean | KO
+Malay | MS
+Norwegian | NO
 Polish | PL
-Portuguese | PT
+Portuguese - Brazil | PT
+Portuguese - Portugal | PT_PT
 Romanian | RO
+Russian | RU
 Spanish | ES
 Spanish - Mexico | ES_MX
 Swedish | SV
-Ukrainian | UK
+Thai | TH
+Turkish | TR
+Ukranian | UK
 Vietnamese | VI
 
 ##Customer Satisfaction (CSAT) currently supports these languages (with language codes):
 
 Language | Code
 -------- | ----
+Arabic | AR
+Belarusian | BE
 Bulgarian | BG
-Chinese (Simplified) | CN_S
-Chinese (Traditional) | CN_T
+Chinese - Simplified | ZH_HANS
+Chinese - Traditional | ZH_HANT
+Czech | CZ
 Dutch | NL
+Dutch - Informal | NL_NL_X_INFORMAL
 English | EN
 Estonian | ET
+Finnish | FI
 French | FR
 German | DE
+German - Informal | DE_DE_X_INFORMAL
 Greek | EL
+Hungarian | HU
 Italian | IT
 Japanese | JA
 Korean | KO
+Malay | MS
+Norwegian | NO
 Polish | PL
-Portuguese | PT
+Portuguese - Brazil | PT
+Portuguese - Portugal | PT_PT
 Romanian | RO
+Russian | RU
 Spanish | ES
 Spanish - Mexico | ES_MX
 Swedish | SV
-Ukrainian | UK
+Thai | TH
+Turkish | TR
+Ukranian | UK
