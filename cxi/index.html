@@ -1,0 +1,1537 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>REST API Documentation | Wootric</title>
+    <link href="../images/favicon-32x32.png" rel="icon" type="image/png" />
+
+    <link href="../stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script src="../javascripts/all_nosearch.js" type="text/javascript"></script>
+
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PF46GT3');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+
+  <body class="cxi cxi_index">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PF46GT3" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="wootric-doc-topbar">
+      <div class="wootric-doc-topbar__logo">
+        <a href="/" title="Wootric Documentation Home"></a>
+      </div>
+        <div class="wootric-doc-topbar__docs-nav">
+          <div class="wootric-doc-topbar__docs-nav__header">Documentation <span class="wootric-doc-topbar__docs-nav__header__icn"></span></div>
+          <div class="wootric-doc-topbar__docs-nav__dropdown-caret"></div>
+          <div class="wootric-doc-topbar__docs-nav__dropdown">
+            <a href="/javascript" >Javascript SDK</a>
+            <a href="/segment" >Segment</a>
+            <a href="/ios" >iOS SDK</a>
+            <a href="/android" >Android SDK</a>
+            <a href="https://github.com/Wootric/react-native-wootric">React Native</a>
+            <a href="http://help.wootric.com/email-surveys">Email Templates</a>
+            <a href="/api" >REST API</a>
+            <a href="/webhooks" >Outgoing Webhooks</a>
+          </div>
+        </div>
+      <div class="wootric-doc-topbar__space"></div>
+      <div class="wootric-doc-topbar__help-link"><a href="http://help.wootric.com" target="_blank">help center</a></div>
+      <div class="wootric-doc-topbar__sign">
+        <a class="wootric-doc-topbar__sign-in" href="https://app.wootric.com/sign_in">sign in</a>
+        <a class="wootric-doc-topbar__sign-up" href="https://app.wootric.com/sign_up">sign up free</a>
+      </div>
+    </div>
+
+      <a href="#" id="nav-button">
+        <span>
+          NAV
+          <img src="../images/navbar.png" alt="Navbar" />
+        </span>
+      </a>
+      <div class="tocify-wrapper">
+        <div id="toc" class="wootric-tocify">
+          <div class="wootric-tocify-main-header">
+          </div>
+        </div>
+          <ul class="toc-footer">
+              <li>© 2021 Wootric&nbsp; | &nbsp;Docs powered by <a href='http://github.com/tripit/slate'>Slate</a></li>
+          </ul>
+      </div>
+    <div class="page-wrapper" >
+      <div class="dark-box"></div>
+      <div class="content">
+        
+          <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the CXI API documentation!</p>
+
+<p>You can use our API to access, create and update your imports and responses.</p>
+
+<p>All HTTP responses from the API (including errors) are in JSON. All code examples are in cURL.</p>
+<h1 id='authentication'>Authentication</h1>
+<p>In order to use the CXI API you need to get an access token for your CXI account from the main Wootric Application, see <a href="api#authentication">here</a> for more details</p>
+
+<p>Access tokens can be retrieved using either grant_type of <code class="prettyprint">password</code> with your account <code class="prettyprint">email</code> and <code class="prettyprint">password</code>, or grant_type of <code class="prettyprint">client_credentials</code> with your application <code class="prettyprint">client_id</code> and <code class="prettyprint">client_secret</code>.</p>
+
+<blockquote>
+<p>To retrieve an access token using OAuth as following:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-i</span> https://api.wootric.com/oauth/token?account_token<span class="o">=</span>NPS-XXXX <span class="se">\</span>
+     <span class="nt">-F</span> <span class="nv">grant_type</span><span class="o">=</span>password <span class="se">\</span>
+     <span class="nt">-F</span> <span class="nv">username</span><span class="o">=</span>&lt;youremailaddress&gt; <span class="se">\</span>
+     <span class="nt">-F</span> <span class="nv">password</span><span class="o">=</span>&lt;yourpassword&gt;
+</code></pre></div>
+<blockquote>
+<p>The above command returns the following JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"access_token"</span><span class="p">:</span><span class="s2">"&lt;youraccesstoken&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"token_type"</span><span class="p">:</span><span class="s2">"bearer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"expires_in"</span><span class="p">:</span><span class="mi">7200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="s2">"&lt;yourrefreshtoken&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scope"</span><span class="p">:</span><span class="s2">"public"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>The same but using credentials:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> POST https://api.wootric.com/oauth/token <span class="se">\</span>
+     <span class="nt">-F</span> <span class="nv">grant_type</span><span class="o">=</span>client_credentials <span class="se">\</span>
+     <span class="nt">-F</span> <span class="nv">client_id</span><span class="o">=</span>&lt;yourclientid&gt; <span class="se">\</span>
+     <span class="nt">-F</span> <span class="nv">client_secret</span><span class="o">=</span>&lt;yourclientsecret&gt;
+</code></pre></div>
+<blockquote>
+<p>The above command returns the following JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"access_token"</span><span class="p">:</span><span class="s2">"&lt;youraccesstoken&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"token_type"</span><span class="p">:</span><span class="s2">"bearer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"expires_in"</span><span class="p">:</span><span class="mi">7200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scope"</span><span class="p">:</span><span class="s2">"public"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>CXI expects the access token to be included in all API requests regardless of grant_type of <code class="prettyprint">password</code> or <code class="prettyprint">client_credentials</code>. We recommend to send your token as HTTP <code class="prettyprint">Authorization Header</code>, for example</p>
+
+<p><code class="prettyprint">curl -X GET -H &quot;Authorization: Bearer &lt;youraccesstoken&gt;&quot; https://cxi-api.wootric.com/v1/imports</code></p>
+
+<p>Access tokens expire 2 hours after creation. New access_token can be obtained using refresh tokens as detailed in the <a href="api#authentication">Wootric Authentication section</a>.</p>
+
+<p><aside class="notice">
+You must replace <code class="prettyprint">myaccesstoken</code> with your personal Access Token.
+</aside></p>
+
+<p><aside class="notice">
+Never send your credentials (password or client_secret) as query parameter to URL even when using POST request. Query parameters get logged in plain text as your API requests hop through different servers on the way to Wootric servers and hence it can be <strong>exploited</strong>.
+</aside></p>
+
+          <h1 id='onboarding'>Onboarding</h1>
+<p>In order to use the CXI API you first need an &ldquo;onboarded&rdquo; account, that is, you should have completed the onboarding flow, which is required to access the rest of the API.</p>
+
+<p>In the onboarding flow you are asked to choose a Product Category for you account and other details.</p>
+
+<p>The API will return a <code class="prettyprint">424 Failed Dependency</code> error when trying to perform an action (like fetching imports, tags or responses) using an account that has not completed the onboarding flow.</p>
+
+<blockquote>
+<p>Trying to use the API without completing the onboarding flow will give you an error:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-i</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-X</span> GET <span class="s2">"</span><span class="nv">$AI_SERVER</span><span class="s2">/v1/imports"</span>
+HTTP/1.1 424 Failed Dependency
+...
+<span class="o">{</span><span class="s2">"message"</span>:<span class="s2">"Please complete the onboarding flow first."</span><span class="o">}</span>
+</code></pre></div><h2 id='get-onboarding-status'>Get Onboarding status</h2>
+<p>This endpoint will give you the onboarding status of your account</p>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-X</span> GET <span class="s2">"https://cxi-api.wootric.com/v1/onboarding"</span> | jq
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON response similar to this for onboarded accounts</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"onboarded"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>The above command returns a JSON response similar to this for NOT onboarded accounts</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"onboarded"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_category_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS DevOps"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS Anc"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS IDC"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS Education CL"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS GD"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS Social Media"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Politicians Review"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS Social Media HS"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E-Commerce"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E-Commerce-WGAC"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Employee Reviews"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Online Food Delivery"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Support Case Feedback"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS RC"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://cxi-api.wootric.com/v1/onboarding</code></p>
+<h2 id='update-onboarding-status'>Update Onboarding status</h2>
+<p>This endpoint updates the onboarding status of an account that has not been onboarded yet. Your account will not be onboarded until you update the <code class="prettyprint">onboarded</code> attribute using this endpoint.</p>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-X</span> PUT <span class="s2">"https://cxi-api.wootric.com/v1/onboarding"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="nv">product_category_id</span><span class="o">=</span>9
+  | jq
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON response similar to this for onboarded accounts</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"onboarded"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS DevOps"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS Anc"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS IDC"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS Education CL"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS GD"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS Social Media"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Politicians Review"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS Social Media HS"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E-Commerce"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E-Commerce-WGAC"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Employee Reviews"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Online Food Delivery"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Support Case Feedback"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SaaS RC"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RETURNS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"response_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">91</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SHIPPING_PACKAGING"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"response_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">89</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODUCT_QUALITY"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"response_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"responses"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><aside class="warning">
+Note that your can use this endpoint as long as the <code class="prettyprint">onboarded</code> attribute is <code class="prettyprint">false</code>, once you update it to <code class="prettyprint">true</code> you can no longer use this endpoint but you&rsquo;ll be able to access the rest of the API.
+</aside></p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">PUT https://cxi-api.wootric.com/v1/onboarding</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>product_category_id</td>
+<td>integer</td>
+<td>The ID of the chosen Product Category</td>
+</tr>
+<tr>
+<td>onboarded</td>
+<td>boolean</td>
+<td>Onboarding status flag</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Hash</td>
+<td>(optional) Details about an optional associated Project</td>
+</tr>
+<tr>
+<td>import</td>
+<td>Hash</td>
+<td>(optional) Details about an optional associated Import (see <a href="cxi#imports">Imports API</a>)</td>
+</tr>
+<tr>
+<td>project[name]</td>
+<td>string</td>
+<td>Name of an associated Project (see <a href="cxi#projects">Projects API</a>)</td>
+</tr>
+<tr>
+<td>import[name]</td>
+<td>string</td>
+<td>Name of an associated Import (see <a href="cxi#imports">Imports API</a>)</td>
+</tr>
+<tr>
+<td>import[source]</td>
+<td>string</td>
+<td>Import&rsquo;s source (see <a href="cxi#imports">Imports API</a>)</td>
+</tr>
+<tr>
+<td>import[metric_type]</td>
+<td>string</td>
+<td>Import&rsquo;s Metric Type (see <a href="cxi#imports">Imports API</a>)</td>
+</tr>
+<tr>
+<td>import[language]</td>
+<td>string</td>
+<td>Import&rsquo;s language (see <a href="cxi#imports">Imports API</a>)</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-X</span> PUT <span class="s2">"https://cxi-api.wootric.com/v1/onboarding"</span> <span class="se">\</span>
+  <span class="nt">-F</span> project[name]<span class="o">=</span>Enterprise <span class="se">\</span>
+  <span class="nt">-F</span> import[name]<span class="o">=</span>important.csv <span class="se">\</span>
+  <span class="nt">-F</span> import[source]<span class="o">=</span><span class="s2">"Survey Monkey"</span> <span class="se">\</span>
+  <span class="nt">-F</span> import[metric_type]<span class="o">=</span>NPS <span class="se">\</span>
+  | jq
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON response similar to this for onboarded accounts</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"onboarded"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E-Commerce"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RETURNS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"response_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enterprise"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"responses"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"import"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"important.csv"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Survey Monkey"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"metric_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nps"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sample_analyzed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Finally, the onboarded state is also set through the same PUT /v1/onboarding endpoint:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code><span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-X</span> PUT <span class="s2">"https://cxi-api.wootric.com/v1/onboarding"</span> <span class="nt">-F</span> <span class="nv">onboarded</span><span class="o">=</span><span class="nb">true</span> | jq
+<span class="o">{</span>
+  <span class="s2">"onboarded"</span>: <span class="nb">true</span>,
+  <span class="s2">"mode"</span>: <span class="s2">"full"</span>
+<span class="o">}</span>
+</code></pre></div>
+<p><aside class="warning">
+From now on all examples assume that your account has been onboarded and you have successfully selected a Product Category for your account and have also created your first import.
+</aside></p>
+
+          <h1 id='projects'>Projects</h1><h2 id='project-object'>Project Object</h2>
+<p>A Project object has the following fields:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>The ID of project</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Project&rsquo;s name</td>
+</tr>
+<tr>
+<td>response_count</td>
+<td>integer</td>
+<td>Number of Responses in this Project</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>integer</td>
+<td>Project&rsquo;s creation date as a Unix Timestamp</td>
+</tr>
+</tbody></table>
+
+<p><aside class="notice">
+In the following cURL examples you must replace <code class="prettyprint">myaccesstoken</code> with a valid <a href="api#authentication">Access Token</a> obtained from the main application.
+</aside></p>
+<h2 id='get-projects'>Get projects</h2>
+<p>This endpoint gets all projects in your account</p>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-X</span> GET <span class="s2">"https://cxi-api.wootric.com/v1/projects"</span> | jq
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON response similar to this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enterprise"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"response_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1610774054</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://cxi-api.wootric.com/v1/projects</code></p>
+<h2 id='create-a-project'>Create a Project</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://cxi-api.wootric.com/v1/projects"</span> <span class="se">\</span>
+  <span class="nt">-F</span> project[name]<span class="o">=</span><span class="s2">"My new Project"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON response similar to this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My new Project"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"response_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1611092961</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint creates a project in your account.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST https://cxi-api.wootric.com/v1/projects</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project[name]</td>
+<td>string</td>
+<td>Project&rsquo;s name</td>
+</tr>
+</tbody></table>
+<h2 id='update-a-project'>Update a Project</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://cxi-api.wootric.com/v1/projects/8"</span> <span class="se">\</span>
+  <span class="nt">-F</span> project[name]<span class="o">=</span><span class="s2">"Updated name for the Project"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON response similar to this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated name for the Project"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"response_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1611092961</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint updates a project in your account.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">PUT https://cxi-api.wootric.com/v1/projects/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>The ID of the Project being updated</td>
+</tr>
+<tr>
+<td>project[name]</td>
+<td>string</td>
+<td>Project&rsquo;s name</td>
+</tr>
+</tbody></table>
+
+          <h1 id='tags'>Tags</h1><h2 id='tag-object'>Tag Object</h2>
+<p>A Tag object has the following fields:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>The ID of tag</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Tag&rsquo;s name</td>
+</tr>
+<tr>
+<td>display_name</td>
+<td>string</td>
+<td>Tag&rsquo;s display name</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Tag&rsquo;s description</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>string</td>
+<td>Tag&rsquo;s mode, one of <code class="prettyprint">manual</code>, <code class="prettyprint">smart</code> or <code class="prettyprint">text_match</code></td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>boolean</td>
+<td>A boolean indicating whether the tag is enabled or not</td>
+</tr>
+<tr>
+<td>text_match_terms</td>
+<td>string[]</td>
+<td>An Array of strings indicating the terms that&rsquo;d be used to match this tag. Only applies to text-match tags.</td>
+</tr>
+<tr>
+<td>filter_rules</td>
+<td>Hash</td>
+<td>a Hash of conditions (or filters) that should be satisfied before applying this tag to a response. Only applies to text-match tags.</td>
+</tr>
+<tr>
+<td>sentiment_breakdown</td>
+<td>Hash</td>
+<td>Sentiment percentage breakdown for this tag, <code class="prettyprint">positive</code>, <code class="prettyprint">negative</code>, <code class="prettyprint">neutral</code> and <code class="prettyprint">null</code> are the possible keys.</td>
+</tr>
+<tr>
+<td>children</td>
+<td>Tag[]</td>
+<td>Array of Tags that are children of this parent tag</td>
+</tr>
+</tbody></table>
+<h2 id='get-tags'>Get tags</h2>
+<p>This endpoint gets all tags in your account</p>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-X</span> GET <span class="s2">"https://cxi-api.wootric.com/v1/tags"</span> | jq
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON response similar to this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">46</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PERFORMANCE"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PERFORMANCE"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"scope_by_parent"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text_match_terms"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"filter_rules"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"response_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"usage"</span><span class="p">:</span><span class="w"> </span><span class="mf">48.148148148148145</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sentiment_breakdown"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"positive"</span><span class="p">:</span><span class="w"> </span><span class="mf">46.15</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"neutral"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.95</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"negative"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.9</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"null"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">49</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UX_UI"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UX_UI"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"scope_by_parent"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text_match_terms"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"filter_rules"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"response_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"usage"</span><span class="p">:</span><span class="w"> </span><span class="mf">46.913580246913575</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sentiment_breakdown"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"positive"</span><span class="p">:</span><span class="w"> </span><span class="mf">36.84</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"neutral"</span><span class="p">:</span><span class="w"> </span><span class="mf">18.42</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"negative"</span><span class="p">:</span><span class="w"> </span><span class="mf">44.74</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"null"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://cxi-api.wootric.com/v1/tags</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page (optional)</td>
+<td>integer</td>
+<td>1</td>
+<td>Number of returned page, max 30</td>
+</tr>
+<tr>
+<td>per_page (optional)</td>
+<td>integer</td>
+<td>25</td>
+<td>Number of records returned on each page, max 50</td>
+</tr>
+<tr>
+<td>flat</td>
+<td>boolean</td>
+<td>false</td>
+<td>Return children tags inside a <code class="prettyprint">children</code> array in the parent tag object (hierarchy), or return children tags on their own (flat)</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>string</td>
+<td>response_count descending</td>
+<td>How to sort results, possible values: <code class="prettyprint">name_asc</code>, <code class="prettyprint">name_desc</code> and <code class="prettyprint">responses_asc</code>. The default is to sort results by response count in descending mode.</td>
+</tr>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>nil</td>
+<td>Used to search (full text search) for matching tag names</td>
+</tr>
+<tr>
+<td>no_stats</td>
+<td>boolean</td>
+<td>false</td>
+<td>Whether to include usage data statistics or not</td>
+</tr>
+<tr>
+<td>exclude_disabled</td>
+<td>boolean</td>
+<td>false</td>
+<td>If true then only enabled tags will be returned</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-tag'>Create a Tag</h2>
+<p>This endpoint creates a tag in your account, only manual and text-match tags can be created.</p>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-X</span> POST <span class="s2">"https://cxi-api.wootric.com/v1/tags"</span> <span class="se">\</span>
+  <span class="nt">-F</span> tag[name]<span class="o">=</span>my-tag <span class="se">\</span>
+  <span class="nt">-F</span> tag[description]<span class="o">=</span><span class="s2">"the descrition"</span> <span class="se">\</span>
+  <span class="nt">-F</span> tag[mode]<span class="o">=</span>text_match <span class="se">\</span>
+  <span class="nt">-F</span> tag[text_match_terms][]<span class="o">=</span><span class="s2">"term1"</span> <span class="se">\</span>
+  <span class="nt">-F</span> tag[text_match_terms][]<span class="o">=</span><span class="s2">"term2"</span> <span class="se">\</span>
+  <span class="nt">-F</span> tag[text_match_terms][]<span class="o">=</span><span class="s2">"term3"</span> <span class="se">\</span>
+  | jq
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON response similar to this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MY-TAG"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MY-TAG"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"the descrition"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text_match"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scope_by_parent"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"text_match_terms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"term1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"term2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"term3"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"filter_rules"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST https://cxi-api.wootric.com/v1/tags</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tag[name]</td>
+<td>string</td>
+<td>The tag&rsquo;s name</td>
+</tr>
+<tr>
+<td>tag[description]</td>
+<td>string</td>
+<td>Tag&rsquo;s description</td>
+</tr>
+<tr>
+<td>tag[mode]</td>
+<td>string</td>
+<td>Tag&rsquo;s mode, one of <code class="prettyprint">manual</code> or <code class="prettyprint">text_match</code></td>
+</tr>
+<tr>
+<td>tag[parent_id]</td>
+<td>integer</td>
+<td>The ID of a Tag that will be used as parent for this tag</td>
+</tr>
+<tr>
+<td>tag[text_match_terms]</td>
+<td>string[]</td>
+<td>An Array of strings indicating the terms that&rsquo;d be used to match this tag. Only applies to text-match tags. Max: 100</td>
+</tr>
+<tr>
+<td>tag[filter_rules]</td>
+<td>Hash</td>
+<td>a Hash of conditions (or filters) that should be satisfied before applying this tag to a response. Only applies to text-match tags.</td>
+</tr>
+</tbody></table>
+<h2 id='update-a-tag'>Update a Tag</h2>
+<p>This endpoint updates a tag in your account</p>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-X</span> PUT <span class="s2">"https://cxi-api.wootric.com/v1/tags/78"</span> <span class="se">\</span>
+  <span class="nt">-F</span> tag[name]<span class="o">=</span>my-updated-tag <span class="se">\</span>
+  <span class="nt">-F</span> tag[description]<span class="o">=</span><span class="s2">"the updated descrition"</span> <span class="se">\</span>
+  <span class="nt">-F</span> tag[text_match_terms][]<span class="o">=</span><span class="s2">"term3"</span> <span class="se">\</span>
+  <span class="nt">-F</span> tag[text_match_terms][]<span class="o">=</span><span class="s2">"term4"</span> <span class="se">\</span>
+  | jq
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON response similar to this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MY-UPDATED-TAG"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MY-UPDATED-TAG"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"the updated descrition"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text_match"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scope_by_parent"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"text_match_terms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"term3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"term4"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"filter_rules"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">PUT https://cxi-api.wootric.com/v1/tags/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tag[name]</td>
+<td>string</td>
+<td>The tag&rsquo;s name</td>
+</tr>
+<tr>
+<td>tag[description]</td>
+<td>string</td>
+<td>Tag&rsquo;s description</td>
+</tr>
+<tr>
+<td>tag[mode]</td>
+<td>string</td>
+<td>Tag&rsquo;s mode, one of <code class="prettyprint">manual</code> or <code class="prettyprint">text_match</code></td>
+</tr>
+<tr>
+<td>tag[parent_id]</td>
+<td>integer</td>
+<td>The ID of a Tag that will be used as parent for this tag</td>
+</tr>
+<tr>
+<td>tag[text_match_terms]</td>
+<td>string[]</td>
+<td>An Array of strings indicating the terms that&rsquo;d be used to match this tag. Only applies to text-match tags. Max: 100</td>
+</tr>
+<tr>
+<td>tag[filter_rules]</td>
+<td>Hash</td>
+<td>a Hash of conditions (or filters) that should be satisfied before applying this tag to a response. Only applies to text-match tags.</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-tag'>Delete a Tag</h2>
+<p>This endpoint deletes a tag in your account</p>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-X</span> DELETE <span class="s2">"https://cxi-api.wootric.com/v1/tags/78"</span> | jq
+</code></pre></div>
+<blockquote>
+<p>The above command returns an empty response with status 200.</p>
+</blockquote>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">DELETE https://cxi-api.wootric.com/v1/tags/&lt;ID&gt;</code></p>
+
+          <h1 id='imports'>Imports</h1><h2 id='import-object'>Import Object</h2>
+<p>An Import object has the following fields:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>The ID of the import</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Import&rsquo;s name</td>
+</tr>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>Import&rsquo;s source</td>
+</tr>
+<tr>
+<td>metric_type</td>
+<td>string</td>
+<td>Import&rsquo;s Metric Type, &ldquo;nps&rdquo;, &ldquo;ces&rdquo;, &ldquo;csat&rdquo; or &ldquo;other&rdquo;</td>
+</tr>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>Import&rsquo;s language</td>
+</tr>
+<tr>
+<td>secondary_product_category_id</td>
+<td>integer</td>
+<td>Import&rsquo;s optional secondary product category ID</td>
+</tr>
+<tr>
+<td>response_count</td>
+<td>integer</td>
+<td>The number of responses in this import</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>timestamp</td>
+<td>Unix Timestamp of when the import was created</td>
+</tr>
+<tr>
+<td>sample_analyzed</td>
+<td>boolean</td>
+<td>A boolean indicating whether the import has been analyzed or not</td>
+</tr>
+</tbody></table>
+
+<p><aside class="notice">
+In the following cURL examples you must replace <code class="prettyprint">myaccesstoken</code> with a valid <a href="api#authentication">Access Token</a> obtained from the main application.
+</aside></p>
+<h2 id='get-imports'>Get imports</h2>
+<p>This endpoint gets all imports in your account</p>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-X</span> GET <span class="s2">"https://cxi-api.wootric.com/v1/imports"</span> | jq
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON response similar to this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ai.csv"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Intercom"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"metric_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nps"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"secondary_product_category_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"response_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1590090287</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample.csv"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Survey Monkey"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"metric_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nps"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"secondary_product_category_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"response_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1588629685</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://cxi-api.wootric.com/v1/imports</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page (optional)</td>
+<td>integer</td>
+<td>1</td>
+<td>Number of returned page, max 30</td>
+</tr>
+<tr>
+<td>per_page (optional)</td>
+<td>integer</td>
+<td>25</td>
+<td>Number of records returned on each page, max 50</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-import'>Get a specific import</h2>
+<p>This endpoint gets a specific import by ID and it&rsquo;d give you more information about an import than the previous endpoint.</p>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-X</span> GET <span class="s2">"https://cxi-api.wootric.com/v1/imports/6"</span> | jq
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON response similar to this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ai.csv"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Intercom"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"metric_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nps"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"secondary_product_category_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"response_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1590090287</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sample_analyzed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"responses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="err">...</span><span class="w"> </span><span class="err">list</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">responses</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">import</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://cxi-api.wootric.com/v1/imports/&lt;id&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>The ID of the import</td>
+</tr>
+</tbody></table>
+<h2 id='create-an-import'>Create an import</h2>
+<p>This endpoint creates an import by uploading a CSV file to /v1/imports, this is a multipart formpost endpoint, so you need to use the proper Content-Type multipart/form-data header.</p>
+<h3 id='csv-file-format'>CSV file format</h3>
+<p>For each row in the CSV file we&rsquo;ll create a response in the newly created import, special column names such as <code class="prettyprint">feedback</code>, <code class="prettyprint">score</code>, <code class="prettyprint">user_id</code> and <code class="prettyprint">feedback_date</code> will be used to create the response and the rest of the columns will be treated as &ldquo;properties&rdquo;.</p>
+
+<p>The only mandatory column in the CSV file is the <code class="prettyprint">feedback_date</code> column and it should have a valid value for each row in the file.
+Also if you include a <code class="prettyprint">score</code> column it should consists of Integer values only (blank values are allowed).</p>
+
+<p>Special columns used as response attributes:</p>
+
+<table><thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>feedback</td>
+<td>the response&rsquo;s feedback</td>
+<td>string</td>
+<td>false</td>
+</tr>
+<tr>
+<td>feedback_date</td>
+<td>the response&rsquo;s feedback date (*)as a Unix Timestamp</td>
+<td>String/Integer</td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>the user&rsquo;s unique ID</td>
+<td>string</td>
+<td>false</td>
+</tr>
+<tr>
+<td>score</td>
+<td>the response&rsquo;s NPS, CSAT, CES or other score</td>
+<td>Integer</td>
+<td>false</td>
+</tr>
+</tbody></table>
+
+<p>Reserved Column Names that cannot be used in the CSV file:
+<code class="prettyprint">tags, wootric_response_id</code></p>
+
+<p>(*) feedback_date format: <code class="prettyprint">yyyy-mm-dd hh:mm:ss</code> (e.g 2020-07-16 15:45:00), we also accept <code class="prettyprint">yyyy-mm-dd hh:mm</code> and <code class="prettyprint">yyyy-mm-dd</code>. You can also use a Unix Timestamp.</p>
+<h3 id='limits'>Limits</h3>
+<p>Imports only work for CSVs less than 10MB in size</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST https://cxi-api.wootric.com/v1/imports</code></p>
+<h3 id='http-headers'>HTTP Headers</h3>
+<p><code class="prettyprint">Content-Type: multipart/form-data</code></p>
+<h3 id='http-post-body'>HTTP POST Body</h3>
+<table><thead>
+<tr>
+<th>Multipart Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file</td>
+<td>UTF-8 encoded string</td>
+<td>The contents of the CSV file (max: 10 MB)</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-XPOST</span> <span class="s2">"https://cxi-api.wootric.com/v1/imports"</span> <span class="nt">-F</span> <span class="s2">"file=@data.csv"</span> | jq
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON response similar to this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data.csv"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"metric_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"secondary_product_category_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"response_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1611093660</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sample_analyzed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"responses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">403</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"feedback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I wish your pricing model worked better for me. I need a custom plan."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"translated_feedback"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mitsu.takasu@example1434.mx"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"feedback_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1504948149</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"metric_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"custom_properties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"platform"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solaris"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"country"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ecuador"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pricing_plan"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lite"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"persona"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business User"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"sentiment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"wootric_response_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"wootric_account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w"> </span><span class="err">list</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">responses</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">import</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='update-an-import'>Update an import</h2>
+<p>This endpoint updates an import&rsquo;s metadata. The name, metric_type and source fields can be set with <code class="prettyprint">PUT /v1/imports/:id</code>.
+Also, this endpoint accepts an optional list of tag_names and project_ids.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">PUT https://cxi-api.wootric.com/v1/imports/&lt;id&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>The ID of the import</td>
+</tr>
+<tr>
+<td>import[name]</td>
+<td>string</td>
+<td>Import&rsquo;s name</td>
+</tr>
+<tr>
+<td>import[source]</td>
+<td>string</td>
+<td>Import&rsquo;s source</td>
+</tr>
+<tr>
+<td>import[metric_type]</td>
+<td>string</td>
+<td>Import&rsquo;s Metric Type, &ldquo;nps&rdquo;, &ldquo;ces&rdquo;, &ldquo;csat&rdquo; or &ldquo;other&rdquo;</td>
+</tr>
+<tr>
+<td>import[language]</td>
+<td>string</td>
+<td>Import&rsquo;s language</td>
+</tr>
+<tr>
+<td>import[secondary_product_category_id]</td>
+<td>integer</td>
+<td>Import&rsquo;s optional secondary product category ID</td>
+</tr>
+<tr>
+<td>import[tag_names]</td>
+<td>string[]</td>
+<td>List of <strong>existing</strong> <code class="prettyprint">Tag</code> names in the account that will be applied to each response in the import.</td>
+</tr>
+<tr>
+<td>import[project_ids]</td>
+<td>integer[]</td>
+<td>List of <strong>existing</strong> `project IDs that will be applied to each response in the import.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-X</span> PUT <span class="s2">"https://cxi-api.wootric.com/v1/imports/11"</span> <span class="se">\</span>
+  <span class="nt">-F</span> import[name]<span class="o">=</span><span class="s2">"My second import"</span> <span class="se">\</span>
+  <span class="nt">-F</span> import[metric_type]<span class="o">=</span>CES <span class="se">\</span>
+  <span class="nt">-F</span> import[source]<span class="o">=</span>Intercom <span class="se">\</span>
+  <span class="nt">-F</span> import[tag_names][0]<span class="o">=</span>TEST <span class="se">\</span>
+  <span class="nt">-F</span> import[project_ids][0]<span class="o">=</span>5 | jq
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON response similar to this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My second import"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Intercom"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"metric_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ces"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"secondary_product_category_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"response_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1611093660</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sample_analyzed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"responses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">413</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">5</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"feedback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I wish your pricing model worked better for me. I need a custom plan."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"translated_feedback"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mitsu.takasu@example1434.mx"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"feedback_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1504948149</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"metric_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ces"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"custom_properties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pricing_plan"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lite"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"platform"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solaris"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"persona"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business User"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"country"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ecuador"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"sentiment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"wootric_response_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"wootric_account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w"> </span><span class="err">list</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">responses</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">import</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='delete-an-import'>Delete an import</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-i</span> <span class="nt">-s</span> <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://cxi-api.wootric.com/v1/imports/10"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns and empty response with status 202 Accepted.</p>
+</blockquote>
+
+<p>This endpoint deletes an import in your account along with all associated responses.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">DELETE https://cxi-api.wootric.com/v1/imports/&lt;id&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>The ID of the import</td>
+</tr>
+</tbody></table>
+
+          <h1 id='reponses'>Reponses</h1><h2 id='response-object'>Response Object</h2>
+<p>A Response object has the following fields:</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>The ID of the response</td>
+</tr>
+<tr>
+<td>feedback</td>
+<td>string</td>
+<td>the response&rsquo;s feedback</td>
+</tr>
+<tr>
+<td>feedback_date</td>
+<td>string/integer</td>
+<td>the response&rsquo;s feedback date (*)</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>string</td>
+<td>the user&rsquo;s unique ID</td>
+</tr>
+<tr>
+<td>metric_type</td>
+<td>string</td>
+<td>response&rsquo;s metric type, one of <code class="prettyprint">nps</code>, <code class="prettyprint">csat</code>, <code class="prettyprint">ces</code> or <code class="prettyprint">other</code></td>
+</tr>
+<tr>
+<td>score</td>
+<td>integer</td>
+<td>the response&rsquo;s NPS, CSAT, CES or other score</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>string</td>
+<td>response&rsquo;s sentiment, <code class="prettyprint">positive</code>, <code class="prettyprint">negative</code>, <code class="prettyprint">neutral</code> or <code class="prettyprint">null</code></td>
+</tr>
+<tr>
+<td>project_ids</td>
+<td>integer[]</td>
+<td>Array of all associated <a href="cxi#projects">Projects</a></td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Hash[]</td>
+<td>a list of <a href="cxi#tags">Tags</a> associated with this response</td>
+</tr>
+<tr>
+<td>custom_properties</td>
+<td>Hash[]</td>
+<td>a list of associated custom properties for this response (**)</td>
+</tr>
+</tbody></table>
+
+<p>(*) feedback_date format: <code class="prettyprint">yyyy-mm-dd hh:mm:ss</code> (e.g 2020-07-16 15:45:00), we also accept <code class="prettyprint">yyyy-mm-dd hh:mm</code> and <code class="prettyprint">yyyy-mm-dd</code>. You can also use a Unix Timestamp.</p>
+
+<p>(**) custom_properties are associated to responses when you create an <a href="cxi#create-an-import">Import</a>. The properties and their values are the columns and cells that you use in the uploaded CSV file.</p>
+
+<p><aside class="notice">
+In the following cURL examples you must replace <code class="prettyprint">myaccesstoken</code> with a valid <a href="api#authentication">Access Token</a> obtained from the main application.
+</aside></p>
+<h2 id='get-responses'>Get responses</h2>
+<p>This endpoint gets all responses in your account</p>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-X</span> GET <span class="s2">"https://cxi-api.wootric.com/v1/responses"</span> | jq
+</code></pre></div>
+<blockquote>
+<p>The above command returns a JSON response similar to this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">413</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">5</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"feedback"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I wish your pricing model worked better for me. I need a custom plan."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"translated_feedback"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mitsu.takasu@example1434.mx"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"feedback_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1504948149</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"metric_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ces"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"custom_properties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pricing_plan"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lite"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"platform"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solaris"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"persona"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business User"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"country"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ecuador"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">93</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TECHNICAL"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TECHNICAL"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sentiment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"negative"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"text_match_terms"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="s2">"filter_rules"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PEOPLE"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PEOPLE"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sentiment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"positive"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"text_match_terms"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="s2">"filter_rules"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">89</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODUCT_QUALITY"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODUCT_QUALITY"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smart"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sentiment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"negative"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"text_match_terms"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="s2">"filter_rules"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"sentiment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"positive"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"wootric_response_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"wootric_account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://cxi-api.wootric.com/v1/responses</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page (optional)</td>
+<td>integer</td>
+<td>1</td>
+<td>Number of returned page, max 30</td>
+</tr>
+<tr>
+<td>per_page (optional)</td>
+<td>integer</td>
+<td>25</td>
+<td>Number of records returned on each page, max 50</td>
+</tr>
+<tr>
+<td>sort_order (optional)</td>
+<td>string</td>
+<td>desc</td>
+<td>Sort responses by <code class="prettyprint">feedback_date</code> in ascending or descending order</td>
+</tr>
+</tbody></table>
+
+          <h1 id='exports'>Exports</h1><h2 id='create-an-export'>Create an export</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-i</span> <span class="nt">-s</span> <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://cxi-api.wootric.com/v1/exports"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns and empty response with status 201 Created.</p>
+</blockquote>
+
+<p>This endpoint creates an export that will send an email to the user that requested the export once the export is ready.</p>
+
+<p>In the email you&rsquo;ll see a link to download a CSV file containing the data that you requested. If you&rsquo;ve chosen <code class="prettyprint">responses</code> as the <code class="prettyprint">export_type</code> you&rsquo;ll get a link to a CSV file containing your responses and associated data, if you&rsquo;ve chosen <code class="prettyprint">users</code> as the <code class="prettyprint">export_type</code> you&rsquo;ll get data associated with your users in the CSV file.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST https://cxi-api.wootric.com/v1/exports</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>export_type</td>
+<td>string</td>
+<td>responses</td>
+<td>The type of export, either <code class="prettyprint">responses</code> or <code class="prettyprint">users</code></td>
+</tr>
+</tbody></table>
+<h3 id='limits'>Limits</h3>
+<p>Your can only have a single export in progress at the same time, so if you requested an export and want another one, you need to wait until you get the first export before requesting the new one.</p>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
+
+
+<!-- begin Wootric code -->
+<script type="text/javascript">
+  window.wootricSettings = {
+    account_token: 'NPS-2a62eaf4',
+    open_ended: true
+  };
+</script>
+<script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
+<script type="text/javascript">
+  if (window.location.pathname.length > 1) {
+    window.wootric('run');
+  }
+</script>
+<!-- end Wootric code -->
