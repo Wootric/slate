@@ -136,6 +136,7 @@ page (optional)| integer | 1 | Number of returned page, max 30
 per_page (optional) | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
 sort_order (optional)| string | desc | Order in which records are shown. Default is newest first. Options are `asc` or `desc`
+excluded_from_calculations (optional)| boolean | false | Include/exclude responses that were invalidated
 
 We recommend to iterate using `created` parameter if you need to get more data than what you get out of our pagination restriction.
 
@@ -220,6 +221,7 @@ page | integer | 1 | Number of returned page, max 30
 per_page | integer | 25 | Number of records returned on each page, max 50
 created | hash | {} | Filter your responses by time of creation (UNIX timestamp type) -  *eq*, *lt*, *lte*, *gt*, *gte* (`created[gt]=UNIX_TIMESTAMP     &created[lt]=UNIX_TIMESTAMP`)
 sort_order (optional)| string | desc | Order in which records are shown. Default is newest first. Options are `asc` or `desc`
+excluded_from_calculations (optional)| boolean | false | Include/exclude responses that were invalidated
 
 We recommend to iterate using `created` parameter if you need to get more data than what you get out of our pagination restriction.
 
