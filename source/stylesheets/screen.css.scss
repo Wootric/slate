@@ -355,7 +355,7 @@ html, body {
     }
 
     &__header {
-      color: $darker-gray;
+      color: $xi-orca;
       line-height: normal;
       font-size: 16px;
       font-weight: 400;
@@ -416,7 +416,7 @@ html, body {
       z-index: 101;
 
       a {
-        color: $gray;
+        color: $xi-orca;
         display: block;
         font-weight: normal;
         padding: 15px;
@@ -457,11 +457,11 @@ html, body {
 
     a {
       @include transition(ease-in-out 0.1s);
-      color: $darker-gray;
+      color: $xi-orca;
       text-decoration: none;
 
       &:hover {
-        color: $wootric-green;
+        color: $xi-blue;
       }
     }
   }
@@ -486,24 +486,23 @@ html, body {
 
     &-in {
       @include transition(ease-in-out 0.1s);
-      color: $light-gray;
+      color: $xi-orca;
       margin-right: 28px;
 
       &:hover {
-        color: $wootric-green;
+        color: $xi-blue;
       }
     }
 
     &-up {
       @include transition(ease-in-out 0.1s);
-      background-color: $wootric-green;
+      background-color: $xi-blue;
       border-radius: 6px;
       color: $main-bg;
       padding: 10px 15px;
 
       &:hover {
-        background-color: darken($wootric-green, 10%);
-        color: darken($main-bg, 10%);
+        background-color: $xi-blue-l-1;
       }
     }
   }
@@ -523,7 +522,7 @@ html, body {
     }
 
     &__main {
-      color: $darkest-gray;
+      color: $xi-orca;
       font-size: 38px;
       font-weight: 400;
       margin-bottom: 20px;
@@ -531,7 +530,7 @@ html, body {
     }
 
     &__sub {
-      color: $gray;
+      color: $xi-orca;
       font-size: 28px;
       font-weight: 300;
     }
@@ -563,7 +562,7 @@ html, body {
       }
 
       &__header{
-        color: $darker-gray;
+        color: $xi-orca;
         margin: 0 0 20px;
         font-size: 26px;
         font-weight: 400;
@@ -735,7 +734,7 @@ html, body {
       }
 
       &__title {
-        color: $gray;
+        color: $xi-orca;
         font-size: 18px;
         font-weight: 400;
       }
