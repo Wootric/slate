@@ -12,7 +12,7 @@ curl "https://api.wootric.com/v1/email_survey_csv" \
   -d "intro=We want you to be our customer for life. That's why your opinion matters."
 ```
 
-CSV file 
+CSV file
 
 email,segment1,segment2
 email@email.com,segment1_value,segment2_value
@@ -21,7 +21,32 @@ email3@email.com,3segment1_value,3segment2_value
 email4@email.com,4segment1_value,4segment2_value
 
 - Maximum of 5000 rows per request.
-- We will automatically create an end user if they don't exist. ???
+- We will automatically create end users if they don't exist.
+
+## CSV Columns
+
+- The first column of the CSV needs to be the email address and the column should be named `email`
+- All the other columns will be treated as string properties unless they have a special column name
+
+### Special columns names
+
+- Context variables
+
+&nbsp;&nbsp; `___context:var`
+
+- Language
+
+&nbsp;&nbsp; `___language`
+
+- Integers, the column name should end with "_amount"
+
+&nbsp;&nbsp; `price_amount`
+
+- Dates, the column name should end with "_date"
+
+&nbsp;&nbsp; `start_date`
+
+<br />
 
 Param | Type | Description
 ----- | ---- | ------------
@@ -38,7 +63,6 @@ send_to_email_field | String | Column containing the email address of the receiv
 unique_identifier_field | String | Field used to set the email of the end user (require send_to_email_field).
 survey_immediately | Boolean | Override eligibility check
 survey_settings | Hash | See **survey_settings** parameters below
-
 
 Email Survey showing Subject and Intro:
 ![Compact Survey](email_survey.png)
@@ -81,8 +105,8 @@ email2@email.com,2segment1_value,2segment2_value,northern,blue
 
 ```sh
 # Example with multi-language
-# Keep in mind that you will need to provide a valid survey_template_id
-# that include all the languages required on the CSV
+# Keep in mind that you will need to provide a valid survey_template_id that has settings
+# for each one of the languages used in the CSV file (in the "___language" column)
 
 curl "https://api.wootric.com/v1/email_survey_csv" \
   -d "access_token=XXXXXXXXXXXXXXXX" \
@@ -118,7 +142,7 @@ email3@email.com,3segment1_value,3segment2_value
 email4@email.com,4segment1_value,4segment2_value
 
 ```sh
-# Example of an 8 day delay
+# Example of an 8 days delay
 
 curl "https://api.wootric.com/v1/email_survey_csv" \
   -d "access_token=XXXXXXXXXXXXXXXX" \
@@ -144,6 +168,7 @@ Param | Type | Description
 ----- | ---- | ------------
 language | String
 logo_url | String
+survey_template_id | Integer
 audience_text | String | Can handle placeholder values surrounded by {{my_value}}
 product_name | String | Can handle placeholder values surrounded by {{my_value}}
 custom_messages | Hash | See **custom_messages** parameters below

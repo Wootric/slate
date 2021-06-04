@@ -6,7 +6,9 @@
 curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/survey_templates?access_token=account_access_token"
 ```
 
-Response
+
+```json
+// Response
 
 {
   "default_survey_template_id": XXXX,
@@ -35,3 +37,4 @@ Response
     }
   ]
 }
+```
