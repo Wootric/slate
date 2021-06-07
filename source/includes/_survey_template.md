@@ -1,4 +1,4 @@
-#Account survey template
+#Survey Templates
 
 ```sh
 # Example with custom product_name and audience_text
