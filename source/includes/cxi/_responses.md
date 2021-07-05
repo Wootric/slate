@@ -124,3 +124,40 @@ Parameter | Type | Default | Description
 page (optional)| integer | 1 | Number of returned page, max 30
 per_page (optional) | integer | 25 | Number of records returned on each page, max 50
 sort_order (optional) | string | desc | Sort responses by `feedback_date` in ascending or descending order
+
+## Update properties bulk
+
+This endpoint updates properties for all the responses present in an uploaded CSV file.
+
+### CSV file format
+
+CSV file containing the response_ids and the properties that will be processed.
+First column is expected to be the response_id, the rest of the columns
+will be treated as custom properties i.e.:
+
+`response_id | property_1___datetime:mm-dd-YYYY | property_2___integer | prop3`
+
+Each property will be treated as a String unless it ends with
+`___datetime`, `___integer` or `___double`
+For date/datetime properties you also need to specify the date format:
+`my_property___datetime:%m/%d/%Y`
+For valid date formats see https://apidock.com/ruby/DateTime/strftime
+
+### HTTP Request
+
+`PUT https://cxi-api.wootric.com/v1/reports/update_bulk_properties`
+
+### HTTP Headers
+
+`Content-Type: multipart/form-data`
+
+### HTTP PUT Body
+
+Multipart Name | Type | Description
+--------- | ---- | -------
+csv | UTF-8 encoded string | The contents of the CSV file (max: 10 MB)
+
+
+```shell
+curl -s -H "Authorization: Bearer myaccesstoken" -XPUT "https://cxi-api.wootric.com/v1/responses/update_bulk_properties" -F "csv=@data.csv" | jq
+```
