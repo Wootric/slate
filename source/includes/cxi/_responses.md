@@ -159,5 +159,5 @@ csv | UTF-8 encoded string | The contents of the CSV file (max: 10 MB)
 
 
 ```shell
-curl -s -H "Authorization: Bearer myaccesstoken" -XPUT "https://cxi-api.wootric.com/v1/responses/update_bulk_properties" -F "csv=@data.csv" | jq
+curl -s -H "Authorization: Bearer myaccesstoken" -XPUT "https://cxi-api.wootric.com/v1/responses/update_bulk_properties" -F "csv=@data.csv" 
 ```
