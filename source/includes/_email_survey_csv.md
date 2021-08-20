@@ -1,7 +1,7 @@
 #Email Survey CSV
 
 ```sh
-// Basic Example
+// Basic Example using a CSV file (FILE.csv)
 
 curl "https://api.wootric.com/v1/email_survey_csv" \
   -d "access_token=XXXXXXXXXXXXXXXX" \
@@ -14,11 +14,18 @@ curl "https://api.wootric.com/v1/email_survey_csv" \
 
 CSV file
 
-email,segment1,segment2
-email@email.com,segment1_value,segment2_value
-email2@email.com,2segment1_value,2segment2_value
-email3@email.com,3segment1_value,3segment2_value
-email4@email.com,4segment1_value,4segment2_value
+email,segment1,segment2<br>
+email@email.com,segment1_value,segment2_value<br>
+email2@email.com,2segment1_value,2segment2_value<br>
+email3@email.com,3segment1_value,3segment2_value<br>
+email4@email.com,4segment1_value,4segment2_value<br>
+
+Example:
+
+email,First Name, Last Name, Company Name<br>
+bob@inmoment.com,Bob,Smith,InMoment<br>
+jane@inmoment.com,Jane,Jones,InMoment<br>
+enrique@gmail.com,Enrique,Rodriguez,ER Inc.<br>
 
 - Maximum of 5000 rows per request.
 - We will automatically create end users if they don't exist.
@@ -46,11 +53,11 @@ email4@email.com,4segment1_value,4segment2_value
 
 &nbsp;&nbsp; `start_date`
 
-<br />
+<br>
 
 Param | Type | Description
 ----- | ---- | ------------
-csv   | File | CSV file with end user data
+csv   | File | CSV file with end user data **OR** a Base64 encoded String with CSV data ("Base 64 Encoding with URL and Filename Safe Alphabet" in [RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648))
 subject | String | Override default subject line (standard NPS/CES/CSAT question used by default). Can handle placeholder values surrounded by {{my_value}}
 intro | String | Intro message for your email. Displayed between logo and question. Default: none. Can handle placeholder values surrounded by {{my_value}}
 context | Hash Array | Array of hashes containing the values to be replaced in subject and/or intro
@@ -82,9 +89,9 @@ curl "https://api.wootric.com/v1/email_survey_csv" \
 
 CSV
 
-email,segment1,segment2,\_\_\_context:service,\_\_\_context:color
-email@email.com,segment1_value,segment2_value,internet,red
-email2@email.com,2segment1_value,2segment2_value,laundry,blue
+email,segment1,segment2,\_\_\_context:service,\_\_\_context:color<br>
+email@email.com,segment1_value,segment2_value,internet,red<br>
+email2@email.com,2segment1_value,2segment2_value,laundry,blue<br>
 
 ```sh
 # Example with custom product_name and audience_text
@@ -99,9 +106,9 @@ curl "https://api.wootric.com/v1/email_survey_csv" \
 
 CSV
 
-email,segment1,segment2,\_\_\_context:region,\_\_\_context:color
-email@email.com,segment1_value,segment2_value,southern,red
-email2@email.com,2segment1_value,2segment2_value,northern,blue
+email,segment1,segment2,\_\_\_context:region,\_\_\_context:color<br>
+email@email.com,segment1_value,segment2_value,southern,red<br>
+email2@email.com,2segment1_value,2segment2_value,northern,blue<br>
 
 ```sh
 # Example with multi-language
@@ -117,10 +124,10 @@ curl "https://api.wootric.com/v1/email_survey_csv" \
 
 CSV
 
-email,segment1,segment2,\_\_\_language
-email@email.com,segment1_value,segment2_value,en
-email2@email.com,2segment1_value,2segment2_value,es
-email2@email.com,2segment1_value,2segment2_value,en
+email,segment1,segment2,\_\_\_language<br>
+email@email.com,segment1_value,segment2_value,en<br>
+email2@email.com,2segment1_value,2segment2_value,es<br>
+email3@email.com,3segment1_value,3segment2_value,en<br>
 
 
 ```sh
@@ -135,11 +142,11 @@ curl "https://api.wootric.com/v1/email_survey_csv" \
 ```
 CSV
 
-email,segment1,segment2
-email@email.com,segment1_value,segment2_value
-email2@email.com,2segment1_value,2segment2_value
-email3@email.com,3segment1_value,3segment2_value
-email4@email.com,4segment1_value,4segment2_value
+email,segment1,segment2<br>
+email@email.com,segment1_value,segment2_value<br>
+email2@email.com,2segment1_value,2segment2_value<br>
+email3@email.com,3segment1_value,3segment2_value<br>
+email4@email.com,4segment1_value,4segment2_value<br>
 
 ```sh
 # Example of an 8 days delay
@@ -161,12 +168,33 @@ curl "https://api.wootric.com/v1/email_survey_csv" \
   -d "survey_settings[sampling][registered_percent]=50"
 ```
 
-<br />
+CSV
+
+email,Region,Country,Project Name<br>
+user1@gmail.com,EMEA,USA,Project One<br>
+user2@gmail.com,LATAM,Argentina,Assessment Project<br>
+
+Corresponding BASE64_STRING:
+
+"ZW1haWwsUmVnaW9uLENvdW50cnksUHJvamVjdCBOYW1lCnVzZXIxQGdt<br>
+YWlsLmNvbSxFTUVBLFVTQSxQcm9qZWN0IE9uZQp1c2VyMkBnbWFpbC5jb<br>
+20sTEFUQU0sQXJnZW50aW5hLEFzc2Vzc21lbnQgUHJvamVjdA=="
+
+```sh
+# Example using a Base64 encoded string
+
+curl "https://api.wootric.com/v1/email_survey_csv" \
+  -d "access_token=XXXXXXXXXXXXXXXX" \
+  -d "csv=$BASE64_STRING" \
+  -d "survey_immediately=true"
+
+```
+
+<br>
 
 ### survey_settings parameters
 Param | Type | Description
 ----- | ---- | ------------
-language | String
 logo_url | String
 survey_template_id | Integer
 audience_text | String | Can handle placeholder values surrounded by {{my_value}}
