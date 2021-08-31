@@ -2541,7 +2541,7 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span cla
 </tr>
 </tbody></table>
 
-<h1 id='email-survey-csv'>Email Survey CSV</h1><div class="highlight"><pre class="highlight shell"><code>// Basic Example
+<h1 id='email-survey-csv'>Email Survey CSV</h1><div class="highlight"><pre class="highlight shell"><code>// Basic Example using a CSV file <span class="o">(</span>FILE.csv<span class="o">)</span>
 
 curl <span class="s2">"https://api.wootric.com/v1/email_survey_csv"</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s2">"access_token=XXXXXXXXXXXXXXXX"</span> <span class="se">\</span>
@@ -2553,11 +2553,18 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey_csv"</span> <span
 </code></pre></div>
 <p>CSV file</p>
 
-<p>email,segment1,segment2
-email@email.com,segment1_value,segment2_value
-email2@email.com,2segment1_value,2segment2_value
-email3@email.com,3segment1_value,3segment2_value
-email4@email.com,4segment1_value,4segment2_value</p>
+<p>email,segment1,segment2<br>
+email@email.com,segment1_value,segment2_value<br>
+email2@email.com,2segment1_value,2segment2_value<br>
+email3@email.com,3segment1_value,3segment2_value<br>
+email4@email.com,4segment1_value,4segment2_value<br></p>
+
+<p>Example:</p>
+
+<p>email,First Name, Last Name, Company Name<br>
+bob@inmoment.com,Bob,Smith,InMoment<br>
+jane@inmoment.com,Jane,Jones,InMoment<br>
+enrique@gmail.com,Enrique,Rodriguez,ER Inc.<br></p>
 
 <ul>
 <li>Maximum of 5000 rows per request.</li>
@@ -2593,7 +2600,7 @@ email4@email.com,4segment1_value,4segment2_value</p>
 
 <p>&nbsp;&nbsp; <code class="prettyprint">start_date</code></p>
 
-<p><br /></p>
+<p><br></p>
 
 <table><thead>
 <tr>
@@ -2605,7 +2612,7 @@ email4@email.com,4segment1_value,4segment2_value</p>
 <tr>
 <td>csv</td>
 <td>File</td>
-<td>CSV file with end user data</td>
+<td>CSV file with end user data <strong>OR</strong> a Base64 encoded String with CSV data (&ldquo;Base 64 Encoding with URL and Filename Safe Alphabet&rdquo; in <a href="https://datatracker.ietf.org/doc/html/rfc4648">RFC 4648</a>)</td>
 </tr>
 <tr>
 <td>subject</td>
@@ -2684,9 +2691,9 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey_csv"</span> <span
 </code></pre></div>
 <p>CSV</p>
 
-<p>email,segment1,segment2,___context:service,___context:color
-email@email.com,segment1_value,segment2_value,internet,red
-email2@email.com,2segment1_value,2segment2_value,laundry,blue</p>
+<p>email,segment1,segment2,___context:service,___context:color<br>
+email@email.com,segment1_value,segment2_value,internet,red<br>
+email2@email.com,2segment1_value,2segment2_value,laundry,blue<br></p>
 <div class="highlight"><pre class="highlight shell"><code><span class="c"># Example with custom product_name and audience_text</span>
 
 curl <span class="s2">"https://api.wootric.com/v1/email_survey_csv"</span> <span class="se">\</span>
@@ -2698,9 +2705,9 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey_csv"</span> <span
 </code></pre></div>
 <p>CSV</p>
 
-<p>email,segment1,segment2,___context:region,___context:color
-email@email.com,segment1_value,segment2_value,southern,red
-email2@email.com,2segment1_value,2segment2_value,northern,blue</p>
+<p>email,segment1,segment2,___context:region,___context:color<br>
+email@email.com,segment1_value,segment2_value,southern,red<br>
+email2@email.com,2segment1_value,2segment2_value,northern,blue<br></p>
 <div class="highlight"><pre class="highlight shell"><code><span class="c"># Example with multi-language</span>
 <span class="c"># Keep in mind that you will need to provide a valid survey_template_id that has settings</span>
 <span class="c"># for each one of the languages used in the CSV file (in the "___language" column)</span>
@@ -2713,10 +2720,10 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey_csv"</span> <span
 </code></pre></div>
 <p>CSV</p>
 
-<p>email,segment1,segment2,___language
-email@email.com,segment1_value,segment2_value,en
-email2@email.com,2segment1_value,2segment2_value,es
-email2@email.com,2segment1_value,2segment2_value,en</p>
+<p>email,segment1,segment2,___language<br>
+email@email.com,segment1_value,segment2_value,en<br>
+email2@email.com,2segment1_value,2segment2_value,es<br>
+email3@email.com,3segment1_value,3segment2_value,en<br></p>
 <div class="highlight"><pre class="highlight shell"><code><span class="c"># Example with senders name and reply-to email</span>
 
 curl <span class="s2">"https://api.wootric.com/v1/email_survey_csv"</span> <span class="se">\</span>
@@ -2728,11 +2735,11 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey_csv"</span> <span
 </code></pre></div>
 <p>CSV</p>
 
-<p>email,segment1,segment2
-email@email.com,segment1_value,segment2_value
-email2@email.com,2segment1_value,2segment2_value
-email3@email.com,3segment1_value,3segment2_value
-email4@email.com,4segment1_value,4segment2_value</p>
+<p>email,segment1,segment2<br>
+email@email.com,segment1_value,segment2_value<br>
+email2@email.com,2segment1_value,2segment2_value<br>
+email3@email.com,3segment1_value,3segment2_value<br>
+email4@email.com,4segment1_value,4segment2_value<br></p>
 <div class="highlight"><pre class="highlight shell"><code><span class="c"># Example of an 8 days delay</span>
 
 curl <span class="s2">"https://api.wootric.com/v1/email_survey_csv"</span> <span class="se">\</span>
@@ -2748,7 +2755,26 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey_csv"</span> <span
   <span class="nt">-d</span> <span class="s2">"survey_settings[sampling][first_survey_delay]=10"</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s2">"survey_settings[sampling][registered_percent]=50"</span>
 </code></pre></div>
-<p><br /></p>
+<p>CSV</p>
+
+<p>email,Region,Country,Project Name<br>
+user1@gmail.com,EMEA,USA,Project One<br>
+user2@gmail.com,LATAM,Argentina,Assessment Project<br></p>
+
+<p>Corresponding BASE64_STRING:</p>
+
+<p>&ldquo;ZW1haWwsUmVnaW9uLENvdW50cnksUHJvamVjdCBOYW1lCnVzZXIxQGdt<br>
+YWlsLmNvbSxFTUVBLFVTQSxQcm9qZWN0IE9uZQp1c2VyMkBnbWFpbC5jb<br>
+20sTEFUQU0sQXJnZW50aW5hLEFzc2Vzc21lbnQgUHJvamVjdA==&rdquo;</p>
+<div class="highlight"><pre class="highlight shell"><code><span class="c"># Example using a Base64 encoded string</span>
+
+curl <span class="s2">"https://api.wootric.com/v1/email_survey_csv"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s2">"access_token=XXXXXXXXXXXXXXXX"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s2">"csv=</span><span class="nv">$BASE64_STRING</span><span class="s2">"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s2">"survey_immediately=true"</span>
+
+</code></pre></div>
+<p><br></p>
 <h3 id='survey_settings-parameters'>survey_settings parameters</h3>
 <table><thead>
 <tr>
@@ -2757,11 +2783,6 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey_csv"</span> <span
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>language</td>
-<td>String</td>
-<td></td>
-</tr>
 <tr>
 <td>logo_url</td>
 <td>String</td>
