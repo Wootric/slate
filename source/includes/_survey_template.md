@@ -1,5 +1,7 @@
 #Survey Templates
 
+This endpoint retrieves information about all your Survey Templates.
+
 ```sh
 # Example with custom product_name and audience_text
 
