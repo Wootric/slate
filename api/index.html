@@ -2265,7 +2265,9 @@ The values returned by this endpoint depend on the Account&rsquo;s time zone set
 </tr>
 </tbody></table>
 
-<h1 id='survey-templates'>Survey Templates</h1><div class="highlight"><pre class="highlight shell"><code><span class="c"># Example with custom product_name and audience_text</span>
+<h1 id='survey-templates'>Survey Templates</h1>
+<p>This endpoint retrieves information about all your Survey Templates.</p>
+<div class="highlight"><pre class="highlight shell"><code><span class="c"># Example with custom product_name and audience_text</span>
 
 curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v1/survey_templates?access_token=account_access_token"</span>
 </code></pre></div><div class="highlight"><pre class="highlight json"><code><span class="err">//</span><span class="w"> </span><span class="err">Response</span><span class="w">
@@ -2541,7 +2543,9 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey"</span> <span cla
 </tr>
 </tbody></table>
 
-<h1 id='email-survey-csv'>Email Survey CSV</h1><div class="highlight"><pre class="highlight shell"><code>// Basic Example using a CSV file <span class="o">(</span>FILE.csv<span class="o">)</span>
+<h1 id='email-survey-csv'>Email Survey CSV</h1>
+<p>This endpoint will let you send email surveys in bulk using a CSV file. The CSV file should contain at least an <code class="prettyprint">email</code> column, the rest of the columns are either special columns (detailed below) or custom properties that will be added to the email surveys.</p>
+<div class="highlight"><pre class="highlight shell"><code>// Basic Example using a CSV file <span class="o">(</span>FILE.csv<span class="o">)</span>
 
 curl <span class="s2">"https://api.wootric.com/v1/email_survey_csv"</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s2">"access_token=XXXXXXXXXXXXXXXX"</span> <span class="se">\</span>
@@ -2582,11 +2586,23 @@ enrique@gmail.com,Enrique,Rodriguez,ER Inc.<br></p>
 
 <p>&nbsp;&nbsp; <code class="prettyprint">___context:var</code></p>
 
+<p>These &ldquo;context&rdquo; variables, if present, will be available as variables to use in variable interpolation.
+For example if you pass the <code class="prettyprint">subject</code> parameter as &ldquo;Hello {{first_name}}!&rdquo; and you add a context variable column to your CSV file (<code class="prettyprint">___context:first_name</code>),
+then each email survey (each row in the file) will use the value of the <code class="prettyprint">___context:first_name</code> as <code class="prettyprint">first_name</code> and that value will be interpolated to resolve the email subject. Resulting in email subjects like &ldquo;Hello John!&rdquo;, &ldquo;Hello Anne&rdquo;, etc.</p>
+
 <ul>
 <li>Language</li>
 </ul>
 
 <p>&nbsp;&nbsp; <code class="prettyprint">___language</code></p>
+
+<p>This corresponds to the language code that should be used for each row in the file.</p>
+
+<ol>
+<li>For multi-language accounts only</li>
+<li>If you use this column in your file you also need to pass the survey template that should be used as a parameter <code class="prettyprint">survey_settings[survey_template_id]</code>, see the <a href="#survey-templates">survey temaplates API</a> to see the list of survey temaplates and available languages that have been configured in your account.</li>
+<li>All values for this column in the whole CSV file should match exactly with one of the configured language codes for the survey template that you are using.</li>
+</ol>
 
 <ul>
 <li>Integers, the column name should end with &ldquo;_amount&rdquo;</li>
