@@ -1,5 +1,7 @@
 #Email Survey CSV
 
+This endpoint will let you send email surveys in bulk using a CSV file. The CSV file should contain at least an `email` column, the rest of the columns are either special columns (detailed below) or custom properties that will be added to the email surveys.
+
 ```sh
 // Basic Example using a CSV file (FILE.csv)
 
@@ -41,9 +43,19 @@ enrique@gmail.com,Enrique,Rodriguez,ER Inc.<br>
 
 &nbsp;&nbsp; `___context:var`
 
+These "context" variables, if present, will be available as variables to use in variable interpolation.
+For example if you pass the `subject` parameter as "Hello {{first_name}}!" and you add a context variable column to your CSV file (`___context:first_name`),
+then each email survey (each row in the file) will use the value of the `___context:first_name` as `first_name` and that value will be interpolated to resolve the email subject. Resulting in email subjects like "Hello John!", "Hello Anne", etc.
+
 - Language
 
 &nbsp;&nbsp; `___language`
+
+This corresponds to the language code that should be used for each row in the file.
+
+1. For multi-language accounts only
+2. If you use this column in your file you also need to pass the survey template that should be used as a parameter `survey_settings[survey_template_id]`, see the [survey temaplates API](#survey-templates) to see the list of survey temaplates and available languages that have been configured in your account.
+3. All values for this column in the whole CSV file should match exactly with one of the configured language codes for the survey template that you are using.
 
 - Integers, the column name should end with "_amount"
 
