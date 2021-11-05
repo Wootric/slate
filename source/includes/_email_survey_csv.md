@@ -49,13 +49,15 @@ then each email survey (each row in the file) will use the value of the `___cont
 
 - Language
 
-&nbsp;&nbsp; `___language`
+&nbsp;&nbsp; `Language` this column it's going to create a property
+
+&nbsp;&nbsp; `___language` this column it's not going to create a property if the language it's multi_language
 
 This corresponds to the language code that should be used for each row in the file.
 
 1. For multi-language accounts only
-2. If you use this column in your file you also need to pass the survey template that should be used as a parameter `survey_settings[survey_template_id]`, see the [survey temaplates API](#survey-templates) to see the list of survey temaplates and available languages that have been configured in your account.
-3. All values for this column in the whole CSV file should match exactly with one of the configured language codes for the survey template that you are using.
+2. To use multi-language column it's required to send `survey_settings[language]` set to `multi_language` and pass the survey template that should be used as a parameter `survey_settings[survey_template_id]`, see the [survey temaplates API](#survey-templates) to see the list of survey temaplates and available languages that have been configured in your account.
+4. All values for this column in the whole CSV file should match exactly with one of the configured language codes for the survey template that you are using.
 
 - Integers, the column name should end with "_amount"
 
