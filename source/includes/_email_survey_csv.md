@@ -39,33 +39,25 @@ enrique@gmail.com,Enrique,Rodriguez,ER Inc.<br>
 
 ### Special columns names
 
-- Context variables
+#### Context variables
 
-&nbsp;&nbsp; `___context:var`
+`___context:var`
 
-These "context" variables, if present, will be available as variables to use in variable interpolation.
-For example if you pass the `subject` parameter as "Hello {{first_name}}!" and you add a context variable column to your CSV file (`___context:first_name`),
-then each email survey (each row in the file) will use the value of the `___context:first_name` as `first_name` and that value will be interpolated to resolve the email subject. Resulting in email subjects like "Hello John!", "Hello Anne", etc.
+These "context" variables, if present, will be available as variables to use in variable interpolation. For example, if you pass the subject parameter as "Hello {{first_name}}!" and you add a context variable column to your CSV file (`___context:first_name`), then each email survey (each row in the file) will use the value of the `___context:first_name` as first_name and that value will be interpolated to resolve the email subject. Resulting in email subjects like "Hello John!", "Hello Anne", etc.
 
-- Language
+#### Language
+- Naming a column `Language` creates a property.
+- Naming a column `___language` does not create a property if the language is multi_language.
 
-&nbsp;&nbsp; `Language` this column it's going to create a property
+The language column corresponds to the language code that should be found in each row of the file.
 
-&nbsp;&nbsp; `___language` this column it's not going to create a property if the language it's multi_language
+1. This is only for multi-language accounts.
+2. To use a multi-language column it's required to send `survey_settings[language]` set to multi_language and pass the survey template used as a parameter `survey_settings[survey_template_id]`. Check out the survey templates API to see the list of survey templates and available languages configured in your account.
+3. All language code values for this column in the CSV should match exactly the language codes configured for the survey template you are using.
 
-This corresponds to the language code that should be used for each row in the file.
-
-1. For multi-language accounts only
-2. To use multi-language column it's required to send `survey_settings[language]` set to `multi_language` and pass the survey template that should be used as a parameter `survey_settings[survey_template_id]`, see the [survey temaplates API](#survey-templates) to see the list of survey temaplates and available languages that have been configured in your account.
-4. All values for this column in the whole CSV file should match exactly with one of the configured language codes for the survey template that you are using.
-
-- Integers, the column name should end with "_amount"
-
-&nbsp;&nbsp; `price_amount`
-
-- Dates, the column name should end with "_date"
-
-&nbsp;&nbsp; `start_date`
+#### Column Naming Reminder:
+- Integer column names should end with "\_amount" (e.g.`price_amount`).
+- Date column names should end with "\_date" (e.g.`start_date`).
 
 <br>
 
