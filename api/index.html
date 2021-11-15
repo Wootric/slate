@@ -2579,44 +2579,28 @@ enrique@gmail.com,Enrique,Rodriguez,ER Inc.<br></p>
 <li>The first column of the CSV needs to be the email address and the column should be named <code class="prettyprint">email</code></li>
 <li>All the other columns will be treated as string properties unless they have a special column name</li>
 </ul>
-<h3 id='special-columns-names'>Special columns names</h3>
+<h3 id='special-columns-names'>Special columns names</h3><h4 id='context-variables'>Context variables</h4>
+<p><code class="prettyprint">___context:var</code></p>
+
+<p>These &ldquo;context&rdquo; variables, if present, will be available as variables to use in variable interpolation. For example, if you pass the subject parameter as &ldquo;Hello {{first_name}}!&rdquo; and you add a context variable column to your CSV file (<code class="prettyprint">___context:first_name</code>), then each email survey (each row in the file) will use the value of the <code class="prettyprint">___context:first_name</code> as first_name and that value will be interpolated to resolve the email subject. Resulting in email subjects like &ldquo;Hello John!&rdquo;, &ldquo;Hello Anne&rdquo;, etc.</p>
+<h4 id='language'>Language</h4>
 <ul>
-<li>Context variables</li>
+<li>Naming a column <code class="prettyprint">Language</code> creates a property.</li>
+<li>Naming a column <code class="prettyprint">___language</code> does not create a property if the language is multi_language.</li>
 </ul>
 
-<p>&nbsp;&nbsp; <code class="prettyprint">___context:var</code></p>
-
-<p>These &ldquo;context&rdquo; variables, if present, will be available as variables to use in variable interpolation.
-For example if you pass the <code class="prettyprint">subject</code> parameter as &ldquo;Hello {{first_name}}!&rdquo; and you add a context variable column to your CSV file (<code class="prettyprint">___context:first_name</code>),
-then each email survey (each row in the file) will use the value of the <code class="prettyprint">___context:first_name</code> as <code class="prettyprint">first_name</code> and that value will be interpolated to resolve the email subject. Resulting in email subjects like &ldquo;Hello John!&rdquo;, &ldquo;Hello Anne&rdquo;, etc.</p>
-
-<ul>
-<li>Language</li>
-</ul>
-
-<p>&nbsp;&nbsp; <code class="prettyprint">Language</code> this column it&rsquo;s going to create a property</p>
-
-<p>&nbsp;&nbsp; <code class="prettyprint">___language</code> this column it&rsquo;s not going to create a property if the language it&rsquo;s multi_language</p>
-
-<p>This corresponds to the language code that should be used for each row in the file.</p>
+<p>The language column corresponds to the language code that should be found in each row of the file.</p>
 
 <ol>
-<li>For multi-language accounts only</li>
-<li>To use multi-language column it&rsquo;s required to send <code class="prettyprint">survey_settings[language]</code> set to <code class="prettyprint">multi_language</code> and pass the survey template that should be used as a parameter <code class="prettyprint">survey_settings[survey_template_id]</code>, see the <a href="#survey-templates">survey temaplates API</a> to see the list of survey temaplates and available languages that have been configured in your account.</li>
-<li>All values for this column in the whole CSV file should match exactly with one of the configured language codes for the survey template that you are using.</li>
+<li>This is only for multi-language accounts.</li>
+<li>To use a multi-language column it&rsquo;s required to send <code class="prettyprint">survey_settings[language]</code> set to multi_language and pass the survey template used as a parameter <code class="prettyprint">survey_settings[survey_template_id]</code>. Check out the survey templates API to see the list of survey templates and available languages configured in your account.</li>
+<li>All language code values for this column in the CSV should match exactly the language codes configured for the survey template you are using.</li>
 </ol>
-
+<h4 id='column-naming-reminder'>Column Naming Reminder:</h4>
 <ul>
-<li>Integers, the column name should end with &ldquo;_amount&rdquo;</li>
+<li>Integer column names should end with &ldquo;_amount&rdquo; (e.g.<code class="prettyprint">price_amount</code>).</li>
+<li>Date column names should end with &ldquo;_date&rdquo; (e.g.<code class="prettyprint">start_date</code>).</li>
 </ul>
-
-<p>&nbsp;&nbsp; <code class="prettyprint">price_amount</code></p>
-
-<ul>
-<li>Dates, the column name should end with &ldquo;_date&rdquo;</li>
-</ul>
-
-<p>&nbsp;&nbsp; <code class="prettyprint">start_date</code></p>
 
 <p><br></p>
 
