@@ -52,7 +52,8 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/respon
                 "pricing_plan": "Small Business",
                 "product_plan": "Mobile",
                 "purchase_date": 1473177881,
-                "revenue_amount": 5000
+                "revenue_amount": 5000,
+                "items_array": "item1, item2"
             }
         }
     },
@@ -76,7 +77,8 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/respon
                 "pricing_plan": "Small Business",
                 "product_plan": "Web",
                 "purchase_date": 1473177888,
-                "revenue_amount": 5000
+                "revenue_amount": 5000,
+                "items_array": "item1, item2"
             }
         }
     }
@@ -113,7 +115,8 @@ curl -X GET -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1
                 "pricing_plan": "Small Business",
                 "product_plan": "Mobile",
                 "purchase_date": 1473177881,
-                "revenue_amount": 5000
+                "revenue_amount": 5000,
+                "items_array": "item1, item2"
             }
         }
     }
@@ -172,7 +175,8 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
                 "pricing_plan": "Small Business",
                 "product_plan": "Mobile",
                 "purchase_date": 1473177881,
-                "revenue_amount": 5000
+                "revenue_amount": 5000,
+                "items_array": "item1, item2"
             }
         }
     },
@@ -198,7 +202,8 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
                 "pricing_plan": "Small Business",
                 "product_plan": "Web",
                 "purchase_date": 1473177888,
-                "revenue_amount": 5000
+                "revenue_amount": 5000,
+                "items_array": "item1, item2"
             }
         }
     }
@@ -257,7 +262,8 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
                 "pricing_plan": "Small Business",
                 "product_plan": "Mobile",
                 "purchase_date": 1473177881,
-                "revenue_amount": 5000
+                "revenue_amount": 5000,
+                "items_array": "item1, item2"
             }
         }
     },
@@ -281,7 +287,8 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
                 "pricing_plan": "Small Business",
                 "product_plan": "Web",
                 "purchase_date": 1473177888,
-                "revenue_amount": 5000
+                "revenue_amount": 5000,
+                "items_array": "item1, item2"
             }
         }
     }
@@ -337,7 +344,8 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
                 "pricing_plan": "Small Business",
                 "product_plan": "Mobile",
                 "purchase_date": 1473177881,
-                "revenue_amount": 5000
+                "revenue_amount": 5000,
+                "items_array": "item1, item2"
             }
         }
     },
@@ -361,7 +369,8 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
                 "pricing_plan": "Small Business",
                 "product_plan": "Web",
                 "purchase_date": 1473177888,
-                "revenue_amount": 5000
+                "revenue_amount": 5000,
+                "items_array": "item1, item2"
             }
         }
     }
@@ -418,7 +427,8 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
                 "pricing_plan": "Small Business",
                 "product_plan": "Mobile",
                 "purchase_date": 1473177881,
-                "revenue_amount": 5000
+                "revenue_amount": 5000,
+                "items_array": "item1, item2"
             }
         }
     },
@@ -444,7 +454,8 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
                 "pricing_plan": "Small Business",
                 "product_plan": "Web",
                 "purchase_date": 1473177888,
-                "revenue_amount": 5000
+                "revenue_amount": 5000,
+                "items_array": "item1, item2"
             }
         }
     }
@@ -498,7 +509,8 @@ curl -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com/v1/end_us
             "pricing_plan": "Small Business",
             "product_plan": "Web",
             "purchase_date": 1473177888,
-            "revenue_amount": 5000
+            "revenue_amount": 5000,
+            "items_array": "item1, item2"
         }
     }
 }

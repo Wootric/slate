@@ -23,6 +23,7 @@ window.wootricSettings = {
     pricing_plan:'Enterprise', // TODO: The current user's pricing plan.
     total_purchase_amount: 12, // Integer representing the user's total purchases with the key suffixed with "_amount"
     last_order_date: 1350466020 // Integer representing the date (Unix timestamp format) of the user's last order with the key suffixed with "_date"
+    items_array: 'item1, item2'// List of values representing the possible items with the key suffixed with "_array"
   }
 };
 </script>
@@ -36,13 +37,13 @@ that user.
 
 Wootric currently supports Integers, Strings, and Unix formatted dates as values.
 
-Integers must be suffixed with _amount and dates must be in Unix timestamp format and suffixed with _date. Examples are shown in the code to the right.
+Integers must be suffixed with `_amount`, dates must be in Unix timestamp format and suffixed with `_date` and lists with `_array`. Examples are shown in the code to the right.
 
 Keys cannot contain characters such as '$', '.' or the NULL character.
 Values cannot be nested hashes or arrays.
 
 ## What Custom Attributes can I send to Wootric?
-Send any custom attributes you like to Wootric, as long as they are in a string, integer, or date format. We find that
+Send any custom attributes you like to Wootric, as long as they are in a string, integer, date, or list format. We find that
 the most meaningful attributes for Net Promoter Score segmentation include things like user
 type, price plan, engagement, and geography.
 
