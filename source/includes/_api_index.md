@@ -26,6 +26,14 @@ You can use our API to access and update your end users, responses and declines.
 
 All responses from the API (including errors) are in JSON. All code examples are in cURL.
 
+# Environments
+
+Currently, Wootric supports two main environments: the <strong> EU </strong> and <strong> US</strong>.
+
+All examples provided in this section are for the <strong> US environment only</strong>. If you want to run these examples on the EU environment, you need to replace the <strong> .com  </strong> domain with <strong> .eu</strong>.
+
+To determine if your account runs on the EU environment now, check if your account token begins with <strong> NPS-EU</strong>.
+
 # Authentication
 > To retrieve an access token using OAuth if you have one account on Wootric, use the following code:
 
