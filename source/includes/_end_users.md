@@ -474,7 +474,8 @@ curl -X DELETE -H "Authorization: Bearer myaccesstoken" "https://api.wootric.com
   }
 ```
 
-This endpoint marks the end user for deletion. Deletion would be performed the following day at 7 AM UTC.
+This endpoint marks the end user for deletion. Deletion would be scheduled the following day at 7 AM UTC.
+Depending on the size of our queues at the time it could take several hours to finish processing.
 
 ### HTTP Request
 
