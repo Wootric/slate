@@ -1484,7 +1484,40 @@ In the following cURL examples you must replace <code class="prettyprint">myacce
 <td>Sort responses by <code class="prettyprint">feedback_date</code> in ascending or descending order</td>
 </tr>
 </tbody></table>
+<h2 id='update-properties-bulk'>Update properties bulk</h2>
+<p>This endpoint updates properties for all the responses present in an uploaded CSV file.</p>
+<h3 id='csv-file-format'>CSV file format</h3>
+<p>CSV file containing the response_ids and the properties that will be processed.
+First column is expected to be the response_id, the rest of the columns
+will be treated as custom properties i.e.:</p>
 
+<p><code class="prettyprint">response_id | property_1___datetime:mm-dd-YYYY | property_2___integer | prop3</code></p>
+
+<p>Each property will be treated as a String unless it ends with
+<code class="prettyprint">___datetime</code>, <code class="prettyprint">___integer</code> or <code class="prettyprint">___double</code>
+For date/datetime properties you also need to specify the date format:
+<code class="prettyprint">my_property___datetime:%m/%d/%Y</code>
+For valid date formats see https://apidock.com/ruby/DateTime/strftime</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">PUT https://cxi-api.wootric.com/v1/reports/update_bulk_properties</code></p>
+<h3 id='http-headers'>HTTP Headers</h3>
+<p><code class="prettyprint">Content-Type: multipart/form-data</code></p>
+<h3 id='http-put-body'>HTTP PUT Body</h3>
+<table><thead>
+<tr>
+<th>Multipart Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>csv</td>
+<td>UTF-8 encoded string</td>
+<td>The contents of the CSV file (max: 10 MB)</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-XPUT</span> <span class="s2">"https://cxi-api.wootric.com/v1/responses/update_bulk_properties"</span> <span class="nt">-F</span> <span class="s2">"csv=@data.csv"</span> 
+</code></pre></div>
           <h1 id='exports'>Exports</h1><h2 id='create-an-export'>Create an export</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-i</span> <span class="nt">-s</span> <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://cxi-api.wootric.com/v1/exports"</span>
 </code></pre></div>
 <blockquote>
@@ -1515,6 +1548,75 @@ In the following cURL examples you must replace <code class="prettyprint">myacce
 <h3 id='limits'>Limits</h3>
 <p>Your can only have a single export in progress at the same time, so if you requested an export and want another one, you need to wait until you get the first export before requesting the new one.</p>
 
+          <h1 id='segmentsproperties'>Segments/Properties</h1><h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">PUT https://cxi-api.wootric.com/v1/segments</code></p>
+<h2 id='response-segments-bulk-update'>Response segments bulk update</h2>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>responses[][id]</td>
+<td>integer</td>
+<td>Response ID</td>
+</tr>
+<tr>
+<td>responses[][custom_properties]</td>
+<td>Array</td>
+<td>list of properties(Hash { key: property_name, value: new_value})</td>
+</tr>
+<tr>
+<td>responses[][custom_properties][][key]</td>
+<td>string</td>
+<td>name of the segment/property</td>
+</tr>
+<tr>
+<td>responses[][custom_properties][][value]</td>
+<td>string</td>
+<td>new value for the segment/property</td>
+</tr>
+</tbody></table>
+<h4 id='update-bulk'>Update bulk</h4>
+<p>This endpoint updates a list of segment associated to a response</p>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer ACCESSTOKEN"</span> <span class="nt">-X</span> PUT <span class="s2">"https://cxi-api.wootric.com/v1/segments/update_bulk"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"responses=[id: RESPONSE_ID, custom_properties: [{key: PROPERTY_NAME, value: NEW_VALUE},{key: PROPERTY_NAME, value: NEW_VALUE}]]"</span>
+</code></pre></div><h2 id='user-segments-bulk-update'>User segments bulk update</h2>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>users[][user_id]</td>
+<td>integer</td>
+<td>User ID</td>
+</tr>
+<tr>
+<td>users[][custom_properties]</td>
+<td>Array</td>
+<td>list of properties(Hash { key: property_name, value: new_value})</td>
+</tr>
+<tr>
+<td>users[][custom_properties][][key]</td>
+<td>string</td>
+<td>name of the segment/property</td>
+</tr>
+<tr>
+<td>users[][custom_properties][][value]</td>
+<td>string</td>
+<td>new value for the segment/property</td>
+</tr>
+</tbody></table>
+<h4 id='update-bulk'>Update bulk</h4>
+<p>This endpoint updates a list of segment associated to a user</p>
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer ACCESSTOKEN"</span> <span class="nt">-X</span> PUT <span class="s2">"https://cxi-api.wootric.com/v1/segments/update_bulk"</span> <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"users=[user_id: USER_ID, custom_properties: [{key: PROPERTY_NAME, value: NEW_VALUE},{key: PROPERTY_NAME, value: NEW_VALUE}]]"</span>
+</code></pre></div>
       </div>
       <div class="dark-box">
       </div>
