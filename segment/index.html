@@ -96,18 +96,15 @@
 
 <p><a href="https://segment.com/docs/">Visit Segment</a> to get started.</p>
 
-<p>Refer to <a href="https://segment.com/docs/connections/destinations/catalog/wootric-by-inmoment/">InMoment (formerly Wootric) Destination</a> for help with setting it up.</p>
+<p>Refer to <a href="https://segment.com/docs/integrations/wootric/">Wootric integration docs</a> for help with setting it up.</p>
+<div class="highlight"><pre class="highlight javascript"><code><span class="c1">// If you don't want to identify user by the custom user id...</span>
+<span class="nx">analytics</span><span class="p">.</span><span class="nx">identify</span><span class="p">({</span> <span class="na">email</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USER_EMAIL</span><span class="dl">"</span><span class="p">,</span> <span class="na">createdAt</span><span class="p">:</span> <span class="nx">UNIX_TIMESTAMP_OR_ISO</span><span class="o">-</span><span class="mi">8610</span><span class="nx">_DATE_STRING</span> <span class="p">});</span>
 
-<p><strong>IMPORTANT</strong><br />
-<strong>Wootric integration is available as a &ldquo;web browser&rdquo; integration only i.e. you need to use <a href="https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/">Analytics.js library</a> to integrate our product using Segment.</strong></p>
+<span class="c1">// ...or with custom id</span>
+<span class="nx">analytics</span><span class="p">.</span><span class="nx">identify</span><span class="p">(</span><span class="dl">"</span><span class="s2">user_id</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">email</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USER_EMAIL</span><span class="dl">"</span><span class="p">,</span> <span class="na">createdAt</span><span class="p">:</span> <span class="nx">UNIX_TIMESTAMP_OR_ISO</span><span class="o">-</span><span class="mi">8610</span><span class="nx">_DATE_STRING</span> <span class="p">});</span>
 
-<p>Note: When using Segment to integrate Wootric, options available within <code class="prettyprint">identify</code> call are: <code class="prettyprint">email</code>, <code class="prettyprint">createdAt</code>, <code class="prettyprint">properties</code> and <code class="prettyprint">language</code>.</p>
-
-<h1 id='idenfity'>Idenfity</h1><div class="highlight"><pre class="highlight javascript"><code><span class="nx">analytics</span><span class="p">.</span><span class="nx">identify</span><span class="p">(</span><span class="s1">'userId123'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">email</span><span class="p">:</span> <span class="s1">'hello@example.com'</span><span class="p">,</span>
-  <span class="na">createdAt</span><span class="p">:</span> <span class="s1">'2018-08-03T15:28:46.493Z'</span><span class="p">,</span>
-  <span class="na">language</span><span class="p">:</span> <span class="s1">'EN'</span>
-<span class="p">});</span>
+<span class="c1">// With additional properties</span>
+<span class="nx">analytics</span><span class="p">.</span><span class="nx">identify</span><span class="p">(</span><span class="dl">"</span><span class="s2">user_id</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">email</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USER_EMAIL</span><span class="dl">"</span><span class="p">,</span> <span class="na">createdAt</span><span class="p">:</span> <span class="nx">UNIX_TIMESTAMP_OR_ISO</span><span class="o">-</span><span class="mi">8610</span><span class="nx">_DATE_STRING</span><span class="p">,</span> <span class="na">custom_property</span><span class="p">:</span> <span class="dl">"</span><span class="s2">custom_property</span><span class="dl">"</span><span class="p">,</span> <span class="na">another_custom_property</span><span class="p">:</span> <span class="dl">"</span><span class="s2">another_custom_property</span><span class="dl">"</span> <span class="p">});</span>
 </code></pre></div>
 <p>If you’re not familiar with the Segment Specs, take a look to understand what the <a href="https://segment.com/docs/connections/spec/identify/">Identify method</a> does.</p>
 
