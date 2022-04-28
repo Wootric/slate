@@ -161,3 +161,38 @@ csv | UTF-8 encoded string | The contents of the CSV file (max: 10 MB)
 ```shell
 curl -s -H "Authorization: Bearer myaccesstoken" -XPUT "https://cxi-api.wootric.com/v1/responses/update_bulk_properties" -F "csv=@data.csv" 
 ```
+
+## Delete Response
+
+```shell
+curl -s -i -H "Authorization: Bearer myaccesstoken" -XDELETE "https://cxi-api.wootric.com/v1/responses/1"
+```
+
+> The above command returns and empty response with status 202 (Accepted)
+```bash
+HTTP/1.1 202 Accepted
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/json
+Cache-Control: no-cache
+X-Request-Id: 5845a55c-c95c-4a16-8813-a1ad5ab73991
+X-Runtime: 0.791538
+Vary: Origin
+Transfer-Encoding: chunked
+```
+
+This endpoint deletes a response.
+
+### HTTP Request
+
+`DELETE https://cxi-api.wootric.com/v1/responses/<response_id>`
+
+### URL Parameters
+
+Parameter | Type | Description
+--------- | ---- | -----------
+response_id | integer | The ID of the response to delete
