@@ -141,16 +141,16 @@ $ pod install
 <p><img alt="Xcode" src="https://cloud.githubusercontent.com/assets/1431421/16505349/238edd62-3ee2-11e6-8f91-9d3c978a10cf.png" /></p>
 <h1 id='presenting-the-survey'>Presenting the survey</h1><h2 id='step-1--initialize-wootric'>Step 1. Initialize Wootric</h2><div class="highlight"><pre class="highlight objective_c"><code><span class="cp">#import &lt;WootricSDK/WootricSDK.h&gt;
 </span>
-<span class="c1">// Inside your method
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_CLIENT_ID</span><span class="o">&gt;</span> <span class="nf">accountToken</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;</span><span class="p">];</span>
+<span class="c1">// Inside your method</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">configureWithClientID</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_CLIENT_ID</span><span class="o">&gt;</span> <span class="nf">accountToken</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_ACCOUNT_TOKEN</span><span class="o">&gt;</span><span class="p">];</span>
 
-<span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserEmail</span><span class="p">:</span><span class="s">@"nps@example.com"</span><span class="p">];</span>
-<span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserCreatedAt</span><span class="p">:</span><span class="mi">@1234567890</span><span class="p">];</span>
+<span class="c1">// TODO: Required to uniquely identify a user. Email is recommended but this can be any unique identifier.</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserEmail</span><span class="p">:</span><span class="s">@"nps@example.com"</span><span class="p">];</span>
+<span class="c1">// TODO: The current logged in user's sign-up date as a Unix timestamp.</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserCreatedAt</span><span class="p">:</span><span class="mi">@1234567890</span><span class="p">];</span>
 
-<span class="c1">// Use only for testing
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">forceSurvey</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+<span class="c1">// Use only for testing</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">forceSurvey</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
 
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">showSurveyInViewController</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_VIEW_CONTROLLER</span><span class="o">&gt;</span><span class="p">];</span>
 </code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="c1">// Inside your method</span>
@@ -199,11 +199,11 @@ If you are using Swift, don&rsquo;t forget to import WootricSDK in your <code cl
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserEmail</span><span class="p">:</span><span class="s">@"nps@example.com"</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserCreatedAt</span><span class="p">:</span><span class="mi">@1234567890</span><span class="p">];</span>
 
-<span class="c1">// Use only for testing
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">forceSurvey</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+<span class="c1">// Use only for testing</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">forceSurvey</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
 
-<span class="c1">// Customization
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setCustomProductName</span><span class="p">:</span><span class="s">@"Wootric"</span><span class="p">];</span>
+<span class="c1">// Customization</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setCustomProductName</span><span class="p">:</span><span class="s">@"Wootric"</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setCustomFinalThankYou</span><span class="p">:</span><span class="s">@"Merci!"</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setCustomLanguage</span><span class="p">:</span><span class="s">@"fr"</span><span class="p">];</span>
 
@@ -370,8 +370,8 @@ If your survey throttle is different than 90 days and/or you don&rsquo;t want to
 </code></pre></div><div class="highlight"><pre class="highlight swift_three"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">setCustomFinalThankYou</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">FINAL_THANK_YOU</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre></div>
 <p>Changes final thank you from admin panel to provided value (English default is &ldquo;Thank you for your response, and your feedback!).</p>
-<h2 id='setcustomvalueforresurveythrottlevisitorpercentageregisteredpercentagedailyresponsecap'>setCustomValueForResurveyThrottle:visitorPercentage:registeredPercentage:dailyResponseCap:</h2><div class="highlight"><pre class="highlight objective_c"><code><span class="c1">// You can pass nil value for any of the parameters - it will use defaults for eligibility check if you do so.
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setCustomValueForResurveyThrottle</span><span class="p">:</span><span class="o">&lt;</span><span class="n">NUMBER_OF_DAYS</span><span class="o">&gt;</span> <span class="nf">visitorPercentage</span><span class="p">:</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">-</span><span class="mi">100</span><span class="o">&gt;</span> <span class="n">registeredPercentage</span><span class="o">:&lt;</span><span class="mi">0</span><span class="o">-</span><span class="mi">100</span><span class="o">&gt;</span> <span class="n">dailyResponseCap</span><span class="o">:&lt;</span><span class="mi">0</span><span class="o">-</span><span class="p">...</span><span class="o">&gt;</span><span class="p">];</span>
+<h2 id='setcustomvalueforresurveythrottlevisitorpercentageregisteredpercentagedailyresponsecap'>setCustomValueForResurveyThrottle:visitorPercentage:registeredPercentage:dailyResponseCap:</h2><div class="highlight"><pre class="highlight objective_c"><code><span class="c1">// You can pass nil value for any of the parameters - it will use defaults for eligibility check if you do so.</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setCustomValueForResurveyThrottle</span><span class="p">:</span><span class="o">&lt;</span><span class="n">NUMBER_OF_DAYS</span><span class="o">&gt;</span> <span class="nf">visitorPercentage</span><span class="p">:</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">-</span><span class="mi">100</span><span class="o">&gt;</span> <span class="n">registeredPercentage</span><span class="o">:&lt;</span><span class="mi">0</span><span class="o">-</span><span class="mi">100</span><span class="o">&gt;</span> <span class="n">dailyResponseCap</span><span class="o">:&lt;</span><span class="mi">0</span><span class="o">-</span><span class="p">...</span><span class="o">&gt;</span><span class="p">];</span>
 </code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="c1">// You can pass nil value for any of the parameters - it will use defaults for eligibility check if you do so.</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setCustomValueForResurveyThrottle</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">NUMBER_OF_DAYS</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">visitorPercentage</span><span class="p">:</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">-</span><span class="mi">100</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">registeredPercentage</span><span class="p">:</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">-</span><span class="mi">100</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">dailyResponseCap</span><span class="p">:</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">-...&gt;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight swift_three"><code><span class="c1">// You can pass nil value for any of the parameters - it will use defaults for eligibility check if you do so.</span>
@@ -443,28 +443,28 @@ to conform to the protocol and assign that class to the WootricSDK.</p>
 specific that this class inherits to <code class="prettyprint">WTRSurveyDelegate</code> and it will be
 the one where the methods specified by the protocol are implemented.</p>
 <div class="highlight"><pre class="highlight objective_c"><code>
-<span class="c1">// Assign WTRSurveyDelegate to class
-</span><span class="k">@interface</span> <span class="nc">SampleViewController</span> <span class="p">()</span> <span class="o">&lt;</span><span class="n">WTRSurveyDelegate</span><span class="o">&gt;</span>
+<span class="c1">// Assign WTRSurveyDelegate to class</span>
+<span class="k">@interface</span> <span class="nc">SampleViewController</span> <span class="p">()</span> <span class="o">&lt;</span><span class="n">WTRSurveyDelegate</span><span class="o">&gt;</span>
 
 <span class="k">@end</span>
 
-<span class="c1">// Set the SDK's delegate
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setDelegate</span><span class="p">:</span><span class="n">self</span><span class="p">];</span>
+<span class="c1">// Set the SDK's delegate</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setDelegate</span><span class="p">:</span><span class="n">self</span><span class="p">];</span>
 
-<span class="c1">// Implement protocol methods
-</span><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">willPresentSurvey</span> <span class="p">{</span>
-
-<span class="p">}</span>
-
-<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">didPresentSurvey</span> <span class="p">{</span>
+<span class="c1">// Implement protocol methods</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">willPresentSurvey</span> <span class="p">{</span>
 
 <span class="p">}</span>
 
-<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">willHideSurvey</span> <span class="p">{</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">didPresentSurvey</span> <span class="p">{</span>
 
 <span class="p">}</span>
 
-<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">didHideSurvey</span><span class="o">:</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="n">data</span> <span class="p">{</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">willHideSurvey</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">didHideSurvey</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">data</span> <span class="p">{</span>
 
 <span class="p">}</span>
 </code></pre></div><div class="highlight"><pre class="highlight swift"><code>
@@ -549,18 +549,18 @@ if custom product name is set it will substitute &ldquo;this product or service&
 
 <h1 id='custom-thank-you'>Custom Thank You</h1>
 <hr>
-<div class="highlight"><pre class="highlight objective_c"><code><span class="c1">// Social share setup
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setFacebookPage</span><span class="p">:</span><span class="o">&lt;</span><span class="n">FACEBOOK_PAGE_URL</span><span class="o">&gt;</span><span class="p">];</span>
+<div class="highlight"><pre class="highlight objective_c"><code><span class="c1">// Social share setup</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setFacebookPage</span><span class="p">:</span><span class="o">&lt;</span><span class="n">FACEBOOK_PAGE_URL</span><span class="o">&gt;</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setTwitterHandler</span><span class="p">:</span><span class="o">&lt;</span><span class="n">TWITTER_HANDLER</span><span class="o">&gt;</span><span class="p">];</span>
 
-<span class="c1">// Custom thank you messages setup
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setThankYouMessage</span><span class="p">:</span><span class="o">&lt;</span><span class="n">THANK_YOU_MESSAGE</span><span class="o">&gt;</span><span class="p">];</span>
+<span class="c1">// Custom thank you messages setup</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setThankYouMessage</span><span class="p">:</span><span class="o">&lt;</span><span class="n">THANK_YOU_MESSAGE</span><span class="o">&gt;</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setDetractorThankYouMessage</span><span class="p">:</span><span class="o">&lt;</span><span class="n">THANK_YOU_MESSAGE</span><span class="o">&gt;</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setPassiveThankYouMessage</span><span class="p">:</span><span class="o">&lt;</span><span class="n">THANK_YOU_MESSAGE</span><span class="o">&gt;</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setPromoterThankYouMessage</span><span class="p">:</span><span class="o">&lt;</span><span class="n">THANK_YOU_MESSAGE</span><span class="o">&gt;</span><span class="p">];</span>
 
-<span class="c1">// Custom thank you button setup
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setThankYouLinkWithText</span><span class="p">:</span><span class="o">&lt;</span><span class="n">THANK_YOU_TEXT</span><span class="o">&gt;</span> <span class="nf">URL</span><span class="p">:</span><span class="o">&lt;</span><span class="n">THANK_YOU_URL</span><span class="o">&gt;</span><span class="p">];</span>
+<span class="c1">// Custom thank you button setup</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setThankYouLinkWithText</span><span class="p">:</span><span class="o">&lt;</span><span class="n">THANK_YOU_TEXT</span><span class="o">&gt;</span> <span class="nf">URL</span><span class="p">:</span><span class="o">&lt;</span><span class="n">THANK_YOU_URL</span><span class="o">&gt;</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setDetractorThankYouLinkWithText</span><span class="p">:</span><span class="o">&lt;</span><span class="n">THANK_YOU_TEXT</span><span class="o">&gt;</span> <span class="nf">URL</span><span class="p">:</span><span class="o">&lt;</span><span class="n">THANK_YOU_URL</span><span class="o">&gt;</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setPassiveThankYouLinkWithText</span><span class="p">:</span><span class="o">&lt;</span><span class="n">THANK_YOU_TEXT</span><span class="o">&gt;</span> <span class="nf">URL</span><span class="p">:</span><span class="o">&lt;</span><span class="n">THANK_YOU_URL</span><span class="o">&gt;</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setPromoterThankYouLinkWithText</span><span class="p">:</span><span class="o">&lt;</span><span class="n">THANK_YOU_TEXT</span><span class="o">&gt;</span> <span class="nf">URL</span><span class="p">:</span><span class="o">&lt;</span><span class="n">THANK_YOU_URL</span><span class="o">&gt;</span><span class="p">];</span>
@@ -600,17 +600,17 @@ if custom product name is set it will substitute &ldquo;this product or service&
 <p>For detailed information please refer to <a href="http://docs.wootric.com/install/#social-media-share-settings">js docs</a>.</p>
 <h1 id='color-customization-iphone-only'>Color Customization (iPhone only)</h1>
 <hr>
-<div class="highlight"><pre class="highlight objective_c"><code><span class="c1">// Change slider color
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setSliderColor</span><span class="p">:</span><span class="o">&lt;</span><span class="n">UI_COLOR</span><span class="o">&gt;</span><span class="p">];</span>
+<div class="highlight"><pre class="highlight objective_c"><code><span class="c1">// Change slider color</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setSliderColor</span><span class="p">:</span><span class="o">&lt;</span><span class="n">UI_COLOR</span><span class="o">&gt;</span><span class="p">];</span>
 
-<span class="c1">// Change Send button color
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setSendButtonBackgroundColor</span><span class="p">:</span><span class="o">&lt;</span><span class="n">UI_COLOR</span><span class="o">&gt;</span><span class="p">];</span>
+<span class="c1">// Change Send button color</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setSendButtonBackgroundColor</span><span class="p">:</span><span class="o">&lt;</span><span class="n">UI_COLOR</span><span class="o">&gt;</span><span class="p">];</span>
 
-<span class="c1">// Change Thank You button color
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setThankYouButtonBackgroundColor</span><span class="p">:</span><span class="o">&lt;</span><span class="n">UI_COLOR</span><span class="o">&gt;</span><span class="p">];</span>
+<span class="c1">// Change Thank You button color</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setThankYouButtonBackgroundColor</span><span class="p">:</span><span class="o">&lt;</span><span class="n">UI_COLOR</span><span class="o">&gt;</span><span class="p">];</span>
 
-<span class="c1">// Change Social buttons color
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setSocialSharingColor</span><span class="p">:</span><span class="o">&lt;</span><span class="n">UI_COLOR</span><span class="o">&gt;</span><span class="p">];</span>
+<span class="c1">// Change Social buttons color</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setSocialSharingColor</span><span class="p">:</span><span class="o">&lt;</span><span class="n">UI_COLOR</span><span class="o">&gt;</span><span class="p">];</span>
 </code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="c1">// Change slider color</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setSliderColor</span><span class="p">(</span><span class="o">&lt;</span><span class="kt">UI_COLOR</span><span class="o">&gt;</span><span class="p">)</span>
 
@@ -647,24 +647,24 @@ While it is not required, setting <code class="prettyprint">setEndUserCreatedAt<
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserEmail</span><span class="p">:</span><span class="s">@"nps@example.com"</span><span class="p">];</span>
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserCreatedAt</span><span class="p">:</span><span class="mi">@1234567890</span><span class="p">];</span>
 
-<span class="c1">// Replace YOUR_APP_ID with your application's id. 
-// e.g. https://itunes.apple.com/en/app/YOUR_APP_NAME/id123456789
-// The app id would 123456789
-</span><span class="n">NSURL</span> <span class="o">*</span><span class="n">appStoreURL</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSURL</span> <span class="nf">URLWithString</span><span class="p">:</span><span class="s">@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=YOUR_APP_ID&amp;onlyLatestVersion=true&amp;pageNumber=0&amp;sortOrdering=1&amp;type=Purple+Software"</span><span class="p">];</span>
+<span class="c1">// Replace YOUR_APP_ID with your application's id. </span>
+<span class="c1">// e.g. https://itunes.apple.com/en/app/YOUR_APP_NAME/id123456789</span>
+<span class="c1">// The app id would 123456789</span>
+<span class="n">NSURL</span> <span class="o">*</span><span class="n">appStoreURL</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSURL</span> <span class="nf">URLWithString</span><span class="p">:</span><span class="s">@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=YOUR_APP_ID&amp;onlyLatestVersion=true&amp;pageNumber=0&amp;sortOrdering=1&amp;type=Purple+Software"</span><span class="p">];</span>
 
-<span class="c1">// Uncomment to set ThankYouLink for all users
-//[Wootric setThankYouLinkWithText:@"Rate our app!" URL:appStoreURL];
-</span>
-<span class="c1">// Will set Link only for promoters
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">setPromoterThankYouLinkWithText</span><span class="p">:</span><span class="s">@"Rate our app!"</span> <span class="nf">URL</span><span class="p">:</span><span class="n">appStoreURL</span><span class="p">];</span>
+<span class="c1">// Uncomment to set ThankYouLink for all users</span>
+<span class="c1">//[Wootric setThankYouLinkWithText:@"Rate our app!" URL:appStoreURL];</span>
 
-<span class="c1">// Will skip the Feedback view for Promoters
-</span><span class="p">[</span><span class="n">Wootric</span> <span class="nf">skipFeedbackScreenForPromoter</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+<span class="c1">// Will set Link only for promoters</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">setPromoterThankYouLinkWithText</span><span class="p">:</span><span class="s">@"Rate our app!"</span> <span class="nf">URL</span><span class="p">:</span><span class="n">appStoreURL</span><span class="p">];</span>
 
-<span class="c1">// Uncomment for testing
-// NOTE: do not use on production
-//[Wootric forceSurvey:YES];
-</span>
+<span class="c1">// Will skip the Feedback view for Promoters</span>
+<span class="p">[</span><span class="n">Wootric</span> <span class="nf">skipFeedbackScreenForPromoter</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+
+<span class="c1">// Uncomment for testing</span>
+<span class="c1">// NOTE: do not use on production</span>
+<span class="c1">//[Wootric forceSurvey:YES];</span>
+
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">showSurveyInViewController</span><span class="p">:</span><span class="n">self</span><span class="p">];</span>
 </code></pre></div><div class="highlight"><pre class="highlight swift"><code><span class="kt">Wootric</span><span class="o">.</span><span class="nf">configureWithClientID</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span> <span class="nv">accountToken</span><span class="p">:</span><span class="n">accountToken</span><span class="p">)</span>
 <span class="kt">Wootric</span><span class="o">.</span><span class="nf">setEndUserEmail</span><span class="p">(</span><span class="s">"nps@example.com"</span><span class="p">)</span>
@@ -726,19 +726,19 @@ While it is not required, setting <code class="prettyprint">setEndUserCreatedAt<
 
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserEmail</span><span class="p">:</span><span class="s">@"nps@example.com"</span><span class="p">];</span>
 
-<span class="c1">// Uncomment for testing
-// NOTE: do not use in production
-// [Wootric forceSurvey:YES];
-</span>
-<span class="c1">// Set end user's properties
-</span><span class="n">NSMutableDictionary</span> <span class="o">*</span><span class="n">properties</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSMutableDictionary</span> <span class="nf">new</span><span class="p">];</span>
+<span class="c1">// Uncomment for testing</span>
+<span class="c1">// NOTE: do not use in production</span>
+<span class="c1">// [Wootric forceSurvey:YES];</span>
+
+<span class="c1">// Set end user's properties</span>
+<span class="n">NSMutableDictionary</span> <span class="o">*</span><span class="n">properties</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSMutableDictionary</span> <span class="nf">new</span><span class="p">];</span>
 <span class="p">[</span><span class="n">properties</span> <span class="nf">setObject</span><span class="p">:</span><span class="s">@"Wootric"</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"company"</span><span class="p">];</span>
 <span class="p">[</span><span class="n">properties</span> <span class="nf">setObject</span><span class="p">:</span><span class="s">@"awesome"</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"type"</span><span class="p">];</span>
 <span class="p">[</span><span class="n">properties</span> <span class="nf">setObject</span><span class="p">:</span><span class="s">@"iOS"</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"os"</span><span class="p">];</span>
-<span class="c1">// Integer representing the date (Unix timestamp format) of the user's last order with the key suffixed with "_date"
-</span><span class="p">[</span><span class="n">properties</span> <span class="nf">setObject</span><span class="p">:</span><span class="mi">@1479316287</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"last_order_date"</span><span class="p">];</span>
-<span class="c1">// Integer representing the user's total purchases with the key suffixed with "_amount"
-</span><span class="p">[</span><span class="n">properties</span> <span class="nf">setObject</span><span class="p">:</span><span class="mi">@10</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"total_purchase_amount"</span><span class="p">];</span>
+<span class="c1">// Integer representing the date (Unix timestamp format) of the user's last order with the key suffixed with "_date"</span>
+<span class="p">[</span><span class="n">properties</span> <span class="nf">setObject</span><span class="p">:</span><span class="mi">@1479316287</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"last_order_date"</span><span class="p">];</span>
+<span class="c1">// Integer representing the user's total purchases with the key suffixed with "_amount"</span>
+<span class="p">[</span><span class="n">properties</span> <span class="nf">setObject</span><span class="p">:</span><span class="mi">@10</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"total_purchase_amount"</span><span class="p">];</span>
 
 <span class="p">[</span><span class="n">Wootric</span> <span class="nf">setEndUserProperties</span><span class="p">:</span><span class="n">properties</span><span class="p">];</span>
 
