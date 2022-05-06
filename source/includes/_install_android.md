@@ -5,7 +5,7 @@
 <dependency>
     <groupId>com.wootric</groupId>
     <artifactId>wootric-sdk-android</artifactId>
-    <version>2.15.0</version>
+    <version>2.21.1</version>
 </dependency>
 ```
 
