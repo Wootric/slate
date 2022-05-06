@@ -1517,7 +1517,45 @@ For valid date formats see https://apidock.com/ruby/DateTime/strftime</p>
 </tr>
 </tbody></table>
 <div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-XPUT</span> <span class="s2">"https://cxi-api.wootric.com/v1/responses/update_bulk_properties"</span> <span class="nt">-F</span> <span class="s2">"csv=@data.csv"</span> 
+</code></pre></div><h2 id='delete-response'>Delete Response</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-s</span> <span class="nt">-i</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="nt">-XDELETE</span> <span class="s2">"https://cxi-api.wootric.com/v1/responses/1"</span>
 </code></pre></div>
+<blockquote>
+<p>The above command returns and empty response with status 202 (Accepted)
+<code class="prettyprint">bash
+HTTP/1.1 202 Accepted
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/json
+Cache-Control: no-cache
+X-Request-Id: 5845a55c-c95c-4a16-8813-a1ad5ab73991
+X-Runtime: 0.791538
+Vary: Origin
+Transfer-Encoding: chunked
+</code></p>
+</blockquote>
+
+<p>This endpoint deletes a response.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">DELETE https://cxi-api.wootric.com/v1/responses/&lt;response_id&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>response_id</td>
+<td>integer</td>
+<td>The ID of the response to delete</td>
+</tr>
+</tbody></table>
+
           <h1 id='exports'>Exports</h1><h2 id='create-an-export'>Create an export</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-i</span> <span class="nt">-s</span> <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://cxi-api.wootric.com/v1/exports"</span>
 </code></pre></div>
 <blockquote>
