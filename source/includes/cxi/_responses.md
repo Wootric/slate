@@ -1,4 +1,4 @@
-# Reponses
+# Responses
 
 ## Response Object
 
@@ -121,9 +121,10 @@ curl -s -H "Authorization: Bearer myaccesstoken" -X GET "https://cxi-api.wootric
 
 Parameter | Type | Default | Description
 --------- | ---- | ------- | -----------
-page (optional)| integer | 1 | Number of returned page, max 30
+page (optional) | integer | 1 | Number of returned page, max 30
 per_page (optional) | integer | 25 | Number of records returned on each page, max 50
 sort_order (optional) | string | desc | Sort responses by `feedback_date` in ascending or descending order
+include_hidden (optional) | boolean | false | Include responses without feedback (score only responses)
 
 ## Update properties bulk
 
