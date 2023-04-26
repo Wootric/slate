@@ -1303,7 +1303,7 @@ Also, this endpoint accepts an optional list of tag_names and project_ids.</p>
 </tr>
 </tbody></table>
 
-          <h1 id='reponses'>Reponses</h1><h2 id='response-object'>Response Object</h2>
+          <h1 id='responses'>Responses</h1><h2 id='response-object'>Response Object</h2>
 <p>A Response object has the following fields:</p>
 
 <table><thead>
@@ -1482,6 +1482,12 @@ In the following cURL examples you must replace <code class="prettyprint">myacce
 <td>string</td>
 <td>desc</td>
 <td>Sort responses by <code class="prettyprint">feedback_date</code> in ascending or descending order</td>
+</tr>
+<tr>
+<td>include_hidden (optional)</td>
+<td>boolean</td>
+<td>false</td>
+<td>Include responses without feedback (score only responses)</td>
 </tr>
 </tbody></table>
 <h2 id='update-properties-bulk'>Update properties bulk</h2>
