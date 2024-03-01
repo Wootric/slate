@@ -152,15 +152,27 @@ With this option enabled, the open feedback screen will be skipped and go direct
 
 ## showOptOut
 ```objective_c
-[Wootric forceSurvey:<BOOL>];
+[Wootric showOptOut:<BOOL>];
 ```
 ```swift
-Wootric.showOptOut(true)
+Wootric.showOptOut(BOOL)
 ```
 ```swift_three
-Wootric.showOptOut(true)
+Wootric.showOptOut(BOOL)
 ```
 If showOptOut is set to YES, it will show an option for the end user to opt out of being surveyed. Default value is NO.
+
+## showDisclaimerText:link:linkText:
+```objective_c
+[Wootric showDisclaimerText:<NSString> link:<NSURL> linkText:<NSString>];
+```
+```swift
+Wootric.showDisclaimerText(<String>, link: <NSURL>, linkText: <String>)
+```
+```swift_three
+Wootric.showDisclaimerText(<String>, link: <NSURL>, linkText: <String>)
+```
+When `disclaimerText, link and linkText` are set, the survey will display the text and link at the bottom of the survey.
 
 ## setLogLevelNone
 ```objective_c
