@@ -47,6 +47,13 @@ wootric.setShowOptOut(<BOOL>);
 ```
 If setShowOptOut is set to `true` then opt out link will be seen.
 
+##showDisclaimer
+```java
+wootric.showDisclaimer(String disclaimerText, Uri disclaimerLinkURL, String disclaimerLinkText)
+```
+
+When `disclaimerText, link and linkText` are set, the survey will display the text and link at the bottom of the survey.
+
 ##shouldSkipFollowupScreenForPromoters
 ```java
 wootric.shouldSkipFollowupScreenForPromoters(<BOOL>);
