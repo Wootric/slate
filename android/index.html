@@ -217,6 +217,9 @@ This value is also used in eligibility check, to determine if end user should be
 <h2 id='setshowoptout'>setShowOptOut</h2><div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">setShowOptOut</span><span class="o">(&lt;</span><span class="n">BOOL</span><span class="o">&gt;);</span>
 </code></pre></div>
 <p>If setShowOptOut is set to <code class="prettyprint">true</code> then opt out link will be seen.</p>
+<h2 id='showdisclaimer'>showDisclaimer</h2><div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">showDisclaimer</span><span class="o">(</span><span class="n">String</span> <span class="n">disclaimerText</span><span class="o">,</span> <span class="n">Uri</span> <span class="n">disclaimerLinkURL</span><span class="o">,</span> <span class="n">String</span> <span class="n">disclaimerLinkText</span><span class="o">)</span>
+</code></pre></div>
+<p>When <code class="prettyprint">disclaimerText, link and linkText</code> are set, the survey will display the text and link at the bottom of the survey.</p>
 <h2 id='shouldskipfollowupscreenforpromoters'>shouldSkipFollowupScreenForPromoters</h2><div class="highlight"><pre class="highlight java"><code><span class="n">wootric</span><span class="o">.</span><span class="na">shouldSkipFollowupScreenForPromoters</span><span class="o">(&lt;</span><span class="n">BOOL</span><span class="o">&gt;);</span>
 </code></pre></div>
 <p>With this option enabled, promoters (score 9-10) will be taken directly to third (social share) screen, skipping the second (feedback) one.</p>
