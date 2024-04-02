@@ -28,11 +28,11 @@ All responses from the API (including errors) are in JSON. All code examples are
 
 # Environments
 
-Currently, Wootric supports two main environments: the <strong> EU </strong> and <strong> US</strong>.
+Currently, Wootric supports three main environments: the <strong> EU, AU</strong> and <strong> US</strong>.
 
-All examples provided in this section are for the <strong> US environment only</strong>. If you want to run these examples on the EU environment, you need to replace the <strong> .com  </strong> domain with <strong> .eu</strong>.
+All examples provided in this section are for the <strong> US environment only</strong>. If you want to run these examples on the EU or AU environment, you need to replace the <strong> .com  </strong> domain with <strong> .eu</strong> or <strong> .au</strong>.
 
-To determine if your account runs on the EU environment now, check if your account token begins with <strong> NPS-EU</strong>.
+To determine if your account runs on the EU or AU environment now, check if your account token begins with <strong> NPS-EU</strong> or <strong> NPS-AU</strong>.
 
 # Authentication
 > To retrieve an access token using OAuth if you have one account on Wootric, use the following code:
