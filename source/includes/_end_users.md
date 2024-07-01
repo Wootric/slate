@@ -131,6 +131,7 @@ updated (optional) | hash | {} | Filter your end users by update time (UNIX time
 email (optional) | string | None | Filter end users by email (will return an array containing a single end user object if the end user with provided email exists)
 sort_order (optional)| string | asc | Order in which records are shown. Default is oldest first. Options are `asc` or `desc`
 sort_key (optional)| string | email | Sort your results based on this attribute. Default is end_user's `email`. It could be one of `email`, `updated_at`, `created_at`.
+surveys_disabled (optional)| boolean | false | Filter your end users by their survey status (if they are opted out from receiving surveys). 
 
 We recommend to iterate using `created` parameter if you need to get more data than what you get out of our pagination restriction.  
 
