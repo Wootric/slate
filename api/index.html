@@ -441,6 +441,12 @@ If you find that the current rate limit on your account is too low for your need
 <td>email</td>
 <td>Sort your results based on this attribute. Default is end_user&rsquo;s <code class="prettyprint">email</code>. It could be one of <code class="prettyprint">email</code>, <code class="prettyprint">updated_at</code>, <code class="prettyprint">created_at</code>.</td>
 </tr>
+<tr>
+<td>surveys_disabled (optional)</td>
+<td>boolean</td>
+<td>false</td>
+<td>Filter your end users by their survey status (if they are opted out from receiving surveys).</td>
+</tr>
 </tbody></table>
 
 <p>We recommend to iterate using <code class="prettyprint">created</code> parameter if you need to get more data than what you get out of our pagination restriction.  </p>
