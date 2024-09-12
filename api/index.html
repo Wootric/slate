@@ -2913,6 +2913,137 @@ curl <span class="s2">"https://api.wootric.com/v1/email_survey_csv"</span> <span
 </tr>
 </tbody></table>
 
+<h1 id='email-stats'>Email Stats</h1><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v2/email_stats"</span>
+
+<span class="o">{</span>
+  <span class="s2">"email_stats"</span>: <span class="o">{</span>
+    <span class="s2">"send_date"</span>: <span class="s2">"Aug  3, 2023-Sep  3, 2024"</span>,
+    <span class="s2">"send_requests"</span>: 7,
+    <span class="s2">"emails_sent"</span>: 5,
+    <span class="s2">"delivered"</span>: 5,
+    <span class="s2">"delivered_percentage"</span>: <span class="s2">"100.0%"</span>,
+    <span class="s2">"bounce_rate"</span>: 0,
+    <span class="s2">"bounce_rate_percentage"</span>: <span class="s2">"0.0%"</span>,
+    <span class="s2">"open_rate"</span>: <span class="s2">"60%"</span>,
+    <span class="s2">"response_rate"</span>: <span class="s2">"0%"</span>,
+    <span class="s2">"not_eligible"</span>: <span class="s2">"2 (29%)"</span>,
+    <span class="s2">"raw_results"</span>: <span class="o">{</span>
+      <span class="s2">"processed"</span>: 5,
+      <span class="s2">"bounce"</span>: 0,
+      <span class="s2">"dropped"</span>: 0,
+      <span class="s2">"delivered"</span>: 5,
+      <span class="s2">"opted_out"</span>: 2,
+      <span class="s2">"not_delivered"</span>: 0,
+      <span class="s2">"open"</span>: 3,
+      <span class="s2">"spamreport"</span>: 0,
+      <span class="s2">"not_eligible"</span>: 0,
+      <span class="s2">"total_surveys"</span>: 5,
+      <span class="s2">"total_responses"</span>: 0,
+      <span class="s2">"sart_date"</span>: <span class="s2">"2023-08-03T00:00:00-07:00"</span>,
+      <span class="s2">"end_date"</span>: <span class="s2">"2024-09-03T23:59:59-07:00"</span>
+    <span class="o">}</span>
+  <span class="o">}</span>,
+  <span class="s2">"initial_send"</span>: null,
+  <span class="s2">"reminder_send"</span>: null
+<span class="o">}</span>
+</code></pre></div>
+<p>Returns email stats information depending on the date_range selected.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>Hash</td>
+<td>See <strong>date_range</strong> parameters below</td>
+</tr>
+</tbody></table>
+<h2 id='sources'>Sources</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v2/email_stats/sources"</span>
+
+
+<span class="o">{</span>
+  <span class="s2">"ongoing"</span>: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="s2">"id"</span>: <span class="s2">"email_api"</span>,
+      <span class="s2">"name"</span>: <span class="s2">"Email API *"</span>
+    <span class="o">}</span>,
+    <span class="o">{</span>
+      <span class="s2">"id"</span>: <span class="s2">"webhook_trigger"</span>,
+      <span class="s2">"name"</span>: <span class="s2">"Webhook Trigger *"</span>
+    <span class="o">}</span>
+  <span class="o">]</span>,
+  <span class="s2">"sends"</span>: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="s2">"id"</span>: 1,
+      <span class="s2">"name"</span>: <span class="s2">"Q1_file.csv"</span>,
+      <span class="s2">"date"</span>: <span class="s2">"Jan 11, 2024  9:01AM"</span>
+    <span class="o">}</span>,
+    <span class="o">{</span>
+      <span class="s2">"id"</span>: 2,
+      <span class="s2">"name"</span>: <span class="s2">"Q2_file.csv"</span>,
+      <span class="s2">"date"</span>: <span class="s2">"Apr 14, 2024  9:04AM"</span>
+    <span class="o">}</span>,
+    <span class="o">{</span>
+      <span class="s2">"id"</span>: 3,
+      <span class="s2">"name"</span>: <span class="s2">"Q3_file.csv"</span>,
+      <span class="s2">"date"</span>: <span class="s2">"Jul 09, 2024  10:04AM"</span>
+    <span class="o">}</span>
+  <span class="o">]</span>
+<span class="o">}</span>
+
+
+
+</code></pre></div>
+<p>Returns the names and IDs of the sources of the email sends.</p>
+<h2 id='bounce-report'>Bounce report</h2><div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-XPOST</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer myaccesstoken"</span> <span class="s2">"https://api.wootric.com/v2/email_stats/bounce_report"</span>
+
+
+null
+</code></pre></div>
+<p>Generates and emails a bounce report to the current user if the access token belongs to one, or the owner of the account if the access token was generated with <code class="prettyprint">grant_type=client_credentials</code>.</p>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>Hash</td>
+<td>See <strong>date_range</strong> parameters below</td>
+</tr>
+<tr>
+<td>source</td>
+<td>String</td>
+<td>Source of the bounce report (email_api, webhook_trigger or ID of the email send)</td>
+</tr>
+</tbody></table>
+<h3 id='date_range'>date_range</h3>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>start_date</td>
+<td>String</td>
+<td>Start date string with format YYYY-MM-DD (e.g. 2024-08-04)</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>String</td>
+<td>End date string with format YYYY-MM-DD (e.g. 2024-08-04)</td>
+</tr>
+</tbody></table>
+
 
       </div>
       <div class="dark-box">
